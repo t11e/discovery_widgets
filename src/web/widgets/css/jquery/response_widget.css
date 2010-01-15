@@ -1,0 +1,8 @@
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview response_widget.css
+ * Core styles for t11e.widget.jquery.ResponseWidget.
+ */
+.t11e-widget-jquery-response-hd h1 {
+    display: none;
+}

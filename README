@@ -1,0 +1,21 @@
+A suite of Ajax search widgets to interface with the Discovery Engine.
+
+Discovery Widgets provides a set of JavaScript widgets that enable a
+highly-responsive Ajax based search interface. They are comprised of
+UI widgets, a page controller, and other infrastructure. The UI
+widgets are built using the jQuery framework.
+
+The page controller uses a RESTful API with regular URL parameters for
+the request and expect a JSON response. Some widgets expect Discovery
+Engine specific response data.
+
+We use a pub/sub notification system for communication decoupling the
+widgets from the main page controller logic. This is similar to the
+system described at http://www.openajax.org but it currently uses
+synchronous event callbacks.
+
+To see the widgets in action run
+
+    ant compress-media server
+
+Then point your browser at http://localhost:8080.

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Discovery Widgets" default="compress-media">
+    <target name="clean">
+        <delete dir="build.ant"/>
+        <delete dir="src/web/build"/>
+    </target>
+
+    <target name="compress-media"
+        description="Lint, concatenate and compress media files as configured in media.yml.">
+        <java jar="tools/mediacompressor-1.0.jar" fork="true" failonerror="true">
+            <arg value="--config=media.yml"/>
+        </java>
+    </target>
+
+    <target name="server" depends="compile">
+        <java classname="com.t11e.web.SimpleServer" failonerror="true">
+            <classpath>
+                <path refid="build.classpath"/>
+                <pathelement path="build.ant/main"/>
+            </classpath>
+            <arg value="8080"/>
+            <arg value="src/web"/>
+        </java>
+    </target>
+
+    <target name="jsdoc">
+        <delete dir="build.ant/jsdoc"/>
+        <java jar="tools/jsdoc_toolkit-2.3.1/jsrun.jar" fork="true" failonerror="true">
+            <arg value="tools/jsdoc_toolkit-2.3.1/app/run.js"/>
+            <arg value="-t=src/jsdoc_templates"/>
+            <arg value="-d=build.ant/jsdoc"/>
+            <arg value="-r=5"/>
+            <arg value="src/web/widgets/js"/>
+        </java>
+        <echo message="JavaScript documentation now available in build.ant/jsdoc/index.html"/>
+    </target>
+
+    <!--
+
+    Support tasks for the Java based examples.
+
+    -->
+
+    <path id="build.classpath">
+      <fileset dir="lib">
+        <include name="*.jar"/>
+        <exclude name="*-sources.jar"/>
+      </fileset>
+    </path>
+
+    <target name="compile">
+        <mkdir dir="build.ant/main"/>
+        <javac destdir="build.ant/main" target="1.6" debug="true">
+            <src path="src/java/main"/>
+            <classpath refid="build.classpath"/>
+        </javac>
+    </target>
+
+    <target name="javadoc">
+        <delete dir="build.ant/javadoc"/>
+        <javadoc destdir="build.ant/javadoc">
+            <classpath refid="build.classpath" />
+            <packageset dir="src/java/main" defaultexcludes="yes"/>
+        </javadoc>
+        <echo message="Java documentation now available in build.ant/javadoc/index.html"/>
+    </target>
+</project>

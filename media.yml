@@ -1,0 +1,156 @@
+# The original CSS/JS file source directory
+mediaRootDir: src/web
+# The directory into which the compressed files will be placed
+# relative to mediaRootDir
+outputDir: build
+# The temporary directory where pre-compressed files are stored
+tempDir: build.ant/compressed
+# Optional property. Defaults to 10000 (10 seconds)
+# checkIntervalMs: 10000
+groups:
+    - groupName: widgets_css
+      mediaType: css
+      outputFileName: widgets.css
+      outputFileNameMinified: widgets.min.css
+      sourceFileNames:
+        - widgets/css/core.css
+        - widgets/css/jquery/pagination_widget.css
+        - widgets/css/jquery/faceted_checkboxes_widget.css
+        - widgets/css/jquery/faceted_flyout_widget.css
+        - widgets/css/jquery/google_map_widget.css
+        - widgets/css/jquery/response_widget.css
+        - widgets/css/jquery/results_widget.css
+        - widgets/css/jquery/button_widget.css
+        - widgets/css/jquery/accordion_widget.css
+        - widgets/css/jquery/slider_widget.css
+
+    - groupName: widgets_theme_simple_css
+      mediaType: css
+      outputFileName: widgets-theme-simple.css
+      outputFileNameMinified: widgets-theme-simple.min.css
+      sourceFileNames:
+        - widgets/css/themes/simple/ui.css
+        - widgets/css/themes/simple/widgets.css
+
+    - groupName: widgets_js
+      mediaType: js
+      outputFileName: widgets.js
+      outputFileNameMinified: widgets.min.js
+      sourceFileNames:
+        - jquery/plugins/ajaxsoft_history/jquery.history-r102.lint.js
+        - jquery/plugins/pagination/jquery.pagination-1.1.lint.js
+        - jquery/plugins/bgiframe/jquery.bgiframe-2.1.1.lint.js
+        - jquery/plugins/template/jquery.template-2009-11-16.lint.js
+        - json2/json2-2009-08-17.lint.js
+        - widgets/js/t11e.js
+        - widgets/js/page_controller.js
+        - widgets/js/jquery/search_plugin.js
+        - widgets/js/jquery/history_plugin.js
+        - widgets/js/jquery/util.js
+        - widgets/js/jquery/slider_widget.js
+        - widgets/js/jquery/dual_slider_widget.js
+        - widgets/js/jquery/response_widget.js
+        - widgets/js/jquery/results_widget.js
+        - widgets/js/jquery/pagination_widget.js
+        - widgets/js/jquery/faceted_checkboxes_widget.js
+        - widgets/js/jquery/faceted_flyout_widget.js
+        - widgets/js/jquery/text_box_widget.js
+        - widgets/js/jquery/button_widget.js
+        - widgets/js/jquery/params_widget.js
+        - widgets/js/jquery/google_map_widget.js
+        - widgets/js/jquery/accordion_widget.js
+        - widgets/js/jquery/activate.js
+
+    - groupName: yui_css
+      mediaType: css
+      outputFileName: yui-2.7.0.css
+      outputFileNameMinified: yui-2.7.0.min.css
+      sourceFileNames:
+        - yui/2.7.0/build/reset/reset.css
+        - yui/2.7.0/build/fonts/fonts.css
+        - yui/2.7.0/build/grids/grids.css
+        - yui/2.7.0/build/base/base.css
+
+    - groupName: jquery_js
+      mediaType: js
+      outputFileName: jquery-1.3.2.js
+      outputFileNameMinified: jquery-1.3.2.min.js
+      jslint: off
+      sourceFileNames:
+        - jquery/jquery-1.3.2.js
+
+    - groupName: jquery-ui_css
+      mediaType: css
+      outputFileName: jquery-ui-1.7.2.css
+      outputFileNameMinified: jquery-ui-1.7.2.min.css
+      sourceFileNames:
+        - jquery/jquery-ui/1.7.2/css/ui.core.css
+        - jquery/jquery-ui/1.7.2/css/ui.resizable.css
+        #- jquery/jquery-ui/1.7.2/css/ui.accordion.css
+        #- jquery/jquery-ui/1.7.2/css/ui.datepicker.css
+        - jquery/jquery-ui/1.7.2/css/ui.dialog.css
+        #- jquery/jquery-ui/1.7.2/css/ui.progressbar.css
+        - jquery/jquery-ui/1.7.2/css/ui.slider.css
+        #- jquery/jquery-ui/1.7.2/css/ui.tabs.css
+
+    - groupName: jquery-ui_js
+      mediaType: js
+      outputFileName: jquery-ui-1.7.2.js
+      outputFileNameMinified: jquery-ui-1.7.2.min.js
+      jslint: off
+      sourceFileNames:
+        - jquery/jquery-ui/1.7.2/js/ui.core.js
+        - jquery/jquery-ui/1.7.2/js/ui.draggable.js
+        - jquery/jquery-ui/1.7.2/js/ui.droppable.js
+        - jquery/jquery-ui/1.7.2/js/ui.resizable.js
+        - jquery/jquery-ui/1.7.2/js/ui.selectable.js
+        - jquery/jquery-ui/1.7.2/js/ui.sortable.js
+        - jquery/jquery-ui/1.7.2/js/effects.core.js
+        - jquery/jquery-ui/1.7.2/js/effects.blind.js
+        - jquery/jquery-ui/1.7.2/js/effects.bounce.js
+        - jquery/jquery-ui/1.7.2/js/effects.clip.js
+        - jquery/jquery-ui/1.7.2/js/effects.drop.js
+        - jquery/jquery-ui/1.7.2/js/effects.explode.js
+        - jquery/jquery-ui/1.7.2/js/effects.fold.js
+        - jquery/jquery-ui/1.7.2/js/effects.highlight.js
+        - jquery/jquery-ui/1.7.2/js/effects.pulsate.js
+        - jquery/jquery-ui/1.7.2/js/effects.scale.js
+        - jquery/jquery-ui/1.7.2/js/effects.shake.js
+        - jquery/jquery-ui/1.7.2/js/effects.slide.js
+        - jquery/jquery-ui/1.7.2/js/effects.transfer.js
+        #- jquery/jquery-ui/1.7.2/js/ui.accordion.js
+        #- jquery/jquery-ui/1.7.2/js/ui.datepicker.js
+        - jquery/jquery-ui/1.7.2/js/ui.dialog.js
+        #- jquery/jquery-ui/1.7.2/js/ui.progressbar.js
+        - jquery/jquery-ui/1.7.2/js/ui.slider.js
+        #- jquery/jquery-ui/1.7.2/js/ui.tabs.js
+
+jslintOptions:
+    #- adsafe
+    - bitwise
+    #- browser
+    #- cap
+    #- css
+    #- debug
+    - eqeqeq
+    #- evil
+    - forin
+    #- fragment'
+    - immed
+    - indent=4
+    #- laxbreak
+    - newcap
+    - nomen
+    #- on
+    #- onevar
+    - passfail
+    #- plusplus
+    - regexp
+    #- safe
+    #- sidebar
+    #- strict
+    #- sub
+    #- undef
+    - white
+    #- widget
+

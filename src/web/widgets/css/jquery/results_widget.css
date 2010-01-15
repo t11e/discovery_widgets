@@ -1,0 +1,24 @@
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview results_widget.css
+ * Core styles for t11e.widget.jquery.ResultsWidget.
+ */
+
+/**
+ * Override this class to customize the display of the loading image.
+ */
+
+.t11e-widget-jquery-results-loading {
+    display: none;
+    width: 230px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #CCCCCC;
+    color: #999999;
+    padding-top: .5em;
+}
+
+.t11e-widget-jquery-results-loading img {
+    margin: 0 auto;
+}

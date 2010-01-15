@@ -1,0 +1,19 @@
+.t11e-widget-jquery-results-loading {
+    display: none;
+    width: 230px;
+    height: 60px;
+    text-align: center;
+    font-weight: bold;
+    background: #FFFFFF url(/images/widgets/themes/simple/progressbar-gray.gif) 50% 50% no-repeat;
+    border: 1px solid #CCCCCC;
+    color: #999999;
+    padding-top: .5em;
+}
+
+.t11e-widget-jquery-accordion-bd .accordion-top,
+.t11e-widget-jquery-accordion-bd .accordion-bottom {
+    -moz-background-clip: border;
+    -moz-background-inline-policy: continuous;
+    -moz-background-origin: padding;
+      background: transparent url(/images/widgets/themes/simple/hd_map_results.png) no-repeat scroll 0 0;
+}

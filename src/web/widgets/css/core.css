@@ -1,0 +1,38 @@
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview core.css
+ *
+ * Core styles for widgets.
+ */
+
+ol.t11e-list-entries {
+    margin:0 auto;
+}
+li.t11e-list-entry {
+    list-style-type: none;
+}
+
+.t11e-widget {
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.t11e-widget .t11e-hd {
+    margin: 0;
+    padding: 0;
+}
+
+.t11e-widget .t11e-hd h1 {
+    font-size: 1em;
+}
+
+.t11e-widget .t11e-bd {
+    margin: 0;
+    padding: 0;
+}
+
+.t11e-widget .t11e-ft {
+    margin: 0;
+    padding: 0;
+}

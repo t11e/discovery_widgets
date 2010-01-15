@@ -1,0 +1,24 @@
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview google_map_widget.css
+ * Core styles for t11e.widget.jquery.GoogleMapWidget.
+ */
+.t11e-widget-jquery-google-map-hd {
+    padding: 0 !important;
+    margin:0 !important;
+}
+
+.t11e-widget-jquery-google-map-bd {
+    padding: 0 !important;
+}
+
+.t11e-widget-jquery-google-map-bd .google-map {
+    border: 1px solid #000000;
+    height: 200px;
+    z-index: 500;
+}
+
+.t11e-widget-jquery-google-map-ft {
+    padding: 0 !important;
+    margin:0 !important;
+}

@@ -1,0 +1,43 @@
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview accordion_widget.css
+ * Core styles for t11e.widget.jquery.AccordionWidget.
+ */
+.t11e-widget-jquery-accordion {
+    position: static;
+}
+
+.t11e-widget-jquery-accordion-bd {
+    position: absolute;
+    padding: 0 !important;
+    z-index: 500;
+}
+
+.t11e-widget-jquery-accordion-bd .accordion-top {
+ height: 34px;
+ margin-top: 0.5em;
+}
+
+.t11e-widget-jquery-accordion-bd .accordion-bottom {
+ background-position: 0 -34px;
+ height: 29px;
+}
+
+.t11e-widget-jquery-accordion-bd .accordion-body {
+  display: none;
+}
+
+.t11e-widget-jquery-accordion ol.t11e-list-entries {
+    margin: 0;
+    padding: 0;
+}
+
+.t11e-widget-jquery-accordion li.t11e-list-entry {
+    margin: 0;
+    padding:0;
+}
+
+.t11e-widget-jquery-accordion-bd .t11e-widget {
+    margin: 0;
+    padding: 0;
+}

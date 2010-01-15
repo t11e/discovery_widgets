@@ -1,0 +1,114 @@
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview faceted_flyout_widget.css
+ * Core styles for t11e.widget.jquery.FacetedFlyoutWidget.
+ */
+
+/*
+ * Breadcrumb button.
+ */
+.t11e-widget-jquery-faceted-flyout .breadcrumb span a.close {
+    position: static;
+    cursor: pointer;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-primary,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-secondary {
+    display: none;
+    z-index: 1000;
+}
+
+/*
+ * Checkbox rows
+ */
+fieldset.t11e-widget-jquery-faceted-flyout-primary div.row,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row {
+    float:left;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+/*
+ * Position checkboxes
+ */
+fieldset.t11e-widget-jquery-faceted-flyout-primary div.row input,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row input {
+    float: left;
+    margin-top: .125em;
+    margin-bottom: 0;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel div.row input {
+    margin-top: .3em;
+}
+
+/*
+ * Position checkbox labels
+ */
+fieldset.t11e-widget-jquery-faceted-flyout-primary div.row label,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row label {
+   width: 65%;
+   float: left;
+}
+
+/*
+ * Position drilldown counts
+ */
+fieldset.t11e-widget-jquery-faceted-flyout-primary div.row span.facet-count,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row span.facet-count {
+    position: absolute;
+    top: .125em;
+    right: .1em;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel {
+    float:left;
+    width: 400px;
+    border: 1px solid #AAAAAA;
+    background-color: #FFFFFF;
+    padding: .25em 1.5em .25em .25em;
+    z-index: 1000;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel table {
+    border: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel tr,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel td,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel th {
+    vertical-align: top;
+    border: 0;
+    padding:0;
+    margin: 0;
+}
+
+/*
+ * Position flyout panel's close button
+ */
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .close-flyout-panel {
+    position: absolute;
+    top: .12em;
+    right: .12em;
+    cursor: pointer;
+}
+
+/**
+ * Toggle button
+ */
+.t11e-widget-jquery-faceted-flyout-bd div.toggle-flyout {
+    padding: 0;
+    cursor: pointer;
+}
+
+.t11e-widget-jquery-faceted-flyout-bd div.t11e-state-disabled {
+    color: #DDDDDD;
+}

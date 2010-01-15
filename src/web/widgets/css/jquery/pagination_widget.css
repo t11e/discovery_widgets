@@ -1,0 +1,22 @@
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview pagination_widget.css
+ * Core styles for t11e.widget.jquery.PaginationWidget.
+ */
+
+.t11e-widget-jquery-pagination .pagination a {
+    /* page links */
+}
+
+.t11e-widget-jquery-pagination .pagination a, .pagination span {
+    display: block;
+    float: left;
+}
+
+.t11e-widget-jquery-pagination .pagination span.current {
+    /* currently selected page */
+}
+
+.t11e-widget-jquery-pagination .pagination .current.prev, .pagination .current.next{
+    /* current next or previous button */
+}
