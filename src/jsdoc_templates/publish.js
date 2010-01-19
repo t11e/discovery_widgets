@@ -28,7 +28,7 @@ function publish(symbolSet) {
     IO.copyFile(publish.conf.templatesDir+"static/scripts/shLegacy.js", publish.conf.outDir+"symbols/scripts/");
     IO.copyFile(publish.conf.templatesDir+"static/scripts/shBrushCss.js", publish.conf.outDir+"symbols/scripts/");
     IO.copyFile(publish.conf.templatesDir+"static/scripts/shBrushJScript.js", publish.conf.outDir+"symbols/scripts/");
-    IO.copyFile(publish.conf.templatesDir+"static/scripts/shBrushXML.js", publish.conf.outDir+"symbols/scripts/");
+    IO.copyFile(publish.conf.templatesDir+"static/scripts/shBrushXml.js", publish.conf.outDir+"symbols/scripts/");
 
     IO.copyFile(publish.conf.templatesDir+"static/styles/help.png", publish.conf.outDir+"symbols/styles/");
     IO.copyFile(publish.conf.templatesDir+"static/styles/magnifier.png", publish.conf.outDir+"symbols/styles/");
