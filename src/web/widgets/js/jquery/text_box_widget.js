@@ -64,7 +64,12 @@ t11e.util.declare('t11e.widget.jquery.TextBoxWidget', function ($) {
     t11e.event.subscribe('request.' + search_group, load_from_params);
 
     var save_to_params = function (params) {
-        params[value_param] = [textbox.val()];
+        var val = $.trim(textbox.val());
+        if ('' !== val) {
+            params[value_param] = [val];
+        } else {
+            delete params[value_param];
+        }
         t11e.util.remove_param(params, options.page_param);
     };
 
