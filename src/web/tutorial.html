@@ -130,10 +130,10 @@
                 <div class="yui-b">
 
                     <div class="t11e-widget t11e-widget-jquery-textbox t11e-widget-id-5">
-                        <div class="t11e-hd t11e-widget-jquery-textbox-hd">Search</div>
+                        <div class="t11e-hd t11e-widget-jquery-textbox-hd">Tags</div>
                         <div class="t11e-bd t11e-widget-jquery-textbox-bd">
                             <form action="" onsubmit="return false;">
-                                <input name="s" />
+                                <input name="tags" />
                             </form>
                         </div>
                         <div class="t11e-ft t11e-widget-jquery-textbox-ft"></div>
@@ -147,7 +147,7 @@
                             t11e.widget_options = {};
                         }
                         t11e.widget_options['5'] = {
-                            "value_param": "s",
+                            "value_param": "tags",
                             "search_group": "default",
                             "page_param": "page"
                         };
@@ -155,23 +155,17 @@
                     </script>
 
                     <div class="t11e-widget t11e-widget-jquery-faceted-checkboxes t11e-widget-id-6">
-                        <div class="t11e-hd t11e-widget-jquery-faceted-checkboxes-hd">Type</div>
+                        <div class="t11e-hd t11e-widget-jquery-faceted-checkboxes-hd">Shape</div>
                         <div class="t11e-bd t11e-widget-jquery-faceted-checkboxes-bd">
                             <form action="">
                                 <div class="row">
-                                    <input type="checkbox" name="t" value="A" /><label>A</label> &nbsp;&nbsp;<span class="facet-count">0</span>
+                                    <input type="checkbox" name="shape" value="square" /><label>Square</label> &nbsp;&nbsp;<span class="facet-count">0</span>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="t" value="B" /><label>B</label> &nbsp;&nbsp;<span class="facet-count">0</span>
+                                    <input type="checkbox" name="shape" value="circle" /><label>Circle</label> &nbsp;&nbsp;<span class="facet-count">0</span>
                                 </div>
                                 <div class="row">
-                                    <input type="checkbox" name="t" value="C" /><label>C</label> &nbsp;&nbsp;<span class="facet-count">0</span>
-                                </div>
-                                <div class="row">
-                                    <input type="checkbox" name="t" value="D" /><label>D</label> &nbsp;&nbsp;<span class="facet-count">0</span>
-                                </div>
-                                <div class="row">
-                                    <input type="checkbox" name="t" value="E" /><label>E</label> &nbsp;&nbsp;<span class="facet-count">0</span>
+                                    <input type="checkbox" name="shape" value="triange" /><label>Triange</label> &nbsp;&nbsp;<span class="facet-count">0</span>
                                 </div>
                             </form>
                         </div>
@@ -186,10 +180,10 @@
                             t11e.widget_options = {};
                         }
                         t11e.widget_options['6'] = {
-                            "value_param": "t",
+                            "value_param": "shape",
                             "page_param": "page",
                             "search_group": "default",
-                            "dimension": "type"
+                            "dimension": "shape"
                         };
                     //-->
                     </script>
@@ -211,19 +205,19 @@
                             t11e.widget_options = {};
                         }
                         t11e.widget_options['7'] = {
+                            "search_group": "default",
                             "page_param": "page",
+                            "min_param": "price_min",
                             "max_param": "price_max",
                             "min_value": 0,
-                            "search_group": "default",
-                            "step": 500,
-                            "max_value": 10000,
-                            "min_param": "price_min"
+                            "max_value": 30,
+                            "step": 1
                         };
                     //-->
                     </script>
 
                     <div class="t11e-widget t11e-widget-jquery-slider t11e-widget-id-8">
-                        <div class="t11e-hd t11e-widget-jquery-slider-hd">Rating</div>
+                        <div class="t11e-hd t11e-widget-jquery-slider-hd">Weight</div>
                         <div class="t11e-bd t11e-widget-jquery-slider-bd">
                             <div class="amount"></div>
                             <div class="slider-control"></div>
@@ -239,11 +233,11 @@
                             t11e.widget_options = {};
                         }
                         t11e.widget_options['8'] = {
-                            "max_value": 5,
+                            "max_value": 30,
                             "min_value": 0,
                             "search_group": "default",
                             "page_param": "page",
-                            "param": "rating"
+                            "param": "weight"
                         };
                     //-->
                     </script>

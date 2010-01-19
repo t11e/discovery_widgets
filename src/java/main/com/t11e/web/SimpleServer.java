@@ -3,7 +3,9 @@ package com.t11e.web;
 import org.mortbay.jetty.Connector;
 import org.mortbay.jetty.Server;
 import org.mortbay.jetty.bio.SocketConnector;
+import org.mortbay.jetty.handler.HandlerList;
 import org.mortbay.jetty.handler.ResourceHandler;
+import org.mortbay.jetty.servlet.ServletHandler;
 
 public class SimpleServer
 {
@@ -33,13 +35,20 @@ public class SimpleServer
       connector.setPort(getPort() > 0 ? getPort() : 0);
       server.setConnectors(new Connector[] {connector});
     }
+    final HandlerList handlers = new HandlerList();
     if (resourceBase != null)
     {
       final ResourceHandler resourceHandler = new ResourceHandler();
       resourceHandler.setWelcomeFiles(new String[] {"index.html"});
       resourceHandler.setResourceBase(resourceBase);
-      server.addHandler(resourceHandler);
+      handlers.addHandler(resourceHandler);
     }
+    {
+      final ServletHandler servletHandler = new ServletHandler();
+      servletHandler.addServletWithMapping(TutorialSearchServlet.class, "/search");
+      handlers.addHandler(servletHandler);
+    }
+    server.setHandler(handlers);
     try
     {
       server.start();
