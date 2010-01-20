@@ -22,7 +22,7 @@ public class TutorialResultsServlet
     final HttpServletResponse response)
     throws IOException
   {
-    final List<String> ids = getCommaSeparatedValues(request, "itemIds");
+    final List<String> ids = getDelimiterSeparatedValues(request, "itemIds", " ");
     final BitSet exactMatches = stringToBitSet(request.getParameter("exactMatches"));
     final int totalSize = getFirstAsInt(request, "totalSize", 0);
     final int exactSize = getFirstAsInt(request, "exactSize", 0);
@@ -50,15 +50,16 @@ public class TutorialResultsServlet
   }
 
 
-  private List<String> getCommaSeparatedValues(
+  private List<String> getDelimiterSeparatedValues(
     final HttpServletRequest request,
-    final String parameter)
+    final String parameter,
+    final String delimiter)
   {
     final String idsString = request.getParameter(parameter);
     List<String> result = Collections.emptyList();
     if (idsString != null)
     {
-      result = Arrays.asList(idsString.split(","));
+      result = Arrays.asList(idsString.split(delimiter));
     }
     return result;
   }

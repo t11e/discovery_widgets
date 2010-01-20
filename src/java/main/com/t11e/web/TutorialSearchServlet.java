@@ -67,6 +67,7 @@ public class TutorialSearchServlet
     final int pageSize = 4;
     request.put("criteria", searchCriteria);
     request.put("pageSize", pageSize);
+    request.put("renderParameters", true);
     if (parameters.containsKey("page"))
     {
       final int page = Integer.parseInt(parameters.get("page")[0], 10);
@@ -116,7 +117,6 @@ public class TutorialSearchServlet
       criterion.put("dimension", "weight");
       criterion.put("value", Arrays.asList(parameters.get("weight")));
     }
-
     final List<Map<String, Object>> drilldownCriteria = new ArrayList<Map<String,Object>>();
     request.put("drillDown", drilldownCriteria);
     {
