@@ -57,7 +57,7 @@ public class TutorialResultsServlet
   {
     final String idsString = request.getParameter(parameter);
     List<String> result = Collections.emptyList();
-    if (idsString != null)
+    if (idsString != null && idsString.length() != 0)
     {
       result = Arrays.asList(idsString.split(delimiter));
     }
