@@ -15,6 +15,10 @@
  *    <dd>The url the results widget uses to request the rendered search results. The url
  *    is appended with the 'results_query_params' value from the search response.</dd>
  *
+ *    <dt>render_params_paths</dd>
+ *    <dd>Array of paths under the JSON AJAX response to look for the render parameters.
+ *    Defaults to ['results_query_params', '_discovery.response.renderParameters'].</dd>
+ *
  *    <dt>animation_length_ms</dt>
  *    <dd>The number of milliseconds to fade in and out the 'loading' message.</dd>
  *
@@ -68,6 +72,10 @@ t11e.util.declare('t11e.widget.jquery.ResultsWidget', function ($) {
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var search_group = options.search_group;
     var base_url = options.base_url;
+    var render_params_paths = options.render_params_paths;
+    if ((!t11e.util.is_array(render_params_paths)) || render_params_paths.length === 0) {
+        render_params_paths = ['results_query_params', '_discovery.response.renderParameters'];
+    }
     var animation_length_ms = options.animation_length_ms;
     var container_opacity = options.container_opacity;
     var center_horizontally = options.center_horizontally;
@@ -117,14 +125,20 @@ t11e.util.declare('t11e.widget.jquery.ResultsWidget', function ($) {
     * @param search The search response object
     */
     var update_from_response = function (search) {
-        var query_params = search.results_query_params;
-        var url = base_url + '?' + query_params;
+        var query_params;
+        $.each(render_params_paths, function (idx, value) {
+            query_params = t11e.util.deref(search, value);
+            return t11e.util.is_undefined(query_params);
+        });
         if (t11e.util.is_undefined(target) ||
             target.length === 0) {
             t11e.util.error('No element has been defined to display results.');
             hide_loading();
-        }
-        else {
+        } else if (t11e.util.is_undefined(query_params)) {
+            t11e.util.error('query_params cannot be deterimined from', render_params_paths);
+            hide_loading();
+        } else {
+            var url = base_url + '?' + query_params;
             target.load(url, null, function (responseText, statusText, xhr) {
                 if (xhr.status < 200 || xhr.status >= 300) {
                     update_from_error('Problem rendering results.', {

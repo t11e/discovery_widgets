@@ -278,7 +278,7 @@ t11e.util.declare('t11e.util.encode_params', function (params, filter_keys) {
     for (var i = 0; i < names.length; i++) {
         var name = names[i];
         var values = params[name];
-        if (!t11e.internals.is_array(values)) {
+        if (!t11e.util.is_array(values)) {
             t11e.util.warn('Ignoring state entry for', name,
                 'as it should be an array.', values);
         } else {
@@ -450,12 +450,12 @@ t11e.util.declare('t11e.internals.log', function (type, params) {
  * @namespace
  */
 /**
- * @name t11e.internals.is_array
+ * @name t11e.util.is_array
  * @function
  * @param obj
  * @return boolean
  */
-t11e.util.declare('t11e.internals.is_array', function (obj) {
+t11e.util.declare('t11e.util.is_array', function (obj) {
     return obj && (obj instanceof Array || typeof obj === 'array');
 });
 
