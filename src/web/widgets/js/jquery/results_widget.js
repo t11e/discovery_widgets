@@ -20,22 +20,24 @@
  *    Defaults to ['results_query_params', '_discovery.response.renderParameters'].</dd>
  *
  *    <dt>animation_length_ms</dt>
- *    <dd>The number of milliseconds to fade in and out the 'loading' message.</dd>
+ *    <dd>The number of milliseconds to fade in and out the 'loading' message.
+ *    Defaults to 150.</dd>
  *
  *    <dt>container_opacity</dt>
- *    <dd>The opacity (between 0 and 1) of the results content area during a search.</dd>
+ *    <dd>The opacity (between 0 and 1) of the results content area during a search.
+ *    Defaults to 0.5.</dd>
  *
  *    <dt>center_horizontally</dt>
  *    <dd>Centers the 'loading' message horizontally relative to the view port. Otherwise
- *    the 'loading' message is centered relative to the widget.</dd>
+ *    the 'loading' message is centered relative to the widget. Defaults to false.</dd>
  *
  *    <dt>center_vertically</dt>
  *    <dd>Centers the 'loading' message vertically in the view port. Otherwise, it is
- *    displayed at the top of the view port.</dd>
+ *    displayed at the top of the view port. Defaults to true.</dd>
  *
  *    <dt>z_index</dt>
  *    <dd>The z-index of the 'loading' message to insure it displays on top of other
- *    elements.</dd>
+ *    elements. Defaults to 1000.</dd>
  *
  *</dl>
  *
@@ -76,11 +78,11 @@ t11e.util.declare('t11e.widget.jquery.ResultsWidget', function ($) {
     if ((!t11e.util.is_array(render_params_paths)) || render_params_paths.length === 0) {
         render_params_paths = ['results_query_params', '_discovery.response.renderParameters'];
     }
-    var animation_length_ms = options.animation_length_ms;
-    var container_opacity = options.container_opacity;
-    var center_horizontally = options.center_horizontally;
-    var center_vertically = options.center_vertically;
-    var z_index = options.z_index;
+    var animation_length_ms = options.animation_length_ms || 150;
+    var container_opacity = options.container_opacity || 0.5;
+    var center_horizontally = options.center_horizontally || false;
+    var center_vertically = options.center_vertically || true;
+    var z_index = options.z_index || 1000;
 
     var target = $(this).find('.t11e-results:first');
     var container = $(this).find('.t11e-widget-jquery-results-bd:first');
