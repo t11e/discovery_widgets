@@ -21,3 +21,32 @@
 .t11e-widget-jquery-button-bd a {
     display: block;
 }
+
+.t11e-widget-jquery-pagination .pagination {
+    font-size: 80%;
+}
+
+.t11e-widget-jquery-pagination .pagination a {
+    text-decoration: none;
+    border: solid 1px #AAE;
+    color: #15B;
+}
+
+.t11e-widget-jquery-pagination .pagination a, .pagination span {
+    display: block;
+    float: left;
+    padding: 0.3em 0.5em !important;
+    margin: 0 5px 5px 0;
+}
+
+.t11e-widget-jquery-pagination .pagination span.current {
+    background: #26B;
+    color: #fff;
+    border: solid 1px #AAE;
+}
+
+.t11e-widget-jquery-pagination .pagination .current.prev, .pagination .current.next{
+    color:#999;
+    border-color:#999;
+    background:#fff;
+}
