@@ -31,14 +31,13 @@
  *          t11e.widget_options = {};
  *      }
  *      t11e.widget_options[&#x27;2041&#x27;] = {
- *          &quot;event_name&quot;: &quot;reset_search&quot;,
- *          &quot;search_group&quot;: &quot;primary&quot;
+ *          &quot;event_name&quot;: &quot;reset_search&quot;
  *      };
  *  //--&gt;
  * &lt;/script&gt;
  * </pre>
  * <h2>Clear Search Example</h2>
- * <pre class="code">
+ * <pre class="brush: html">
  * &lt;div class=&quot;t11e-widget t11e-widget-jquery-button t11e-widget-id-2043&quot;&gt;
  *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-button-hd&quot;&gt;&lt;/div&gt;
  *  &lt;div class=&quot;t11e-bd t11e-widget-jquery-button-bd&quot;&gt;

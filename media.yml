@@ -20,7 +20,6 @@ groups:
         - widgets/css/jquery/google_map_widget.css
         - widgets/css/jquery/response_widget.css
         - widgets/css/jquery/results_widget.css
-        - widgets/css/jquery/button_widget.css
         - widgets/css/jquery/accordion_widget.css
         - widgets/css/jquery/slider_widget.css
 

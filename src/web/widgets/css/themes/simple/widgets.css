@@ -17,3 +17,7 @@
     -moz-background-origin: padding;
       background: transparent url(/images/widgets/themes/simple/hd_map_results.png) no-repeat scroll 0 0;
 }
+
+.t11e-widget-jquery-button-bd a {
+    display: block;
+}
