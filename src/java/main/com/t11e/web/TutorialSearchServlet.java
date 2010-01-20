@@ -24,6 +24,7 @@ public class TutorialSearchServlet
 {
   private static final long serialVersionUID = 8872041268396435423L;
 
+  @SuppressWarnings("unchecked")
   @Override
   protected void doGet(
     final HttpServletRequest request,
@@ -32,7 +33,7 @@ public class TutorialSearchServlet
   {
 
     final Map<String, Object> discoveryRequest =
-      buildDiscoveryRequest((Map<String, String[]>) request.getParameterMap());
+      buildDiscoveryRequest(request.getParameterMap());
 
     final Map<String, Object> discoveryResponse =
       queryDiscoveryEngine(discoveryRequest);
@@ -129,6 +130,7 @@ public class TutorialSearchServlet
 
   }
 
+  @SuppressWarnings("unchecked")
   private Map<String, Object> queryDiscoveryEngine(
     final Map<String, Object> request)
     throws IOException
