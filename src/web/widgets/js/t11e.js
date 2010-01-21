@@ -369,7 +369,7 @@ t11e.util.declare('t11e.util.get_next_number', (function () {
  *
  * <pre class="brush: js">
  *    var show_criteria_locations = t11e.util.as_boolean(options.show_criteria_locations, false);
- * </pre?
+ * </pre>
  * @name t11e.util.as_boolean
  * @function
  * @param value
