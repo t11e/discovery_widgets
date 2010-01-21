@@ -450,6 +450,8 @@ t11e.util.declare('t11e.internals.log', function (type, params) {
  * @namespace
  */
 /**
+ * Returns true if obj is an array.
+ *
  * @name t11e.util.is_array
  * @function
  * @param obj
