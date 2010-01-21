@@ -19,3 +19,7 @@ To see the widgets in action run
     ant compress-media server
 
 Then point your browser at http://localhost:8080.
+
+Note that you can override what port the server uses. For example:
+
+    ant -Dserver.port=8888 compress-media server
