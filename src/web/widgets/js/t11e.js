@@ -460,6 +460,18 @@ t11e.util.declare('t11e.util.is_array', function (obj) {
 });
 
 /**
+ * Returns true if obj is a function.
+ *
+ * @name t11e.util.is_function
+ * @function
+ * @param obj
+ * @return boolean
+ */
+t11e.util.declare('t11e.util.is_function', function (obj) {
+    return Object.prototype.toString.call(obj) === '[object Function]';
+});
+
+/**
  * @name t11e.internals.get_keys
  * @function
  * @param map
