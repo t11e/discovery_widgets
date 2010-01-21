@@ -19,7 +19,7 @@ t11e.util.declare('t11e.widget.jquery.util.associate_labels', function ($, conta
     });
 });
 
-t11e.util.declare('t11e.widget.jquery.util.remove_checkboxe_values_from_params', function ($, checkboxes, params, value_param) {
+t11e.util.declare('t11e.widget.jquery.util.remove_checkbox_values_from_params', function ($, checkboxes, params, value_param) {
     var values = params[value_param];
     if (t11e.util.is_defined(values)) {
         var values_to_remove = checkboxes.map(function (checkbox) {
@@ -29,6 +29,10 @@ t11e.util.declare('t11e.widget.jquery.util.remove_checkboxe_values_from_params',
             t11e.widget.jquery.util.subtract($, values, values_to_remove);
     }
 });
+t11e.util.deprecated(
+    'Misspelled method name',
+    't11e.widget.jquery.util.remove_checkboxe_values_from_params',
+    't11e.widget.jquery.util.remove_checkbox_values_from_params');
 
 t11e.util.declare('t11e.widget.jquery.util.subtract', function ($, firstArray, secondArray) {
     var output = $.grep(firstArray, function (value, idx) {
@@ -37,7 +41,7 @@ t11e.util.declare('t11e.widget.jquery.util.subtract', function ($, firstArray, s
     return output;
 });
 
-t11e.util.declare('t11e.widget.jquery.util.get_dimenion_drilldown', function ($, search, dimension) {
+t11e.util.declare('t11e.widget.jquery.util.get_dimension_drilldown', function ($, search, dimension) {
     var facet_counts = {};
     var found = false;
     var drillDown = t11e.util.deref(search, '_discovery.response.drillDown');
@@ -58,6 +62,10 @@ t11e.util.declare('t11e.widget.jquery.util.get_dimenion_drilldown', function ($,
     }
     return facet_counts;
 });
+t11e.util.deprecated(
+    'Misspelled method name',
+    't11e.widget.jquery.util.get_dimenion_drilldown',
+    't11e.widget.jquery.util.get_dimension_drilldown');
 
 t11e.util.declare('t11e.widget.jquery.util.apply_template', function ($, template_string, props) {
     var result = undefined;
