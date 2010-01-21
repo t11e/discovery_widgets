@@ -425,6 +425,50 @@ t11e.util.declare('t11e.util.warn', function () {
 });
 
 /**
+ * Mechanism for marking methods as deprecated.
+ * Use like t11e.util.declare, but with the addition of a reason.
+ * Results in the definition of old.function.name.
+ * <p>
+ * Note that the third argument can either be a function, function name, or undefined.
+ * The dot.separated.syntax for function namespaces is supported.
+ * <p>
+ * Examples:
+ * <pre>
+ *   t11e.util.deprecated('why', 'old.function.name', 'new.function.name');
+ *
+ *   t11e.util.deprecated('why', 'old.function.name', function(arg1, argn) { ... });
+ * </pre>
+ * @name t11e.util.deprecated
+ * @function
+ */
+t11e.util.declare('t11e.util.deprecated', function (reason, old_function_name, new_function_name) {
+    var decorator;
+    if (t11e.util.is_undefined(new_function_name)) {
+        decorator = function () {
+            t11e.util.error('Deprecated method', old_function_name, 'has been removed:', reason);
+        };
+    } else if (t11e.util.is_function(new_function_name)) {
+        decorator = function () {
+            t11e.util.warn('Deprecated method', old_function_name, 'called:', reason);
+            return new_function_name.apply(this, arguments);
+        };
+    } else {
+        var delegate = t11e.util.deref(window, new_function_name);
+        if (t11e.util.is_undefined(delegate)) {
+            t11e.util.error('t11e.util.deprecated called with invalid new function name', new_function_name);
+        } else {
+            decorator = function () {
+                t11e.util.warn('Deprecated method', old_function_name, 'called. Delegating to', new_function_name, ':', reason);
+                return delegate.apply(this, arguments);
+            };
+        }
+    }
+    if (t11e.util.is_defined(decorator)) {
+        t11e.util.declare(old_function_name, decorator);
+    }
+});
+
+/**
  * Internal logger function that can dispatch to window.console.log,
  * window.console.warn and window.console.error. Has special logic
  * to deal with IE8 and gracefully handles the case that window.console
