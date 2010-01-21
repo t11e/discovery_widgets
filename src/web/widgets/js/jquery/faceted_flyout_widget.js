@@ -91,37 +91,13 @@
  *      t11e.widget_options[&#x27;2077&#x27;] = {
  *          &quot;flyout_panel_width&quot;: 250,
  *          &quot;value_param&quot;: &quot;c&quot;,
- *          &quot;page_param&quot;: null,
- *          &quot;primary_settings&quot;: {
- *              &quot;checkboxes&quot;: [{
- *                  &quot;id&quot;: &quot;vehicles/automobiles/cars&quot;,
- *                  &quot;label&quot;: &quot;Cars&quot;
- *              },
- *              {
- *                  &quot;id&quot;: &quot;vehicles/automobiles/motorcycles&quot;,
- *                  &quot;label&quot;: &quot;Motorcycles&quot;
- *              },
- *              {
- *                  &quot;id&quot;: &quot;vehicles/automobiles/suvs&quot;,
- *                  &quot;label&quot;: &quot;SUV&quot;
- *              }]
- *          },
  *          &quot;search_group&quot;: &quot;vehicle&quot;,
- *          &quot;secondary_settings&quot;: {
- *              &quot;checkboxes&quot;: [{
- *                  &quot;id&quot;: &quot;vehicles/automobiles/trucks&quot;,
- *                  &quot;label&quot;: &quot;Trucks&quot;
- *              },
- *              {
- *                  &quot;id&quot;: &quot;vehicles/automobiles/vans&quot;,
- *                  &quot;label&quot;: &quot;Vans&quot;
- *              }]
- *          },
  *          &quot;dimension&quot;: &quot;category&quot;,
  *          &quot;column_count&quot;: 2
  *      };
  *  //--&gt;
- * &lt;/script&gt; *</pre>
+ * &lt;/script&gt;
+ * </pre>
  * @name t11e.widget.jquery.FacetedFlyoutWidget
  * @class A checkbox widget that contains a flyout panel for additional options.
  *
@@ -267,24 +243,9 @@ t11e.util.declare('t11e.widget.jquery.FacetedFlyoutWidget', function ($) {
         * @param {Object} search The search response object.
         */
         var update_from_response = function (search) {
-            var facet_counts = {};
-            var found = false;
-            var drillDown = t11e.util.deref(search, '_discovery.response.drillDown');
-            if (t11e.util.is_defined(drillDown)) {
-                $(drillDown).each(function (i, criterion) {
-                    if (!found && dimension === criterion.dimension) {
-                        found = true;
-                        var ids = criterion.ids;
-                        var counts = criterion.exactCounts;
-                        var j;
-                        for (j = 0; j < ids.length && j < counts.length; j++) {
-                            var id = ids[j];
-                            var count = counts[j];
-                            facet_counts[id] = count;
-                        }
-                    }
-                });
-            }
+            var facet_counts =
+                t11e.widget.jquery.util.get_dimension_drilldown($, search, dimension);
+
             checkboxes.each(function (i, checkbox) {
                 // Updated drillDown counts
                 var count = facet_counts[checkbox.value];
