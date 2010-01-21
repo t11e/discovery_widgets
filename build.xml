@@ -7,18 +7,19 @@
 
     <target name="compress-media"
         description="Lint, concatenate and compress media files as configured in media.yml.">
-        <java jar="tools/mediacompressor-1.0.jar" fork="true" failonerror="true">
+        <java jar="tools/mediacompressor-1.1.jar" fork="true" failonerror="true">
             <arg value="--config=media.yml"/>
         </java>
     </target>
 
+    <property name="server.port" value="8080"/>
     <target name="server" depends="compile">
         <java classname="com.t11e.web.SimpleServer" failonerror="true">
             <classpath>
                 <path refid="build.classpath"/>
                 <pathelement path="build.ant/main"/>
             </classpath>
-            <arg value="8080"/>
+            <arg value="${server.port}"/>
             <arg value="src/web"/>
         </java>
     </target>
@@ -50,7 +51,7 @@
 
     <target name="compile">
         <mkdir dir="build.ant/main"/>
-        <javac destdir="build.ant/main" target="1.6" debug="true">
+        <javac destdir="build.ant/main" target="1.5" debug="true">
             <src path="src/java/main"/>
             <classpath refid="build.classpath"/>
         </javac>
