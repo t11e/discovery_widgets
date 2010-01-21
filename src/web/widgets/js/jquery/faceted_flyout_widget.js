@@ -195,7 +195,7 @@ t11e.util.declare('t11e.widget.jquery.FacetedFlyoutWidget', function ($) {
      * @param {Object} params
      */
     var clear_params_from_search = function (params) {
-        t11e.widget.jquery.util.remove_checkboxe_values_from_params($, checkboxes, params, value_param);
+        t11e.widget.jquery.util.remove_checkbox_values_from_params($, checkboxes, params, value_param);
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 
