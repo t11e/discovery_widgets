@@ -17,50 +17,35 @@
  * @namespace
  * Module that contains various utility functions.
  */
-
 (function () {
     var is_undefined = function (arg) {
         return 'undefined' === typeof arg;
     };
-    var define_namespace = function (symbol) {
+    var declare = function (symbol, object) {
         var parts = symbol.split('.');
         var scope = window;
         for (var i = 0; i < parts.length; i++) {
             var part = parts[i];
             if (is_undefined(scope[part])) {
-                scope[part] = {'prototype': {}};
+                if (i !== parts.length - 1) {
+                    scope[part] = {};
+                } else {
+                    scope[part] = object;
+                }
             }
+            scope = scope[part];
         }
     };
-    define_namespace('t11e.util');
-    t11e.util.define_namespace = define_namespace;
-
-    /**
-    * @name t11e.util.is_undefined
-    * @function
-    * @param arg
-    */
+    declare('t11e.util', {});
+    t11e.util.declare = declare;
     t11e.util.is_undefined = is_undefined;
 }());
 
-t11e.util.define_namespace('t11e.util');
-t11e.util.define_namespace('t11e.internals');
-
-t11e.util.declare = function (symbol, object) {
-    var parts = symbol.split('.');
-    var scope = window;
-    for (var i = 0; i < parts.length; i++) {
-        var part = parts[i];
-        if (t11e.util.is_undefined(scope[part])) {
-            if (i !== parts.length - 1) {
-                scope[part] = {};
-            } else {
-                scope[part] = object;
-            }
-        }
-        scope = scope[part];
-    }
+t11e.util.define_namespace = function (namespace) {
+    t11e.util.declare(namespace, {});
 };
+
+t11e.util.define_namespace('t11e.internals');
 
 /**
  * @name t11e.util.is_defined
@@ -628,5 +613,7 @@ t11e.internals.is_empty = function (map) {
     return t11e.internals.get_keys(map).length === 0;
 };
 
-t11e.util.prototype.Eclipse__Outline__Hack = undefined;
-t11e.internals.prototype.Eclipse__Outline__Hack = undefined;
+if (false) {
+    t11e.util.prototype.Eclipse__Outline__Hack = undefined;
+    t11e.internals.prototype.Eclipse__Outline__Hack = undefined;
+}
