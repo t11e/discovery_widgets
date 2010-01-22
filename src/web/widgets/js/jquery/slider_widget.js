@@ -13,7 +13,7 @@ if (false) {
  *
  * <h2>Options</h2>
  *
- *<dl>
+ * <dl>
  *    <dt>css_class</dt>
  *    <dd>An option CSS class to be applied to this widget instance to facilitate custom styling.</dd>
  *
@@ -38,9 +38,9 @@ if (false) {
  *    <dt>page_param</dt>
  *    <dd>Causes the pagination widget to reset when when this widget is updated. The 'page_param' value
  *    must be set to the same as the pagination widget's 'page_param' value.</dd>
- *</dl>
+ * </dl>
  *
- *<h2>Sample HTML</h2>
+ * <h2>Example</h2>
  * <div class="t11e-widget t11e-widget-jquery-slider t11e-widget-id-2105">
  *   <div class="t11e-hd t11e-widget-jquery-slider-hd">Rating</div>
  *   <div class="t11e-bd t11e-widget-jquery-slider-bd">
@@ -62,34 +62,6 @@ if (false) {
  *   };
  * //-->
  * </script>
- *
- * <pre class="brush: html">
- * &lt;div class=&quot;t11e-widget t11e-widget-jquery-slider t11e-widget-id-2105&quot;&gt;
- *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-slider-hd&quot;&gt;Rating&lt;/div&gt;
- *  &lt;div class=&quot;t11e-bd t11e-widget-jquery-slider-bd&quot;&gt;
- *      &lt;div class=&quot;amount&quot;&gt;&lt;/div&gt;
- *      &lt;div class=&quot;slider-control&quot;&gt;&lt;/div&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-ft t11e-widget-jquery-slider-ft&quot;&gt;&lt;/div&gt;
- * &lt;/div&gt;
- * &lt;script type=&quot;text/javascript&quot;&gt;
- * //&lt;!--
- *  if (&#x27;undefined&#x27; === typeof t11e) {
- *      t11e = {};
- *  }
- *  if (&#x27;undefined&#x27; === typeof t11e.widget_options) {
- *      t11e.widget_options = {};
- *  }
- *  t11e.widget_options[&#x27;2105&#x27;] = {
- *      &quot;max_value&quot;: 5,
- *      &quot;min_value&quot;: 0,
- *      &quot;search_group&quot;: &quot;default&quot;,
- *      &quot;page_param&quot;: &quot;page&quot;,
- *      &quot;param&quot;: &quot;rating&quot;
- *  };
- * //--&gt;
- *  &lt;/script&gt;
- * </pre>
  *
  * @name t11e.widget.jquery.SliderWidget
  * @class A single-handled slider.

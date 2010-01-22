@@ -59,6 +59,7 @@ groups:
         - widgets/js/jquery/google_map_widget.js
         - widgets/js/jquery/accordion_widget.js
         - widgets/js/jquery/activate.js
+        - widgets/js/jquery/document.js
 
     - groupName: yui_css
       mediaType: css
