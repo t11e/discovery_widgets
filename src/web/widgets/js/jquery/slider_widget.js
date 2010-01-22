@@ -3,6 +3,11 @@
  * @fileOverview t11e.widget.jquery.SliderWidget definition
  */
 
+t11e.util.define_namespace('t11e.widget.jquery');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
+
 /**
  * Single handled slider widget.
  *
@@ -67,7 +72,7 @@
  * @name t11e.widget.jquery.SliderWidget
  * @class A single-handled slider.
  */
-t11e.util.declare('t11e.widget.jquery.SliderWidget', function ($) {
+t11e.widget.jquery.SliderWidget = function ($) {
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var search_group = options.search_group;
     var amount = $(this).find(".amount:first");
@@ -140,4 +145,4 @@ t11e.util.declare('t11e.widget.jquery.SliderWidget', function ($) {
         t11e.util.remove_param(params, options.page_param);
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
-});
+};
