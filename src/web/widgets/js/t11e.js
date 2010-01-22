@@ -17,46 +17,59 @@
  * @namespace
  * Module that contains various utility functions.
  */
+
 (function () {
     var is_undefined = function (arg) {
         return 'undefined' === typeof arg;
     };
-    var declare = function (symbol, object) {
+    var define_namespace = function (symbol) {
         var parts = symbol.split('.');
         var scope = window;
         for (var i = 0; i < parts.length; i++) {
             var part = parts[i];
             if (is_undefined(scope[part])) {
-                if (i !== parts.length - 1) {
-                    scope[part] = {};
-                } else {
-                    scope[part] = object;
-                }
+                scope[part] = {'prototype': {}};
             }
-            scope = scope[part];
         }
     };
-    /**
-    * @name t11e.util.declare
-    * @function
-    */
-    declare('t11e.util.declare', declare);
+    define_namespace('t11e.util');
+    t11e.util.define_namespace = define_namespace;
+
     /**
     * @name t11e.util.is_undefined
     * @function
     * @param arg
     */
-    declare('t11e.util.is_undefined', is_undefined);
+    t11e.util.is_undefined = is_undefined;
 }());
+
+t11e.util.define_namespace('t11e.util');
+t11e.util.define_namespace('t11e.internals');
+
+t11e.util.declare = function (symbol, object) {
+    var parts = symbol.split('.');
+    var scope = window;
+    for (var i = 0; i < parts.length; i++) {
+        var part = parts[i];
+        if (t11e.util.is_undefined(scope[part])) {
+            if (i !== parts.length - 1) {
+                scope[part] = {};
+            } else {
+                scope[part] = object;
+            }
+        }
+        scope = scope[part];
+    }
+};
 
 /**
  * @name t11e.util.is_defined
  * @function
  * @param {Object} arg
  */
-t11e.util.declare('t11e.util.is_defined', function (arg) {
+t11e.util.is_defined = function (arg) {
     return ! t11e.util.is_undefined(arg);
-});
+};
 
 /**
  * <p>The t11e.widget namespace encapsulates all widget implementations. The widget
@@ -123,7 +136,7 @@ t11e.util.declare('t11e.util.is_defined', function (arg) {
  * used as a mechanism to hook up all the various components in a framework
  * independent fashion.
  */
-t11e.util.declare('t11e.event', (function () {
+t11e.event = (function () {
     /** @private */
     var empty = {};
     /** @private */
@@ -229,7 +242,7 @@ t11e.util.declare('t11e.event', (function () {
             }
         }
     };
-}()));
+}());
 
 /**
  * Decodes params from a query string.
@@ -239,7 +252,7 @@ t11e.util.declare('t11e.event', (function () {
  * @param {Object} query_string
  * @returns {Object} parsed
  */
-t11e.util.declare('t11e.util.decode_params', function (query_string) {
+t11e.util.decode_params = function (query_string) {
     var parsed = {};
     var pairs = query_string.split('&');
     for (var i = 0; i < pairs.length; i++) {
@@ -257,7 +270,7 @@ t11e.util.declare('t11e.util.decode_params', function (query_string) {
         }
     }
     return parsed;
-});
+};
 
 /**
  * Encodes params from a query string.
@@ -268,7 +281,7 @@ t11e.util.declare('t11e.util.decode_params', function (query_string) {
  * @param filter_keys
  * @returns {String} query_string
  */
-t11e.util.declare('t11e.util.encode_params', function (params, filter_keys) {
+t11e.util.encode_params = function (params, filter_keys) {
     var query_string = '';
     var names = t11e.internals.get_keys(params);
     if (t11e.util.is_defined(filter_keys)) {
@@ -314,7 +327,7 @@ t11e.util.declare('t11e.util.encode_params', function (params, filter_keys) {
         }
     }
     return query_string;
-});
+};
 
 /**
  * Removes a parameter from the params object.
@@ -323,11 +336,11 @@ t11e.util.declare('t11e.util.encode_params', function (params, filter_keys) {
  * @param params
  * @param param
  */
-t11e.util.declare('t11e.util.remove_param', function (params, param) {
+t11e.util.remove_param = function (params, param) {
     if (t11e.util.is_defined(params) && t11e.util.is_defined(param)) {
         return t11e.internals.remove_from_map(params, [param]);
     }
-});
+};
 
 /**
  * Utility function used to dereference a path, as in the following example
@@ -341,7 +354,7 @@ t11e.util.declare('t11e.util.remove_param', function (params, param) {
  * @param context
  * @param path
  */
-t11e.util.declare('t11e.util.deref', function (context, path) {
+t11e.util.deref = function (context, path) {
     var output = context;
     var parts = path.split('.');
     var part;
@@ -350,18 +363,18 @@ t11e.util.declare('t11e.util.deref', function (context, path) {
         output = output[part];
     }
     return output;
-});
+};
 
 /**
  * @name t11e.util.get_next_number
  * @function
  */
-t11e.util.declare('t11e.util.get_next_number', (function () {
+t11e.util.get_next_number = (function () {
     var counter = 0;
     return function () {
         return counter++;
     };
-}()));
+}());
 
 /**
  * Utility function that maps various strings to boolean values <code>true</code>
@@ -375,7 +388,7 @@ t11e.util.declare('t11e.util.get_next_number', (function () {
  * @param value
  * @param defaultValue
  */
-t11e.util.declare('t11e.util.as_boolean', function (value, defaultValue) {
+t11e.util.as_boolean = function (value, defaultValue) {
     var output = defaultValue;
     if (t11e.util.is_defined(value)) {
         if (t11e.util.is_defined(value.toLowerCase)) {
@@ -395,34 +408,34 @@ t11e.util.declare('t11e.util.as_boolean', function (value, defaultValue) {
         }
     }
     return output;
-});
+};
 
 /**
  * Log to the console.
  * @name t11e.util.log
  * @function
  */
-t11e.util.declare('t11e.util.log', function () {
+t11e.util.log = function () {
     t11e.internals.log('log', arguments);
-});
+};
 
 /**
  * Log errors to the console.
  * @name t11e.util.error
  * @function
  */
-t11e.util.declare('t11e.util.error', function () {
+t11e.util.error = function () {
     t11e.internals.log('error', arguments);
-});
+};
 
 /**
  * Log warnings to the console.
  * @name t11e.util.warn
  * @function
  */
-t11e.util.declare('t11e.util.warn', function () {
+t11e.util.warn = function () {
     t11e.internals.log('warn', arguments);
-});
+};
 
 /**
  * Mechanism for marking methods as deprecated.
@@ -474,7 +487,7 @@ t11e.util.declare('t11e.util.deprecated', function (reason, old_function_name, n
  * to deal with IE8 and gracefully handles the case that window.console
  * doesn't exist.
  */
-t11e.util.declare('t11e.internals.log', function (type, params) {
+t11e.internals.log = function (type, params) {
     if (t11e.util.is_defined(window.console)) {
         var logger = window.console[type];
         if (t11e.util.is_defined(logger)) {
@@ -487,7 +500,7 @@ t11e.util.declare('t11e.internals.log', function (type, params) {
             }
         }
     }
-});
+};
 
 /**
  * @name t11e.internals
@@ -501,9 +514,9 @@ t11e.util.declare('t11e.internals.log', function (type, params) {
  * @param obj
  * @return boolean
  */
-t11e.util.declare('t11e.util.is_array', function (obj) {
+t11e.util.is_array = function (obj) {
     return obj && (obj instanceof Array || typeof obj === 'array');
-});
+};
 
 /**
  * Returns true if obj is a function.
@@ -523,7 +536,7 @@ t11e.util.declare('t11e.util.is_function', function (obj) {
  * @param map
  * @returns Array
  */
-t11e.util.declare('t11e.internals.get_keys', function (map) {
+t11e.internals.get_keys = function (map) {
     var keys = [];
     var empty = {};
     for (var key in map) {
@@ -533,7 +546,7 @@ t11e.util.declare('t11e.internals.get_keys', function (map) {
         }
     }
     return keys;
-});
+};
 
 /**
  * @name t11e.internals.contains_value
@@ -542,7 +555,7 @@ t11e.util.declare('t11e.internals.get_keys', function (map) {
  * @param value
  * @return boolean
  */
-t11e.util.declare('t11e.internals.contains_value', function (array, value) {
+t11e.internals.contains_value = function (array, value) {
     var result = false;
     var test;
     for (var i = 0; i < array.length && !result; i++) {
@@ -552,14 +565,15 @@ t11e.util.declare('t11e.internals.contains_value', function (array, value) {
         }
     }
     return result;
-});
+};
+
 /**
  * @name t11e.internals.intersect
  * @function
  * @param array1
  * @param array2
  */
-t11e.util.declare('t11e.internals.intersect', function (array1, array2) {
+t11e.internals.intersect = function (array1, array2) {
     var result = [];
     var value;
     var contains_value = t11e.internals.contains_value;
@@ -570,7 +584,8 @@ t11e.util.declare('t11e.internals.intersect', function (array1, array2) {
         }
     }
     return result;
-});
+};
+
 /**
  * @name t11e.internals.update_map
  * @function
@@ -578,7 +593,7 @@ t11e.util.declare('t11e.internals.intersect', function (array1, array2) {
  * @param source
  * @return target
  */
-t11e.util.declare('t11e.internals.update_map', function (target, source) {
+t11e.internals.update_map = function (target, source) {
     var keys = t11e.internals.get_keys(source);
     var key;
     for (var i = 0; i < keys.length; i++) {
@@ -586,28 +601,32 @@ t11e.util.declare('t11e.internals.update_map', function (target, source) {
         target[key] = source[key];
     }
     return target;
-});
+};
+
 /**
  * @name t11e.internals.remove_from_map
  * @function
  * @param target
  * @param keys
  */
-t11e.util.declare('t11e.internals.remove_from_map', function (target, keys) {
+t11e.internals.remove_from_map = function (target, keys) {
     var key;
     for (var i = 0; i < keys.length; i++) {
         key = keys[i];
         delete target[key];
     }
     return target;
-});
+};
+
 /**
  * @name t11e.internals.is_empty
  * @function
  * @param map
  * @return boolean
  */
-t11e.util.declare('t11e.internals.is_empty', function (map) {
+t11e.internals.is_empty = function (map) {
     return t11e.internals.get_keys(map).length === 0;
-});
+};
 
+t11e.util.prototype.Eclipse__Outline__Hack = undefined;
+t11e.internals.prototype.Eclipse__Outline__Hack = undefined;
