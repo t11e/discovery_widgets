@@ -439,7 +439,7 @@ t11e.util.warn = function () {
  * @name t11e.util.deprecated
  * @function
  */
-t11e.util.declare('t11e.util.deprecated', function (reason, old_function_name, new_function_name) {
+t11e.util.deprecated = function (reason, old_function_name, new_function_name) {
     var decorator;
     if (t11e.util.is_undefined(new_function_name)) {
         decorator = function () {
@@ -464,7 +464,8 @@ t11e.util.declare('t11e.util.deprecated', function (reason, old_function_name, n
     if (t11e.util.is_defined(decorator)) {
         t11e.util.declare(old_function_name, decorator);
     }
-});
+    return decorator;
+};
 
 /**
  * Internal logger function that can dispatch to window.console.log,
@@ -511,9 +512,9 @@ t11e.util.is_array = function (obj) {
  * @param obj
  * @return boolean
  */
-t11e.util.declare('t11e.util.is_function', function (obj) {
+t11e.util.is_function = function (obj) {
     return Object.prototype.toString.call(obj) === '[object Function]';
-});
+};
 
 /**
  * @name t11e.internals.get_keys
