@@ -436,8 +436,6 @@ t11e.util.warn = function () {
  *
  *   t11e.util.deprecated('why', 'old.function.name', function(arg1, argn) { ... });
  * </pre>
- * @name t11e.util.deprecated
- * @function
  */
 t11e.util.deprecated = function (reason, old_function_name, new_function_name) {
     var decorator;

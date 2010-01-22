@@ -1,19 +1,18 @@
+t11e.util.define_namespace('t11e.widget.jquery');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
+
 /**
- * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.jquery.activate_widgets
- * <p>All jQuery widgets need to be activated prior to their use, which is
+ * All jQuery widgets need to be activated prior to their use, which is
  * accomplished by a call to the {@link t11e.widget.jquery.activate_widgets}
- * function in this module.</p>
- */
-/**
- * @name t11e.widget.jquery.activate_widgets
- * @class
- * @description
+ * function in this module.
+ * <p>
  *    Hooks up all UI elements to their
  *    JavaScript counterparts and creates the various helper objects that
  *    are used to dispatch search.
  *
- * @param {Object} $ jQuery
+ * @param $ jQuery
  */
 t11e.widget.jquery.activate_widgets = function ($) {
     /**@scope t11e.widget.jquery.activate_widgets*/

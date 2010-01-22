@@ -1,7 +1,7 @@
-/**
- * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.activate_search_page
- */
+t11e.util.define_namespace('t11e.widget');
+if (false) {
+    t11e.widget.prototype.Eclipse__Outline__Hack = undefined;
+}
 
 /**
  * Simple search controller class that performs search, communicating with
@@ -134,14 +134,10 @@
  * </dd>
  * </dl>
  *
- * @name t11e.widget.activate_search_page
- * @class Initialize the page controller
- *
  * @param {Object} options Configuration options for search_groups,
  * history_plugin and search_plugin.
- *
  */
-t11e.util.declare('t11e.widget.activate_search_page', function (/**Object*/options) {
+t11e.widget.activate_search_page = function (/**Object*/options) {
     /**
      * Setup initial state.
      */
@@ -351,4 +347,4 @@ t11e.util.declare('t11e.widget.activate_search_page', function (/**Object*/optio
     if (debug_state) {
         t11e.util.log('[DEBUG_STATE] initial_search', initial_search);
     }
-});
+};
