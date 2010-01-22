@@ -13,52 +13,46 @@
  *    <dd>The event_name option is a template that is filled in with the rest of
  *       the options.</dd>
  * </dl>
+ *
  * <h2>Reset Search Example</h2>
- * <pre class="brush: html">
- * &lt;div class=&quot;t11e-widget t11e-widget-jquery-button t11e-widget-id-2041&quot;&gt;
- *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-button-hd&quot;&gt;&lt;/div&gt;
- *  &lt;div class=&quot;t11e-bd t11e-widget-jquery-button-bd&quot;&gt;
- *      &lt;a href=&quot;#&quot;&gt;Reset&lt;/a&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-ft t11e-widget-jquery-button-ft&quot;&gt;&lt;/div&gt;
- * &lt;/div&gt;
- * &lt;script type=&quot;text/javascript&quot;&gt;
- *  //&lt;!--
- *      if (&#x27;undefined&#x27; === typeof t11e) {
- *          t11e = {};
- *      }
- *      if (&#x27;undefined&#x27; === typeof t11e.widget_options) {
- *          t11e.widget_options = {};
- *      }
- *      t11e.widget_options[&#x27;2041&#x27;] = {
- *          &quot;event_name&quot;: &quot;reset_search&quot;
+ * <div class="t11e-widget t11e-widget-jquery-button t11e-widget-id-2041">
+ *   <div class="t11e-hd t11e-widget-jquery-button-hd"></div>
+ *   <div class="t11e-bd t11e-widget-jquery-button-bd">
+ *     <a href="#">Reset</a>
+ *   </div>
+ *   <div class="t11e-ft t11e-widget-jquery-button-ft"></div>
+ * </div>
+ * <script type="text/javascript">
+ * //<!--
+ *   if ('undefined' === typeof t11e) { t11e = {}; }
+ *   if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
+ *   t11e.widget_options['2041'] = {
+ *     "event_name": "reset_search"
  *      };
- *  //--&gt;
- * &lt;/script&gt;
- * </pre>
+ * //-->
+ * </script>
+ *
  * <h2>Clear Search Example</h2>
  * <pre class="brush: html">
- * &lt;div class=&quot;t11e-widget t11e-widget-jquery-button t11e-widget-id-2043&quot;&gt;
- *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-button-hd&quot;&gt;&lt;/div&gt;
- *  &lt;div class=&quot;t11e-bd t11e-widget-jquery-button-bd&quot;&gt;
- *      &lt;a href=&quot;#&quot;&gt;Clear&lt;/a&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-ft t11e-widget-jquery-button-ft&quot;&gt;&lt;/div&gt;
- * &lt;/div&gt;
- * &lt;script type=&quot;text/javascript&quot;&gt;
- *  //&lt;!--
- *      if (&#x27;undefined&#x27; === typeof t11e) {
- *          t11e = {};
- *      }
- *      if (&#x27;undefined&#x27; === typeof t11e.widget_options) {
- *          t11e.widget_options = {};
- *      }
- *      t11e.widget_options[&#x27;2043&#x27;] = {
- *          &quot;event_name&quot;: &quot;clear_search.${search_group}&quot;,
- *          &quot;search_group&quot;: &quot;realestate&quot;
+ * <![CDATA[
+ * <div class="t11e-widget t11e-widget-jquery-button t11e-widget-id-2043">
+ *   <div class="t11e-hd t11e-widget-jquery-button-hd"></div>
+ *    <div class="t11e-bd t11e-widget-jquery-button-bd">
+ *      <a href="#">Clear</a>
+ *    </div>
+ *   <div class="t11e-ft t11e-widget-jquery-button-ft"></div>
+ * </div>
+ * <script type="text/javascript">
+ * //<!--
+ *   if ('undefined' === typeof t11e) { t11e = {}; }
+ *   if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
+ *   t11e.widget_options['2043'] = {
+ *     "event_name": "clear_search.${search_group}",
+ *     "search_group": "realestate"
  *      };
- *  //--&gt;
- * &lt;/script&gt;
+ * //-->
+ * </script>
+ * ]]>
  * </pre>
  * @name t11e.widget.jquery.ButtonWidget
  * @class Implements a button that triggers a configured event.

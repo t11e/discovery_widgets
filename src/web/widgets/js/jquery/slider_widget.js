@@ -41,6 +41,28 @@ if (false) {
  *</dl>
  *
  *<h2>Sample HTML</h2>
+ * <div class="t11e-widget t11e-widget-jquery-slider t11e-widget-id-2105">
+ *   <div class="t11e-hd t11e-widget-jquery-slider-hd">Rating</div>
+ *   <div class="t11e-bd t11e-widget-jquery-slider-bd">
+ *     <div class="amount"></div>
+ *     <div class="slider-control"></div>
+ *   </div>
+ *   <div class="t11e-ft t11e-widget-jquery-slider-ft"></div>
+ * </div>
+ * <script type="text/javascript">
+ * //<!--
+ *   if ('undefined' === typeof t11e) { t11e = {}; }
+ *   if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
+ *   t11e.widget_options['2105'] = {
+ *     "max_value": 5,
+ *     "min_value": 0,
+ *     "search_group": "default",
+ *     "page_param": "page",
+ *     "param": "rating"
+ *   };
+ * //-->
+ * </script>
+ *
  * <pre class="brush: html">
  * &lt;div class=&quot;t11e-widget t11e-widget-jquery-slider t11e-widget-id-2105&quot;&gt;
  *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-slider-hd&quot;&gt;Rating&lt;/div&gt;
