@@ -1,3 +1,7 @@
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview page_controller.js
+ */
 t11e.util.define_namespace('t11e.widget');
 if (false) {
     t11e.widget.prototype.Eclipse__Outline__Hack = undefined;

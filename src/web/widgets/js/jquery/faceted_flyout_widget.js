@@ -4,7 +4,6 @@
  * <p>{@link t11e.widget.jquery.FacetedFlyoutWidget} provides a faceted
  * search interface of either checkboxes or radio buttons that includes a
  * flyout panel to display additional choices.</p>
- * @copyright Transparensee Systems, Inc.
  */
 
 /**
