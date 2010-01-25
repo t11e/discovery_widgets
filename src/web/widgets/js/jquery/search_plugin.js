@@ -4,13 +4,19 @@
  *
  * <p>jQuery ajax search request</p>
  */
+
+t11e.util.define_namespace('t11e.widget.jquery');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
+
 /**
  * Returns a search object that manages Ajax search requests. It triggers
  * either a response event or a response_error event.
  * @name t11e.widget.jquery.search_plugin
  * @class Search plugin that uses jQuery to execute the Ajax search request.
  */
-t11e.util.declare('t11e.widget.jquery.search_plugin', function ($) {
+t11e.widget.jquery.search_plugin = function ($) {
     return {
         'search': function (group_name, options, state) {
             t11e.event.trigger('searching.' + group_name);
@@ -32,4 +38,4 @@ t11e.util.declare('t11e.widget.jquery.search_plugin', function ($) {
             });
         }
     };
-});
+};

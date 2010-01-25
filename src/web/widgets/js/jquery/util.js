@@ -5,7 +5,13 @@
  * <p>Automatically find any labels and associates them with the first input
  * inside the given container.</p>
  */
-t11e.util.declare('t11e.widget.jquery.util.associate_labels', function ($, container) {
+
+t11e.util.define_namespace('t11e.widget.jquery.util');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
+
+t11e.widget.jquery.util.associate_labels = function ($, container) {
     var input = $(container).find('input:first');
     var input_id = input.attr('id');
     if ('' === input_id) {
@@ -17,9 +23,9 @@ t11e.util.declare('t11e.widget.jquery.util.associate_labels', function ($, conta
             $(label).attr('for', input_id);
         }
     });
-});
+};
 
-t11e.util.declare('t11e.widget.jquery.util.remove_checkbox_values_from_params', function ($, checkboxes, params, value_param) {
+t11e.widget.jquery.util.remove_checkbox_values_from_params = function ($, checkboxes, params, value_param) {
     var values = params[value_param];
     if (t11e.util.is_defined(values)) {
         var values_to_remove = checkboxes.map(function (checkbox) {
@@ -28,20 +34,20 @@ t11e.util.declare('t11e.widget.jquery.util.remove_checkbox_values_from_params', 
         params[value_param] =
             t11e.widget.jquery.util.subtract($, values, values_to_remove);
     }
-});
+};
 t11e.util.deprecated(
     'Misspelled method name',
     't11e.widget.jquery.util.remove_checkboxe_values_from_params',
     't11e.widget.jquery.util.remove_checkbox_values_from_params');
 
-t11e.util.declare('t11e.widget.jquery.util.subtract', function ($, firstArray, secondArray) {
+t11e.widget.jquery.util.subtract = function ($, firstArray, secondArray) {
     var output = $.grep(firstArray, function (value, idx) {
         return ! $.inArray(value, secondArray);
     });
     return output;
-});
+};
 
-t11e.util.declare('t11e.widget.jquery.util.get_dimension_drilldown', function ($, search, dimension) {
+t11e.widget.jquery.util.get_dimension_drilldown = function ($, search, dimension) {
     var facet_counts = {};
     var found = false;
     var drillDown = t11e.util.deref(search, '_discovery.response.drillDown');
@@ -61,13 +67,13 @@ t11e.util.declare('t11e.widget.jquery.util.get_dimension_drilldown', function ($
         });
     }
     return facet_counts;
-});
+};
 t11e.util.deprecated(
     'Misspelled method name',
     't11e.widget.jquery.util.get_dimenion_drilldown',
     't11e.widget.jquery.util.get_dimension_drilldown');
 
-t11e.util.declare('t11e.widget.jquery.util.apply_template', function ($, template_string, props) {
+t11e.widget.jquery.util.apply_template = function ($, template_string, props) {
     var result = undefined;
     if (t11e.util.is_defined($.template) &&
             t11e.util.is_defined(template_string) &&
@@ -75,4 +81,4 @@ t11e.util.declare('t11e.widget.jquery.util.apply_template', function ($, templat
         result = $.template(template_string).apply(props);
     }
     return result;
-});
+};

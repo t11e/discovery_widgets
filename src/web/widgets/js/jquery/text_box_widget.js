@@ -3,6 +3,11 @@
  * @fileOverview t11e.widget.jquery.TextBoxWidget definition
  */
 
+t11e.util.define_namespace('t11e.widget.jquery');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
+
 /**
  * Widget that displays a text entry box.
  * <h2>Options</h2>
@@ -43,7 +48,7 @@
  * @name t11e.widget.jquery.TextBoxWidget
  * @class A textbox widget for keyword searches.
  */
-t11e.util.declare('t11e.widget.jquery.TextBoxWidget', function ($) {
+t11e.widget.jquery.TextBoxWidget = function ($) {
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var search_group = options.search_group;
     var value_param = options.value_param;
@@ -87,5 +92,5 @@ t11e.util.declare('t11e.widget.jquery.TextBoxWidget', function ($) {
         t11e.util.remove_param(params, options.page_param);
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
-});
+};
 

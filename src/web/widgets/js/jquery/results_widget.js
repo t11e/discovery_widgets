@@ -3,6 +3,11 @@
  * @fileOverview t11e.widget.jquery.ResultsWidget definition
  */
 
+t11e.util.define_namespace('t11e.widget.jquery');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
+
 /**
  * Widget that displays AJAX rendered HTML search results.
  * <h2>Options</h2>
@@ -70,7 +75,7 @@
  * @name t11e.widget.jquery.ResultsWidget
  * @class Executes Ajax request and renders search results.
  */
-t11e.util.declare('t11e.widget.jquery.ResultsWidget', function ($) {
+t11e.widget.jquery.ResultsWidget = function ($) {
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var search_group = options.search_group;
     var base_url = options.base_url;
@@ -253,4 +258,4 @@ t11e.util.declare('t11e.widget.jquery.ResultsWidget', function ($) {
         }
     };
 
-});
+};

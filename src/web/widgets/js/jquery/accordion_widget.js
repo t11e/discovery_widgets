@@ -2,6 +2,12 @@
  * @copyright Transparensee Systems, Inc.
  * @fileOverview t11e.widget.jquery.AccordionWidget definition.
  */
+
+t11e.util.define_namespace('t11e.widget.jquery');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
+
 /**
  * Widget to wrap any widget or html. Adds a window-shade behavior, and keeps
  * the children at top of page when scrolled with shade open behaviors.
@@ -53,7 +59,7 @@
  * @class Implements window shade behavior.
  *
  */
-t11e.util.declare('t11e.widget.jquery.AccordionWidget', function ($) {
+t11e.widget.jquery.AccordionWidget = function ($) {
     /** @private */
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     /** @private */
@@ -133,4 +139,4 @@ t11e.util.declare('t11e.widget.jquery.AccordionWidget', function ($) {
         }
     };
     init();
-});
+};

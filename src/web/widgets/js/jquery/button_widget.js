@@ -3,6 +3,11 @@
  * @fileOverview t11e.widget.jquery.ButtonWidget definition
  */
 
+t11e.util.define_namespace('t11e.widget.jquery');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
+
 /**
  * <h2>Options</h2>
  * <dl>
@@ -57,7 +62,7 @@
  * @name t11e.widget.jquery.ButtonWidget
  * @class Implements a button that triggers a configured event.
  */
-t11e.util.declare('t11e.widget.jquery.ButtonWidget', function ($) {
+t11e.widget.jquery.ButtonWidget = function ($) {
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var event_name = $.template(options.event_name).apply(options);
     var button = $(this).find('.t11e-widget-jquery-button-bd:first a');
@@ -67,4 +72,4 @@ t11e.util.declare('t11e.widget.jquery.ButtonWidget', function ($) {
         event.preventDefault();
         event.stopPropagation();
     });
-});
+};

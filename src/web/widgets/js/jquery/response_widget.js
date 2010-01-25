@@ -3,6 +3,10 @@
  * @fileOverview t11e.widget.jquery.ResponseWidget definition
  */
 
+t11e.util.define_namespace('t11e.widget.jquery');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
 
 /**
  * Debug widget that displays the search response as JSON.
@@ -156,7 +160,7 @@
  * @name t11e.widget.jquery.ResponseWidget
  * @class Debug widget for displaying search results.
  */
-t11e.util.declare('t11e.widget.jquery.ResponseWidget', function ($) {
+t11e.widget.jquery.ResponseWidget = function ($) {
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var search_group = options.search_group;
     var base_url = options.base_url;
@@ -175,4 +179,4 @@ t11e.util.declare('t11e.widget.jquery.ResponseWidget', function ($) {
         target.html('<pre style="overflow:scroll;">' + JSON.stringify(response, null, '  ') + '</pre>');
     };
     t11e.event.subscribe('response.' + search_group, update_from_response);
-});
+};

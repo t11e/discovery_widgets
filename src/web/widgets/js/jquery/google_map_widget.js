@@ -3,6 +3,11 @@
  * @fileOverview t11e.widget.jquery.GoogleMapWidget definition
  */
 
+t11e.util.define_namespace('t11e.widget.jquery');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
+
 /**
  * Widget for displaying geocoded results on a Google map.
  *
@@ -99,7 +104,7 @@
  * @name t11e.widget.jquery.GoogleMapWidget
  * @class A widget for displaying search results on a Google map.
  */
-t11e.util.declare('t11e.widget.jquery.GoogleMapWidget', function ($) {
+t11e.widget.jquery.GoogleMapWidget = function ($) {
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var search_group = options.search_group;
     var dimension = options.dimension;
@@ -345,4 +350,4 @@ t11e.util.declare('t11e.widget.jquery.GoogleMapWidget', function ($) {
         update_map(map_not_ready_items);
     });
 
-});
+};

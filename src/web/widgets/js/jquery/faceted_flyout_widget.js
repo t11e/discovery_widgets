@@ -6,6 +6,11 @@
  * flyout panel to display additional choices.</p>
  */
 
+t11e.util.define_namespace('t11e.widget.jquery');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
+
 /**
  * A widget with the same functionality as {@link t11e.widget.jquery.FacetedCheckboxesWidget}
  * that also contains a flyout panel.
@@ -101,7 +106,7 @@
  * @class A checkbox widget that contains a flyout panel for additional options.
  *
  */
-t11e.util.declare('t11e.widget.jquery.FacetedFlyoutWidget', function ($) {
+t11e.widget.jquery.FacetedFlyoutWidget = function ($) {
     /**
      * Widget that displays faceted checkboxes which allow selection of
      * facets to alter the search and display the facet counts from the
@@ -378,4 +383,4 @@ t11e.util.declare('t11e.widget.jquery.FacetedFlyoutWidget', function ($) {
     });
 
     init();
-});
+};

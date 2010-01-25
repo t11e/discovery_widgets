@@ -2,6 +2,12 @@
  * @copyright Transparensee Systems, Inc.
  * @fileOverview t11e.widget.jquery.PaginationWidget definition
  */
+
+t11e.util.define_namespace('t11e.widget.jquery');
+if (false) {
+    t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+}
+
 /**
  * Widget that displays pagination controls for the search results.
  *
@@ -51,7 +57,7 @@
  * @name t11e.widget.jquery.PaginationWidget
  * @class Displays pagination navigation links for search results.
  */
-t11e.util.declare('t11e.widget.jquery.PaginationWidget', function ($) {
+t11e.widget.jquery.PaginationWidget = function ($) {
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var search_group = options.search_group;
     var page_param = options.page_param;
@@ -79,4 +85,4 @@ t11e.util.declare('t11e.widget.jquery.PaginationWidget', function ($) {
         t11e.util.remove_param(params, page_param);
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
-});
+};
