@@ -19,32 +19,31 @@ if (false) {
  *    <dd>The query parameter this widget is associated with.</dd>
  * </dl>
  * <h2>Sample HTML</h2>
- *<pre class="brush: html">
- * &lt;div class=&quot;t11e-widget t11e-widget-jquery-textbox t11e-widget-id-2076&quot;&gt;
- *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-textbox-hd&quot;&gt;&lt;/div&gt;
- *  &lt;div class=&quot;t11e-bd t11e-widget-jquery-textbox-bd&quot;&gt;
- *      &lt;form action=&quot;&quot; onsubmit=&quot;return false;&quot;&gt;
- *          &lt;input name=&quot;k&quot;&gt;
- *      &lt;/form&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-ft t11e-widget-jquery-textbox-ft&quot;&gt;&lt;/div&gt;
- * &lt;/div&gt;
- * &lt;script type=&quot;text/javascript&quot;&gt;
- *  //&lt;!--
- *      if (&#x27;undefined&#x27; === typeof t11e) {
+ * <div class="t11e-widget t11e-widget-jquery-textbox t11e-widget-id-2076">
+ *  <div class="t11e-hd t11e-widget-jquery-textbox-hd"></div>
+ *  <div class="t11e-bd t11e-widget-jquery-textbox-bd">
+ *      <form action="" onsubmit="return false;">
+ *          <input name="k">
+ *      </form>
+ *  </div>
+ *  <div class="t11e-ft t11e-widget-jquery-textbox-ft"></div>
+ * </div>
+ * <script type="text/javascript">
+ *  //<!--
+ *      if ('undefined' === typeof t11e) {
  *          t11e = {};
  *      }
- *      if (&#x27;undefined&#x27; === typeof t11e.widget_options) {
+ *      if ('undefined' === typeof t11e.widget_options) {
  *          t11e.widget_options = {};
  *      }
- *      t11e.widget_options[&#x27;2076&#x27;] = {
- *          &quot;value_param&quot;: &quot;k&quot;,
- *          &quot;search_group&quot;: &quot;vehicle&quot;,
- *          &quot;page_param&quot;: null
+ *      t11e.widget_options['2076'] = {
+ *          "value_param": "k",
+ *          "search_group": "vehicle",
+ *          "page_param": null
  *      };
- *  //--&gt;
- * &lt;/script&gt;
- *</pre>
+ *  //-->
+ * </script>
+ *
  * @name t11e.widget.jquery.TextBoxWidget
  * @class A textbox widget for keyword searches.
  */

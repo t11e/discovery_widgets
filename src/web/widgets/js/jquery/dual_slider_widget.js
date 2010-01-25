@@ -43,35 +43,34 @@ if (false) {
  * </dl>
  *
  * <h2>Sample HTML</h2>
- * <pre class="brush: html">
- * &lt;div class=&quot;t11e-widget t11e-widget-jquery-dual-slider t11e-widget-id-2081&quot;&gt;
- *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-dual-slider-hd&quot;&gt;&lt;/div&gt;
- *  &lt;div class=&quot;t11e-bd t11e-widget-jquery-dual-slider-bd&quot;&gt;
- *      &lt;div class=&quot;amount&quot;&gt;&lt;/div&gt;
- *      &lt;div class=&quot;slider-control&quot;&gt;&lt;/div&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-ft t11e-widget-jquery-dual-slider-ft&quot;&gt;&lt;/div&gt;
- * &lt;/div&gt;
- * &lt;script type=&quot;text/javascript&quot;&gt;
- *  //&lt;!--
- *      if (&#x27;undefined&#x27; === typeof t11e) {
+ * <div class="t11e-widget t11e-widget-jquery-dual-slider t11e-widget-id-2081">
+ *  <div class="t11e-hd t11e-widget-jquery-dual-slider-hd"></div>
+ *  <div class="t11e-bd t11e-widget-jquery-dual-slider-bd">
+ *      <div class="amount"></div>
+ *      <div class="slider-control"></div>
+ *  </div>
+ *  <div class="t11e-ft t11e-widget-jquery-dual-slider-ft"></div>
+ * </div>
+ * <script type="text/javascript">
+ *  //<!--
+ *      if ('undefined' === typeof t11e) {
  *          t11e = {};
  *      }
- *      if (&#x27;undefined&#x27; === typeof t11e.widget_options) {
+ *      if ('undefined' === typeof t11e.widget_options) {
  *          t11e.widget_options = {};
  *      }
- *      t11e.widget_options[&#x27;2081&#x27;] = {
- *          &quot;page_param&quot;: null,
- *          &quot;max_param&quot;: &quot;year_max&quot;,
- *          &quot;min_value&quot;: 1960,
- *          &quot;search_group&quot;: &quot;vehicle&quot;,
- *          &quot;step&quot;: 1,
- *          &quot;max_value&quot;: 2010,
- *          &quot;min_param&quot;: &quot;year_min&quot;
+ *      t11e.widget_options['2081'] = {
+ *          "page_param": null,
+ *          "max_param": "year_max",
+ *          "min_value": 1960,
+ *          "search_group": "vehicle",
+ *          "step": 1,
+ *          "max_value": 2010,
+ *          "min_param": "year_min"
  *      };
- *  //--&gt;
- * &lt;/script&gt;
- * </pre>
+ *  //-->
+ * </script>
+ *
  * @name t11e.widget.jquery.DualSliderWidget
  * @class A dual-handled slider widget for searching a range of values.
  */

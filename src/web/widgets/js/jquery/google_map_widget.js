@@ -62,45 +62,43 @@ if (false) {
  *    <dt>map_height</dt>
  *    <dd>The display height of the map. The default is '300px'.</dd>
  *</dl>
- *<h2>Sample HTML</h2>
- *<pre class="brush: html">
- * &lt;div class=&quot;t11e-widget t11e-widget-jquery-google-map t11e-widget-id-2083&quot;&gt;
- *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-google-map-hd&quot;&gt;&lt;/div&gt;
- *  &lt;div class=&quot;t11e-bd t11e-widget-jquery-google-map-bd&quot;&gt;
- *      &lt;div class=&quot;google-map&quot;&gt;&lt;/div&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-ft t11e-widget-jquery-google-map-ft&quot;&gt;&lt;/div&gt;
- * &lt;/div&gt;
- * &lt;script type=&quot;text/javascript&quot;&gt;
- *  //&lt;!--
- *      if (&#x27;undefined&#x27; === typeof t11e) {
+ *<h2>Example</h2>
+ * <div class="t11e-widget t11e-widget-jquery-google-map t11e-widget-id-2083">
+ *  <div class="t11e-hd t11e-widget-jquery-google-map-hd"></div>
+ *  <div class="t11e-bd t11e-widget-jquery-google-map-bd">
+ *      <div class="google-map"></div>
+ *  </div>
+ *  <div class="t11e-ft t11e-widget-jquery-google-map-ft"></div>
+ * </div>
+ * <script type="text/javascript">
+ *  //<!--
+ *      if ('undefined' === typeof t11e) {
  *          t11e = {};
  *      }
- *      if (&#x27;undefined&#x27; === typeof t11e.widget_options) {
+ *      if ('undefined' === typeof t11e.widget_options) {
  *          t11e.widget_options = {};
  *      }
- *      t11e.widget_options[&#x27;2083&#x27;] = {
- *          &quot;item_info_url&quot;: &quot;/info_window/${id}/&quot;,
- *          &quot;map_height&quot;: 250,
- *          &quot;icon_height&quot;: 20,
- *          &quot;center_latitude&quot;: 40.777900699999996,
- *          &quot;close_match_icon&quot;: &quot;/images/google_map_markers/largeTDYellowIcons/marker${index}.png&quot;,
- *          &quot;zoom_level&quot;: 13,
- *          &quot;center_longitude&quot;: -73.9634018,
- *          &quot;icon_shadow&quot;: &quot;/images/google_map_markers/shadow50.png&quot;,
- *          &quot;icon_width&quot;: 34,
- *          &quot;icon_shadow_width&quot;: 27,
- *          &quot;exact_match_icon&quot;: &quot;/images/google_map_markers/largeTDRedIcons/marker${index}.png&quot;,
- *          &quot;icon_anchor_y&quot;: 34,
- *          &quot;icon_anchor_x&quot;: 9,
- *          &quot;search_group&quot;: &quot;vehicle&quot;,
- *          &quot;dimension&quot;: &quot;latlon&quot;,
- *          &quot;icon_shadow_height&quot;: 34,
- *          &quot;media_url&quot;: &quot;/media/&quot;
+ *      t11e.widget_options['2083'] = {
+ *          "item_info_url": "/info_window/${id}/",
+ *          "map_height": 250,
+ *          "icon_height": 20,
+ *          "center_latitude": 40.777900699999996,
+ *          "close_match_icon": "/images/google_map_markers/largeTDYellowIcons/marker${index}.png",
+ *          "zoom_level": 13,
+ *          "center_longitude": -73.9634018,
+ *          "icon_shadow": "/images/google_map_markers/shadow50.png",
+ *          "icon_width": 34,
+ *          "icon_shadow_width": 27,
+ *          "exact_match_icon": "/images/google_map_markers/largeTDRedIcons/marker${index}.png",
+ *          "icon_anchor_y": 34,
+ *          "icon_anchor_x": 9,
+ *          "search_group": "vehicle",
+ *          "dimension": "latlon",
+ *          "icon_shadow_height": 34,
+ *          "media_url": "/media/"
  *      };
- *  //--&gt;
- * &lt;/script&gt;
- * </pre>
+ *  //-->
+ * </script>
  * @name t11e.widget.jquery.GoogleMapWidget
  * @class A widget for displaying search results on a Google map.
  */

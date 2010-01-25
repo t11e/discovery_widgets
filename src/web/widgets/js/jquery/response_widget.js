@@ -10,35 +10,33 @@ if (false) {
 
 /**
  * Debug widget that displays the search response as JSON.
- * <h2>Sample HTML</h2>
- * <pre class="brush: html">
- * &lt;div class=&quot;t11e-widget t11e-widget-jquery-response t11e-widget-id-2103&quot;&gt;
- *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-response-hd&quot;&gt;
- *      &lt;h1&gt;
+ * <h2>Example</h2>
+ * <div class="t11e-widget t11e-widget-jquery-response t11e-widget-id-2103">
+ *  <div class="t11e-hd t11e-widget-jquery-response-hd">
+ *      <h1>
  *          JSON Response
- *      &lt;/h1&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-bd t11e-widget-jquery-response-bd&quot;&gt;
- *      &lt;div class=&quot;response&quot;&gt;&lt;/div&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-ft t11e-widget-jquery-response-ft&quot;&gt;&lt;/div&gt;
- * &lt;/div&gt;
- * &lt;script type=&quot;text/javascript&quot;&gt;
- *  //&lt;!--
- *      if (&#x27;undefined&#x27; === typeof t11e) {
+ *      </h1>
+ *  </div>
+ *  <div class="t11e-bd t11e-widget-jquery-response-bd">
+ *      <div class="response"></div>
+ *  </div>
+ *  <div class="t11e-ft t11e-widget-jquery-response-ft"></div>
+ * </div>
+ * <script type="text/javascript">
+ *  //<!--
+ *      if ('undefined' === typeof t11e) {
  *          t11e = {};
  *      }
- *      if (&#x27;undefined&#x27; === typeof t11e.widget_options) {
+ *      if ('undefined' === typeof t11e.widget_options) {
  *          t11e.widget_options = {};
  *      }
- *      t11e.widget_options[&#x27;2103&#x27;] = {
- *          &quot;search_group&quot;: &quot;vehicle&quot;
+ *      t11e.widget_options['2103'] = {
+ *          "search_group": "vehicle"
  *      };
- *  //--&gt;
- * &lt;/script&gt;
- * </pre>
+ *  //-->
+ * </script>
  *
- *<h3>Sample Response</h3>
+ *<h3>Example Response</h3>
  *<pre class="brush: js">
  * {
  *   "results_query_params": "itemIds=1299123372,1379973264,1379992904,1380507219,1380521004,

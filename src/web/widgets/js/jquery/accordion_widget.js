@@ -26,35 +26,35 @@ if (false) {
  *     <dt>animation_length_ms</dt>
  *     <dd>Optional. Milliseconds for window shade open effect. Defaults to 500 ms.</dd>
  * </dl>
- * <h2>Sample HTML</h2>
- *<pre class="brush: html">
- * &lt;div class=&quot;t11e-widget t11e-widget-jquery-accordion t11e-widget-id-2082&quot;&gt;
- *  &lt;div class=&quot;t11e-widget-jquery-accordion-bd&quot;&gt;
- *      &lt;div class=&quot;accordion-top&quot;&gt;&lt;/div&gt;
- *      &lt;ol class=&quot;t11e-list-entries accordion-body&quot;&gt;
- *          &lt;li class=&quot;t11e-list-entry&quot;&gt;
- *              &lt;!-- Contained widget --&gt;
- *          &lt;/li&gt;
- *      &lt;/ol&gt;
- *      &lt;div class=&quot;accordion-bottom&quot;&gt;&lt;/div&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-widget-jquery-accordion-ft&quot;&gt;&lt;/div&gt;
- * &lt;/div&gt;
- * &lt;script type=&quot;text/javascript&quot;&gt;
- *  //&lt;!--
- *      if (&#x27;undefined&#x27; === typeof t11e) {
+ *
+ * <h2>Example</h2>
+ * <div class="t11e-widget t11e-widget-jquery-accordion t11e-widget-id-2082">
+ *   <div class="t11e-widget-jquery-accordion-bd">
+ *      <div class="accordion-top"></div>
+ *      <ol class="t11e-list-entries accordion-body">
+ *          <li class="t11e-list-entry">
+ *              <!-- Contained widget -->
+ *          </li>
+ *      </ol>
+ *      <div class="accordion-bottom"></div>
+ *   </div>
+ *   <div class="t11e-widget-jquery-accordion-ft"></div>
+ * </div>
+ * <script type="text/javascript">
+ *  //<!--
+ *      if ('undefined' === typeof t11e) {
  *          t11e = {};
  *      }
- *      if (&#x27;undefined&#x27; === typeof t11e.widget_options) {
+ *      if ('undefined' === typeof t11e.widget_options) {
  *          t11e.widget_options = {};
  *      }
- *      t11e.widget_options[&#x27;2082&#x27;] = {
- *          &quot;animation_length_ms&quot;: 500,
- *          &quot;contained_widget_height&quot;: null
+ *      t11e.widget_options['2082'] = {
+ *          "animation_length_ms": 500,
+ *          "contained_widget_height": null
  *      };
- *  //--&gt;
- * &lt;/script&gt;
- *</pre>
+ *  //-->
+ * </script>
+ *
  * @name t11e.widget.jquery.AccordionWidget
  * @class Implements window shade behavior.
  *

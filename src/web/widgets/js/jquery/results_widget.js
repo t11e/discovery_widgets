@@ -46,32 +46,31 @@ if (false) {
  *
  *</dl>
  *
- * <h2>Sample HTML</h2>
- *<pre class="brush: html">
- * &lt;div class=&quot;t11e-widget t11e-widget-jquery-results t11e-widget-id-2088&quot;&gt;
- *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-results-hd&quot;&gt;&lt;/div&gt;
- *  &lt;div class=&quot;t11e-bd t11e-widget-jquery-results-bd&quot;&gt;
- *      &lt;div class=&quot;t11e-results&quot;&gt;&lt;/div&gt;
- *      &lt;div class=&quot;t11e-widget-jquery-results-loading&quot;&gt;
- *      &lt;/div&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-ft t11e-widget-jquery-results-ft&quot;&gt;&lt;/div&gt;
- * &lt;/div&gt;&lt;script type=&quot;text/javascript&quot;&gt;
- *  //&lt;!--
- *      if (&#x27;undefined&#x27; === typeof t11e) {
+ * <h2>Example</h2>
+ * <div class="t11e-widget t11e-widget-jquery-results t11e-widget-id-2088">
+ *  <div class="t11e-hd t11e-widget-jquery-results-hd"></div>
+ *  <div class="t11e-bd t11e-widget-jquery-results-bd">
+ *      <div class="t11e-results"></div>
+ *      <div class="t11e-widget-jquery-results-loading">
+ *      </div>
+ *  </div>
+ *  <div class="t11e-ft t11e-widget-jquery-results-ft"></div>
+ * </div><script type="text/javascript">
+ *  //<!--
+ *      if ('undefined' === typeof t11e) {
  *          t11e = {};
  *      }
- *      if (&#x27;undefined&#x27; === typeof t11e.widget_options) {
+ *      if ('undefined' === typeof t11e.widget_options) {
  *          t11e.widget_options = {};
  *      }
- *      t11e.widget_options[&#x27;2088&#x27;] = {
- *          &quot;load_message&quot;: &quot;loading&quot;,
- *          &quot;search_group&quot;: &quot;vehicle&quot;,
- *          &quot;base_url&quot;: &quot;/proxy/results&quot;,
+ *      t11e.widget_options['2088'] = {
+ *          "load_message": "loading",
+ *          "search_group": "vehicle",
+ *          "base_url": "/proxy/results",
  *      };
- *  //--&gt;
- * &lt;/script&gt;
- * </pre>
+ *  //-->
+ * </script>
+ *
  * @name t11e.widget.jquery.ResultsWidget
  * @class Executes Ajax request and renders search results.
  */

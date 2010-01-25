@@ -31,54 +31,53 @@ if (false) {
  *    <dt>dimension</dt>
  *    <dd>The dimension (index) used for updating drilldown counts.</dd>
 
- * <h2>Sample HTML</h2>
- * <pre class="brush: html">
- * * &lt;div class=&quot;t11e-widget t11e-widget-jquery-faceted-checkboxes t11e-widget-id-2078&quot;&gt;
- *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-faceted-checkboxes-hd&quot;&gt;&lt;/div&gt;
- *  &lt;div class=&quot;t11e-bd t11e-widget-jquery-faceted-checkboxes-bd&quot;&gt;
- *      &lt;form action=&quot;&quot;&gt;
- *          &lt;div class=&quot;row&quot;&gt;
- *              &lt;input type=&quot;checkbox&quot; name=&quot;c&quot; value=&quot;vehicles/automobiles/cars&quot;&gt;
- *              &lt;label&gt;Cars&lt;/label&gt; &amp;nbsp;&amp;nbsp;&lt;span class=&quot;facet-count&quot;&gt;0&lt;/span&gt;
- *          &lt;/div&gt;
- *          &lt;div class=&quot;row&quot;&gt;
- *              &lt;input type=&quot;checkbox&quot; name=&quot;c&quot; value=&quot;vehicles/automobiles/motorcycles&quot;&gt;
- *              &lt;label&gt;Motorcycles&lt;/label&gt; &amp;nbsp;&amp;nbsp;&lt;span class=&quot;facet-count&quot;&gt;0&lt;/span&gt;
- *          &lt;/div&gt;
- *          &lt;div class=&quot;row&quot;&gt;
- *              &lt;input type=&quot;checkbox&quot; name=&quot;c&quot; value=&quot;vehicles/automobiles/suvs&quot;&gt;
- *              &lt;label&gt;SUV&lt;/label&gt; &amp;nbsp;&amp;nbsp;&lt;span class=&quot;facet-count&quot;&gt;0&lt;/span&gt;
- *          &lt;/div&gt;
- *          &lt;div class=&quot;row&quot;&gt;
- *              &lt;input type=&quot;checkbox&quot; name=&quot;c&quot; value=&quot;vehicles/automobiles/trucks&quot;&gt;
- *              &lt;label&gt;Trucks&lt;/label&gt; &amp;nbsp;&amp;nbsp;&lt;span class=&quot;facet-count&quot;&gt;0&lt;/span&gt;
- *          &lt;/div&gt;
- *          &lt;div class=&quot;row&quot;&gt;
- *              &lt;input type=&quot;checkbox&quot; name=&quot;c&quot; value=&quot;vehicles/automobiles/vans&quot;&gt;
- *              &lt;label&gt;Vans&lt;/label&gt; &amp;nbsp;&amp;nbsp;&lt;span class=&quot;facet-count&quot;&gt;0&lt;/span&gt;
- *          &lt;/div&gt;
- *      &lt;/form&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-ft t11e-widget-jquery-faceted-checkboxes-ft&quot;&gt;&lt;/div&gt;
- * &lt;/div&gt;
- * &lt;script type=&quot;text/javascript&quot;&gt;
- *  //&lt;!--
- *      if (&#x27;undefined&#x27; === typeof t11e) {
+ * <h2>Example</h2>
+ * <div class="t11e-widget t11e-widget-jquery-faceted-checkboxes t11e-widget-id-2078">
+ *  <div class="t11e-hd t11e-widget-jquery-faceted-checkboxes-hd"></div>
+ *  <div class="t11e-bd t11e-widget-jquery-faceted-checkboxes-bd">
+ *      <form action="">
+ *          <div class="row">
+ *              <input type="checkbox" name="c" value="vehicles/automobiles/cars">
+ *              <label>Cars</label> &nbsp;&nbsp;<span class="facet-count">0</span>
+ *          </div>
+ *          <div class="row">
+ *              <input type="checkbox" name="c" value="vehicles/automobiles/motorcycles">
+ *              <label>Motorcycles</label> &nbsp;&nbsp;<span class="facet-count">0</span>
+ *          </div>
+ *          <div class="row">
+ *              <input type="checkbox" name="c" value="vehicles/automobiles/suvs">
+ *              <label>SUV</label> &nbsp;&nbsp;<span class="facet-count">0</span>
+ *          </div>
+ *          <div class="row">
+ *              <input type="checkbox" name="c" value="vehicles/automobiles/trucks">
+ *              <label>Trucks</label> &nbsp;&nbsp;<span class="facet-count">0</span>
+ *          </div>
+ *          <div class="row">
+ *              <input type="checkbox" name="c" value="vehicles/automobiles/vans">
+ *              <label>Vans</label> &nbsp;&nbsp;<span class="facet-count">0</span>
+ *          </div>
+ *      </form>
+ *  </div>
+ *  <div class="t11e-ft t11e-widget-jquery-faceted-checkboxes-ft"></div>
+ * </div>
+ * <script type="text/javascript">
+ *  //<!--
+ *      if ('undefined' === typeof t11e) {
  *          t11e = {};
  *      }
- *      if (&#x27;undefined&#x27; === typeof t11e.widget_options) {
+ *      if ('undefined' === typeof t11e.widget_options) {
  *          t11e.widget_options = {};
  *      }
- *      t11e.widget_options[&#x27;2078&#x27;] = {
- *          &quot;value_param&quot;: &quot;c&quot;,
- *          &quot;page_param&quot;: null,
- *          &quot;search_group&quot;: &quot;vehicle&quot;,
- *          &quot;dimension&quot;: &quot;category&quot;
+ *      t11e.widget_options['2078'] = {
+ *          "value_param": "c",
+ *          "page_param": null,
+ *          "search_group": "vehicle",
+ *          "dimension": "category"
  *          }
  *      };
- *  //--&gt;
- * &lt;/script&gt;
- *</pre>
+ *  //-->
+ * </script>
+ *
  * @name t11e.widget.jquery.FacetedCheckboxesWidget
  * @class A checkbox widget that displays facet counts.
  *

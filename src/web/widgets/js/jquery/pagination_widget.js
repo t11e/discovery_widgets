@@ -28,32 +28,33 @@ if (false) {
  *     <dt>page_size</dt>
  *     <dd>The number of result items per page.</dd>
  * </dl>
- * <h2>Sample HTML</h2>
- * <pre class="brush: html">
- * &lt;div class=&quot;t11e-widget t11e-widget-jquery-pagination t11e-widget-id-2089&quot;&gt;
- *  &lt;div class=&quot;t11e-hd t11e-widget-jquery-pagination-hd&quot;&gt;&lt;/div&gt;
- *  &lt;div class=&quot;t11e-bd t11e-widget-jquery-pagination-bd&quot;&gt;
- *      &lt;div class=&quot;pagination&quot;&gt;
- *          &lt;a href=&quot;#&quot; class=&quot;prev&quot;&gt;Prev&lt;/a&gt;
- *          &lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;
- *          &lt;a href=&quot;#&quot; class=&quot;next&quot;&gt;Next&lt;/a&gt;
- *      &lt;/div&gt;
- *  &lt;/div&gt;
- *  &lt;div class=&quot;t11e-ft t11e-widget-jquery-pagination-ft&quot;&gt;&lt;/div&gt;
- * &lt;/div&gt;
- * &lt;script type=&quot;text/javascript&quot;&gt;//&lt;!--
- * if (&#x27;undefined&#x27; === typeof t11e) {
- *     t11e = {};
- * }
- * if (&#x27;undefined&#x27; === typeof t11e.widget_options) {
- *     t11e.widget_options = {};
- * }
- * t11e.widget_options[&#x27;2089&#x27;] = {
- *     &quot;search_group&quot;: &quot;vehicle&quot;,
- *     &quot;page_param&quot;: &quot;page&quot;
- * };
- * //--&gt;&lt;/script&gt;
- * </pre>
+ * <h2>Example</h2>
+ * <div class="t11e-widget t11e-widget-jquery-pagination t11e-widget-id-2089">
+ *  <div class="t11e-hd t11e-widget-jquery-pagination-hd"></div>
+ *  <div class="t11e-bd t11e-widget-jquery-pagination-bd">
+ *      <div class="pagination">
+ *          <a href="#" class="prev">Prev</a>
+ *          <a href="#">1</a>
+ *          <a href="#" class="next">Next</a>
+ *      </div>
+ *  </div>
+ *  <div class="t11e-ft t11e-widget-jquery-pagination-ft"></div>
+ * </div>
+ * <script type="text/javascript">
+ * //<!--
+ *   if ('undefined' === typeof t11e) {
+ *       t11e = {};
+ *   }
+ *   if ('undefined' === typeof t11e.widget_options) {
+ *       t11e.widget_options = {};
+ *   }
+ *   t11e.widget_options['2089'] = {
+ *       "search_group": "vehicle",
+ *       "page_param": "page"
+ *   };
+ * //-->
+ * </script>
+ *
  * @name t11e.widget.jquery.PaginationWidget
  * @class Displays pagination navigation links for search results.
  */
