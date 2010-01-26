@@ -99,6 +99,7 @@ if (false) {
  *      };
  *  //-->
  * </script>
+ * <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=" type="text/javascript"></script>
  * @name t11e.widget.jquery.GoogleMapWidget
  * @class A widget for displaying search results on a Google map.
  */
