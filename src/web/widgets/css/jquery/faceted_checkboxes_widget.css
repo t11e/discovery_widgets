@@ -8,16 +8,16 @@
  * Checkbox rows
  */
 .t11e-widget-jquery-faceted-checkboxes-bd div.row {
-   float:left;
-   position: relative;
-   width: 100%;
+    float:left;
+    position: relative;
+    width: 100%;
 }
 
 /*
  * Position checkboxes
  */
 .t11e-widget-jquery-faceted-checkboxes-bd div.row input {
-   float: left;
+    float: left;
     margin-top: .125em;
     margin-bottom: 0;
 }
@@ -26,15 +26,15 @@
  * Position checkbox labels
  */
 .t11e-widget-jquery-faceted-checkboxes-bd div.row label {
-   float: left;
-   width: 65%;
+    float: left;
+    width: 65%;
 }
 
 /*
  * Position drilldown counts
  */
 .t11e-widget-jquery-faceted-checkboxes-bd div.row span.facet-count {
-   position: absolute;
-   top: 0;
-   right: .1em;
+    position: absolute;
+    top: 0;
+    right: .1em;
 }

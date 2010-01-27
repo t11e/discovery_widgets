@@ -1,0 +1,93 @@
+.t11e-widget {
+    width: 200px;
+    margin: 0 0 16px 0;
+    padding: .5em;
+}
+
+.t11e-widget-jquery-google-map {
+    width: 400px;
+    border: 1px solid #CCC;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px;
+    -webkit-box-shadow:1px 4px 6px rgba(0, 0, 0, .5);
+}
+
+.t11e-widget-jquery-faceted-checkboxes {
+    border: 1px solid #CCC;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px;
+    -webkit-box-shadow:1px 4px 6px rgba(0, 0, 0, .5);
+}
+
+.t11e-widget-jquery-faceted-flyout {
+    border: 1px solid #CCC;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px;
+    -webkit-box-shadow:1px 4px 6px rgba(0, 0, 0, .5);
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-primary,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary {
+    border: none;
+}
+
+.t11e-widget-jquery-slider {
+    padding: 1em;
+}
+
+.t11e-widget-jquery-dual-slider {
+    padding: 1em;
+}
+
+.t11e-widget-jquery-button {
+    width: 75px;
+}
+
+.t11e-widget-jquery-button-bd a {
+    display: block;
+    padding: .5em;
+    border: 1px solid #CCC;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px;
+    -webkit-box-shadow:1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+.t11e-widget-jquery-button-bd a:hover {
+    display: block;
+    border: 1px solid #AAA;
+    background-color: #EEE;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px;
+    -webkit-box-shadow:1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+.t11e-widget-jquery-button-bd a:active {
+    display: block;
+    border: 1px solid #AAA;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px;
+    -webkit-box-shadow: -1px -1px 1px rgba(0, 0, 0, .5);
+}
+
+.t11e-widget-jquery-pagination .pagination {
+    font-size: 80%;
+}
+
+.t11e-widget-jquery-pagination .pagination a {
+    text-decoration: none;
+    border: solid 1px #AAE;
+    color: #15B;
+}
+
+.t11e-widget-jquery-pagination .pagination a, .pagination span {
+    display: block;
+    float: left;
+    padding: 0.3em 0.5em !important;
+    margin: 0 5px 5px 0;
+}
+
+.t11e-widget-jquery-pagination .pagination span.current {
+    background: #26B;
+    color: #fff;
+    border: solid 1px #AAE;
+}
+
+.t11e-widget-jquery-pagination .pagination .current.prev, .pagination .current.next{
+    color:#999;
+    border-color:#999;
+    background:#fff;
+}

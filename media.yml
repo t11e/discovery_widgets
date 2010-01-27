@@ -21,7 +21,6 @@ groups:
         - widgets/css/jquery/response_widget.css
         - widgets/css/jquery/results_widget.css
         - widgets/css/jquery/accordion_widget.css
-        - widgets/css/jquery/slider_widget.css
 
     - groupName: widgets_theme_simple_css
       mediaType: css
@@ -30,6 +29,14 @@ groups:
       sourceFileNames:
         - widgets/css/themes/simple/ui.css
         - widgets/css/themes/simple/widgets.css
+
+    - groupName: widgets_theme_jsdoc_css
+      mediaType: css
+      outputFileName: widgets-theme-jsdoc.css
+      outputFileNameMinified: widgets-theme-jsdoc.min.css
+      sourceFileNames:
+        - widgets/css/themes/jsdoc/ui.css
+        - widgets/css/themes/jsdoc/widgets.css
 
     - groupName: widgets_js
       mediaType: js
