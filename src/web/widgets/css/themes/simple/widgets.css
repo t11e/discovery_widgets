@@ -8,6 +8,13 @@
     padding: 1em;
 }
 
+/**
+ * Set background color to address IE8 fading text bug
+ */
+.t11e-results {
+    background-color: #FFFFFF;
+}
+
 .t11e-widget-jquery-accordion-bd .accordion-top,
 .t11e-widget-jquery-accordion-bd .accordion-bottom {
 }
