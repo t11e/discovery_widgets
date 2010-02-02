@@ -48,7 +48,10 @@ groups:
         - jquery/plugins/bgiframe/jquery.bgiframe-2.1.1.lint.js
         - jquery/plugins/template/jquery.template-2009-11-16.lint.js
         - json2/json2-2009-08-17.lint.js
-        - widgets/js/t11e.js
+        - widgets/js/t11e/base.js
+        - widgets/js/t11e/internals.js
+        - widgets/js/t11e/event.js
+        - widgets/js/t11e/util.js
         - widgets/js/page_controller.js
         - widgets/js/jquery/search_plugin.js
         - widgets/js/jquery/history_plugin.js
