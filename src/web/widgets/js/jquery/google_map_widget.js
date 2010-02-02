@@ -72,30 +72,25 @@ if (false) {
  * </div>
  * <script type="text/javascript">
  *  //<!--
- *      if ('undefined' === typeof t11e) {
- *          t11e = {};
- *      }
- *      if ('undefined' === typeof t11e.widget_options) {
- *          t11e.widget_options = {};
- *      }
+ *      if ('undefined' === typeof t11e) { t11e = {}; }
+ *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
  *      t11e.widget_options['2083'] = {
- *          "item_info_url": "/info_window/${id}/",
- *          "map_height": 250,
- *          "icon_height": 20,
- *          "center_latitude": 40.777900699999996,
- *          "close_match_icon": "/images/google_map_markers/largeTDYellowIcons/marker${index}.png",
- *          "zoom_level": 13,
- *          "center_longitude": -73.9634018,
- *          "icon_shadow": "/images/google_map_markers/shadow50.png",
- *          "icon_width": 34,
- *          "icon_shadow_width": 27,
- *          "exact_match_icon": "/images/google_map_markers/largeTDRedIcons/marker${index}.png",
- *          "icon_anchor_y": 34,
- *          "icon_anchor_x": 9,
  *          "search_group": "vehicle",
  *          "dimension": "latlon",
+ *          "map_height": 250,
+ *          "center_latitude": 40.777900699999996,
+ *          "center_longitude": -73.9634018,
+ *          "zoom_level": 13,
+ *          "close_match_icon": "/images/google_map_markers/largeTDYellowIcons/marker${index}.png",
+ *          "exact_match_icon": "/images/google_map_markers/largeTDRedIcons/marker${index}.png",
+ *          "icon_shadow": "/images/google_map_markers/shadow50.png",
+ *          "item_info_url": "/info_window/${id}/",
+ *          "icon_width": 34,
+ *          "icon_height": 20,
+ *          "icon_shadow_width": 27,
  *          "icon_shadow_height": 34,
- *          "media_url": "/media/"
+ *          "icon_anchor_x": 9,
+ *          "icon_anchor_y": 34
  *      };
  *  //-->
  * </script>

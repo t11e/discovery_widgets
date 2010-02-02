@@ -42,15 +42,11 @@ if (false) {
  * </div>
  * <script type="text/javascript">
  *  //<!--
- *      if ('undefined' === typeof t11e) {
- *          t11e = {};
- *      }
- *      if ('undefined' === typeof t11e.widget_options) {
- *          t11e.widget_options = {};
- *      }
+ *      if ('undefined' === typeof t11e) { t11e = {}; }
+ *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
  *      t11e.widget_options['2082'] = {
  *          "animation_length_ms": 500,
- *          "contained_widget_height": null
+ *          "contained_widget_height": "300px"
  *      };
  *  //-->
  * </script>

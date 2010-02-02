@@ -24,12 +24,8 @@ if (false) {
  * </div>
  * <script type="text/javascript">
  *  //<!--
- *      if ('undefined' === typeof t11e) {
- *          t11e = {};
- *      }
- *      if ('undefined' === typeof t11e.widget_options) {
- *          t11e.widget_options = {};
- *      }
+ *      if ('undefined' === typeof t11e) { t11e = {}; }
+ *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
  *      t11e.widget_options['2103'] = {
  *          "search_group": "vehicle"
  *      };

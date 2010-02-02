@@ -57,16 +57,11 @@ if (false) {
  *  <div class="t11e-ft t11e-widget-jquery-results-ft"></div>
  * </div><script type="text/javascript">
  *  //<!--
- *      if ('undefined' === typeof t11e) {
- *          t11e = {};
- *      }
- *      if ('undefined' === typeof t11e.widget_options) {
- *          t11e.widget_options = {};
- *      }
+ *      if ('undefined' === typeof t11e) { t11e = {}; }
+ *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
  *      t11e.widget_options['2088'] = {
- *          "load_message": "loading",
  *          "search_group": "vehicle",
- *          "base_url": "/proxy/results",
+ *          "base_url": "/proxy/results"
  *      };
  *  //-->
  * </script>

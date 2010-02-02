@@ -85,18 +85,14 @@ if (false) {
  *  <div class="t11e-ft t11e-widget-jquery-faceted-flyout-ft"></div>
  * </div><script type="text/javascript">
  *  //<!--
- *      if ('undefined' === typeof t11e) {
- *          t11e = {};
- *      }
- *      if ('undefined' === typeof t11e.widget_options) {
- *          t11e.widget_options = {};
- *      }
+ *      if ('undefined' === typeof t11e) { t11e = {}; }
+ *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
  *      t11e.widget_options['2077'] = {
- *          "flyout_panel_width": 250,
- *          "value_param": "c",
  *          "search_group": "vehicle",
+ *          "value_param": "c",
  *          "dimension": "category",
- *          "column_count": 2
+ *          "column_count": 2,
+ *          "flyout_panel_width": 250
  *      };
  *  //-->
  * </script>

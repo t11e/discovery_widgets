@@ -53,20 +53,15 @@ if (false) {
  * </div>
  * <script type="text/javascript">
  *  //<!--
- *      if ('undefined' === typeof t11e) {
- *          t11e = {};
- *      }
- *      if ('undefined' === typeof t11e.widget_options) {
- *          t11e.widget_options = {};
- *      }
+ *      if ('undefined' === typeof t11e) { t11e = {}; }
+ *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
  *      t11e.widget_options['2081'] = {
- *          "page_param": null,
+ *          "search_group": "vehicle",
+ *          "min_param": "year_min",
  *          "max_param": "year_max",
  *          "min_value": 1960,
- *          "search_group": "vehicle",
- *          "step": 1,
  *          "max_value": 2010,
- *          "min_param": "year_min"
+ *          "step": 1
  *      };
  *  //-->
  * </script>

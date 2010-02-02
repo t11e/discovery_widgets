@@ -54,11 +54,10 @@ if (false) {
  *   if ('undefined' === typeof t11e) { t11e = {}; }
  *   if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
  *   t11e.widget_options['2105'] = {
- *     "max_value": 5,
- *     "min_value": 0,
  *     "search_group": "default",
- *     "page_param": "page",
- *     "param": "rating"
+ *     "param": "rating",
+ *     "min_value": 0,
+ *     "max_value": 5
  *   };
  * //-->
  * </script>
