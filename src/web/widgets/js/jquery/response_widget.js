@@ -35,122 +35,32 @@ if (false) {
  *<h3>Example Response</h3>
  *<pre class="brush: js">
  * {
- *   "results_query_params": "itemIds=1299123372,1379973264,1379992904,1380507219,1380521004,
- *                          1380521054,1380542517,1380757566,1380942965,1381018779
- *                          &exactMatches=1111111111&totalSize=1110&exactSize=424&startIndex=0&pageSize=10",
  *   "_discovery": {
- *     "request": {
- *       "drillDown": [
- *         {
- *           "ids": [
- *             "vehicles/automobiles/cars",
- *             "vehicles/automobiles/motorcycles",
- *             "vehicles/automobiles/suvs",
- *             "vehicles/automobiles/trucks",
- *             "vehicles/automobiles/vans"
- *           ],
- *           "dimension": "category"
- *         }
- *       ],
- *       "values": [
- *         "latlon"
- *       ],
- *       "pageSize": 10,
- *       "criteria": [
- *         {
- *           "id": "vehicles/automobiles/cars",
- *           "dimension": "category"
- *         }
- *       ]
- *     },
  *     "response": {
- *       "exactMatches": [
- *         true,
- *         true,
- *         true,
- *         true,
- *         true,
- *         true,
- *         true,
- *         true,
- *         true,
- *         true
- *       ],
- *       "pageSize": 10,
- *       "itemIds": [
- *         "1299123372",
- *         "1379973264",
- *         "1379992904",
- *         "1380507219",
- *         "1380521004",
- *         "1380521054",
- *         "1380542517",
- *         "1380757566",
- *         "1380942965",
- *         "1381018779"
- *       ],
- *       "exactSize": 424,
- *       "datasetSize": 3626,
- *       "relevanceValues": [
- *         1,
- *         1,
- *         1,
- *         1,
- *         1,
- *         1,
- *         1,
- *         1,
- *         1,
- *         1
- *       ],
- *       "startIndex": 0,
- *       "totalSize": 1110,
- *       "currentPageSize": 10,
- *       "availableSize": 1110,
- *       "values": {
- *         "latlon": [
- *           "40.7779007,-73.9634018",
- *           "40.446701000000004,-74.4889984",
- *           "40.760299700000004,-74.0509033",
- *           "40.8624992,-74.0747986",
- *           "40.7631989,-73.8672028",
- *           "40.7631989,-73.8672028",
- *           "40.7481995,-73.9325027",
- *           "40.7392998,-73.8896027",
- *           "40.7522011,-73.97419739999998",
- *           "40.7779007,-73.9634018"
- *         ]
- *       },
+ *       "availableSize": 9,
+ *       "currentPageSize": 4,
+ *       "datasetSize": 9,
  *       "drillDown": [
  *         {
- *           "exactCounts": [
- *             424,
- *             48,
- *             429,
- *             68,
- *             56
- *           ],
- *           "fuzzyCounts": [
- *             424,
- *             48,
- *             429,
- *             68,
- *             56
- *           ],
- *           "dimension": "category",
- *           "ids": [
- *             "vehicles/automobiles/cars",
- *             "vehicles/automobiles/motorcycles",
- *             "vehicles/automobiles/suvs",
- *             "vehicles/automobiles/trucks",
- *             "vehicles/automobiles/vans"
- *           ]
+ *           "dimension": "shape",
+ *           "exactCounts": [3, 3, 3],
+ *           "fuzzyCounts": [3, 3, 3],
+ *           "ids": ["square", "circle", "triangle"]
  *         }
- *       ]
+ *       ],
+ *       "exactMatches": [true, true, true, false],
+ *       "exactSize": 3,
+ *       "itemIds": ["CheapHeavyCircle", "CheapLightCircle", "LightCircle", "CheapTriangle"],
+ *       "pageSize": 4,
+ *       "relevanceValues": [1, 1, 1, 0],
+ *       "renderParameters": "startIndex=0&pageSize=4&exactSize=3&totalSize=9&itemIds=CheapHeavyCircle+CheapLightCircle+LightCircle+CheapTriangle&exactMatches=1110",
+ *       "startIndex": 0,
+ *       "totalSize": 9
  *     }
  *   }
  * }
  *</pre>
+ *
  * @name t11e.widget.jquery.ResponseWidget
  * @class Debug widget for displaying search results.
  */
