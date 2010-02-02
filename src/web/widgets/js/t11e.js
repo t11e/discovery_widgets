@@ -444,6 +444,7 @@ t11e.util.deprecated = function (reason, old_function_name, new_function_name) {
             t11e.util.error('Deprecated method', old_function_name, 'has been removed:', reason);
         };
     } else if (t11e.util.is_function(new_function_name)) {
+        /** @ignore */
         decorator = function () {
             t11e.util.warn('Deprecated method', old_function_name, 'called:', reason);
             return new_function_name.apply(this, arguments);
@@ -453,6 +454,7 @@ t11e.util.deprecated = function (reason, old_function_name, new_function_name) {
         if (t11e.util.is_undefined(delegate)) {
             t11e.util.error('t11e.util.deprecated called with invalid new function name', new_function_name);
         } else {
+            /** @ignore */
             decorator = function () {
                 t11e.util.warn('Deprecated method', old_function_name, 'called. Delegating to', new_function_name, ':', reason);
                 return delegate.apply(this, arguments);
