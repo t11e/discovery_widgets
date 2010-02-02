@@ -154,6 +154,10 @@ t11e.widget.jquery.ResultsWidget = function ($) {
     };
     t11e.event.subscribe('response.' + search_group, update_from_response);
 
+    /**
+     * Shows the loading popup if the widget contains a div of
+     * class <code>t11e-widget-jquery-results-loading</code>.
+     */
     var show_loading = function () {
         if (t11e.util.is_defined(loading) && loading.length !== 0 &&
             t11e.util.is_defined(container) && container.length !== 0) {
@@ -221,6 +225,9 @@ t11e.widget.jquery.ResultsWidget = function ($) {
     };
     t11e.event.subscribe('searching.' + search_group, show_loading);
 
+    /**
+     * Hides the loading popup.
+     */
     var hide_loading = function () {
         if (t11e.util.is_defined(loading) && loading.length !== 0 &&
             t11e.util.is_defined(container) && container.length !== 0) {
