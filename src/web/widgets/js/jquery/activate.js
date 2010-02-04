@@ -58,6 +58,8 @@ t11e.widget.jquery.activate_widgets = function ($) {
         t11e.widget.jquery.SliderWidget));
     $('.t11e-widget-jquery-dual-slider').each(call_with_jquery(
         t11e.widget.jquery.DualSliderWidget));
+    $('.t11e-widget-jquery-faceted-dual-slider').each(call_with_jquery(
+        t11e.widget.jquery.FacetedDualSliderWidget));
     $('.t11e-widget-jquery-response').each(call_with_jquery(
         t11e.widget.jquery.ResponseWidget));
     $('.t11e-widget-jquery-results').each(call_with_jquery(

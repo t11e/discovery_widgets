@@ -1,0 +1,83 @@
+.t11e-widget-jquery-results-loading {
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    background-color: #999999;
+    border: 1px solid #666666;
+    color: #FFFFFF;
+    padding: 1em;
+}
+
+/**
+ * Set background color to address IE8 fading text bug
+ */
+.t11e-results {
+    background-color: #FFFFFF;
+}
+
+.t11e-widget-jquery-accordion-bd .accordion-top,
+.t11e-widget-jquery-accordion-bd .accordion-bottom {
+}
+
+.t11e-widget-jquery-button-bd a {
+    display: block;
+}
+
+.t11e-widget-jquery-pagination .pagination {
+    font-size: 80%;
+}
+
+.t11e-widget-jquery-pagination .pagination a {
+    text-decoration: none;
+    border: solid 1px #AAE;
+    color: #15B;
+}
+
+.t11e-widget-jquery-pagination .pagination a, .pagination span {
+    display: block;
+    float: left;
+    padding: 0.3em 0.5em !important;
+    margin: 0 5px 5px 0;
+}
+
+.t11e-widget-jquery-pagination .pagination span.current {
+    background: #26B;
+    color: #fff;
+    border: solid 1px #AAE;
+}
+
+.t11e-widget-jquery-pagination .pagination .current.prev, .pagination .current.next{
+    color:#999;
+    border-color:#999;
+    background:#fff;
+}
+
+
+
+.t11e-widget-jquery-faceted-dual-slider-sparkline .t11e-sparkline {
+    margin-bottom: 0;
+}
+
+.t11e-widget-jquery-faceted-dual-slider-sparkline .ui-slider .ui-slider-handle {
+    background: transparent url(/images/widgets/themes/advanced/thumb-n.gif) no-repeat top center;
+    border: 0;
+    margin-left: -.6em;
+    top: -.2em;
+    width: 1.1em;
+    height: 1.5em;
+}
+.t11e-widget-jquery-faceted-dual-slider-sparkline .ui-slider-horizontal {
+    background-color: transparent;
+    border: 0;
+    margin: -.2em .2em 0 .2em;
+    height: 1em;
+}
+
+.t11e-widget-jquery-faceted-dual-slider-sparkline .ui-slider-horizontal .ui-slider-range {
+    top: 0;
+    height: 0;
+}
+
+.t11e-widget-jquery-faceted-dual-slider-sparkline .t11e-amount {
+    margin-top: 1.2em;
+}
