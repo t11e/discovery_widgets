@@ -11,6 +11,15 @@ if (false) {
     t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
 }
 
+t11e.widget.jquery.util.call_func = function ($, value, func) {
+    if (t11e.util.is_defined(func) &&
+        t11e.util.is_function(func)) {
+        return func($, value);
+    } else {
+        return value;
+    }
+};
+
 t11e.widget.jquery.util.associate_labels = function ($, container) {
     var input = $(container).find('input:first');
     var input_id = input.attr('id');

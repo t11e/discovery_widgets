@@ -95,6 +95,13 @@ groups:
       jslint: off
       sourceFileNames:
         - jquery/jquery-1.3.2.js
+
+    - groupName: sparkline_js
+      mediaType: js
+      outputFileName: jquery.sparkline-1.4.3.js
+      outputFileNameMinified: jquery.sparkline-1.4.3.min.js
+      jslint: off
+      sourceFileNames:
         - jquery/plugins/sparkline/jquery.sparkline-1.4.3.js
 
     - groupName: jquery-ui_css
