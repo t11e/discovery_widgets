@@ -40,38 +40,69 @@ if (false) {
  *    <dt>page_param</dt>
  *    <dd>Causes the pagination widget to reset when when this widget is updated. The 'page_param' value
  *    must be set to the same as the pagination widget's 'page_param' value.</dd>
+ *
+ *    <dt>value_to_param</dt>
+ *    <dd>Optional callback for mapping the slider value to a param value.</dd>
+ *
+ *    <dt>param_to_value</dt>
+ *    <dd>Optional callback for mapping a param value to a slider value.</dd>
+ *
+ *    <dt>sparkline</dt>
+ *    <dd>Configuration for displaying a sparkline (an inline chart) that represents the distribution of
+ *    the slider values.</dd>
+ *
+ *    <dt>format</dt>
+ *    <dd>Optional callback that formats how the slider values are displayed on the page.
  * </dl>
  *
  * <h2>Sample HTML</h2>
- * <div class="t11e-widget t11e-widget-jquery-dual-slider t11e-widget-id-2081">
- *  <div class="t11e-hd t11e-widget-jquery-dual-slider-hd"></div>
- *  <div class="t11e-bd t11e-widget-jquery-dual-slider-bd">
- *      <div class="amount"></div>
- *      <div class="slider-control"></div>
- *  </div>
- *  <div class="t11e-ft t11e-widget-jquery-dual-slider-ft"></div>
+ * <div class="t11e-widget t11e-widget-jquery-faceted-dual-slider t11e-widget-id-7">
+ *     <div class="t11e-hd t11e-widget-jquery-faceted-dual-slider-hd">Price</div>
+ *     <div class="t11e-bd t11e-widget-jquery-faceted-dual-slider-bd">
+ *         <div class="t11e-sparkline"></div>
+ *         <div class="t11e-slider-control"></div>
+ *         <div class="t11e-amount"></div>
+ *     </div>
+ *     <div class="t11e-ft t11e-widget-jquery-faceted-dual-slider-ft">
+ *     </div>
  * </div>
  * <script type="text/javascript">
- *  //<!--
- *      if ('undefined' === typeof t11e) {
- *          t11e = {};
- *      }
- *      if ('undefined' === typeof t11e.widget_options) {
- *          t11e.widget_options = {};
- *      }
- *      t11e.widget_options['2081'] = {
- *          "page_param": null,
- *          "max_param": "year_max",
- *          "min_value": 1960,
- *          "search_group": "vehicle",
- *          "step": 1,
- *          "max_value": 2010,
- *          "min_param": "year_min"
- *      };
- *  //-->
+ * //<!--
+ *     t11e.widget_options['7'] = {
+ *         "search_group": "default",
+ *         "dimension": "price",
+ *         "page_param": "page",
+ *         "min_param": "price_min",
+ *         "max_param": "price_max",
+ *         "min_value": 2,
+ *         "max_value": 10,
+ *         "step": 1,
+ *         "sparkline": {
+ *             "height": "2em",
+ *             "lineWidth": 2,
+ *             "background": {
+ *                 "lineColor": "#AAA",
+ *                 "fillColor": "#CCC"
+ *             },
+ *             "foreground": {
+ *                 "lineColor": "#F66",
+ *                 "fillColor": "#FAA"
+ *             }
+ *         },
+ *         "value_to_param": function ($, value) {
+ *             return Math.pow(Number(value), 3);
+ *         },
+ *         "param_to_value": function ($, value) {
+ *             return Math.ceil(Math.pow(value, 1/3));
+ *         },
+ *         "format": function ($, amount, min_value, max_value) {
+ *             amount.html('$' + min_value + ' - $' + max_value);
+ *         }
+ *     };
+ * //-->
  * </script>
  *
- * @name t11e.widget.jquery.DualSliderWidget
+ * @name t11e.widget.jquery.FacetedDualSliderWidget
  * @class A dual-handled slider widget for searching a range of values.
  */
 t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
@@ -90,15 +121,21 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
         'orientation': t11e.util.is_defined(options.orientation) ? options.orientation : 'horizontal'
     };
     slider_ctl.slider(slider_options);
+
+    var value_to_param = function (value) {
+        return t11e.widget.jquery.util.call_func($, value, options.value_to_param);
+    };
+
+    var param_to_value = function (param) {
+        return t11e.widget.jquery.util.call_func($, param, options.param_to_value);
+    };
+
     var update_amounts = function (event, ui) {
-        var min_value = ui.values[0];
-        var max_value = ui.values[1];
-        if (t11e.util.is_defined(options.value_to_param)) {
-            min_value = options.value_to_param(min_value);
-            max_value = options.value_to_param(max_value);
-        }
-        if (t11e.util.is_defined(options.format)) {
-            options.format(amount, min_value, max_value);
+        var min_value = value_to_param(ui.values[0]);
+        var max_value = value_to_param(ui.values[1]);
+        if (t11e.util.is_defined(options.format) &&
+            t11e.util.is_function(options.format)) {
+            options.format($, amount, min_value, max_value);
         }
         else {
             amount.html(min_value + ' - ' + max_value);
@@ -110,38 +147,38 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
     if (t11e.util.is_defined(options.sparkline) &&
         t11e.util.is_defined(sl) &&
         sl.length > 0 &&
-        t11e.util.is_defined($.sparkline)) {
-        var defined = t11e.util.is_defined(options.value_to_param);
-        var chart_min = defined ? options.value_to_param(slider_options.min) : slider_options.min;
-        var chart_max = defined ? options.value_to_param(slider_options.max) : slider_options.max;
+        t11e.util.is_defined(sl.sparkline)) {
+        $(this).addClass('t11e-widget-jquery-faceted-dual-slider-sparkline');
+        var chart_min = value_to_param(slider_options.min);
+        var chart_max = value_to_param(slider_options.max);
         var sl_options = options.sparkline;
+        var sl_width = $(this).find('.ui-slider-horizontal').width();
         var sl_config = {
             type: 'line',
             height: t11e.util.is_defined(sl_options.height) ? sl_options.height : "2em",
-            width: t11e.util.is_defined(sl_options.width) ? sl_options.width : "auto",
-            lineWidth: t11e.util.is_defined(sl_options.lineWidth) ? sl_options.lineWidth : "2",
+            width: t11e.util.is_defined(sl_options.width) ? sl_options.width : sl_width,
+            lineWidth: t11e.util.is_defined(sl_options.lineWidth) ? sl_options.lineWidth : 2,
             chartRangeMin: chart_min,
             chartRangeMax: chart_max,
             spotColor: '',
             minSpotColor: '',
             maxSpotColor: ''
         };
-        var sl_background = $.extend({}, sl_config, sl.background);
-        var sl_foreground = $.extend({}, sl_config, sl.foreground);
+        var sl_background = $.extend({}, sl_config, sl_options.background);
+        var sl_foreground = $.extend({}, sl_config, sl_options.foreground);
         sl_foreground.composite = true;
-        $(this).addClass('t11e-widget-jquery-faceted-dual-slider-sparkline');
     }
 
-    var show_scale = function (min_value, max_value) {
+    var show_sparkline = function (min_value, max_value) {
         if (t11e.util.is_defined(sl) &&
             t11e.util.is_defined(sl_background) &&
             t11e.util.is_defined(sl_foreground)) {
             var sparkline_values = [];
             var selected = [];
             for (var i = slider_options.min; i <= slider_options.max; i = i + slider_options.step) {
-                sparkline_values.push(options.value_to_param(i));
+                sparkline_values.push(value_to_param(i));
                 if (i >= min_value && i <= max_value) {
-                    selected.push(options.value_to_param(i));
+                    selected.push(value_to_param(i));
                 }
                 else {
                     selected.push(null);
@@ -159,22 +196,12 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
         var slider_min_value;
         var slider_max_value;
         if (t11e.util.is_defined(param_min_values) && param_min_values.length > 0) {
-            var param_min_value =  param_min_values[0];
-            if (t11e.util.is_defined(options.param_to_value)) {
-                slider_min_value = options.param_to_value(param_min_value);
-            } else {
-                slider_min_value = param_min_value;
-            }
+            slider_min_value = param_to_value(param_min_values[0]);
         } else {
             slider_min_value = slider_options.min;
         }
         if (t11e.util.is_defined(param_max_values) && param_max_values.length > 0) {
-            var param_max_value =  param_max_values[0];
-            if (t11e.util.is_defined(options.param_to_value)) {
-                slider_max_value = options.param_to_value(param_max_value);
-            } else {
-                slider_max_value = param_max_value;
-            }
+            slider_max_value = param_to_value(param_max_values[0]);
         } else {
             slider_max_value = slider_options.max;
         }
@@ -194,19 +221,15 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
                     ignore_event = false;
                 }
             }
-            show_scale(slider_min_value, slider_max_value);
+            show_sparkline(slider_min_value, slider_max_value);
         }
     };
     t11e.event.subscribe('request.' + search_group, load_from_params);
 
     var save_to_params = function (params) {
         var values = slider_ctl.slider('values');
-        var param_min_value = values[0];
-        var param_max_value = values[1];
-        if (t11e.util.is_defined(options.value_to_param)) {
-            param_min_value = options.value_to_param(param_min_value);
-            param_max_value = options.value_to_param(param_max_value);
-        }
+        var param_min_value = value_to_param(values[0]);
+        var param_max_value = value_to_param(values[1]);
         params[options.min_param] = [param_min_value];
         params[options.max_param] = [param_max_value];
         // Reset the pagination parameter so that the new results
@@ -226,26 +249,4 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
         t11e.util.remove_param(params, options.page_param);
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
-
-    if (t11e.util.is_defined(dimension)) {
-        /**
-        * @function
-        * @description
-        *     Update the widget's drilldown counts from the search response object.
-        *     This function is used as a callback to the <code>response</code> topic.
-        * @param {Object} search The search response object.
-        */
-        var update_from_response = function (search) {
-            var facet_counts =
-                t11e.widget.jquery.util.get_dimension_drilldown($, search, dimension);
-            //alert(facet_counts);
-        };
-        /**
-         * Subscribe to the response topic.
-         * @param {String} response.search_group
-         * @param {Function} callback
-         */
-        t11e.event.subscribe('response.' + search_group, update_from_response);
-    }
-
 };
