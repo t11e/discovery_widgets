@@ -72,6 +72,7 @@ t11e.widget.jquery.AccordionWidget = function ($) {
     // Capture the height of the accordion so the space will be preserved
     var place_holder_height = accordion.height();
     var original_top = accordion.offset().top;
+    var ie6 = $.browser.msie && $.browser.version.substr(0, 1) < 7;
 
     accordion_top.bind('click', function (event) {
         toggle_accordion();
@@ -83,15 +84,21 @@ t11e.widget.jquery.AccordionWidget = function ($) {
 
     $(window).bind('scroll', function (event) {
         if (is_open) {
-            scroll_top = $(window).scrollTop();
-            container_top = original_top;
-            accordion.animate({
-                top: (scroll_top > container_top ? scroll_top - container_top : 0)
-            }, {
-                duration: 500,
-                easing: 'linear',
-                queue: false
-            });
+            var scroll_top = $(window).scrollTop();
+            if (!ie6) {
+                if (original_top < scroll_top + 2) {
+                    accordion.css({
+                        top: 1,
+                        position: 'fixed'
+                    });
+                }
+                else {
+                    accordion.css({
+                        top: original_top,
+                        position: 'absolute'
+                    });
+                }
+            }
         }
     });
 
@@ -105,10 +112,18 @@ t11e.widget.jquery.AccordionWidget = function ($) {
                 'linear',
                 function () {
                     accordion_body.css({display: 'none'});
-                    accordion.css({top: 0});
+                    accordion.css({position: 'absolute', top: original_top});
                 });
         } else {
             accordion_body.css({display: 'block'});
+            var scroll_top = $(window).scrollTop();
+
+            if (!ie6 && original_top < scroll_top + 2) {
+                accordion.css({
+                    top: 1,
+                    position: 'fixed'
+                });
+            }
             accordion_body.animate(
                 {
                     height: contained_widget_height
