@@ -52,24 +52,24 @@ groups:
         - widgets/js/t11e/internals.js
         - widgets/js/t11e/event.js
         - widgets/js/t11e/util.js
-        - widgets/js/page_controller.js
-        - widgets/js/jquery/search_plugin.js
-        - widgets/js/jquery/history_plugin.js
-        - widgets/js/jquery/util.js
-        - widgets/js/jquery/slider_widget.js
-        - widgets/js/jquery/dual_slider_widget.js
-        - widgets/js/jquery/response_widget.js
-        - widgets/js/jquery/results_widget.js
-        - widgets/js/jquery/pagination_widget.js
-        - widgets/js/jquery/faceted_checkboxes_widget.js
-        - widgets/js/jquery/faceted_flyout_widget.js
-        - widgets/js/jquery/text_box_widget.js
-        - widgets/js/jquery/button_widget.js
-        - widgets/js/jquery/params_widget.js
-        - widgets/js/jquery/google_map_widget.js
-        - widgets/js/jquery/accordion_widget.js
-        - widgets/js/jquery/activate.js
-        - widgets/js/jquery/document.js
+        - widgets/js/t11e/widget/page_controller.js
+        - widgets/js/t11e/widget/jquery/search_plugin.js
+        - widgets/js/t11e/widget/jquery/history_plugin.js
+        - widgets/js/t11e/widget/jquery/util.js
+        - widgets/js/t11e/widget/jquery/slider_widget.js
+        - widgets/js/t11e/widget/jquery/dual_slider_widget.js
+        - widgets/js/t11e/widget/jquery/response_widget.js
+        - widgets/js/t11e/widget/jquery/results_widget.js
+        - widgets/js/t11e/widget/jquery/pagination_widget.js
+        - widgets/js/t11e/widget/jquery/faceted_checkboxes_widget.js
+        - widgets/js/t11e/widget/jquery/faceted_flyout_widget.js
+        - widgets/js/t11e/widget/jquery/text_box_widget.js
+        - widgets/js/t11e/widget/jquery/button_widget.js
+        - widgets/js/t11e/widget/jquery/params_widget.js
+        - widgets/js/t11e/widget/jquery/google_map_widget.js
+        - widgets/js/t11e/widget/jquery/accordion_widget.js
+        - widgets/js/t11e/widget/jquery/activate.js
+        - widgets/js/t11e/widget/jquery/document.js
 
     - groupName: yui_css
       mediaType: css
