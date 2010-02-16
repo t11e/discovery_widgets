@@ -54,6 +54,8 @@ t11e.widget.jquery.activate_widgets = function ($) {
     /**
     * Activate jQuery widgets.
     */
+    $('.t11e-widget-jquery-faceted-slider').each(call_with_jquery(
+        t11e.widget.jquery.FacetedSliderWidget));
     $('.t11e-widget-jquery-slider').each(call_with_jquery(
         t11e.widget.jquery.SliderWidget));
     $('.t11e-widget-jquery-dual-slider').each(call_with_jquery(

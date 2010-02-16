@@ -111,26 +111,47 @@ t11e.widget.jquery.FacetedSliderWidget = function ($) {
         * @param {Object} search The search response object.
         */
         var update_from_response = function (search) {
-            var current = slider_ctl.slider('value');
+            var current = Number(slider_ctl.slider('value'));
             var cmap = {};
-            var facet_counts =
-                t11e.widget.jquery.util.get_dimension_drilldown($, search, dimension);
+            //var facet_counts =
+            //    t11e.widget.jquery.util.get_dimension_drilldown($, search, dimension);
+            var found = false;
+            //t11e.util.log(facet_counts);
             if (t11e.util.is_defined(facets)) {
+                t11e.util.log('Calculating bars');
                 sparkline_values = [];
-                for (var facet in facet_counts) {
-                    sparkline_values.push(facet_counts[facet]);
-                    if (facet === current) {
-                        cmap[facet] = '#f00';
-                    } else {
-                        cmap[facet] = '#ccc';
-                    }
+                var drillDown = t11e.util.deref(search, '_discovery.response.drillDown');
+                if (t11e.util.is_defined(drillDown)) {
+                    $(drillDown).each(function (i, criterion) {
+                        if (!found && dimension === criterion.dimension) {
+                            found = true;
+                            var ids = criterion.ids;
+                            var counts = criterion.exactCounts;
+                            var j;
+                            for (j = 0; j < ids.length && j < counts.length; j++) {
+                                var id = ids[j];
+                                var count = counts[j];
+                                sparkline_values.push(count);
+                                t11e.util.log(current, j);
+                                if (j === current) {
+                                    t11e.util.log('#f00');
+                                    cmap[j] = '#f00';
+                                } else {
+                                    //t11e.util.log('#ccc');
+                                    //cmap[j] = '#ccc';
+                                }
+                            }
+                        }
+                    });
                 }
+
                 t11e.util.log(sparkline_values);
                 facets.sparkline(sparkline_values, {
                     type: 'bar',
-                    barWidth: 16,
-                    barSpacing: 11,
-                    colorMap: cmap
+                    //width: '156px'
+                    barColor: '#ccc',
+                    barWidth: 155 / 6
+                    //barSpacing: 11
                 });
             }
         };

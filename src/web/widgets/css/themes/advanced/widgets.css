@@ -52,8 +52,6 @@
     background:#fff;
 }
 
-
-
 .t11e-widget-jquery-faceted-dual-slider-sparkline .t11e-bd {
     padding: .6em;
 }
@@ -84,4 +82,28 @@
 
 .t11e-widget-jquery-faceted-dual-slider-sparkline .t11e-amount {
     margin-top: 1.2em;
+}
+
+.t11e-widget-jquery-faceted-slider .t11e-bd {
+    padding: 6px;
+}
+
+.t11e-widget-jquery-faceted-slider-bd .ui-slider-horizontal {
+    background-color: transparent;
+    border: 0;
+    /*margin: -.2em .2em 0 .2em;*/
+    height: 1em;
+}
+
+.t11e-widget-jquery-faceted-slider-bd .ui-slider .ui-slider-handle {
+    background: transparent url(/images/widgets/themes/advanced/thumb-n.gif) no-repeat top center;
+    border: 0;
+    margin-left: -8px;
+    top: -4px;
+    width: 16px;
+    height: 18px;
+}
+
+.t11e-widget-jquery-faceted-slider-bd .t11e-facets {
+    margin-left: -6px;
 }
