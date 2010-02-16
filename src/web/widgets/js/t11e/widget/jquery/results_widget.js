@@ -82,10 +82,16 @@ t11e.widget.jquery.ResultsWidget = function ($) {
     var center_horizontally = options.center_horizontally || false;
     var center_vertically = options.center_vertically || true;
     var z_index = options.z_index || 1000;
+    var highlight_template = options.highlight_template || '<span class="highlight"/>';
+    var results_callback = options.results_callback;
+    if (!t11e.util.is_function(results_callback)) {
+        results_callback = t11e.util.deref(window, results_callback);
+    }
 
     var target = $(this).find('.t11e-results:first');
     var container = $(this).find('.t11e-widget-jquery-results-bd:first');
     var loading = $(this).find('.t11e-widget-jquery-results-loading:first');
+
     var update_from_error = function (title, error) {
         if (t11e.util.is_defined(target) && target.length !== 0) {
             target.html('<div class="t11e-error">' +
@@ -111,6 +117,7 @@ t11e.widget.jquery.ResultsWidget = function ($) {
         update_from_error('Problem performing search.', error);
         hide_loading();
     });
+
     /** @scope t11e.widget.jquery.ResultsWidget */
    /**
     * This function is used as a callback for the <code>response</code> event. It takes
@@ -140,13 +147,28 @@ t11e.widget.jquery.ResultsWidget = function ($) {
             hide_loading();
         } else {
             var url = base_url + '?' + query_params;
-            target.load(url, null, function (responseText, statusText, xhr) {
+            // Load the results into a dummy div and then splice them into
+            // the document as a separate step so we can process them
+            // before they are displayed.
+            var dummy = $('<div/>');
+            dummy.load(url, null, function (responseText, statusText, xhr) {
                 if (xhr.status < 200 || xhr.status >= 300) {
                     update_from_error('Problem rendering results.', {
                         status: xhr.status,
                         statusText: xhr.statusText,
                         responseText: responseText
                     });
+                }
+                else
+                {
+                    highlight_text(dummy, t11e.util.deref(search, '_discovery.response'));
+                    if (t11e.util.is_defined(results_callback)) {
+                        results_callback(dummy, search);
+                    }
+                    var contents = dummy.children().clone(true);
+                    target.empty();
+                    target.append(contents);
+                    dummy.empty();
                 }
                 hide_loading();
             });
@@ -259,4 +281,28 @@ t11e.widget.jquery.ResultsWidget = function ($) {
         }
     };
 
+    var highlight_text = function (target, discoveryResponse) {
+        if (t11e.util.is_array(options.highlight_filter)) {
+            var explanation = t11e.util.deref(discoveryResponse, 'explanation');
+            if (t11e.util.is_defined(explanation)) {
+                var tokens = [];
+                $(explanation).each(function (i, explain) {
+                    var currentTokens = explain.textTokens;
+                    if (t11e.util.is_defined(currentTokens)) {
+                        tokens = tokens.concat(tokens, currentTokens);
+                    }
+                });
+                if (tokens.length > 0) {
+                    var sections = [];
+                    $(options.highlight_filter).each(function (i, filter) {
+                        $.merge(sections, target.find(filter));
+                    });
+                    $(sections).each(function (i, section) {
+                        t11e.widget.jquery.text_highlighter($, section, highlight_template,
+                            t11e.widget.jquery.text_token_filter_factory($, tokens));
+                    });
+                }
+            }
+        }
+    };
 };
