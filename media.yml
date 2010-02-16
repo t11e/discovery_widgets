@@ -92,6 +92,16 @@ groups:
         - yui/2.7.0/build/grids/grids.css
         - yui/2.7.0/build/base/base.css
 
+    - groupName: yui_grids_css
+      mediaType: css
+      outputFileName: yui_grids-2.7.0.css
+      outputFileNameMinified: yui_grids-2.7.0.min.css
+      sourceFileNames:
+        #- yui/2.7.0/build/reset/reset.css
+        #- yui/2.7.0/build/fonts/fonts.css
+        - yui/2.7.0/build/grids/grids.css
+        #- yui/2.7.0/build/base/base.css
+
     - groupName: jquery_js
       mediaType: js
       outputFileName: jquery-1.3.2.js
