@@ -182,12 +182,17 @@ t11e.util.remove_param = function (params, param) {
  * @param path
  */
 t11e.util.deref = function (context, path) {
-    var output = context;
-    var parts = path.split('.');
-    var part;
-    for (var i = 0; i < parts.length && t11e.util.is_defined(output); i++) {
-        part = parts[i];
-        output = output[part];
+    var output;
+    if (t11e.util.is_undefined(path)) {
+        output = undefined;
+    } else {
+        output = context;
+        var parts = path.split('.');
+        var part;
+        for (var i = 0; i < parts.length && t11e.util.is_defined(output); i++) {
+            part = parts[i];
+            output = output[part];
+        }
     }
     return output;
 };
