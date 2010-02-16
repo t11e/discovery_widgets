@@ -130,20 +130,6 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
         return t11e.widget.jquery.util.call_func($, param, options.param_to_value);
     };
 
-    var update_amounts = function (event, ui) {
-        var min_value = value_to_param(ui.values[0]);
-        var max_value = value_to_param(ui.values[1]);
-        if (t11e.util.is_defined(options.format) &&
-            t11e.util.is_function(options.format)) {
-            options.format($, amount, min_value, max_value);
-        }
-        else {
-            amount.html(min_value + ' - ' + max_value);
-        }
-    };
-    slider_ctl.bind('slide', update_amounts);
-    update_amounts(null, slider_options);
-
     if (t11e.util.is_defined(options.sparkline) &&
         t11e.util.is_defined(sl) &&
         sl.length > 0 &&
@@ -169,10 +155,24 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
         sl_foreground.composite = true;
     }
 
-    var show_sparkline = function (min_value, max_value) {
+    var update_amounts = function (event, ui) {
+        var min_value = value_to_param(ui.values[0]);
+        var max_value = value_to_param(ui.values[1]);
+        if (t11e.util.is_defined(options.format) &&
+            t11e.util.is_function(options.format)) {
+            options.format($, amount, min_value, max_value);
+        }
+        else {
+            amount.html(min_value + ' - ' + max_value);
+        }
+    };
+
+    var show_sparkline = function (event, ui) {
         if (t11e.util.is_defined(sl) &&
             t11e.util.is_defined(sl_background) &&
             t11e.util.is_defined(sl_foreground)) {
+            var min_value = ui.values[0];
+            var max_value = ui.values[1];
             var sparkline_values = [];
             var selected = [];
             for (var i = slider_options.min; i <= slider_options.max; i = i + slider_options.step) {
@@ -188,6 +188,10 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
             sl.sparkline(selected, sl_foreground);
         }
     };
+    slider_ctl.bind('slide', update_amounts);
+    slider_ctl.bind('slide', show_sparkline);
+    update_amounts(null, slider_options);
+    show_sparkline(null, slider_options);
 
     var ignore_event = false;
     var load_from_params = function (params) {
@@ -216,12 +220,15 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
                     update_amounts(null, {
                         'values': [slider_min_value, slider_max_value]
                     });
+                    show_sparkline(null, {
+                        'values': [slider_min_value, slider_max_value]
+                    });
                 }
                 finally {
                     ignore_event = false;
                 }
             }
-            show_sparkline(slider_min_value, slider_max_value);
+
         }
     };
     t11e.event.subscribe('request.' + search_group, load_from_params);
@@ -249,4 +256,5 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
         t11e.util.remove_param(params, options.page_param);
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
+
 };
