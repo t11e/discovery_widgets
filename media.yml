@@ -72,6 +72,7 @@ groups:
         - widgets/js/t11e/widget/jquery/response_widget.js
         - widgets/js/t11e/widget/jquery/results_widget.js
         - widgets/js/t11e/widget/jquery/pagination_widget.js
+        - widgets/js/t11e/widget/jquery/select_widget.js
         - widgets/js/t11e/widget/jquery/faceted_checkboxes_widget.js
         - widgets/js/t11e/widget/jquery/faceted_flyout_widget.js
         - widgets/js/t11e/widget/jquery/text_box_widget.js
