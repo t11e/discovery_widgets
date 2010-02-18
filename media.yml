@@ -131,7 +131,7 @@ groups:
         - jquery/jquery-ui/1.7.2/css/ui.dialog.css
         #- jquery/jquery-ui/1.7.2/css/ui.progressbar.css
         - jquery/jquery-ui/1.7.2/css/ui.slider.css
-        #- jquery/jquery-ui/1.7.2/css/ui.tabs.css
+        - jquery/jquery-ui/1.7.2/css/ui.tabs.css
 
     - groupName: jquery-ui_js
       mediaType: js
@@ -163,7 +163,7 @@ groups:
         - jquery/jquery-ui/1.7.2/js/ui.dialog.js
         #- jquery/jquery-ui/1.7.2/js/ui.progressbar.js
         - jquery/jquery-ui/1.7.2/js/ui.slider.js
-        #- jquery/jquery-ui/1.7.2/js/ui.tabs.js
+        - jquery/jquery-ui/1.7.2/js/ui.tabs.js
 
 jslintOptions:
     #- adsafe
