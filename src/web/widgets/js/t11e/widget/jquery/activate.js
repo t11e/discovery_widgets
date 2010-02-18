@@ -68,6 +68,8 @@ t11e.widget.jquery.activate_widgets = function ($) {
         t11e.widget.jquery.ResultsWidget));
     $('.t11e-widget-jquery-pagination').each(call_with_jquery(
         t11e.widget.jquery.PaginationWidget));
+    $('.t11e-widget-jquery-select').each(call_with_jquery(
+        t11e.widget.jquery.SelectWidget));
     $('.t11e-widget-jquery-faceted-checkboxes').each(call_with_jquery(
         t11e.widget.jquery.FacetedCheckboxesWidget));
     $('.t11e-widget-jquery-textbox').each(call_with_jquery(
