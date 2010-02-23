@@ -158,6 +158,21 @@ groups:
         - jquery/jquery-ui/1.7.2/js/ui.slider.js
         - jquery/jquery-ui/1.7.2/js/ui.tabs.js
 
+    - groupName: qunit_css
+      mediaType: css
+      outputFileName: qunit.css
+      outputFileNameMinified: qunit.min.css
+      sourceFileNames:
+        - jquery/qunit/532c6e9/qunit/qunit.css
+
+    - groupName: qunit_js
+      mediaType: js
+      outputFileName: qunit.js
+      outputFileNameMinified: qunit.min.js
+      jslint: off
+      sourceFileNames:
+        - jquery/qunit/532c6e9/qunit/qunit.js
+
 jslintOptions:
     #- adsafe
     - bitwise
