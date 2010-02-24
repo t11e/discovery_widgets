@@ -56,7 +56,7 @@ $initial = t11e_initial_request($url, $request);
                         <div class="yui-g">
                             <div class="yui-u first">
 
-<div class="t11e-widget t11e-widget-jquery-pagination t11e-widget-id-1">
+<div class="t11e-widget t11e-widget-jquery-pagination t11e-widget-id-pagination1">
     <div class="t11e-hd t11e-widget-jquery-pagination-hd"></div>
     <div class="t11e-bd t11e-widget-jquery-pagination-bd">
         <div class="pagination">
@@ -67,14 +67,14 @@ $initial = t11e_initial_request($url, $request);
 </div>
 <script type="text/javascript">
 //<!--
-    t11e.widget_options['1'] = {
+    t11e.widget_options['pagination1'] = {
         "search_group": "default",
         "page_param": "page"
     };
 //-->
 </script>
 
-<div class="t11e-widget t11e-widget-jquery-results t11e-widget-id-2">
+<div class="t11e-widget t11e-widget-jquery-results t11e-widget-id-results">
     <div class="t11e-hd t11e-widget-jquery-results-hd"></div>
     <div class="t11e-bd t11e-widget-jquery-results-bd">
         <div class="t11e-results"></div>
@@ -86,14 +86,14 @@ $initial = t11e_initial_request($url, $request);
 </div>
 <script type="text/javascript">
 //<!--
-    t11e.widget_options['2'] = {
+    t11e.widget_options['results'] = {
         "search_group": "default",
         "base_url": "php/t11e_tutorial_results.php"
     };
 //-->
 </script>
 
-<div class="t11e-widget t11e-widget-jquery-pagination t11e-widget-id-3">
+<div class="t11e-widget t11e-widget-jquery-pagination t11e-widget-id-pagination2">
     <div class="t11e-hd t11e-widget-jquery-pagination-hd"></div>
     <div class="t11e-bd t11e-widget-jquery-pagination-bd">
         <div class="pagination">
@@ -103,14 +103,14 @@ $initial = t11e_initial_request($url, $request);
     <div class="t11e-ft t11e-widget-jquery-pagination-ft"></div>
 </div><script type="text/javascript">
 //<!--
-    t11e.widget_options['3'] = {
+    t11e.widget_options['pagination2'] = {
         "search_group": "default",
         "page_param": "page"
     };
 //-->
 </script>
 
-<div class="t11e-widget t11e-widget-jquery-response t11e-widget-id-4">
+<div class="t11e-widget t11e-widget-jquery-response t11e-widget-id-response">
     <div class="t11e-hd t11e-widget-jquery-response-hd">JSON Response</div>
     <div class="t11e-bd t11e-widget-jquery-response-bd">
         <div class="response"></div>
@@ -119,7 +119,7 @@ $initial = t11e_initial_request($url, $request);
 </div>
 <script type="text/javascript">
 //<!--
-    t11e.widget_options['4'] = {
+    t11e.widget_options['response'] = {
         "search_group": "default"
     };
 //-->
@@ -134,7 +134,7 @@ $initial = t11e_initial_request($url, $request);
                 </div>
                 <div class="yui-b">
 
-<div class="t11e-widget t11e-widget-jquery-button t11e-widget-id-5">
+<div class="t11e-widget t11e-widget-jquery-button t11e-widget-id-clear">
     <div class="t11e-hd t11e-widget-jquery-button-hd"></div>
     <div class="t11e-bd t11e-widget-jquery-button-bd">
         <a href="#">Clear</a>
@@ -143,14 +143,14 @@ $initial = t11e_initial_request($url, $request);
 </div>
 <script type="text/javascript">
 //<!--
-   t11e.widget_options['5'] = {
+   t11e.widget_options['clear'] = {
        "search_group": "default",
        "event_name": "clear_search.${search_group}"
    };
 //-->
 </script>
 
-<div class="t11e-widget t11e-widget-jquery-select t11e-widget-id-6">
+<div class="t11e-widget t11e-widget-jquery-select t11e-widget-id-type">
     <div class="t11e-hd t11e-widget-jquery-select-hd"><h1>Type</h1></div>
     <div class="t11e-bd t11e-widget-jquery-select-bd">
         <form action="">
@@ -165,14 +165,14 @@ $initial = t11e_initial_request($url, $request);
 </div>
 <script type="text/javascript">
 //<!--
-   t11e.widget_options['6'] = {
+   t11e.widget_options['type'] = {
        "search_group": "default",
        "value_param": "type"
    };
 //-->
 </script>
 
-<div class="t11e-widget t11e-widget-jquery-faceted-slider t11e-widget-id-7">
+<div class="t11e-widget t11e-widget-jquery-faceted-slider t11e-widget-id-bedrooms">
     <div class="t11e-hd t11e-widget-jquery-faceted-slider-hd"><h1>Bedrooms</h1></div>
     <div class="t11e-bd t11e-widget-jquery-faceted-slider-bd">
         <div class="t11e-sparkline"></div>
@@ -184,7 +184,7 @@ $initial = t11e_initial_request($url, $request);
 </div>
 <script type="text/javascript">
 //<!--
-    t11e.widget_options['7'] = {
+    t11e.widget_options['bedrooms'] = {
         "search_group": "default",
         "dimension": "bedroom",
         "page_param": "page",
@@ -214,7 +214,7 @@ $initial = t11e_initial_request($url, $request);
 //-->
 </script>
 
-<div class="t11e-widget t11e-widget-jquery-faceted-slider t11e-widget-id-8">
+<div class="t11e-widget t11e-widget-jquery-faceted-slider t11e-widget-id-bath">
     <div class="t11e-hd t11e-widget-jquery-faceted-slider-hd"><h1>Baths</h1></div>
     <div class="t11e-bd t11e-widget-jquery-faceted-slider-bd">
         <div class="t11e-sparkline"></div>
@@ -226,7 +226,7 @@ $initial = t11e_initial_request($url, $request);
 </div>
 <script type="text/javascript">
 //<!--
-    t11e.widget_options['8'] = {
+    t11e.widget_options['bath'] = {
         "search_group": "default",
         "dimension": "bath",
         "page_param": "page",
@@ -308,7 +308,7 @@ $initial = t11e_initial_request($url, $request);
 //-->
 </script>
 
-<div class="t11e-widget t11e-widget-jquery-faceted-dual-slider t11e-widget-id-9">
+<div class="t11e-widget t11e-widget-jquery-faceted-dual-slider t11e-widget-id-price">
     <div class="t11e-hd t11e-widget-jquery-faceted-dual-slider-hd"><h1>Price</h1></div>
     <div class="t11e-bd t11e-widget-jquery-faceted-dual-slider-bd">
         <div class="t11e-amount"></div>
@@ -319,7 +319,7 @@ $initial = t11e_initial_request($url, $request);
 </div>
 <script type="text/javascript">
 //<!--
-    t11e.widget_options['9'] = {
+    t11e.widget_options['price'] = {
         "search_group": "default",
         "dimension": "price",
         "page_param": "page",
@@ -336,7 +336,7 @@ $initial = t11e_initial_request($url, $request);
 //-->
 </script>
 
-<div class="t11e-widget t11e-widget-jquery-faceted-dual-slider t11e-widget-id-10">
+<div class="t11e-widget t11e-widget-jquery-faceted-dual-slider t11e-widget-id-lease">
     <div class="t11e-hd t11e-widget-jquery-faceted-dual-slider-hd"><h1>Lease</h1></div>
     <div class="t11e-bd t11e-widget-jquery-faceted-dual-slider-bd">
         <div class="t11e-amount"></div>
@@ -347,7 +347,7 @@ $initial = t11e_initial_request($url, $request);
 </div>
 <script type="text/javascript">
 //<!--
-    t11e.widget_options['10'] = {
+    t11e.widget_options['lease'] = {
         "search_group": "default",
         "dimension": "lease",
         "page_param": "page",
@@ -363,7 +363,7 @@ $initial = t11e_initial_request($url, $request);
 //-->
 </script>
 
-<div class="t11e-widget t11e-widget-jquery-faceted-checkboxes t11e-widget-id-11">
+<div class="t11e-widget t11e-widget-jquery-faceted-checkboxes t11e-widget-id-style">
     <div class="t11e-hd t11e-widget-jquery-faceted-checkboxes-hd"><h1>Style</h1></div>
     <div class="t11e-bd t11e-widget-jquery-faceted-checkboxes-bd">
         <form action="">
@@ -612,7 +612,7 @@ $initial = t11e_initial_request($url, $request);
 </div>
 <script type="text/javascript">
  //<!--
-     t11e.widget_options['11'] = {
+     t11e.widget_options['style'] = {
          "search_group": "default",
          "value_param": "style",
          "dimension": "style"

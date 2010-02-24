@@ -18,8 +18,7 @@
  */
 .t11e-widget-jquery-faceted-checkboxes-bd div.row input {
     float: left;
-    margin-top: .125em;
-    margin-bottom: 0;
+    margin: .125em 0 0 0;
 }
 
 /*
@@ -27,6 +26,7 @@
  */
 .t11e-widget-jquery-faceted-checkboxes-bd div.row label {
     float: left;
+    margin: 0 0 0 .5em;
     width: 65%;
 }
 
@@ -37,4 +37,19 @@
     position: absolute;
     top: 0;
     right: .1em;
+}
+
+/*
+ * Remove bullets/numbers from ordered lists
+ */
+.t11e-widget-jquery-faceted-checkboxes-bd ol {
+    margin:0 0 0 0;
+}
+
+.t11e-widget-jquery-faceted-checkboxes-bd ol ol {
+    margin:0 0 0 1em;
+}
+
+.t11e-widget-jquery-faceted-checkboxes-bd li {
+    list-style-type: none;
 }
