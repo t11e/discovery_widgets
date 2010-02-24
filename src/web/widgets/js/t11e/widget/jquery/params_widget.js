@@ -17,10 +17,11 @@ if (false) {
 t11e.widget.jquery.ParamsWidget = function ($) {
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var search_group = options.search_group;
-    var target = $(this).find(".params:first");
+    var target = $(this).find(".t11e-params:first");
 
     var load_from_params = function (params) {
         target.html('<pre style="overflow:scroll;">' + JSON.stringify(params, null, '  ') + '</pre>');
     };
     t11e.event.subscribe('request.' + search_group, load_from_params);
+
 };
