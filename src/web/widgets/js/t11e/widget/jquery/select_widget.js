@@ -14,7 +14,7 @@ if (false) {
  *
  * <h2>Options</h2>
  *
- *<dl>
+ * <dl>
  *    <dt>css_class</dt>
  *    <dd>An option CSS class to be applied to this widget instance to facilitate custom styling.</dd>
  *
@@ -23,10 +23,7 @@ if (false) {
  *
  *    <dt>value_param</dt>
  *    <dd>The search group parameter this widget listens to.</dd>
- *
- *    <dt>dimension</dt>
- *    <dd>The dimension (index) used for updating drilldown counts.</dd>
-
+ * </dl>
  * <h2>Example</h2>
  *
  * @name t11e.widget.jquery.SelectWidget
@@ -34,11 +31,11 @@ if (false) {
  *
  * */
 t11e.widget.jquery.SelectWidget = function ($) {
-    t11e.util.log('Initializing SelectWidget');
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var search_group = options.search_group;
     var value_param = options.value_param;
     var dimension = options.dimension;
+    var select = $(this).find('form select');
     var select_options = $(this).find('form select option');
 
     var ignore_event = false;
@@ -118,7 +115,7 @@ t11e.widget.jquery.SelectWidget = function ($) {
      *
      * @param {Object} event
      */
-    var option_clicked = function (event) {
+    var option_changed = function (event) {
         if (!ignore_event) {
             var changed = false;
             t11e.event.trigger('update_request.' + search_group, function (params) {
@@ -136,44 +133,7 @@ t11e.widget.jquery.SelectWidget = function ($) {
         }
     };
 
-    select_options.each(function (i, option) {
-        $(option).bind('click', option_clicked);
-    });
-
-    if (t11e.util.is_defined(dimension)) {
-        /**
-        * @function
-        * @description
-        *     Update the widget's drilldown counts from the search response object.
-        *     This function is used as a callback to the <code>response</code> topic.
-        * @param {Object} search The search response object.
-        */
-        var update_from_response = function (search) {
-            var facet_counts =
-                t11e.widget.jquery.util.get_dimension_drilldown($, search, dimension);
-
-            select_options.each(function (i, option) {
-                var count = facet_counts[option.value];
-                if (t11e.util.is_undefined(count)) {
-                    count = 0;
-                }
-                alert($(option).find('.facet-count').length);
-                $(option).find('span.facet-count').each(function (i, span) {
-                    $(span).html(count);
-                });
-            });
-        };
-        /**
-         * Subscribe to the response topic.
-         * @param {String} response.search_group
-         * @param {Function} callback
-         */
-        t11e.event.subscribe('response.' + search_group, update_from_response);
-    }
-
-    //$(this).find('form div.row').each(function (i, row) {
-    //   t11e.widget.jquery.util.associate_labels($, row);
-    //});
+    $(select).bind('change', option_changed);
 
     /**
      * Clear all the widget's options. This
