@@ -82,12 +82,10 @@ t11e.widget.jquery.FacetedSliderWidget = function ($) {
     slider_ctl.slider(slider_options);
 
     var value_to_param = function (value) {
-        t11e.util.log('calling value to param', value);
         return t11e.widget.jquery.util.call_func($, value, options.value_to_param);
     };
 
     var param_to_value = function (param) {
-        t11e.util.log('calling param to value', param);
         return t11e.widget.jquery.util.call_func($, param, options.param_to_value);
     };
 
@@ -104,67 +102,7 @@ t11e.widget.jquery.FacetedSliderWidget = function ($) {
     slider_ctl.bind('slide', update_amounts);
     update_amounts(null, slider_options);
 
-    if (t11e.util.is_defined(dimension)) {
-        /**
-        * @function
-        * @description
-        * @param {Object} search The search response object.
-        */
-        var update_from_response = function (search) {
-            var current = Number(slider_ctl.slider('value'));
-            var cmap = {};
-            //var facet_counts =
-            //    t11e.widget.jquery.util.get_dimension_drilldown($, search, dimension);
-            var found = false;
-            //t11e.util.log(facet_counts);
-            if (t11e.util.is_defined(facets)) {
-                t11e.util.log('Calculating bars');
-                sparkline_values = [];
-                var drillDown = t11e.util.deref(search, '_discovery.response.drillDown');
-                if (t11e.util.is_defined(drillDown)) {
-                    $(drillDown).each(function (i, criterion) {
-                        if (!found && dimension === criterion.dimension) {
-                            found = true;
-                            var ids = criterion.ids;
-                            var counts = criterion.exactCounts;
-                            var j;
-                            for (j = 0; j < ids.length && j < counts.length; j++) {
-                                var id = ids[j];
-                                var count = counts[j];
-                                sparkline_values.push(count);
-                                t11e.util.log(current, j);
-                                if (j === current) {
-                                    t11e.util.log('#f00');
-                                    cmap[j] = '#f00';
-                                } else {
-                                    //t11e.util.log('#ccc');
-                                    //cmap[j] = '#ccc';
-                                }
-                            }
-                        }
-                    });
-                }
-
-                t11e.util.log(sparkline_values);
-                facets.sparkline(sparkline_values, {
-                    type: 'bar',
-                    //width: '156px'
-                    barColor: '#ccc',
-                    barWidth: 155 / 6
-                    //barSpacing: 11
-                });
-            }
-        };
-        /**
-         * Subscribe to the response topic.
-         * @param {String} response.search_group
-         * @param {Function} callback
-         */
-        t11e.event.subscribe('response.' + search_group, update_from_response);
-    }
-
     var ignore_event = false;
-    /** @scope t11e.widget.jquery.SliderWidget */
     /**
      * This function is used as a callback for the <code>request</code> event and it is
      * used to update the slider's state from the current search parameters
@@ -189,7 +127,6 @@ t11e.widget.jquery.FacetedSliderWidget = function ($) {
     };
     t11e.event.subscribe('request.' + search_group, load_from_params);
 
-    /** @scope t11e.widget.jquery.SliderWidget */
     /**
      * This function is used as a callback for the <code>update_request</code> event.
      * It takes a single argument, which is the search parameters object,
@@ -205,7 +142,8 @@ t11e.widget.jquery.FacetedSliderWidget = function ($) {
      */
     var save_to_params = function (params) {
         var value = slider_ctl.slider('value');
-        params[options.param] = [value_to_param(value)];
+        var param = value_to_param(value);
+        params[options.param] = [param];
         t11e.util.remove_param(params, options.page_param);
     };
 
