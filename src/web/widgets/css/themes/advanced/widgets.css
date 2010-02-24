@@ -15,8 +15,77 @@
     background-color: #FFFFFF;
 }
 
+.t11e-widget {
+}
+
+.t11e-widget .t11e-bd {
+    padding: 0 .5em 0 .5em;
+}
+
+/**
+* @copyright Transparensee Systems, Inc.
+* @fileOverview accordion_widget.css
+* Core styles for t11e.widget.jquery.AccordionWidget.
+*/
+
+.t11e-widget-jquery-accordion {
+    border: 1px solid red;
+     height: 69px;
+     width: 785px;
+
+}
+
+.accordion-top {
+     margin:0 !important;
+     border: 1px solid green;
+     width: 785px;
+}
+
+.t11e-widget-jquery-accordion {
+   /*position: static;*/
+}
+
+.t11e-widget-jquery-accordion-bd {
+   position: absolute;
+   padding: 0 !important;
+   z-index: 500;
+}
+
 .t11e-widget-jquery-accordion-bd .accordion-top,
 .t11e-widget-jquery-accordion-bd .accordion-bottom {
+   -moz-background-clip: border;
+   -moz-background-inline-policy: continuous;
+   -moz-background-origin: padding;
+   background: #FF0000 url(/images/widgets/themes/advanced/hd_map_results.png) no-repeat scroll 0 0;
+}
+
+.t11e-widget-jquery-accordion-bd .accordion-top {
+height: 34px;
+margin-top: 0.5em;
+}
+
+.t11e-widget-jquery-accordion-bd .accordion-bottom {
+background-position: 0 -34px;
+height: 29px;
+}
+
+.t11e-widget-jquery-accordion-bd .accordion-body {
+ display: none;
+}
+
+.t11e-widget-jquery-accordion ol.t11e-list-entries {
+   margin: 0;
+   padding: 0;
+}
+
+.t11e-widget-jquery-accordion li.t11e-list-entry {
+   margin: 0;
+   padding:0;
+}
+
+.t11e-widget-jquery-accordion-bd .t11e-widget {
+   margin: 0;
+   padding: 0;
 }
 
 .t11e-widget-jquery-button-bd a {
@@ -82,28 +151,4 @@
 
 .t11e-widget-jquery-faceted-dual-slider-sparkline .t11e-amount {
     margin-top: 1.2em;
-}
-
-.t11e-widget-jquery-faceted-slider .t11e-bd {
-    padding: 6px;
-}
-
-.t11e-widget-jquery-faceted-slider-bd .ui-slider-horizontal {
-    background-color: transparent;
-    border: 0;
-    /*margin: -.2em .2em 0 .2em;*/
-    height: 1em;
-}
-
-.t11e-widget-jquery-faceted-slider-bd .ui-slider .ui-slider-handle {
-    background: transparent url(/images/widgets/themes/advanced/thumb-n.gif) no-repeat top center;
-    border: 0;
-    margin-left: -8px;
-    top: -4px;
-    width: 16px;
-    height: 18px;
-}
-
-.t11e-widget-jquery-faceted-slider-bd .t11e-facets {
-    margin-left: -6px;
 }
