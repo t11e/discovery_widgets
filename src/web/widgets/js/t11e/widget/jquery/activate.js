@@ -7,6 +7,24 @@ if (false) {
     t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
 }
 
+t11e.widget.jquery.default_mappings = {
+    '.t11e-widget-jquery-faceted-slider': 't11e.widget.jquery.FacetedSliderWidget',
+    '.t11e-widget-jquery-slider': 't11e.widget.jquery.SliderWidget',
+    '.t11e-widget-jquery-dual-slider': 't11e.widget.jquery.DualSliderWidget',
+    '.t11e-widget-jquery-faceted-dual-slider': 't11e.widget.jquery.FacetedDualSliderWidget',
+    '.t11e-widget-jquery-response': 't11e.widget.jquery.ResponseWidget',
+    '.t11e-widget-jquery-results': 't11e.widget.jquery.ResultsWidget',
+    '.t11e-widget-jquery-pagination': 't11e.widget.jquery.PaginationWidget',
+    '.t11e-widget-jquery-select': 't11e.widget.jquery.SelectWidget',
+    '.t11e-widget-jquery-faceted-checkboxes': 't11e.widget.jquery.FacetedCheckboxesWidget',
+    '.t11e-widget-jquery-textbox': 't11e.widget.jquery.TextBoxWidget',
+    '.t11e-widget-jquery-params': 't11e.widget.jquery.ParamsWidget',
+    '.t11e-widget-jquery-faceted-flyout': 't11e.widget.jquery.FacetedFlyoutWidget',
+    '.t11e-widget-jquery-google-map': 't11e.widget.jquery.GoogleMapWidget',
+    '.t11e-widget-jquery-button': 't11e.widget.jquery.ButtonWidget',
+    '.t11e-widget-jquery-accordion': 't11e.widget.jquery.AccordionWidget'
+};
+
 /**
  * All jQuery widgets need to be activated prior to their use, which is
  * accomplished by a call to the {@link t11e.widget.jquery.activate_widgets}
@@ -18,70 +36,22 @@ if (false) {
  *
  * @param $ jQuery
  */
-t11e.widget.jquery.activate_widgets = function ($) {
-    /**@scope t11e.widget.jquery.activate_widgets*/
-    /**
-     * Creates a 't11e-widget-id' attribute on the widgets base
-     * 'div' element and sets the appropriate widget id value.
-     */
-    var bind_widget_id = function () {
-        if (t11e.util.is_undefined($(this).attr('t11e-widget-id'))) {
-            /*jslint regexp: false */
-            var matches = /t11e-widget-id-([^ ]+)/.exec($(this).attr('class'));
-            if (matches && matches.length === 2) {
-                var fake_class = matches[0];
-                var widget_id = matches[1];
-                $(this).removeClass(fake_class);
-                $(this).attr('t11e-widget-id', widget_id);
-            }
+t11e.widget.jquery.activate_widgets = function ($, widget_mappings) {
+    if (t11e.util.is_undefined(widget_mappings)) {
+        widget_mappings = t11e.widget.jquery.default_mappings;
+    }
+    var widgets = $('.t11e-widget');
+    widgets.each(t11e.widget.jquery.util.call_with_jquery_fn($,
+            t11e.widget.jquery.util.bind_widget_id));
+    $.each(widget_mappings, function (selector, orig_fn) {
+        var fn = orig_fn;
+        if (!t11e.util.is_function(fn)) {
+            fn = t11e.util.deref(window, fn);
         }
-    };
-    /**
-    * Function to instantiate jQuery widgets that pass a reference
-    * to jQuery.
-    * @param {Function} fn widget constructor
-    */
-    var call_with_jquery = function (fn) {
-        return function () {
-            try {
-                bind_widget_id.call(this);
-                return fn.call(this, $);
-            } catch (e) {
-                t11e.util.error('Problem setting up widget', fn, e);
-            }
-        };
-    };
-    /**
-    * Activate jQuery widgets.
-    */
-    $('.t11e-widget-jquery-faceted-slider').each(call_with_jquery(
-        t11e.widget.jquery.FacetedSliderWidget));
-    $('.t11e-widget-jquery-slider').each(call_with_jquery(
-        t11e.widget.jquery.SliderWidget));
-    $('.t11e-widget-jquery-dual-slider').each(call_with_jquery(
-        t11e.widget.jquery.DualSliderWidget));
-    $('.t11e-widget-jquery-faceted-dual-slider').each(call_with_jquery(
-        t11e.widget.jquery.FacetedDualSliderWidget));
-    $('.t11e-widget-jquery-response').each(call_with_jquery(
-        t11e.widget.jquery.ResponseWidget));
-    $('.t11e-widget-jquery-results').each(call_with_jquery(
-        t11e.widget.jquery.ResultsWidget));
-    $('.t11e-widget-jquery-pagination').each(call_with_jquery(
-        t11e.widget.jquery.PaginationWidget));
-    $('.t11e-widget-jquery-select').each(call_with_jquery(
-        t11e.widget.jquery.SelectWidget));
-    $('.t11e-widget-jquery-faceted-checkboxes').each(call_with_jquery(
-        t11e.widget.jquery.FacetedCheckboxesWidget));
-    $('.t11e-widget-jquery-textbox').each(call_with_jquery(
-        t11e.widget.jquery.TextBoxWidget));
-    $('.t11e-widget-jquery-params').each(call_with_jquery(
-        t11e.widget.jquery.ParamsWidget));
-    $('.t11e-widget-jquery-faceted-flyout').each(call_with_jquery(
-        t11e.widget.jquery.FacetedFlyoutWidget));
-    $('.t11e-widget-jquery-google-map').each(call_with_jquery(
-        t11e.widget.jquery.GoogleMapWidget));
-    $('.t11e-widget-jquery-button').each(call_with_jquery(
-        t11e.widget.jquery.ButtonWidget));
-    $('.t11e-widget-jquery-accordion').each(call_with_jquery(
-        t11e.widget.jquery.AccordionWidget));
+        if (t11e.util.is_defined(fn)) {
+            widgets.filter(selector).each(t11e.widget.jquery.util.call_with_jquery_fn($, fn));
+        } else {
+            t11e.util.error('Invalid function for widget selector', selector, orig_fn);
+        }
+    });
 };
