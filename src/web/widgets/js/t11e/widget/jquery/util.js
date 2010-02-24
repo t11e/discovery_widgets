@@ -91,3 +91,35 @@ t11e.widget.jquery.util.apply_template = function ($, template_string, props) {
     }
     return result;
 };
+
+/**
+ * Creates a 't11e-widget-id' attribute on the widgets base
+ * 'div' element and sets the appropriate widget id value.
+ */
+t11e.widget.jquery.util.bind_widget_id = function ($) {
+    if (t11e.util.is_undefined($(this).attr('t11e-widget-id'))) {
+        /*jslint regexp: false */
+        var matches = /t11e-widget-id-([^ ]+)/.exec($(this).attr('class'));
+        if (matches && matches.length === 2) {
+            var fake_class = matches[0];
+            var widget_id = matches[1];
+            $(this).removeClass(fake_class);
+            $(this).attr('t11e-widget-id', widget_id);
+        }
+    }
+};
+
+/**
+ * Function to instantiate jQuery widgets that pass a reference
+ * to jQuery.
+ * @param {Function} fn widget constructor
+ */
+t11e.widget.jquery.util.call_with_jquery_fn = function ($, fn) {
+    return function () {
+        try {
+            return fn.call(this, $);
+        } catch (e) {
+            t11e.util.error('Problem invoking fn', fn, e);
+        }
+    };
+};
