@@ -56,22 +56,21 @@ if (false) {
  *
  */
 t11e.widget.jquery.AccordionWidget = function ($) {
-    /** @private */
     var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
-    /** @private */
     var contained_widget_height = options.contained_widget_height || '300px';
     var animation_length_ms = options.animation_length_ms || 500;
     var container = $(this);
     var accordion = $(this).find('.t11e-widget-jquery-accordion-bd:first');
     // Find the first widget contained by the accordion
-    var accordion_top = accordion.find('.accordion-top:first');
-    var accordion_body = accordion.find('.accordion-body:first');
-    var accordion_bottom = accordion.find('.accordion-bottom:first');
+    var accordion_top = accordion.find('.t11e-accordion-top:first');
+    var accordion_body = accordion.find('.t11e-accordion-body:first');
+    var accordion_bottom = accordion.find('.t11e-accordion-bottom:first');
     var contained_widget = accordion_body.find('.t11e-widget:first');
     var is_open = false;
     // Capture the height of the accordion so the space will be preserved
     var place_holder_height = accordion.height();
-    var original_top = accordion.offset().top;
+    var original_position = accordion.position().top;
+    var original_offset = accordion.offset().top;
     var ie6 = $.browser.msie && $.browser.version.substr(0, 1) < 7;
 
     accordion_top.bind('click', function (event) {
@@ -84,9 +83,9 @@ t11e.widget.jquery.AccordionWidget = function ($) {
 
     $(window).bind('scroll', function (event) {
         if (is_open) {
-            var scroll_top = $(window).scrollTop();
+            scroll_top = $(window).scrollTop();
             if (!ie6) {
-                if (original_top < scroll_top + 2) {
+                if (original_offset < scroll_top + 2) {
                     accordion.css({
                         top: 1,
                         position: 'fixed'
@@ -94,7 +93,7 @@ t11e.widget.jquery.AccordionWidget = function ($) {
                 }
                 else {
                     accordion.css({
-                        top: original_top,
+                        top: original_position,
                         position: 'absolute'
                     });
                 }
@@ -112,13 +111,16 @@ t11e.widget.jquery.AccordionWidget = function ($) {
                 'linear',
                 function () {
                     accordion_body.css({display: 'none'});
-                    accordion.css({position: 'absolute', top: original_top});
+                    accordion.css({
+                        position: 'absolute',
+                        top: original_position
+                    });
                 });
         } else {
             accordion_body.css({display: 'block'});
             var scroll_top = $(window).scrollTop();
 
-            if (!ie6 && original_top < scroll_top + 2) {
+            if (!ie6 && original_offset < scroll_top + 2) {
                 accordion.css({
                     top: 1,
                     position: 'fixed'

@@ -1,39 +1,33 @@
 /**
- * @copyright Transparensee Systems, Inc.
- * @fileOverview accordion_widget.css
- * Core styles for t11e.widget.jquery.AccordionWidget.
- */
+* @copyright Transparensee Systems, Inc.
+* @fileOverview accordion_widget.css
+* Core styles for t11e.widget.jquery.AccordionWidget.
+*/
+
 .t11e-widget-jquery-accordion {
-    position: static;
+   position: static;
 }
 
 .t11e-widget-jquery-accordion-bd {
-    position: absolute;
-    padding: 0 !important;
-    z-index: 500;
+   /*position: absolute;*/
+   padding: 0 !important;
+   z-index: 500;
+   width: 100%;
 }
 
-.t11e-widget-jquery-accordion-bd .accordion-top {
+.t11e-widget-jquery-accordion-bd .t11e-accordion-top,
+.t11e-widget-jquery-accordion-bd .t11e-accordion-bottom {
+   -moz-background-clip: border;
+   -moz-background-inline-policy: continuous;
+   -moz-background-origin: padding;
+   border: 1px solid #CCC;
+   background-color: #EEE;
+   height: 29px;
 }
 
-.t11e-widget-jquery-accordion-bd .accordion-bottom {
+.t11e-widget-jquery-accordion-bd .t11e-accordion-body {
+    background-color: #FFF;
+    display: none;
 }
 
-.t11e-widget-jquery-accordion-bd .accordion-body {
-  display: none;
-}
 
-.t11e-widget-jquery-accordion ol.t11e-list-entries {
-    margin: 0;
-    padding: 0;
-}
-
-.t11e-widget-jquery-accordion li.t11e-list-entry {
-    margin: 0;
-    padding:0;
-}
-
-.t11e-widget-jquery-accordion-bd .t11e-widget {
-    margin: 0;
-    padding: 0;
-}
