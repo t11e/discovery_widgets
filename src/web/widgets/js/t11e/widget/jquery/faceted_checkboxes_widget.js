@@ -77,8 +77,7 @@ if (false) {
  * @class A checkbox widget that displays facet counts.
  *
  * */
-t11e.widget.jquery.FacetedCheckboxesWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.FacetedCheckboxesWidget = function ($, options) {
     var search_group = options.search_group;
     var value_param = options.value_param;
     var dimension = options.dimension;
@@ -232,4 +231,7 @@ t11e.widget.jquery.FacetedCheckboxesWidget = function ($) {
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_faceted_checkboxes', t11e.widget.jquery.FacetedCheckboxesWidget);
 

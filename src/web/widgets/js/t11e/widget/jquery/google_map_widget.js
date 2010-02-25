@@ -98,8 +98,7 @@ if (false) {
  * @name t11e.widget.jquery.GoogleMapWidget
  * @class A widget for displaying search results on a Google map.
  */
-t11e.widget.jquery.GoogleMapWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.GoogleMapWidget = function ($, options) {
     var search_group = options.search_group;
     var dimension = options.dimension;
     var map_widget = $(this);
@@ -345,3 +344,6 @@ t11e.widget.jquery.GoogleMapWidget = function ($) {
     });
 
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_google_map', t11e.widget.jquery.GoogleMapWidget);

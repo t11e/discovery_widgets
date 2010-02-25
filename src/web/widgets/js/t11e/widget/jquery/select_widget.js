@@ -30,8 +30,7 @@ if (false) {
  * @class A select widget.
  *
  * */
-t11e.widget.jquery.SelectWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.SelectWidget = function ($, options) {
     var search_group = options.search_group;
     var value_param = options.value_param;
     var dimension = options.dimension;
@@ -146,3 +145,5 @@ t11e.widget.jquery.SelectWidget = function ($) {
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 };
 
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_select', t11e.widget.jquery.SelectWidget);

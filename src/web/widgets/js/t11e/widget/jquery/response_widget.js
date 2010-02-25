@@ -64,8 +64,7 @@ if (false) {
  * @name t11e.widget.jquery.ResponseWidget
  * @class Debug widget for displaying search results.
  */
-t11e.widget.jquery.ResponseWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.ResponseWidget = function ($, options) {
     var search_group = options.search_group;
     var base_url = options.base_url;
     var target = $(this).find(".response:first");
@@ -84,3 +83,6 @@ t11e.widget.jquery.ResponseWidget = function ($) {
     };
     t11e.event.subscribe('response.' + search_group, update_from_response);
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_response', t11e.widget.jquery.ResponseWidget);

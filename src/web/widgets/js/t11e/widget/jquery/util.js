@@ -110,16 +110,12 @@ t11e.widget.jquery.util.bind_widget_id = function ($) {
 };
 
 /**
- * Function to instantiate jQuery widgets that pass a reference
- * to jQuery.
- * @param {Function} fn widget constructor
+ * Creates a jQuery UI widget out of a traditional style Discovery Widget.
  */
-t11e.widget.jquery.util.call_with_jquery_fn = function ($, fn) {
-    return function () {
-        try {
-            return fn.call(this, $);
-        } catch (e) {
-            t11e.util.error('Problem invoking fn', fn, e);
-        }
+t11e.widget.jquery.make_jquery_ui_widget = function ($, ui_name, widget) {
+    $.widget('ui.' + ui_name, {});
+    /*jslint nomen: false */
+    $.ui[ui_name].prototype._init = function () {
+        widget.call(this.element[0], $, this.options);
     };
 };

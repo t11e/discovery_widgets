@@ -54,8 +54,7 @@ if (false) {
  * @name t11e.widget.jquery.PaginationWidget
  * @class Displays pagination navigation links for search results.
  */
-t11e.widget.jquery.PaginationWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.PaginationWidget = function ($, options) {
     var search_group = options.search_group;
     var page_param = options.page_param;
     var pagination = $(this).find(".pagination:first");
@@ -83,3 +82,6 @@ t11e.widget.jquery.PaginationWidget = function ($) {
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_pagination', t11e.widget.jquery.PaginationWidget);

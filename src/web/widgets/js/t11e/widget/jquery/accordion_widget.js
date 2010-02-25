@@ -55,8 +55,7 @@ if (false) {
  * @class Implements window shade behavior.
  *
  */
-t11e.widget.jquery.AccordionWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.AccordionWidget = function ($, options) {
     var contained_widget_height = options.contained_widget_height || '300px';
     var animation_length_ms = options.animation_length_ms || 500;
     var container = $(this);
@@ -153,3 +152,6 @@ t11e.widget.jquery.AccordionWidget = function ($) {
     };
     init();
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_accordion', t11e.widget.jquery.AccordionWidget);

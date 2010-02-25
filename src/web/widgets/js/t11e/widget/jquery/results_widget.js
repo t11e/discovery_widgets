@@ -69,8 +69,7 @@ if (false) {
  * @name t11e.widget.jquery.ResultsWidget
  * @class Executes Ajax request and renders search results.
  */
-t11e.widget.jquery.ResultsWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.ResultsWidget = function ($, options) {
     var search_group = options.search_group;
     var base_url = options.base_url;
     var render_params_paths = options.render_params_paths;
@@ -306,3 +305,6 @@ t11e.widget.jquery.ResultsWidget = function ($) {
         }
     };
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_results', t11e.widget.jquery.ResultsWidget);
