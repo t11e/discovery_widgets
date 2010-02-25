@@ -66,9 +66,8 @@ if (false) {
  * @name t11e.widget.jquery.FacetedSliderWidget
  * @class A single-handled slider.
  */
-t11e.widget.jquery.FacetedSliderWidget = function ($) {
+t11e.widget.jquery.FacetedSliderWidget = function ($, options) {
     t11e.util.log("init FacetedSliderWidget");
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var search_group = options.search_group;
     var dimension = options.dimension;
     var facets = $(this).find(".t11e-facets:first");
@@ -159,3 +158,6 @@ t11e.widget.jquery.FacetedSliderWidget = function ($) {
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_faceted_slider', t11e.widget.jquery.FacetedSliderWidget);

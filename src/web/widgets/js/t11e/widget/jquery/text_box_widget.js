@@ -42,8 +42,7 @@ if (false) {
  * @name t11e.widget.jquery.TextBoxWidget
  * @class A textbox widget for keyword searches.
  */
-t11e.widget.jquery.TextBoxWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.TextBoxWidget = function ($, options) {
     var search_group = options.search_group;
     var value_param = options.value_param;
     var textbox = $(this).find('input:first');
@@ -88,3 +87,5 @@ t11e.widget.jquery.TextBoxWidget = function ($) {
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 };
 
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_text_box', t11e.widget.jquery.TextBoxWidget);

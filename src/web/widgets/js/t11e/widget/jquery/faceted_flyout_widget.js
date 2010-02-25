@@ -101,13 +101,12 @@ if (false) {
  * @class A checkbox widget that contains a flyout panel for additional options.
  *
  */
-t11e.widget.jquery.FacetedFlyoutWidget = function ($) {
+t11e.widget.jquery.FacetedFlyoutWidget = function ($, options) {
     /**
      * Widget that displays faceted checkboxes which allow selection of
      * facets to alter the search and display the facet counts from the
      * response.
      */
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
     var search_group = options.search_group;
     var value_param = options.value_param;
     var dimension = options.dimension;
@@ -379,3 +378,6 @@ t11e.widget.jquery.FacetedFlyoutWidget = function ($) {
 
     init();
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_faceted_flyout', t11e.widget.jquery.FacetedFlyoutWidget);

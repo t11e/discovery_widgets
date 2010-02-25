@@ -40,8 +40,7 @@ if (false) {
  * @name t11e.widget.jquery.ButtonWidget
  * @class Implements a button that triggers a configured event.
  */
-t11e.widget.jquery.ButtonWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.ButtonWidget = function ($, options) {
     var event_name = $.template(options.event_name).apply(options);
     var button = $(this).find('.t11e-widget-jquery-button-bd:first a');
 
@@ -51,3 +50,6 @@ t11e.widget.jquery.ButtonWidget = function ($) {
         event.stopPropagation();
     });
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_button', t11e.widget.jquery.ButtonWidget);

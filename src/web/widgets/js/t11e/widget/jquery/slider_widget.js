@@ -65,8 +65,7 @@ if (false) {
  * @name t11e.widget.jquery.SliderWidget
  * @class A single-handled slider.
  */
-t11e.widget.jquery.SliderWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.SliderWidget = function ($, options) {
     var search_group = options.search_group;
     var amount = $(this).find(".amount:first");
     var slider_ctl = $(this).find(".slider-control:first");
@@ -139,3 +138,6 @@ t11e.widget.jquery.SliderWidget = function ($) {
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_slider', t11e.widget.jquery.SliderWidget);

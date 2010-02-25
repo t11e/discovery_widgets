@@ -69,8 +69,7 @@ if (false) {
  * @name t11e.widget.jquery.DualSliderWidget
  * @class A dual-handled slider widget for searching a range of values.
  */
-t11e.widget.jquery.DualSliderWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.DualSliderWidget = function ($, options) {
     var search_group = options.search_group;
     var amount = $(this).find(".amount:first");
     var slider_ctl = $(this).find(".slider-control:first");
@@ -137,3 +136,6 @@ t11e.widget.jquery.DualSliderWidget = function ($) {
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_dual_slider', t11e.widget.jquery.DualSliderWidget);

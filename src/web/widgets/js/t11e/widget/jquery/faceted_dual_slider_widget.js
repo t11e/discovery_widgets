@@ -105,8 +105,7 @@ if (false) {
  * @name t11e.widget.jquery.FacetedDualSliderWidget
  * @class A dual-handled slider widget for searching a range of values.
  */
-t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
-    var options = t11e.widget_options[$(this).attr('t11e-widget-id')];
+t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {
     var search_group = options.search_group;
     var dimension = options.dimension;
     var sl = $(this).find(".t11e-sparkline:first");
@@ -258,3 +257,6 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($) {
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 
 };
+
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_faceted_dual_slider', t11e.widget.jquery.FacetedDualSliderWidget);
