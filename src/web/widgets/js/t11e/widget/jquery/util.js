@@ -119,3 +119,26 @@ t11e.widget.jquery.make_jquery_ui_widget = function ($, ui_name, widget) {
         widget.call(this.element[0], $, this.options);
     };
 };
+
+/**
+ * Calls jQuery.serializeArray on the form and then flattens it into
+ * a simple multi-map.
+ */
+t11e.widget.jquery.serialize_form = function ($, form) {
+    var result = {};
+    $.each($(form).serializeArray(), function (i, field) {
+        if (t11e.util.is_defined(field.value)) {
+            var old_value = result[field.name];
+            if (t11e.util.is_defined(old_value)) {
+                if (t11e.util.is_array(old_value)) {
+                    old_value.push(field.value);
+                } else {
+                    result[field.name] = [old_value, field.value];
+                }
+            } else {
+                result[field.name] = field.value;
+            }
+        }
+    });
+    return result;
+};
