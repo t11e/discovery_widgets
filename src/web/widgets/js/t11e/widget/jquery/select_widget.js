@@ -57,6 +57,12 @@ t11e.widget.jquery.SelectWidget = function ($, options) {
                 }
             });
         } finally {
+            var selected_options = select.find('option:selected');
+            // Select first option (for safari so behavior matches ff)
+            if (selected_options.length === 0) {
+                var def_option = select.find('option:first');
+                def_option.attr('selected', 'selected');
+            }
             ignore_event = false;
         }
     };
