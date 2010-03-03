@@ -67,7 +67,6 @@ if (false) {
  * @class A single-handled slider.
  */
 t11e.widget.jquery.FacetedSliderWidget = function ($, options) {
-    t11e.util.log("init FacetedSliderWidget");
     var search_group = options.search_group;
     var dimension = options.dimension;
     var facets = $(this).find(".t11e-facets:first");
