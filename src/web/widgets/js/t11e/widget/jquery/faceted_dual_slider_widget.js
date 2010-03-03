@@ -106,8 +106,12 @@ if (false) {
  * @class A dual-handled slider widget for searching a range of values.
  */
 t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {
+    t11e.util.log('FacetedDualSliderWIdget');
     var search_group = options.search_group;
     var dimension = options.dimension;
+    t11e.util.log(options);
+    var max_is_any = t11e.util.is_defined(options.max_is_any) ? options.max_is_any : false;
+    t11e.util.log(max_is_any);
     var sl = $(this).find(".t11e-sparkline:first");
     var amount = $(this).find(".t11e-amount:first");
     var slider_ctl = $(this).find(".t11e-slider-control:first");
@@ -157,6 +161,9 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {
     var update_amounts = function (event, ui) {
         var min_value = value_to_param(ui.values[0]);
         var max_value = value_to_param(ui.values[1]);
+        if (max_is_any && ui.values[1] === slider_options.max) {
+            max_value = '';
+        }
         if (t11e.util.is_defined(options.format) &&
             t11e.util.is_function(options.format)) {
             options.format($, amount, min_value, max_value);
@@ -237,7 +244,12 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {
         var param_min_value = value_to_param(values[0]);
         var param_max_value = value_to_param(values[1]);
         params[options.min_param] = [param_min_value];
-        params[options.max_param] = [param_max_value];
+        if (max_is_any && values[1] === slider_options.max) {
+            // Remove parameter
+            t11e.util.remove_param(params, options.max_param);
+        } else {
+            params[options.max_param] = [param_max_value];
+        }
         // Reset the pagination parameter so that the new results
         // start on the first page.
         t11e.util.remove_param(params, options.page_param);
