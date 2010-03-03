@@ -106,12 +106,9 @@ if (false) {
  * @class A dual-handled slider widget for searching a range of values.
  */
 t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {
-    t11e.util.log('FacetedDualSliderWIdget');
     var search_group = options.search_group;
     var dimension = options.dimension;
-    t11e.util.log(options);
     var max_is_any = t11e.util.is_defined(options.max_is_any) ? options.max_is_any : false;
-    t11e.util.log(max_is_any);
     var sl = $(this).find(".t11e-sparkline:first");
     var amount = $(this).find(".t11e-amount:first");
     var slider_ctl = $(this).find(".t11e-slider-control:first");
