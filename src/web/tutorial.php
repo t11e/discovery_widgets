@@ -340,16 +340,16 @@ $initial = t11e_initial_request($url, $request);
             <ol>
                 <li>
                     <div class="row">
-                        <input type="checkbox" name="style" value="multi-family"/>
-                        <label>multi-family</label>
+                        <input type="checkbox" id="style_0" name="style" value="multi-family"/>
+                        <label for="style_0">multi-family</label>
                         <span class="facet-count">
                             <?php echo $initial["style"]["multi-family"] ?>
                         </span>
                         <ol>
                             <li>
                                 <div class="row">
-                                    <input type="checkbox" name="style" value="apartment"/>
-                                    <label>apartment</label>
+                                    <input type="checkbox" id="style_1" name="style" value="apartment"/>
+                                    <label for="style_1">apartment</label>
                                     <span class="facet-count">
                                         <?php echo $initial["style"]["apartment"] ?>
                                     </span>
@@ -357,8 +357,8 @@ $initial = t11e_initial_request($url, $request);
                             </li>
                             <li>
                                 <div class="row">
-                                    <input type="checkbox" name="style" value="condo"/>
-                                    <label>condo</label>
+                                    <input type="checkbox" id="style_2" name="style" value="condo"/>
+                                    <label for="style_2">condo</label>
                                     <span class="facet-count">
                                         <?php echo $initial["style"]["condo"] ?>
                                     </span>
@@ -366,8 +366,8 @@ $initial = t11e_initial_request($url, $request);
                             </li>
                             <li>
                                 <div class="row">
-                                    <input type="checkbox" name="style" value="co-op"/>
-                                    <label>co-op</label>
+                                    <input type="checkbox" id="style_3" name="style" value="co-op"/>
+                                    <label for="style_3">co-op</label>
                                     <span class="facet-count">
                                         <?php echo $initial["style"]["co-op"] ?>
                                     </span>
@@ -375,8 +375,8 @@ $initial = t11e_initial_request($url, $request);
                             </li>
                             <li>
                                 <div class="row">
-                                    <input type="checkbox" name="style" value="townhome"/>
-                                    <label>townhome</label>
+                                    <input type="checkbox" id="style_4" name="style" value="townhome"/>
+                                    <label for="style_4">townhome</label>
                                     <span class="facet-count">
                                         <?php echo $initial["style"]["townhome"] ?>
                                     </span>
@@ -387,24 +387,24 @@ $initial = t11e_initial_request($url, $request);
                 </li>
                 <li>
                     <div class="row">
-                        <input type="checkbox" name="style" value="single-family"/>
-                        <label>single-family</label>
+                        <input type="checkbox" id="style_5" name="style" value="single-family"/>
+                        <label for="style_5">single-family</label>
                         <span class="facet-count">
                             <?php echo $initial["style"]["single-family"] ?>
                         </span>
                         <ol>
                             <li>
                                 <div class="row">
-                                    <input type="checkbox" name="style" value="colonial"/>
-                                    <label>colonial</label>
+                                    <input type="checkbox" id="style_6" name="style" value="colonial"/>
+                                    <label for="style_6">colonial</label>
                                     <span class="facet-count">
                                         <?php echo $initial["style"]["colonial"] ?>
                                     </span>
                                     <ol>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="new england"/>
-                                                <label>new england</label>
+                                                <input type="checkbox" id="style_7" name="style" value="new england"/>
+                                                <label for="style_7">new england</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["new england"] ?>
                                                 </span>
@@ -412,8 +412,8 @@ $initial = t11e_initial_request($url, $request);
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="cape cod"/>
-                                                <label>cape cod</label>
+                                                <input type="checkbox" id="style_8" name="style" value="cape cod"/>
+                                                <label for="style_8">cape cod</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["cape cod"] ?>
                                                 </span>
@@ -424,16 +424,16 @@ $initial = t11e_initial_request($url, $request);
                             </li>
                             <li>
                                 <div class="row">
-                                    <input type="checkbox" name="style" value="classical"/>
-                                    <label>classical</label>
+                                    <input type="checkbox" id="style_9" name="style" value="classical"/>
+                                    <label for="style_9">classical</label>
                                     <span class="facet-count">
                                         <?php echo $initial["style"]["classical"] ?>
                                     </span>
                                     <ol>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="federal"/>
-                                                <label>federal</label>
+                                                <input type="checkbox" id="style_10" name="style" value="federal"/>
+                                                <label for="style_10">federal</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["federal"] ?>
                                                 </span>
@@ -441,8 +441,8 @@ $initial = t11e_initial_request($url, $request);
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="greek revival"/>
-                                                <label>greek revival</label>
+                                                <input type="checkbox" id="style_11"name="style" value="greek revival"/>
+                                                <label for="style_11">greek revival</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["greek revival"] ?>
                                                 </span>
@@ -450,8 +450,8 @@ $initial = t11e_initial_request($url, $request);
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="tidewater"/>
-                                                <label>tidewater</label>
+                                                <input type="checkbox" id="style_12" name="style" value="tidewater"/>
+                                                <label for="style_12">tidewater</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["tidewater"] ?>
                                                 </span>
@@ -459,8 +459,8 @@ $initial = t11e_initial_request($url, $request);
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="antebellum"/>
-                                                <label>antebellum</label>
+                                                <input type="checkbox" id="style_13" name="style" value="antebellum"/>
+                                                <label for="style_13">antebellum</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["antebellum"] ?>
                                                 </span>
@@ -471,16 +471,16 @@ $initial = t11e_initial_request($url, $request);
                             </li>
                             <li>
                                 <div class="row">
-                                    <input type="checkbox" name="style" value="victorian"/>
-                                    <label>victorian</label>
+                                    <input type="checkbox" id="style_14" name="style" value="victorian"/>
+                                    <label for="style_14">victorian</label>
                                     <span class="facet-count">
                                         <?php echo $initial["style"]["victorian"] ?>
                                     </span>
                                     <ol>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="gothic"/>
-                                                <label>gothic</label>
+                                                <input type="checkbox" id="style_15" name="style" value="gothic"/>
+                                                <label for="style_15">gothic</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["gothic"] ?>
                                                 </span>
@@ -488,8 +488,8 @@ $initial = t11e_initial_request($url, $request);
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="second empire"/>
-                                                <label>second empire</label>
+                                                <input type="checkbox" id="style_16" name="style" value="second empire"/>
+                                                <label for="style_16">second empire</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["second empire"] ?>
                                                 </span>
@@ -497,8 +497,8 @@ $initial = t11e_initial_request($url, $request);
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="queen anne"/>
-                                                <label>queen anne</label>
+                                                <input type="checkbox" id="style_17" name="style" value="queen anne"/>
+                                                <label for="style_17">queen anne</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["queen anne"] ?>
                                                 </span>
@@ -509,16 +509,16 @@ $initial = t11e_initial_request($url, $request);
                             </li>
                             <li>
                                 <div class="row">
-                                    <input type="checkbox" name="style" value="contemporary"/>
-                                    <label>contemporary</label>
+                                    <input type="checkbox" id="style_18" name="style" value="contemporary"/>
+                                    <label for="style_18">contemporary</label>
                                     <span class="facet-count">
                                         <?php echo $initial["style"]["contemporary"] ?>
                                     </span>
                                     <ol>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="ranch"/>
-                                                <label>ranch</label>
+                                                <input type="checkbox" id="style_19" name="style" value="ranch"/>
+                                                <label for="style_19">ranch</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["ranch"] ?>
                                                 </span>
@@ -526,8 +526,8 @@ $initial = t11e_initial_request($url, $request);
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="raised ranch"/>
-                                                <label>raised ranch</label>
+                                                <input type="checkbox" id="style_20" name="style" value="raised ranch"/>
+                                                <label for="style_20">raised ranch</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["raised ranch"] ?>
                                                 </span>
@@ -535,8 +535,8 @@ $initial = t11e_initial_request($url, $request);
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="split-level"/>
-                                                <label>split-level</label>
+                                                <input type="checkbox" id="style_21" name="style" value="split-level"/>
+                                                <label for="style_21">split-level</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["split-level"] ?>
                                                 </span>
@@ -544,8 +544,8 @@ $initial = t11e_initial_request($url, $request);
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="bauhaus"/>
-                                                <label>bauhaus</label>
+                                                <input type="checkbox" id="style_22" name="style" value="bauhaus"/>
+                                                <label for="style_22">bauhaus</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["bauhaus"] ?>
                                                 </span>
@@ -553,8 +553,8 @@ $initial = t11e_initial_request($url, $request);
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="art moderne"/>
-                                                <label>art moderne</label>
+                                                <input type="checkbox" id="style_23" name="style" value="art moderne"/>
+                                                <label for="style_23">art moderne</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["art moderne"] ?>
                                                 </span>
@@ -562,8 +562,8 @@ $initial = t11e_initial_request($url, $request);
                                         </li>
                                         <li>
                                             <div class="row">
-                                                <input type="checkbox" name="style" value="transitional"/>
-                                                <label>transitional</label>
+                                                <input type="checkbox" id="style_24" name="style" value="transitional"/>
+                                                <label for="style_24">transitional</label>
                                                 <span class="facet-count">
                                                     <?php echo $initial["style"]["transitional"] ?>
                                                 </span>
