@@ -69,6 +69,7 @@ if (false) {
 t11e.widget.jquery.FacetedSliderWidget = function ($, options) {
     var search_group = options.search_group;
     var dimension = options.dimension;
+    var min_is_any = t11e.util.is_defined(options.min_is_any) ? options.min_is_any : false;
     var facets = $(this).find(".t11e-facets:first");
     var amount = $(this).find(".t11e-amount:first");
     var slider_ctl = $(this).find(".t11e-slider-control:first");
@@ -88,12 +89,20 @@ t11e.widget.jquery.FacetedSliderWidget = function ($, options) {
     };
 
     var update_amounts = function (event, ui) {
+        var value;
+        if (t11e.util.is_defined(ui.value)) {
+            if (min_is_any && ui.value === slider_options.min) {
+                value = '';
+            } else {
+                value = value_to_param(ui.value);
+            }
+        }
         if (t11e.util.is_defined(options.format) &&
             t11e.util.is_function(options.format)) {
-            options.format($, amount, ui.value);
+            options.format($, amount, value);
         }
         else {
-            amount.html(ui.value);
+            amount.html(value);
         }
     };
 
@@ -110,18 +119,24 @@ t11e.widget.jquery.FacetedSliderWidget = function ($, options) {
      * @param params
      */
     var load_from_params = function (params) {
-        var values = params[options.param];
-        var param_value = (t11e.util.is_defined(values) && values.length > 0) ? values[0] : 0;
-        var value = param_to_value(param_value);
-        if (value !== slider_ctl.slider('value')) {
+        var param_values = params[options.param];
+        var slider_value;
+        if (t11e.util.is_defined(param_values) && param_values.length > 0) {
+            //var param_value = (t11e.util.is_defined(values) && values.length > 0) ? values[0] : 0;
+            slider_value = param_to_value(param_values[0]);
+        } else {
+            slider_value = slider_options.min;
+        }
+        if (slider_value !== slider_ctl.slider('value')) {
             ignore_event = true;
             try {
-                slider_ctl.slider('value', value);
+                slider_ctl.slider('value', slider_value);
             } finally {
                 ignore_event = false;
             }
-            update_amounts(null, {'value': Number(value)});
+            update_amounts(null, {'value': slider_value});
         }
+
     };
     t11e.event.subscribe('request.' + search_group, load_from_params);
 
@@ -141,7 +156,12 @@ t11e.widget.jquery.FacetedSliderWidget = function ($, options) {
     var save_to_params = function (params) {
         var value = slider_ctl.slider('value');
         var param = value_to_param(value);
-        params[options.param] = [param];
+        if (min_is_any && value === slider_options.min) {
+            // Remove parameter
+            t11e.util.remove_param(params, options.param);
+        } else {
+            params[options.param] = [param];
+        }
         t11e.util.remove_param(params, options.page_param);
     };
 

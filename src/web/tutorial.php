@@ -198,26 +198,37 @@ $initial = t11e_initial_request($url, $request);
         "dimension": "bedroom",
         "page_param": "page",
         "min_value": 0,
-        "max_value": 5,
+        "max_value": 6,
         "param": "bedroom",
+        "min_is_any": true,
+        "value_to_param": function ($, value) {
+            var value = Number(value) - 1;
+            return value;
+        },
+        "param_to_value": function ($, value) {
+
+            var value = Number(value) + 1;
+            return value;
+        },
         "format": function ($, amount, value){
             var display;
-            if ('undefined' !== typeof value) {
-                display = value;
-                switch (value) {
-                    case 0:
-                        display = 'Studio';
-                        break;
-                    case 5:
-                        display = value + '+ BR';
-                        break;
-                    default:
-                        display = value + ' BR';
-                }
+            if (value === '') {
+                amount.html('--');
             } else {
-                display = '--';
+                if (t11e.util.is_defined(value)) {
+                    display = Number(value);
+                    switch (value) {
+                        case 0:
+                            display = 'Studio';
+                            break;
+                        default:
+                            display = display + ' BR';
+                    }
+                } else {
+                    display = '--';
+                }
+                amount.html(display);
             }
-            amount.html(display);
         }
     };
 //-->
@@ -239,79 +250,22 @@ $initial = t11e_initial_request($url, $request);
         "search_group": "default",
         "dimension": "bath",
         "page_param": "page",
-        "min_value": 1,
+        "min_value": 0,
         "max_value": 5,
         "param": "bath",
-        "value_to_param": function ($, value) {
-            var param;
-            if (t11e.util.is_defined(value)) {
-                switch (value) {
-                    case 0:
-                        param = "[0,1)";
-                        break;
-                    case 1:
-                        param = "[1,2)";
-                        break;
-                    case 2:
-                        param = "[2,3)";
-                        break;
-                    case 3:
-                        param = "[3,4)";
-                        break;
-                    case 4:
-                        param = "[4,5)";
-                        break;
-                    case 5:
-                        param = "[5,]";
-                        break;
-                }
-            }
-            return param;
-        },
-        "param_to_value": function ($, param) {
-            var value = 0;
-            if (t11e.util.is_defined(param)) {
-                switch (param) {
-                    case "[0,1)":
-                        value = 0;
-                        break;
-                    case "[1,2)":
-                        value = 1;
-                        break;
-                    case "[2,3)":
-                        value = 2;
-                        break;
-                    case "[3,4)":
-                        value = 3;
-                        break;
-                    case "[4,5)":
-                        value = 4;
-                        break;
-                    case "[5,]":
-                        value = 5;
-                        break;
-                }
-            }
-            return value;
-        },
+        "min_is_any": true,
         "format": function ($, amount, value){
             var display;
-            if ('undefined' !== typeof value) {
-                display = value;
-                switch (value) {
-                    case 0:
-                        display = '--';
-                        break;
-                    case 5:
-                        display = value + '+ BA';
-                        break;
-                    default:
-                        display = value + ' BA';
-                }
+            if (value === '') {
+                amount.html('--');
             } else {
-                display = '--';
+                if (t11e.util.is_defined(value)) {
+                    display = value + ' BA';
+                } else {
+                    display = '--';
+                }
+                amount.html(display);
             }
-            amount.html(display);
         }
     };
 //-->
