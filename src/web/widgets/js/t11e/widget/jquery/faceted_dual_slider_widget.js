@@ -108,6 +108,7 @@ if (false) {
 t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {
     var search_group = options.search_group;
     var dimension = options.dimension;
+    var min_is_any = t11e.util.is_defined(options.min_is_any) ? options.min_is_any : false;
     var max_is_any = t11e.util.is_defined(options.max_is_any) ? options.max_is_any : false;
     var sl = $(this).find(".t11e-sparkline:first");
     var amount = $(this).find(".t11e-amount:first");
@@ -158,6 +159,9 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {
     var update_amounts = function (event, ui) {
         var min_value = value_to_param(ui.values[0]);
         var max_value = value_to_param(ui.values[1]);
+        if (min_is_any && ui.values[0] === slider_options.min) {
+            min_value = '';
+        }
         if (max_is_any && ui.values[1] === slider_options.max) {
             max_value = '';
         }
@@ -240,7 +244,12 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {
         var values = slider_ctl.slider('values');
         var param_min_value = value_to_param(values[0]);
         var param_max_value = value_to_param(values[1]);
-        params[options.min_param] = [param_min_value];
+        if (min_is_any && values[0] === slider_options.min) {
+            // Remove parameter
+            t11e.util.remove_param(params, options.min_param);
+        } else {
+            params[options.min_param] = [param_min_value];
+        }
         if (max_is_any && values[1] === slider_options.max) {
             // Remove parameter
             t11e.util.remove_param(params, options.max_param);

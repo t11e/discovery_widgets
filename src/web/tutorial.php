@@ -337,9 +337,12 @@ $initial = t11e_initial_request($url, $request);
         "min_value": 0,
         "max_value": 1000000,
         "step": 25000,
-
+        "min_is_any": true,
+        "max_is_any": true,
         "format": function ($, amount, min_value, max_value) {
-            amount.html('$' + (min_value/1000) + 'K - $' + (max_value/1000) +'K');
+            if ('' === min_value) {min_value = ' any'} else { min_value = min_value/1000 + 'K' }
+            if ('' === max_value) {max_value = ' any'} else { max_value = max_value/1000 + 'K' }
+            amount.html('$' + min_value + ' - $' + max_value);
         }
     };
 //-->
@@ -363,9 +366,13 @@ $initial = t11e_initial_request($url, $request);
         "min_param": "lease_min",
         "max_param": "lease_max",
         "min_value": 0,
-        "max_value": 10000,
-        "step": 100,
+        "max_value": 11000,
+        "min_is_any": true,
+        "max_is_any": true,
+        "step": 1000,
         "format": function ($, amount, min_value, max_value) {
+            if ('' === min_value) {min_value = ' any'}
+            if ('' === max_value) {max_value = ' any'}
             amount.html('$' + min_value + ' - $' + max_value);
         }
     };
