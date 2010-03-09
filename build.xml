@@ -25,18 +25,18 @@
     </target>
 
     <target name="jsdoc" depends="compress-media">
-        <delete dir="build.ant/jsdoc"/>
+        <delete dir="src/web/jsdoc"/>
         <java jar="tools/jsdoc_toolkit-2.3.1/jsrun.jar" fork="true" failonerror="true">
             <arg value="tools/jsdoc_toolkit-2.3.1/app/run.js"/>
             <arg value="-t=src/jsdoc_templates"/>
-            <arg value="-d=build.ant/jsdoc"/>
+            <arg value="-d=src/web/jsdoc"/>
             <arg value="-r=5"/>
             <arg value="src/web/widgets/js"/>
         </java>
-        <copy todir="build.ant/jsdoc/symbols/build">
+        <copy todir="src/web/jsdoc/symbols/build">
             <fileset dir="src/web/build"/>
         </copy>
-        <echo message="JavaScript documentation now available in build.ant/jsdoc/index.html"/>
+        <echo message="JavaScript documentation now available in src/web/jsdoc/index.html"/>
     </target>
 
     <!--
