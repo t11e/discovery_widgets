@@ -34,7 +34,7 @@ $initial = t11e_initial_request($url, $request);
         <link href="build/yui-2.7.0.min.css" rel="stylesheet" type="text/css" />
         <link href="build/jquery-ui-1.7.2.min.css" rel="stylesheet" type="text/css" />
         <link href="build/widgets.min.css" rel="stylesheet" type="text/css" />
-        <link href="build/widgets-theme-simple.min.css" rel="stylesheet" type="text/css" />
+        <link href="build/widgets-theme-advanced.css" rel="stylesheet" type="text/css" />
         <style>
             .t11e-widget-jquery-results .t11e-fuzzy { background: #DDD }
         </style>
@@ -46,15 +46,22 @@ $initial = t11e_initial_request($url, $request);
     if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
 //-->
 </script>
-        <div id="doc3" class="yui-t3">
+        <div id="doc4" class="yui-t2">
             <div id="hd" role="banner">
               <h1>Tutorial Search Page</h1>
             </div>
             <div id="bd" role="main">
                 <div id="yui-main">
                     <div class="yui-b">
-                        <div class="yui-g">
-                            <div class="yui-u first">
+                        <div class="yui-gc">
+                            <div class="t11e-widget yui-u first">
+<div id="tabs">
+  <ul>
+    <li><a href="#tab-results" onclick="javascript:return false;"><span>Results</span></a></li>
+    <li><a href="#tab-debug" onclick="javascript:return false;"><span>Debug</span></a></li>
+  </ul>
+  <div id="tab-results">
+
 
 <div class="t11e-widget t11e-widget-jquery-pagination t11e-widget-id-pagination1">
     <div class="t11e-hd t11e-widget-jquery-pagination-hd"></div>
@@ -109,7 +116,8 @@ $initial = t11e_initial_request($url, $request);
     };
 //-->
 </script>
-
+  </div>
+  <div id="tab-debug">
 <div class="t11e-widget t11e-widget-jquery-response t11e-widget-id-response">
     <div class="t11e-hd t11e-widget-jquery-response-hd">JSON Response</div>
     <div class="t11e-bd t11e-widget-jquery-response-bd">
@@ -124,7 +132,8 @@ $initial = t11e_initial_request($url, $request);
     };
 //-->
 </script>
-
+  </div>
+</div>
                             </div>
                             <div class="yui-u">
 
@@ -137,7 +146,7 @@ $initial = t11e_initial_request($url, $request);
 <div class="t11e-widget t11e-widget-jquery-button t11e-widget-id-clear">
     <div class="t11e-hd t11e-widget-jquery-button-hd"></div>
     <div class="t11e-bd t11e-widget-jquery-button-bd">
-        <a href="#">Clear</a>
+        <a class="ui-state-default ui-corner-all" href="#">Clear</a>
      </div>
     <div class="t11e-ft t11e-widget-jquery-button-ft"></div>
 </div>
@@ -311,8 +320,8 @@ $initial = t11e_initial_request($url, $request);
 <div class="t11e-widget t11e-widget-jquery-faceted-dual-slider t11e-widget-id-price">
     <div class="t11e-hd t11e-widget-jquery-faceted-dual-slider-hd"><h1>Price</h1></div>
     <div class="t11e-bd t11e-widget-jquery-faceted-dual-slider-bd">
-        <div class="t11e-amount"></div>
         <div class="t11e-slider-control"></div>
+        <div class="t11e-amount"></div>
     </div>
     <div class="t11e-ft t11e-widget-jquery-faceted-dual-slider-ft">
     </div>
@@ -339,8 +348,8 @@ $initial = t11e_initial_request($url, $request);
 <div class="t11e-widget t11e-widget-jquery-faceted-dual-slider t11e-widget-id-lease">
     <div class="t11e-hd t11e-widget-jquery-faceted-dual-slider-hd"><h1>Lease</h1></div>
     <div class="t11e-bd t11e-widget-jquery-faceted-dual-slider-bd">
-        <div class="t11e-amount"></div>
         <div class="t11e-slider-control"></div>
+        <div class="t11e-amount"></div>
     </div>
     <div class="t11e-ft t11e-widget-jquery-faceted-dual-slider-ft">
     </div>
@@ -627,11 +636,20 @@ $initial = t11e_initial_request($url, $request);
         </div>
         <script type="text/javascript" src="build/jquery-1.3.2.min.js" charset="utf-8"></script>
         <script type="text/javascript" src="build/jquery-ui-1.7.2.min.js" charset="utf-8"></script>
-        <script type="text/javascript" src="build/jquery.sparkline-1.4.3.js" charset="utf-8"></script>
         <script type="text/javascript" src="build/widgets.js" charset="utf-8"></script>
         <script type="text/javascript">//<![CDATA[
         (function ($) {
             t11e.widget.jquery.activate_widgets($);
+            $('#tabs').tabs();
+
+            $('.t11e-widget-jquery-button a').hover(
+                function () {
+                    $(this).addClass("ui-state-hover");
+                },
+                function () {
+                    $(this).removeClass("ui-state-hover");
+                }
+            );
             var options = {"search_groups": {"default": {"url": "php/t11e_tutorial.php"}}};
             options.history_plugin = t11e.widget.jquery.history_plugin($);
             options.search_plugin = t11e.widget.jquery.search_plugin($);

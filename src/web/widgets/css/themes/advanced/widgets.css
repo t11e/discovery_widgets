@@ -1,11 +1,38 @@
-.t11e-widget-jquery-results-loading {
-    display: none;
-    text-align: center;
-    font-weight: bold;
-    background-color: #999999;
-    border: 1px solid #666666;
-    color: #FFFFFF;
-    padding: 1em;
+/**
+ * Fonts and styles
+ */
+body {
+    font-family: "Trebuchet MS", Arial, Helvetica, Tahoma, sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+h1 {
+    font-size: 138.5%;
+}
+
+h2 {
+    font-size: 123.1%;
+}
+
+h3 {
+    font-size: 108%;
+}
+
+
+h4 {
+    font-size: 100%;
+}
+
+ul {
+    margin: .5em .5em .5em 2em;
+}
+
+#tabs.ui-tabs ul li {
+    list-style-type: none;
 }
 
 /**
@@ -22,70 +49,66 @@
     padding: 0 .5em 0 .5em;
 }
 
-/**
-* @copyright Transparensee Systems, Inc.
-* @fileOverview accordion_widget.css
-* Core styles for t11e.widget.jquery.AccordionWidget.
-*/
-
-.t11e-widget-jquery-accordion {
-    border: 1px solid red;
-     height: 69px;
-     width: 785px;
-
+.t11e-hd h1 {
+    margin: 0;
+    padding: 0 0 .25em .25em;
 }
 
-.accordion-top {
-     margin:0 !important;
-     border: 1px solid green;
-     width: 785px;
+.t11e-amount {
+    margin-top: .5em;
 }
 
-.t11e-widget-jquery-accordion {
-   /*position: static;*/
+.t11e-widget-jquery-results-loading {
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    background-color: #999999;
+    border: 1px solid #666666;
+    color: #FFFFFF;
+    padding: 1em;
 }
 
-.t11e-widget-jquery-accordion-bd {
-   position: absolute;
-   padding: 0 !important;
-   z-index: 500;
+.t11e-widget-jquery-results-bd .t11e-results p {
+    margin-bottom: .25em;
 }
 
-.t11e-widget-jquery-accordion-bd .accordion-top,
-.t11e-widget-jquery-accordion-bd .accordion-bottom {
-   -moz-background-clip: border;
-   -moz-background-inline-policy: continuous;
-   -moz-background-origin: padding;
-   background: #FF0000 url(/images/widgets/themes/advanced/hd_map_results.png) no-repeat scroll 0 0;
+.t11e-widget-jquery-results-bd .t11e-results ul {
+    margin: 0;
+    padding: 0;
 }
 
-.t11e-widget-jquery-accordion-bd .accordion-top {
-height: 34px;
-margin-top: 0.5em;
+.t11e-widget-jquery-results-bd .t11e-results li.t11e-results-row {
+    font-size: 85%;
+    margin: 2px;
+    padding: .5em;
+    float: left;
+    width: 200px;
+    height: 180px;
+    border: 1px solid #999;
+    list-style-type: none;
 }
 
-.t11e-widget-jquery-accordion-bd .accordion-bottom {
-background-position: 0 -34px;
-height: 29px;
+.t11e-widget .t11e-widget-jquery-button-bd {
+    margin: 0 auto;
+    text-align: center;
+}
+.t11e-widget .t11e-widget-jquery-button-bd a {
+    margin: 0 auto;
+    width: 100px;
+    padding: .5em;
 }
 
-.t11e-widget-jquery-accordion-bd .accordion-body {
- display: none;
+.t11e-widget .t11e-widget-jquery-faceted-slider-bd,
+.t11e-widget .t11e-widget-jquery-faceted-dual-slider-bd {
+    padding: 0 1em .5em .75em;
 }
 
-.t11e-widget-jquery-accordion ol.t11e-list-entries {
-   margin: 0;
-   padding: 0;
+.t11e-widget .t11e-widget-jquery-dual-slider-bd {
+    padding: 0 1em .5em .75em;
 }
 
-.t11e-widget-jquery-accordion li.t11e-list-entry {
-   margin: 0;
-   padding:0;
-}
-
-.t11e-widget-jquery-accordion-bd .t11e-widget {
-   margin: 0;
-   padding: 0;
+.t11e-widget .t11e-widget-jquery-select-bd {
+    padding: 0 0 .5em .25em;
 }
 
 .t11e-widget-jquery-button-bd a {
@@ -124,6 +147,7 @@ height: 29px;
 .t11e-widget-jquery-faceted-dual-slider-sparkline .t11e-bd {
     padding: .6em;
 }
+
 .t11e-widget-jquery-faceted-dual-slider-sparkline .t11e-sparkline {
     margin-bottom: 0;
 }

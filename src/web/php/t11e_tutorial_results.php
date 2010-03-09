@@ -32,11 +32,12 @@ $properties = $response['properties'];
 
 ?>
 <p>Your search returned <strong><?php echo $exactSize ?></strong> exact matches.</p>
+<ul>
 <?php
 if ($totalSize > 0) {
     for ($i=0; $i < count($itemIds); $i++) {
 ?>
-<div style="border-top: 1px solid #ddd;" class="t11e-item <?php echo $exactMatches[$i] ? 't11e-exact' : 't11e-fuzzy' ?>">
+<li class="t11e-results-row <?php echo $exactMatches[$i] ? 't11e-exact' : 't11e-fuzzy' ?>">
 <?php
         foreach ($properties[$i] as $key => $value) {
 ?>
@@ -44,10 +45,11 @@ if ($totalSize > 0) {
 <?php
         }
 ?>
-</div>
+</li>
 <?php
 
     }
 }
 
 ?>
+</ul>
