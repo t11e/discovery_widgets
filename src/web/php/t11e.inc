@@ -12,6 +12,8 @@ function t11e_fix_get() {
     foreach ($pairs as $i) {
         if (!empty($i)) {
             list($name, $value) = explode('=', $i, 2);
+            $name = rawurldecode($name);
+            $value = rawurldecode($value);
             if (isset($params[$name]) ) {
                 if (is_array($params[$name]) ) {
                     $params[$name][] = $value;

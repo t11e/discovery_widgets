@@ -1,4 +1,4 @@
- <?php
+<?php
 require("php/t11e.inc");
 
 /**
