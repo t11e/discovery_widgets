@@ -53,6 +53,18 @@ if (false) {
  *
  *    <dt>format</dt>
  *    <dd>Optional callback that formats how the slider values are displayed on the page.
+ *
+ *    <dt>min_is_any</dt>
+ *    <dd>When set to 'true', the minimum value on the slider is set to match any value. If there is
+ *    a max value set for the slider and min_is_any is set to 'true', then the slider is equivalent
+ *    to searching for items whose dimension is less than the max value.</div>
+ *
+ *    <dt>max_is_any</dt>
+ *    <dd>When set to 'true', the maximum value on the slider is set to match any value. If there is
+ *    a min value set for the slider and max_is_any is set to 'true', then the slider is equivalent
+ *    to searching for items whose dimension is greater than the min value. If both min_is_any and
+ *    max_is_any is set to 'true', the slider is not used in the search.</dd>
+ *
  * </dl>
  *
  * <h2>Sample HTML</h2>
@@ -68,6 +80,8 @@ if (false) {
  * </div>
  * <script type="text/javascript">
  * //<!--
+ *     if ('undefined' === typeof t11e) { t11e = {}; }
+ *     if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
  *     t11e.widget_options['7'] = {
  *         "search_group": "default",
  *         "dimension": "price",
@@ -131,6 +145,7 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {
         return t11e.widget.jquery.util.call_func($, param, options.param_to_value);
     };
 
+    // TODO: Sparklines should be moved to a plugin
     if (t11e.util.is_defined(options.sparkline) &&
         t11e.util.is_defined(sl) &&
         sl.length > 0 &&

@@ -68,7 +68,6 @@ if (false) {
  *          "search_group": "vehicle",
  *          "value_param": "c",
  *          "dimension": "category"
- *          }
  *      };
  *  //-->
  * </script>

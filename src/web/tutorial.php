@@ -206,7 +206,6 @@ $initial = t11e_initial_request($url, $request);
             return value;
         },
         "param_to_value": function ($, value) {
-
             var value = Number(value) + 1;
             return value;
         },

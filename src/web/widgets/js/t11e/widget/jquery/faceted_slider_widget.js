@@ -35,6 +35,10 @@ if (false) {
  *    <dt>step</dt>
  *    <dd>The increment value for the slider. The default is '1'.</dd>
  *
+ *    <dt>min_is_any</dt>
+ *    <dd>When set to 'true', the minimum value on the slider is set to match any value, which
+ *    is a way of disabling the slider so it is no longer part of the search.</dd>
+ *
  *    <dt>page_param</dt>
  *    <dd>Causes the pagination widget to reset when when this widget is updated. The 'page_param' value
  *    must be set to the same as the pagination widget's 'page_param' value.</dd>
