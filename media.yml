@@ -21,6 +21,7 @@ groups:
         - widgets/css/jquery/response_widget.css
         - widgets/css/jquery/results_widget.css
         - widgets/css/jquery/accordion_widget.css
+        - widgets/css/jquery/breadcrumb_widget.css
 
     - groupName: widgets_theme_simple_css
       mediaType: css
@@ -80,6 +81,7 @@ groups:
         - widgets/js/t11e/widget/jquery/params_widget.js
         - widgets/js/t11e/widget/jquery/google_map_widget.js
         - widgets/js/t11e/widget/jquery/accordion_widget.js
+        - widgets/js/t11e/widget/jquery/breadcrumb_widget.js
         - widgets/js/t11e/widget/jquery/text_highlighter_plugin.js
         - widgets/js/t11e/widget/jquery/activate.js
         - widgets/js/t11e/widget/jquery/document.js
