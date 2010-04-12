@@ -79,8 +79,8 @@
     t11e.widget_options['bc1'] = {
         "search_group": "default",
         "value_params": [
-            "test",
-            "dummy"
+            "param1",
+            "param2"
         ]
     };
 //-->
@@ -96,7 +96,6 @@
         <script type="text/javascript" src="../../../../build/jquery-ui-1.7.2.js" charset="utf-8"></script>
         <script type="text/javascript" src="../../../../build/widgets.js" charset="utf-8"></script>
         <script type="text/javascript" src="../../../../build/qunit.js" charset="utf-8"></script>
-        <script type="text/javascript" src="../../../../widgets/js/t11e/widget/jquery/breadcrumb_widget.js" charset="utf-8"></script>
         <script type="text/javascript">//<![CDATA[
         (function ($) {
             t11e.widget.jquery.activate_widgets($);
@@ -106,46 +105,71 @@
             t11e.widget.activate_search_page(options);
         }(jQuery));
 
-        module("module1", {
-        setup: function() {
-            //$('.t11e-breadcrumb').remove();
-            same($('.t11e-breadcrumb').length, 0);
-        },
-        teardown: function() {
-            same($('.t11e-breadcrumb').length, 2);
-        }
+        var add_param = function (params, param, value) {
+            var values = params[param];
+            if (t11e.util.is_undefined(values)) {
+                params[param] = [value];
+            } else if (-1 === $.inArray(value, values)) {
+                values.push(value);
+            }
+        };
+
+        module("breadcrumbs", {
+            setup: function() {
+                //same($('.t11e-breadcrumb').length, 0);
+                //$('.t11e-breadcrumb').remove();
+            },
+            teardown: function() {
+                //pass
+            }
         });
 
-        test('Save to param.', function () {
+        test('Options', function () {
+            var breadcrumb = $('.t11e-widget-jquery-breadcrumb:first');
+            same(breadcrumb.t11e_breadcrumb('option', 'page_param'), 'page', 'page_param should be "page"');
+            same(breadcrumb.t11e_breadcrumb('option', 'value_params').length, 2, 'value_params length should be 2');
+            same(breadcrumb.t11e_breadcrumb('option', 'animate'), false, 'animate should be "false"');
+            breadcrumb.t11e_breadcrumb('option', 'animate', true);
+            same(breadcrumb.t11e_breadcrumb('option', 'animate'), true, 'animate should be "true"');
+            breadcrumb.t11e_breadcrumb('option', 'animate', false);
+            same(breadcrumb.t11e_breadcrumb('option', 'animate'), false, 'animate should be "false"');
+            same(breadcrumb.t11e_breadcrumb('option', 'animation_speed'), 'fast', 'animation_speed should be "fast"');
+        });
+
+        test('Save to params', function () {
+
             t11e.event.trigger('update_request.default', function (params) {
-                var values = params['test'];
-                if (t11e.util.is_undefined(values)) {
-                    params['test'] = ['param'];
-                } else if (-1 === $.inArray('param', values)) {
-                    values.push('param');
-                }
+                add_param(params, 'param1', 'value1');
             });
 
             same($('.t11e-breadcrumb').length, 1, 'There should be 1 breadcrumb item');
-            //ok(true, t11e.util.is_defined(type1));
-            //same(test_input.checked, undefined, 'This checkbox should not be checked');
 
             t11e.event.trigger('update_request.default', function (params) {
-                var values = params['dummy'];
-                if (t11e.util.is_undefined(values)) {
-                    params['dummy'] = ['dummy1'];
-                } else if (-1 === $.inArray('dummy1', values)) {
-                    values.push('dummy1');
-                }
+                add_param(params, 'param2', 'value1');
             });
 
             t11e.event.trigger('update_request.default', function (params) {
-                var values = params['dummy'];
-                if (t11e.util.is_undefined(values)) {
-                    params['dummy'] = ['dummy2'];
-                } else if (-1 === $.inArray('dummy2', values)) {
-                    values.push('dummy2');
-                }
+                add_param(params, 'param2', 'value2');
+            });
+
+            same($('.t11e-breadcrumb').length, 3, 'There should be 3 breadcrumb items');
+
+            //var clicked_item = $('.t11e-breadcrumb > a')[0];
+            //$(clicked_item).trigger('click');
+
+        });
+
+        asyncTest('Remove from params', function () {
+            t11e.event.trigger('update_request.default', function (params) {
+                add_param(params, 'param1', 'value1');
+            });
+
+            t11e.event.trigger('update_request.default', function (params) {
+                add_param(params, 'param2', 'value1');
+            });
+
+            t11e.event.trigger('update_request.default', function (params) {
+                add_param(params, 'param2', 'value2');
             });
 
             same($('.t11e-breadcrumb').length, 3, 'There should be 3 breadcrumb items');
@@ -153,7 +177,17 @@
             var clicked_item = $('.t11e-breadcrumb > a')[0];
             $(clicked_item).trigger('click');
 
+            setTimeout(function() {
+                same($('.t11e-breadcrumb').length, 2, 'There should be 2 breadcrumb items');
+
+
+                // After the assertion has been called,
+                // continue the test
+                start();
+            }, 100)
+
         });
+
         //]]></script>
     </body>
 </html>

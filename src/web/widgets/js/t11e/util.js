@@ -170,6 +170,23 @@ t11e.util.remove_param = function (params, param) {
 };
 
 /**
+ * Removes a parameter with specified value from the params object.
+ * @name t11e.util.remove_param_value
+ * @function
+ * @param params
+ * @param param
+ * @param value
+ */
+t11e.util.remove_param_value = function (params, param, value) {
+    if (t11e.util.is_defined(params) && t11e.util.is_defined(param) &&
+        t11e.util.is_defined(value)) {
+        var values = params[param];
+        params[param] = t11e.internals.remove_value(values, value);
+        return params[param];
+    }
+};
+
+/**
  * Utility function used to dereference a path, as in the following example
  * where <code>response_ids</code> are extracted from the search response object.
  *

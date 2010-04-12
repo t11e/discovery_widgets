@@ -64,6 +64,23 @@ t11e.internals.contains_value = function (array, value) {
 };
 
 /**
+ * @name t11e.internals.remove_value
+ * @function
+ * @param array
+ * @param value
+ * @return array
+ */
+t11e.internals.remove_value = function (array, value) {
+    var result = [];
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] !== value) {
+            result.push(array[i]);
+        }
+    }
+    return result;
+};
+
+/**
  * @name t11e.internals.intersect
  * @function
  * @param array1
