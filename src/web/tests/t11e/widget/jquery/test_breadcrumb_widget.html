@@ -154,9 +154,6 @@
 
             same($('.t11e-breadcrumb').length, 3, 'There should be 3 breadcrumb items');
 
-            //var clicked_item = $('.t11e-breadcrumb > a')[0];
-            //$(clicked_item).trigger('click');
-
         });
 
         asyncTest('Remove from params', function () {
@@ -180,9 +177,6 @@
             setTimeout(function() {
                 same($('.t11e-breadcrumb').length, 2, 'There should be 2 breadcrumb items');
 
-
-                // After the assertion has been called,
-                // continue the test
                 start();
             }, 100)
 
