@@ -45,7 +45,7 @@
                             //<!--
                                 t11e.widget_options['map'] = {
                                     "search_group": "vehicle",
-                                    "dimension": "latlon",
+                                    "dimension": "location",
                                     "map_height": 250,
                                     "center_latitude": 40.777900699999996,
                                     "center_longitude": -73.9634018,
@@ -106,6 +106,7 @@
         <form action="" onsubmit="return false;">
             <input name="location" />
         </form>
+    <div class="t11e-error"></div>
     </div>
     <div class="t11e-ft t11e-widget-jquery-geocode-ft"></div>
 </div>
@@ -114,8 +115,8 @@
     t11e.widget_options['geo'] = {
         "search_group": "default",
         "value_param": "location",
-        "latitude_param": "lat",
-        "longitude_param": "lon"
+        "latitude_param": "la",
+        "longitude_param": "lo"
     };
 //-->
 </script>
@@ -141,33 +142,39 @@
             t11e.widget.activate_search_page(options);
         }(jQuery));
 
-        module("Geocode", {
-            setup: function() {
-                // pass
-            },
-            teardown: function() {
-                //pass
-            }
-        });
+        module("Options");
 
         test('Options', function () {
             var geocode = $('.t11e-widget-jquery-geocode:first');
             same(geocode.t11e_geocode('option', 'page_param'), 'page', 'page_param should be "page"');
             same(geocode.t11e_geocode('option', 'value_param'), 'location', 'value_param should be "location"');
+            same(geocode.t11e_geocode('option', 'latitude_param'), 'la', 'latitude_param should be "la"');
+            same(geocode.t11e_geocode('option', 'longitude_param'), 'lo', 'longitude_param should be "lo"');
         });
 
-        asyncTest('Geocode', function () {
-            var input = $('.t11e-widget-jquery-geocode input');
-            input.val('27617');
-            input.change();
-
-            setTimeout(function() {
+        (function ($) {
+            var test_input = function() {
                 var input = $('.t11e-widget-jquery-geocode input');
                 same(input.val(), 'Raleigh, NC 27617, USA', 'Input should say "Raleigh, NC 27617, USA"');
                 start();
-            },200)
+            }
 
-        });
+            module("Geocode", {
+                setup: function() {
+                    t11e.event.subscribe('update_request.default', test_input);
+                },
+                teardown: function() {
+                    t11e.event.unsubscribe('update_request.default', test_input);
+                }
+            });
+
+            test('Geocode', function () {
+                var input = $('.t11e-widget-jquery-geocode input');
+                input.val('27617');
+                input.change();
+                stop(3000);
+            });
+        }(jQuery));
 
         //]]></script>
     </body>
