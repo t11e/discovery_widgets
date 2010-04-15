@@ -65,7 +65,7 @@
  * //-->
  * </script>
  * <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=" type="text/javascript"></script>
- * @name GeocodeWidget
+ * @name jQuery.ui.t11e_geocode
  * @class A widget for geocoding addresses.
  */
 
