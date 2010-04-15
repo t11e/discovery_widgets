@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
     <head>
         <title>
-            Test Breadcrumb
+            Test Geocode
         </title>
         <link href="../../../../build/yui-2.7.0.min.css" rel="stylesheet" type="text/css" />
         <link href="../../../../build/jquery-ui-1.7.2.min.css" rel="stylesheet" type="text/css" />
@@ -20,7 +20,7 @@
 </script>
         <div id="doc3" class="yui-t3">
             <div id="hd" role="banner">
-              <h1>Test Breadcrumb</h1>
+              <h1>Test Geocode</h1>
               <p><a href="index.html">Back</a></p>
             </div>
             <div id="bd" role="main">
@@ -33,36 +33,6 @@
                             <div id="qunit-testrunner-toolbar"></div>
                             <h2 id="qunit-userAgent"></h2>
                             <ol id="qunit-tests"></ol>
-
-                            <div class="t11e-widget t11e-widget-jquery-google-map t11e-widget-id-map">
-                                <div class="t11e-hd t11e-widget-jquery-google-map-hd"></div>
-                                <div class="t11e-bd t11e-widget-jquery-google-map-bd">
-                                    <div class="google-map"></div>
-                                </div>
-                                <div class="t11e-ft t11e-widget-jquery-google-map-ft"></div>
-                            </div>
-                            <script type="text/javascript">
-                            //<!--
-                                t11e.widget_options['map'] = {
-                                    "search_group": "vehicle",
-                                    "dimension": "location",
-                                    "map_height": 250,
-                                    "center_latitude": 40.777900699999996,
-                                    "center_longitude": -73.9634018,
-                                    "zoom_level": 13,
-                                    "close_match_icon": "/images/google_map_markers/largeTDYellowIcons/marker${index}.png",
-                                    "exact_match_icon": "/images/google_map_markers/largeTDRedIcons/marker${index}.png",
-                                    "icon_shadow": "/images/google_map_markers/shadow50.png",
-                                    "item_info_url": "/info_window/${id}/",
-                                    "icon_width": 34,
-                                    "icon_height": 20,
-                                    "icon_shadow_width": 27,
-                                    "icon_shadow_height": 34,
-                                    "icon_anchor_x": 9,
-                                    "icon_anchor_y": 34
-                                };
-                            //-->
-                            </script>
 
                         </div>
                     </div>
@@ -100,23 +70,41 @@
 //-->
 </script>
 
-<div class="t11e-widget t11e-widget-jquery-geocode t11e-widget-id-geo">
+<div class="t11e-widget t11e-widget-jquery-geocode t11e-widget-id-geo1">
     <div class="t11e-hd t11e-widget-jquery-geocode-hd"><h1>Geocode</h1></div>
     <div class="t11e-bd t11e-widget-jquery-geocode-bd">
         <form action="" onsubmit="return false;">
             <input name="location" />
         </form>
-    <div class="t11e-error"></div>
+        <div class="t11e-error"></div>
+        <div class="t11e-results"></div>
     </div>
     <div class="t11e-ft t11e-widget-jquery-geocode-ft"></div>
 </div>
 <script type="text/javascript">
 //<!--
-    t11e.widget_options['geo'] = {
+    t11e.widget_options['geo1'] = {
         "search_group": "default",
         "value_param": "location",
         "latitude_param": "la",
-        "longitude_param": "lo"
+        "longitude_param": "lo",
+        "display_results": true
+    };
+//-->
+</script>
+
+<div class="t11e-widget t11e-widget-jquery-geocode t11e-widget-id-geo2">
+    <div class="t11e-hd t11e-widget-jquery-geocode-hd"><h1>Geocode</h1></div>
+    <div class="t11e-bd t11e-widget-jquery-geocode-bd"></div>
+    <div class="t11e-ft t11e-widget-jquery-geocode-ft"></div>
+</div>
+<script type="text/javascript">
+//<!--
+    t11e.widget_options['geo2'] = {
+        "search_group": "default",
+        "value_param": "loc",
+        "latitude_param": "lat",
+        "longitude_param": "lon"
     };
 //-->
 </script>
@@ -142,40 +130,7 @@
             t11e.widget.activate_search_page(options);
         }(jQuery));
 
-        module("Options");
-
-        test('Options', function () {
-            var geocode = $('.t11e-widget-jquery-geocode:first');
-            same(geocode.t11e_geocode('option', 'page_param'), 'page', 'page_param should be "page"');
-            same(geocode.t11e_geocode('option', 'value_param'), 'location', 'value_param should be "location"');
-            same(geocode.t11e_geocode('option', 'latitude_param'), 'la', 'latitude_param should be "la"');
-            same(geocode.t11e_geocode('option', 'longitude_param'), 'lo', 'longitude_param should be "lo"');
-        });
-
-        (function ($) {
-            var test_input = function() {
-                var input = $('.t11e-widget-jquery-geocode input');
-                same(input.val(), 'Raleigh, NC 27617, USA', 'Input should say "Raleigh, NC 27617, USA"');
-                start();
-            }
-
-            module("Geocode", {
-                setup: function() {
-                    t11e.event.subscribe('update_request.default', test_input);
-                },
-                teardown: function() {
-                    t11e.event.unsubscribe('update_request.default', test_input);
-                }
-            });
-
-            test('Geocode', function () {
-                var input = $('.t11e-widget-jquery-geocode input');
-                input.val('27617');
-                input.change();
-                stop(3000);
-            });
-        }(jQuery));
-
         //]]></script>
+        <script type="text/javascript" src="test_geocode_widget.js" charset="utf-8"></script>
     </body>
 </html>

@@ -176,6 +176,13 @@ groups:
       sourceFileNames:
         - jquery/qunit/532c6e9/qunit/qunit.js
 
+    - groupName: tests_js
+      mediaType: js
+      outputFileName: tests.js
+      outputFileNameMinified: tests.min.js
+      sourceFileNames:
+        - tests/t11e/widget/jquery/test_geocode_widget.js
+
 jslintOptions:
     #- adsafe
     - bitwise
