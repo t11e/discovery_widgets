@@ -115,6 +115,14 @@ groups:
       sourceFileNames:
         - jquery/jquery-1.3.2.js
 
+    - groupName: jquery-1.4.2_js
+      mediaType: js
+      outputFileName: jquery-1.4.2.js
+      outputFileNameMinified: jquery-1.4.2.min.js
+      jslint: off
+      sourceFileNames:
+        - jquery/jquery-1.4.2.js
+
     - groupName: jquery-ui_css
       mediaType: css
       outputFileName: jquery-ui-1.7.2.css
@@ -160,6 +168,61 @@ groups:
         #- jquery/jquery-ui/1.7.2/js/ui.progressbar.js
         - jquery/jquery-ui/1.7.2/js/ui.slider.js
         - jquery/jquery-ui/1.7.2/js/ui.tabs.js
+
+    - groupName: jquery-ui-1.8_css
+      mediaType: css
+      outputFileName: jquery-ui-1.8.css
+      outputFileNameMinified: jquery-ui-1.8.min.css
+      sourceFileNames:
+        - jquery/jquery-ui/1.8/css/jquery.ui.core.css
+        - jquery/jquery-ui/1.8/css/jquery.ui.resizable.css
+        #- jquery/jquery-ui/1.8/css/jquery.ui.accordion.css
+        #- jquery/jquery-ui/1.8/css/jquery.ui.datepicker.css
+        - jquery/jquery-ui/1.8/css/jquery.ui.dialog.css
+        #- jquery/jquery-ui/1.8/css/jquery.ui.progressbar.css
+        - jquery/jquery-ui/1.8/css/jquery.ui.slider.css
+        - jquery/jquery-ui/1.8/css/jquery.ui.tabs.css
+        #- jquery/jquery-ui/1.8/css/jquery.ui.autocomplete.css
+        - jquery/jquery-ui/1.8/css/jquery.ui.base.css
+        - jquery/jquery-ui/1.8/css/jquery.ui.button.css
+
+    - groupName: jquery-ui-1.8_js
+      mediaType: js
+      outputFileName: jquery-ui-1.8.js
+      outputFileNameMinified: jquery-ui-1.8.min.js
+      jslint: off
+      sourceFileNames:
+        - jquery/jquery-ui/1.8/js/jquery.ui.core.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.widget.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.mouse.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.position.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.draggable.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.droppable.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.resizable.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.selectable.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.sortable.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.core.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.blind.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.bounce.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.clip.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.drop.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.explode.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.fade.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.fold.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.highlight.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.pulsate.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.scale.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.shake.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.slide.js
+        - jquery/jquery-ui/1.8/js/jquery.effects.transfer.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.accordion.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.autocomplete.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.button.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.datepicker.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.dialog.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.progressbar.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.slider.js
+        - jquery/jquery-ui/1.8/js/jquery.ui.tabs.js
 
     - groupName: qunit_css
       mediaType: css
