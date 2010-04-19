@@ -1,0 +1,8 @@
+<div class="t11e-widget t11e-widget-jquery-results">
+    <div class="t11e-hd t11e-widget-jquery-results-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-results-bd">
+        <div class="t11e-results"></div>
+        <div class="t11e-widget-jquery-results-loading"></div>
+    </div>
+    <div class="t11e-ft t11e-widget-jquery-results-ft"></div>
+</div>

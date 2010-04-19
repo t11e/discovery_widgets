@@ -1,0 +1,11 @@
+<div class="t11e-widget t11e-widget-jquery-pagination">
+    <div class="t11e-hd t11e-widget-jquery-pagination-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-pagination-bd">
+        <div class="pagination">
+            <a href="#" class="prev">Prev</a>
+            <a href="#">1</a>
+            <a href="#" class="next">Next</a>
+        </div>
+    </div>
+    <div class="t11e-ft t11e-widget-jquery-pagination-ft"></div>
+</div>

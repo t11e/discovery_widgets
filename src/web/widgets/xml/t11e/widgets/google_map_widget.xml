@@ -1,0 +1,7 @@
+<div class="t11e-widget t11e-widget-jquery-google-map">
+    <div class="t11e-hd t11e-widget-jquery-google-map-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-google-map-bd">
+        <div class="google-map"></div>
+    </div>
+    <div class="t11e-ft t11e-widget-jquery-google-map-ft"></div>
+</div>

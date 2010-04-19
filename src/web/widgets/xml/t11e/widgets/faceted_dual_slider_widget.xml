@@ -1,0 +1,10 @@
+<div class="t11e-widget t11e-widget-jquery-faceted-dual-slider">
+    <div class="t11e-hd t11e-widget-jquery-faceted-dual-slider-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-faceted-dual-slider-bd">
+        <div class="t11e-sparkline"></div>
+        <div class="t11e-slider-control"></div>
+        <div class="t11e-amount"></div>
+    </div>
+    <div class="t11e-ft t11e-widget-jquery-faceted-dual-slider-ft">
+    </div>
+</div>

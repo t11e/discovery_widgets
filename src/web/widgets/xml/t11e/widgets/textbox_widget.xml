@@ -1,0 +1,9 @@
+<div class="t11e-widget t11e-widget-jquery-textbox">
+    <div class="t11e-hd t11e-widget-jquery-textbox-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-textbox-bd">
+        <form action="" onsubmit="return false;">
+            <input name="" />
+        </form>
+    </div>
+    <div class="t11e-ft t11e-widget-jquery-textbox-ft"></div>
+</div>

@@ -1,0 +1,16 @@
+<div class="t11e-widget t11e-widget-jquery-faceted-flyout">
+    <div class="t11e-hd t11e-widget-jquery-faceted-flyout-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-faceted-flyout-bd">
+        <div class="breadcrumb"></div>
+        <form action="">
+            <fieldset class="t11e-widget-jquery-faceted-flyout-primary">
+            </fieldset>
+            <fieldset class="t11e-widget-jquery-faceted-flyout-secondary">
+            </fieldset>
+            <div class="toggle-flyout">
+                More...
+            </div>
+        </form>
+    </div>
+    <div class="t11e-ft t11e-widget-jquery-faceted-flyout-ft"></div>
+</div>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+    <head>
+        <title>
+            Widget Tests
+        </title>
+        <link href="../../../../../build/yui-2.7.0.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../../../../build/jquery-ui-1.7.2.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../../../../build/widgets.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../../../../build/widgets-theme-simple.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../../../../build/qunit.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+<script type="text/javascript">
+//<!--
+    if ('undefined' === typeof t11e) { t11e = {}; }
+    if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
+//-->
+</script>
+        <div id="doc3" class="yui-t3">
+            <div id="hd" role="banner">
+              <h1>Test dual_slider_widget</h1>
+              <p><a href="index.html">Back</a></p>
+            </div>
+            <div id="bd" role="main">
+                <div id="yui-main">
+                    <div class="yui-b">
+                        <div class="yui-g">
+                            <h1 id="qunit-header">QUnit Test Suite</h1>
+                            <h2 id="qunit-banner"></h2>
+                            <div id="qunit-testrunner-toolbar"></div>
+                            <h2 id="qunit-userAgent"></h2>
+                            <ol id="qunit-tests"></ol>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="yui-b">
+
+<div class="t11e-widget t11e-widget-jquery-dual-slider">
+    <div class="t11e-hd t11e-widget-jquery-dual-slider-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-dual-slider-bd">
+        <div class="amount"></div>
+        <div class="slider-control"></div>
+    </div>
+    <div class="t11e-ft t11e-widget-jquery-dual-slider-ft"></div>
+</div>
+
+                </div>
+            </div>
+
+            <div id="ft" role="contentinfo">
+            </div>
+        </div>
+        <script type="text/javascript" src="../../../../../build/jquery-1.3.2.js" charset="utf-8"></script>
+        <script type="text/javascript" src="../../../../../build/jquery-ui-1.7.2.js" charset="utf-8"></script>
+        <script type="text/javascript" src="../../../../../build/widgets.js" charset="utf-8"></script>
+        <script type="text/javascript" src="../../../../../build/qunit.js" charset="utf-8"></script>
+        <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=" type="text/javascript"></script>
+
+        <script type="text/javascript">//<![CDATA[
+        (function ($) {
+            t11e.widget.jquery.activate_widgets($);
+            var options = {"search_groups": {"default": {"url": "../../../../php/t11e_tutorial.php"}}};
+            options.history_plugin = t11e.widget.jquery.history_plugin($);
+            options.search_plugin = t11e.widget.jquery.search_plugin($);
+            t11e.widget.activate_search_page(options);
+        }(jQuery));
+
+        //]]></script>
+        <script type="text/javascript" src="test_dual_slider_widget.js" charset="utf-8"></script>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<div class="t11e-widget t11e-widget-jquery-accordion">
+    <div class="t11e-widget-jquery-accordion-hd"></div>
+    <div class="t11e-widget-jquery-accordion-bd">
+        <div class="accordion-top"></div>
+        <ol class="t11e-list-entries t11e-accordion-body">
+            <li class="t11e-list-entry">
+                <!-- Contained widget -->
+            </li>
+        </ol>
+        <div class="t11e-accordion-bottom"></div>
+    </div>
+    <div class="t11e-widget-jquery-accordion-ft"></div>
+</div>

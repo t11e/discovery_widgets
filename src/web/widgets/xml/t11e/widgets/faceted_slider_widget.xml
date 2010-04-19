@@ -1,0 +1,8 @@
+<div class="t11e-widget t11e-widget-jquery-slider">
+    <div class="t11e-hd t11e-widget-jquery-slider-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-slider-bd">
+        <div class="t11e-amount"></div>
+        <div class="t11e-slider-control"></div>
+    </div>
+    <div class="t11e-ft t11e-widget-jquery-slider-ft"></div>
+</div>
