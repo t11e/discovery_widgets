@@ -24,7 +24,8 @@ t11e.widget.jquery.default_mappings = {
     '.t11e-widget-jquery-button': 't11e_button',
     '.t11e-widget-jquery-accordion': 't11e_accordion',
     '.t11e-widget-jquery-breadcrumb': 't11e_breadcrumb',
-    '.t11e-widget-jquery-geocode': 't11e_geocode'
+    '.t11e-widget-jquery-location': 't11e_location',
+    '.t11e-jquery-ui-geocode': 't11e_geocode'
 };
 
 /**

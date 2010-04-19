@@ -82,7 +82,8 @@ groups:
         - widgets/js/t11e/widget/jquery/google_map_widget.js
         - widgets/js/t11e/widget/jquery/accordion_widget.js
         - widgets/js/t11e/widget/jquery/breadcrumb_widget.js
-        - widgets/js/t11e/widget/jquery/geocode_widget.js
+        - widgets/js/t11e/widget/jquery/location_widget.js
+        - widgets/js/t11e/ui/jquery/jquery.ui.t11e_geocode.js
         - widgets/js/t11e/widget/jquery/text_highlighter_plugin.js
         - widgets/js/t11e/widget/jquery/activate.js
         - widgets/js/t11e/widget/jquery/document.js
@@ -244,7 +245,8 @@ groups:
       outputFileName: tests.js
       outputFileNameMinified: tests.min.js
       sourceFileNames:
-        - tests/t11e/widget/jquery/test_geocode_widget.js
+        - tests/t11e/widget/jquery/test.location_widget.js
+        - tests/t11e/ui/jquery/test.jquery.ui.t11e_geocode.js
 
 jslintOptions:
     #- adsafe

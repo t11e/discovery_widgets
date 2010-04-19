@@ -70,45 +70,7 @@
 //-->
 </script>
 
-<div class="t11e-widget t11e-widget-jquery-geocode t11e-widget-id-geo1">
-    <div class="t11e-hd t11e-widget-jquery-geocode-hd"><h1>Geocode</h1></div>
-    <div class="t11e-bd t11e-widget-jquery-geocode-bd">
-        <form action="" onsubmit="return false;">
-            <input name="location" />
-        </form>
-        <div class="t11e-error"></div>
-        <div class="t11e-results"></div>
-    </div>
-    <div class="t11e-ft t11e-widget-jquery-geocode-ft"></div>
-</div>
-<script type="text/javascript">
-//<!--
-    t11e.widget_options['geo1'] = {
-        "search_group": "default",
-        "value_param": "location",
-        "latitude_param": "la",
-        "longitude_param": "lo",
-        "display_results": true
-    };
-//-->
-</script>
-
-<div class="t11e-widget t11e-widget-jquery-geocode t11e-widget-id-geo2">
-    <div class="t11e-hd t11e-widget-jquery-geocode-hd"><h1>Geocode</h1></div>
-    <div class="t11e-bd t11e-widget-jquery-geocode-bd"></div>
-    <div class="t11e-ft t11e-widget-jquery-geocode-ft"></div>
-</div>
-<script type="text/javascript">
-//<!--
-    t11e.widget_options['geo2'] = {
-        "search_group": "default",
-        "value_param": "loc",
-        "latitude_param": "lat",
-        "longitude_param": "lon"
-    };
-//-->
-</script>
-
+<div id="geocode1"></div>
                 </div>
             </div>
 
@@ -130,7 +92,9 @@
             t11e.widget.activate_search_page(options);
         }(jQuery));
 
+
+
         //]]></script>
-        <script type="text/javascript" src="test_geocode_widget.js" charset="utf-8"></script>
+        <script type="text/javascript" src="test.jquery.ui.t11e_geocode.js" charset="utf-8"></script>
     </body>
 </html>
