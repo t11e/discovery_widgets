@@ -8,10 +8,10 @@ var add_param = function (params, param, value) {
 };
 
 module("breadcrumbs", {
-    setup: function() {
+    setup: function () {
         $('.t11e-widget-jquery-button-bd a').trigger('click');
     },
-    teardown: function() {
+    teardown: function () {
         //pass
     }
 });
@@ -66,10 +66,10 @@ asyncTest('Remove from params', function () {
     var clicked_item = $('.t11e-breadcrumb > a')[0];
     $(clicked_item).trigger('click');
 
-    setTimeout(function() {
+    setTimeout(function () {
         same($('.t11e-breadcrumb').length, 2, 'There should be 2 breadcrumb items');
 
         start();
-    }, 100)
+    }, 100);
 
 });
