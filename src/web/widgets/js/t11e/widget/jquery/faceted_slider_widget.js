@@ -48,8 +48,8 @@ if (false) {
  * <div class="t11e-widget t11e-widget-jquery-slider t11e-widget-id-2105">
  *   <div class="t11e-hd t11e-widget-jquery-slider-hd">Rating</div>
  *   <div class="t11e-bd t11e-widget-jquery-slider-bd">
- *     <div class="amount"></div>
- *     <div class="slider-control"></div>
+ *     <div class="t11e-amount"></div>
+ *     <div class="t11e-slider-control"></div>
  *   </div>
  *   <div class="t11e-ft t11e-widget-jquery-slider-ft"></div>
  * </div>

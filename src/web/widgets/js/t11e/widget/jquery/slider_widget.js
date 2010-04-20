@@ -66,9 +66,10 @@ if (false) {
  * @class A single-handled slider.
  */
 t11e.widget.jquery.SliderWidget = function ($, options) {
+    t11e.util.log(options);
     var search_group = options.search_group;
-    var amount = $(this).find(".amount:first");
-    var slider_ctl = $(this).find(".slider-control:first");
+    var amount = $(this).find('.amount:first');
+    var slider_ctl = $(this).find('.slider-control:first');
     var slider_options = {
         'min': Number(options.min_value),
         'max': Number(options.max_value),

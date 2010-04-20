@@ -76,7 +76,7 @@ groups:
         - widgets/js/t11e/widget/jquery/select_widget.js
         - widgets/js/t11e/widget/jquery/faceted_checkboxes_widget.js
         - widgets/js/t11e/widget/jquery/faceted_flyout_widget.js
-        - widgets/js/t11e/widget/jquery/text_box_widget.js
+        - widgets/js/t11e/widget/jquery/textbox_widget.js
         - widgets/js/t11e/widget/jquery/button_widget.js
         - widgets/js/t11e/widget/jquery/params_widget.js
         - widgets/js/t11e/widget/jquery/google_map_widget.js
@@ -245,8 +245,24 @@ groups:
       outputFileName: tests.js
       outputFileNameMinified: tests.min.js
       sourceFileNames:
-        - tests/t11e/widget/jquery/test.location_widget.js
-        - tests/t11e/ui/jquery/test.jquery.ui.t11e_geocode.js
+        - tests/js/t11e/widget/jquery/test_accordion_widget.js
+        - tests/js/t11e/widget/jquery/test_breadcrumb_widget.js
+        - tests/js/t11e/widget/jquery/test_button_widget.js
+        - tests/js/t11e/widget/jquery/test_dual_slider_widget.js
+        - tests/js/t11e/widget/jquery/test_faceted_checkboxes_widget.js
+        - tests/js/t11e/widget/jquery/test_faceted_dual_slider_widget.js
+        - tests/js/t11e/widget/jquery/test_faceted_flyout_widget.js
+        - tests/js/t11e/widget/jquery/test_faceted_slider_widget.js
+        - tests/js/t11e/widget/jquery/test_google_map_widget.js
+        - tests/js/t11e/widget/jquery/test_location_widget.js
+        - tests/js/t11e/widget/jquery/test_pagination_widget.js
+        - tests/js/t11e/widget/jquery/test_params_widget.js
+        - tests/js/t11e/widget/jquery/test_response_widget.js
+        - tests/js/t11e/widget/jquery/test_results_widget.js
+        - tests/js/t11e/widget/jquery/test_select_widget.js
+        - tests/js/t11e/widget/jquery/test_slider_widget.js
+        - tests/js/t11e/widget/jquery/test_textbox_widget.js
+        - tests/js/t11e/ui/jquery/test.jquery.ui.t11e_geocode.js
 
 jslintOptions:
     #- adsafe

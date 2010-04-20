@@ -88,4 +88,4 @@ t11e.widget.jquery.TextBoxWidget = function ($, options) {
 };
 
 t11e.widget.jquery.make_jquery_ui_widget(jQuery,
-    't11e_text_box', t11e.widget.jquery.TextBoxWidget);
+    't11e_textbox', t11e.widget.jquery.TextBoxWidget);
