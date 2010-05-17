@@ -14,14 +14,15 @@ groups:
       outputFileNameMinified: widgets.min.css
       sourceFileNames:
         - widgets/css/core.css
-        - widgets/css/jquery/pagination_widget.css
-        - widgets/css/jquery/faceted_checkboxes_widget.css
-        - widgets/css/jquery/faceted_flyout_widget.css
-        - widgets/css/jquery/google_map_widget.css
-        - widgets/css/jquery/response_widget.css
-        - widgets/css/jquery/results_widget.css
-        - widgets/css/jquery/accordion_widget.css
-        - widgets/css/jquery/breadcrumb_widget.css
+        - widgets/css/jquery/widget/pagination_widget.css
+        - widgets/css/jquery/widget/faceted_checkboxes_widget.css
+        - widgets/css/jquery/widget/faceted_flyout_widget.css
+        - widgets/css/jquery/widget/google_map_widget.css
+        - widgets/css/jquery/widget/response_widget.css
+        - widgets/css/jquery/widget/results_widget.css
+        - widgets/css/jquery/widget/accordion_widget.css
+        - widgets/css/jquery/widget/breadcrumb_widget.css
+        - widgets/css/jquery/ui/jquery.ui.t11e_styled_checkboxes.css
 
     - groupName: widgets_theme_simple_css
       mediaType: css
