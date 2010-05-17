@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview Geocode widget definition
+ * @fileOverview Styled Checkboxes
  * Based on: http://filamentgroup.com/lab/accessible_custom_designed_checkbox_radio_button_inputs_styled_css_jquery/
  */
 (function ($) {
@@ -18,14 +18,13 @@
 
         inputs.each(function (i, target) {
 
-            if ($(target).is('[type=checkbox],[type=radio]')) {
+            if ($(target).is('[type="checkbox"],[type="radio"]')) {
                 var input = $(target);
-
                 // get the associated label using the input's id
-                var label = $('label[for=' + input.attr('id') + ']');
+                var label = self.element.find('label[for="' + input.attr('id') + '"]');
 
                 //get type, for classname suffix
-                var input_type = (input.is('[type=checkbox]')) ? 'checkbox' : 'radio';
+                var input_type = (input.is('[type="checkbox"]')) ? 'checkbox' : 'radio';
 
                 // Deal with legacy faceted checkbox widget code that wraps inputs in divs.
                 var parent = input.parent();
@@ -33,11 +32,15 @@
                     parent.addClass(self.options.row_class + ' t11e-' + input_type);
                 } else {
                     // wrap the input + label in a div
-                    parent = $('<div class="' + self.options.row_class + ' t11e-' + input_type + '"></div>').insertBefore(input).append(input, label);
+                    parent = $('<div/>')
+                        .attr('class', self.options.row_class + ' t11e-' + input_type)
+                        .insertBefore(input);
+                    parent.append(input);
+                    parent.append(label);
                 }
 
                 // find all inputs in this set using the shared name attribute
-                var all_inputs = self.element.find('input[name=' + input.attr('name') + ']');
+                var all_inputs = self.element.find('input[name="' + input.attr('name') + '"]');
 
                 // necessary for browsers that don't support the :hover pseudo class on labels
                 label.hover(
@@ -57,7 +60,8 @@
                     if (input.is(':checked')) {
                         if (input.is(':radio')) {
                             all_inputs.each(function (i, target) {
-                                $('label[for=' + $(target).attr('id') + ']').removeClass('ui-state-checked');
+                                self.element.find('label[for="' + $(target).attr('id') + '"]')
+                                    .removeClass('ui-state-checked');
                             });
                         }
                         label.addClass('ui-state-checked');
