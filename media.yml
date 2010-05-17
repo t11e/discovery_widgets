@@ -84,7 +84,9 @@ groups:
         - widgets/js/t11e/widget/jquery/accordion_widget.js
         - widgets/js/t11e/widget/jquery/breadcrumb_widget.js
         - widgets/js/t11e/widget/jquery/location_widget.js
+        - widgets/js/t11e/widget/jquery/jquery.ui.t11e_faceted_checkboxes.js
         - widgets/js/t11e/ui/jquery/jquery.ui.t11e_geocode.js
+        - widgets/js/t11e/ui/jquery/jquery.ui.t11e_styled_checkboxes.js
         - widgets/js/t11e/widget/jquery/text_highlighter_plugin.js
         - widgets/js/t11e/widget/jquery/activate.js
         - widgets/js/t11e/widget/jquery/document.js

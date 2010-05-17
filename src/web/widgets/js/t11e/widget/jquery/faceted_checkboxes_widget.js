@@ -231,6 +231,6 @@ t11e.widget.jquery.FacetedCheckboxesWidget = function ($, options) {
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 };
 
-t11e.widget.jquery.make_jquery_ui_widget(jQuery,
-    't11e_faceted_checkboxes', t11e.widget.jquery.FacetedCheckboxesWidget);
 
+t11e.widget.jquery.make_jquery_ui_widget(jQuery,
+    't11e_faceted_checkboxes_widget', t11e.widget.jquery.FacetedCheckboxesWidget);

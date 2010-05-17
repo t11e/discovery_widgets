@@ -1,0 +1,71 @@
+
+.t11e-checkbox, .t11e-radio {
+    position: relative;
+}
+
+/* input, label positioning */
+.t11e-checkbox input, .t11e-radio input {
+    position: absolute;
+    left: 2px;
+    top: 3px;
+    margin: 0;
+    z-index: 0;
+}
+
+/*
+ * z-index is set higher than checkboxes/radio buttons
+ * so that the labels hide them.
+ */
+.t11e-checkbox label,
+.t11e-radio label {
+    display: block;
+    position: relative;
+    z-index: 1;
+    padding: .25em 0 .25em 30px;
+    margin: 0 0 .3em;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+}
+
+label.ui-state-hover {
+
+}
+
+.t11e-checkbox label.ui-state-focus,
+.t11e-radio label.ui-state-focus {
+}
+
+/**
+ *  Image sprite placement that hides radio buttons and checkboxes
+ */
+
+.t11e-checkbox label {
+    /*background: #ffffff url(/images/widgets/themes/advanced/checkbox.gif) no-repeat;*/
+}
+
+.t11e-radio label {
+    /*background:#ffffff url(/images/widgets/themes/advanced/radiobutton.gif) no-repeat;*/
+}
+
+.t11e-checkbox label, .t11e-radio label {
+    /*background-position: -10px -14px;*/
+}
+
+.t11e-checkbox label.ui-state-hover,
+.t11e-checkbox label.ui-state-focus,
+.t11e-radio label.ui-state-hover,
+.t11e-radio label.ui-state-focus {
+    /*background-position: -10px -114px;*/
+}
+
+.t11e-checkbox label.ui-state-checked,
+.t11e-radio label.ui-state-checked {
+    background-color: #eeeeee;
+   /*background-position: -10px -214px;*/
+}
+
+.t11e-checkbox label.ui-state-checked-hover,
+.t11e-checkbox label.ui-state-checked-focus {
+    /*background-position: -10px -314px;*/
+}
