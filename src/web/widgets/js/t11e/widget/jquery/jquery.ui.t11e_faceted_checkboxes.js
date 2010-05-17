@@ -74,7 +74,7 @@
 (function ($) {
     var options = {
         search_group: 'default',
-        value_param: 'fc',
+        value_param: '',
         input_selector: 'form input',
         row_class: 't11e-input-row',
         facet_count_class: 't11e-facet-count'
@@ -86,10 +86,10 @@
     $.ui.t11e_faceted_checkboxes.prototype._init = function () {
         var self = this;
 
-        var search_group = options.search_group;
-        var value_param = options.value_param;
-        var dimension = options.dimension;
-        var settings = options.settings;
+        var search_group = self.options.search_group;
+        var value_param = self.options.value_param;
+        var dimension = self.options.dimension;
+        var settings = self.options.settings;
         var checkboxes = self.element.find(self.options.input_selector);
 
         var ignore_event = false;
@@ -183,7 +183,7 @@
                         }
                     });
                     if (changed) {
-                        t11e.util.remove_param(params, options.page_param);
+                        t11e.util.remove_param(params, self.options.page_param);
                     }
                 });
             }

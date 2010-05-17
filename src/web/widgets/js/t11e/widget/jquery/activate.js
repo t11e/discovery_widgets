@@ -17,6 +17,7 @@ t11e.widget.jquery.default_mappings = {
     '.t11e-widget-jquery-pagination': 't11e_pagination',
     '.t11e-widget-jquery-select': 't11e_select',
     '.t11e-widget-jquery-faceted-checkboxes': 't11e_faceted_checkboxes_widget',
+    '.t11e-widget-jquery-faceted-checkboxes2': 't11e_faceted_checkboxes',
     '.t11e-widget-jquery-textbox': 't11e_textbox',
     '.t11e-widget-jquery-params': 't11e_params',
     '.t11e-widget-jquery-faceted-flyout': 't11e_faceted_flyout',
