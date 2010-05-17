@@ -75,9 +75,10 @@
     var options = {
         search_group: 'default',
         value_param: '',
-        input_selector: 'form input',
+        input_selector: 'input',
         row_class: 't11e-input-row',
-        facet_count_class: 't11e-facet-count'
+        facet_count_class: 't11e-facet-count',
+        mutex_params: {}
     };
     $.widget('ui.t11e_faceted_checkboxes', {options: options});
     $.ui.t11e_faceted_checkboxes.defaults = options;
@@ -91,6 +92,15 @@
         var dimension = self.options.dimension;
         var settings = self.options.settings;
         var checkboxes = self.element.find(self.options.input_selector);
+
+        self.mutex_param_names = [];
+        $.each(self.options.mutex_params, function (value, param_names) {
+            $.each(param_names, function (idx, param_name) {
+                if (-1 === $.inArray(param_name, self.mutex_param_names)) {
+                    self.mutex_param_names.push(param_name);
+                }
+            });
+        });
 
         var ignore_event = false;
         /**
@@ -110,6 +120,7 @@
                     if (checkbox.checked !== selected) {
                         checkbox.checked = selected;
                     }
+                    $(checkbox).trigger('update_state');
                 });
             } finally {
                 ignore_event = false;
@@ -182,7 +193,18 @@
                             changed = remove_facet_from_params(params, checkbox.value) || changed;
                         }
                     });
+                    
                     if (changed) {
+                        var to_delete = $.merge([], self.mutex_param_names);
+                        $.each(params[self.options.value_param] || [], function (idx, value) {
+                            var to_keep = self.options.mutex_params[value] || [];
+                            to_delete = $.grep(to_delete, function (value, idx) {
+                                return -1 === $.inArray(value, to_keep);
+                            });
+                        });
+                        $.each(to_delete, function (idx, val) {
+                            delete params[val];
+                        });
                         t11e.util.remove_param(params, self.options.page_param);
                     }
                 });

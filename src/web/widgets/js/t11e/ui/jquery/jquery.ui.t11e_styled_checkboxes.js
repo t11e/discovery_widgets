@@ -5,7 +5,7 @@
  */
 (function ($) {
     var options = {
-        input_selector: 'form input',
+        input_selector: 'input',
         row_class: 't11e-input-row'
     };
     $.widget('ui.t11e_styled_checkboxes', {options: options});
