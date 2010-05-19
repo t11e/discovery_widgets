@@ -63,7 +63,7 @@
                     self.geocode(event);
                 }
             };
-            self._address.bind('change', changed);
+            self._address.bind('change blur', changed);
         }
         if (self.options.address) {
             self.address(self.options.address);
