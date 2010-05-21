@@ -101,10 +101,7 @@
                 });
             },
             clear: function (event, ui) {
-                t11e.event.trigger('update_request.' + options.search_group, function (params) {
-                    self._remove_error();
-                    self._clear_params(params);
-                });
+                //self._remove_error();
             }
         });
 
