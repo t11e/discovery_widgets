@@ -79,7 +79,7 @@ function t11e_query($url, $request) {
             '_discovery' => array(
                 'request' => $request,
                 'response' => $response
-            )
+        )
         );
         return json_encode($results);
     } else {
@@ -87,28 +87,31 @@ function t11e_query($url, $request) {
     }
 }
 
-function t11e_json_post($url, $data) {
-    /**
-    * Posts $data to $url and expects JSON data in return
-    */
-    $json_data = json_encode($data);
-    $c = curl_init($url);
-    curl_setopt($c, CURLOPT_RETURNTRANSFER,true);
-    curl_setopt($c, CURLOPT_POST, true);
-    curl_setopt($c, CURLOPT_POSTFIELDS, $json_data);
-    curl_setopt($c, CURLOPT_FAILONERROR,true);
-    curl_setopt($c, CURLOPT_HTTPHEADER,array('Content-Type: application/json'));
-
-    $response = curl_exec($c);
-    $http_status = curl_getinfo($c, CURLINFO_HTTP_CODE);
-    $error = curl_error($c);
-    curl_close($c);
-
-    if ($http_status == 200) {
-        return json_decode($response, true);
-    } else {
-        return $error;
+function t11e_post_request($url, $content, $optional_headers = null) {
+    $params = array('http' => array(
+        'method' => 'POST',
+        'content' => $content
+    ));
+    if ($optional_headers !== null) {
+        $params['http']['header'] = $optional_headers;
     }
+    $ctx = stream_context_create($params);
+    $fp = @fopen($url, 'rb', false, $ctx);
+    if (!$fp) {
+        throw new Exception("Problem with $url, $php_errormsg");
+    }
+    $response = @stream_get_contents($fp);
+    if ($response === false) {
+        throw new Exception("Problem reading data from $url, $php_errormsg");
+    }
+    return $response;
+}
+
+function t11e_json_post($url, $data) {
+    $jsonRequest = json_encode($data);
+    $response = t11e_post_request($url, $jsonRequest, "Content-Type: application/json\r\n");
+    $jsonResponse = json_decode($response, true);
+    return $jsonResponse;
 }
 
 ?>
