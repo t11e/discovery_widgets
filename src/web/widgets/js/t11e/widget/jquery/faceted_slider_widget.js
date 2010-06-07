@@ -89,7 +89,7 @@ t11e.widget.jquery.FacetedSliderWidget = function ($, options) {
     };
 
     var param_to_value = function (param) {
-        return t11e.widget.jquery.util.call_func($, param, options.param_to_value);
+        return parseFloat(t11e.widget.jquery.util.call_func($, param, options.param_to_value));
     };
 
     var update_amounts = function (event, ui) {

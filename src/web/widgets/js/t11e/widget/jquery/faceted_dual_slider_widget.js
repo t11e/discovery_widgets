@@ -142,7 +142,7 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {
     };
 
     var param_to_value = function (param) {
-        return t11e.widget.jquery.util.call_func($, param, options.param_to_value);
+        return parseFloat(t11e.widget.jquery.util.call_func($, param, options.param_to_value));
     };
 
     // TODO: Sparklines should be moved to a plugin
@@ -172,20 +172,24 @@ t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {
     }
 
     var update_amounts = function (event, ui) {
-        var min_value = value_to_param(ui.values[0]);
-        var max_value = value_to_param(ui.values[1]);
-        if (min_is_any && ui.values[0] === slider_options.min) {
-            min_value = '';
+        var min_param_value = value_to_param(ui.values[0]);
+        var max_param_value = value_to_param(ui.values[1]);
+
+        if (t11e.util.is_undefined(min_param_value) ||
+            (min_is_any && ui.values[0] === slider_options.min)) {
+            min_param_value = '';
         }
-        if (max_is_any && ui.values[1] === slider_options.max) {
-            max_value = '';
+        if (t11e.util.is_undefined(max_param_value) ||
+            (max_is_any && ui.values[1] === slider_options.max)) {
+            max_param_value = '';
         }
+
         if (t11e.util.is_defined(options.format) &&
             t11e.util.is_function(options.format)) {
-            options.format($, amount, min_value, max_value);
+            options.format($, amount, min_param_value, max_param_value);
         }
         else {
-            amount.html(min_value + ' - ' + max_value);
+            amount.html(min_param_value + ' - ' + max_param_value);
         }
     };
 
