@@ -86,24 +86,31 @@
         var self = this;
         var options = self.options;
         var container = self.element.find('.t11e-widget-jquery-location-bd:first');
-
-        self.geocode = container.t11e_geocode({
-            error: function (event, ui) {
-                t11e.event.trigger('update_request.' + options.search_group, function (params) {
-                    self._display_error(self.options.error_template);
-                    self._clear_params(params);
-                });
-            },
-            success: function (event, ui) {
-                t11e.event.trigger('update_request.' + options.search_group, function (params) {
-                    self._remove_error();
-                    self._save_params(event, ui, params);
-                });
-            },
-            clear: function (event, ui) {
-                //self._remove_error();
-            }
-        });
+        if (t11e.util.is_defined(container) &&
+            container.length > 0) {
+            container.t11e_geocode({
+                error: function (event, ui) {
+                    t11e.event.trigger('update_request.' + options.search_group, function (params) {
+                        self._display_error(self.options.error_template);
+                        self._clear_params(params);
+                    });
+                },
+                success: function (event, ui) {
+                    t11e.event.trigger('update_request.' + options.search_group, function (params) {
+                        self._remove_error();
+                        self._save_params(event, ui, params);
+                    });
+                },
+                clear: function (event, ui) {
+                    t11e.event.trigger('update_request.' + options.search_group, function (params) {
+                        self._remove_error();
+                        self._clear_params(params);
+                    });
+                }
+            });
+        } else {
+            t11e.util.error('Container is not defined');
+        }
 
         t11e.event.subscribe('request.' + options.search_group, function (params) {
             self._load_params(params);
@@ -117,12 +124,12 @@
     $.ui.t11e_location.prototype._load_params = function (params) {
         var self = this;
         var options = this.options;
-
-        if (t11e.util.is_defined(self.geocode)) {
+        var container = self.element.find('.t11e-widget-jquery-location-bd:first');
+        if (t11e.util.is_defined(container)) {
             var values = params[options.value_param];
             var value = t11e.util.is_defined(values) ? values[0] : '';
             value = t11e.util.is_defined(value) ? value : '';
-            self.geocode.t11e_geocode('address', value);
+            container.t11e_geocode('address', value);
         }
     };
 
