@@ -59,21 +59,25 @@
         if (self._inputs_exist()) {
             var changed = function (event) {
                 if (!self.geocoding) {
+                    var geocode_address = true;
                     if (self._is_geocoded()) {
                         // Do not re-code if this address has already been geocoded.
+                        var address = self.address();
                         var results = self.element.data('results');
                         if (t11e.util.is_defined(results)) {
-                            var address = self.address();
                             if (address === results.address) {
                                 self._address.val(results.normalized_address);
-                                return;
+                                geocode_address = false;
+                            } else if (address === results.normalized_address) {
+                                geocode_address = false;
                             }
-                            if (address === results.normalized_address) {
-                                return;
-                            }
+                        } else if ('' === address) {
+                            geocode_address = false;
                         }
                     }
-                    self.geocode(event);
+                    if (geocode_address) {
+                        self.geocode(event);
+                    }
                 }
             };
             self._address.bind('change', changed);
@@ -165,12 +169,15 @@
     $.ui.t11e_geocode.prototype.address = function (address) {
         var self = this;
         if (t11e.util.is_defined(self._address)) {
+            var original_address = $.trim(self._address.val());
             if (arguments.length) {
-                self.options.address = address;
-                self._address.val(address);
-                self._address.change();
+                if (original_address !== address) {
+                    self.options.address = address;
+                    self._address.val(address);
+                    self._address.change();
+                }
             } else {
-                return $.trim(self._address.val());
+                return  original_address;
             }
         }
     };

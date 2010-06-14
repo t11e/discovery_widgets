@@ -97,6 +97,7 @@
                 },
                 success: function (event, ui) {
                     t11e.event.trigger('update_request.' + options.search_group, function (params) {
+                        delete params[options.page_param];
                         self._remove_error();
                         self._save_params(event, ui, params);
                     });
