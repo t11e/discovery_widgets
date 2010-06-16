@@ -67,12 +67,11 @@
                         if (t11e.util.is_defined(results)) {
                             if (address === results.address) {
                                 self._address.val(results.normalized_address);
+                                self.options.address = results.normalized_address;
                                 geocode_address = false;
                             } else if (address === results.normalized_address) {
                                 geocode_address = false;
                             }
-                        } else if ('' === address) {
-                            geocode_address = false;
                         }
                     }
                     if (geocode_address) {
@@ -159,6 +158,7 @@
         if (self._inputs_exist()) {
             var address = results.normalized_address || '';
             self._address.val(address);
+            self.options.address = address;
             var latitude = results.latitude || '';
             self._latitude.val(latitude);
             var longitude = results.longitude || '';
@@ -179,20 +179,6 @@
             } else {
                 return  original_address;
             }
-        }
-    };
-
-    $.ui.t11e_geocode.prototype.latitude = function () {
-        var self = this;
-        if (t11e.util.is_defined(self._latitude)) {
-            return self._latitude.val();
-        }
-    };
-
-    $.ui.t11e_geocode.prototype.longitude = function () {
-        var self = this;
-        if (t11e.util.is_defined(self._longitude)) {
-            return self._longitude.val();
         }
     };
 

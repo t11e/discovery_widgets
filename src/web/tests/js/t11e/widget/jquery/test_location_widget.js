@@ -27,8 +27,8 @@
     test('Change location', function () {
         var widget = $('.t11e-widget-jquery-location-bd:first');
         widget.t11e_geocode();
-        widget.t11e_geocode('address', '27617');
         stop();
+        widget.t11e_geocode('address', '27617');
     });
 
     var test_clear = function () {
@@ -49,8 +49,8 @@
     test('Clear input', function () {
         var widget = $('.t11e-widget-jquery-location-bd:first');
         widget.t11e_geocode();
-        widget.t11e_geocode('address', '');
         stop();
+        widget.t11e_geocode('address', '');
     });
 
 }(jQuery));
