@@ -47,6 +47,7 @@ public class SimpleServer
       final ServletHandler servletHandler = new ServletHandler();
       servletHandler.addServletWithMapping(TutorialSearchServlet.class, "/search");
       servletHandler.addServletWithMapping(TutorialResultsServlet.class, "/results");
+      servletHandler.addServletWithMapping(TutorialAutoCompleteServlet.class, "/autocomplete");
       handlers.addHandler(servletHandler);
     }
     server.setHandler(handlers);

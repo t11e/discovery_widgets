@@ -87,6 +87,8 @@ groups:
         - widgets/js/t11e/widget/jquery/jquery.ui.t11e_faceted_checkboxes.js
         - widgets/js/t11e/ui/jquery/jquery.ui.t11e_geocode.js
         - widgets/js/t11e/ui/jquery/jquery.ui.t11e_styled_checkboxes.js
+        - widgets/js/t11e/ui/jquery/jquery.ui.t11e_cached_local_json_source.js
+        - widgets/js/t11e/ui/jquery/jquery.ui.t11e_autocomplete.js
         - widgets/js/t11e/widget/jquery/text_highlighter_plugin.js
         - widgets/js/t11e/widget/jquery/activate.js
         - widgets/js/t11e/widget/jquery/document.js
@@ -186,7 +188,7 @@ groups:
         #- jquery/jquery-ui/1.8/css/jquery.ui.progressbar.css
         - jquery/jquery-ui/1.8/css/jquery.ui.slider.css
         - jquery/jquery-ui/1.8/css/jquery.ui.tabs.css
-        #- jquery/jquery-ui/1.8/css/jquery.ui.autocomplete.css
+        - jquery/jquery-ui/1.8/css/jquery.ui.autocomplete.css
         - jquery/jquery-ui/1.8/css/jquery.ui.base.css
         - jquery/jquery-ui/1.8/css/jquery.ui.button.css
 
