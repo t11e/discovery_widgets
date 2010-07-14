@@ -36,6 +36,10 @@
         <copy todir="src/web/jsdoc/symbols/build">
             <fileset dir="src/web/build"/>
         </copy>
+        <copy todir="src/web/jsdoc/symbols/build/images">
+          <fileset dir="src/web/jquery/jquery-ui/1.8/css/images"/>
+          <fileset dir="src/web/images"/>
+        </copy>
         <echo message="JavaScript documentation now available in src/web/jsdoc/index.html"/>
     </target>
 
