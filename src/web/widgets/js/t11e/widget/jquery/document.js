@@ -36,4 +36,18 @@ t11e.widget.jquery.document_widgets = function ($, doc_wrapper) {
         $(target).text(documented_content);
         $(element).before(target);
     });
+
+    $('.t11e-widget-example').each(function (index, element) {
+        var first = element.firstChild;
+        if (t11e.util.is_defined(first) && first.nodeType === first.COMMENT_NODE) {
+            var example_content = first.nodeValue;
+            var documentation = $(doc_wrapper);
+            $(documentation).text(example_content);
+            $(element).before(documentation);
+
+            var widget = $(first.nodeValue);
+            $(element).before(widget);
+            $(element).remove();
+        }
+    });
 };
