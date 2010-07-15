@@ -6,7 +6,7 @@
             Tutorial Search Page
         </title>
         <link href="build/yui-2.7.0.min.css" rel="stylesheet" type="text/css" />
-        <link href="build/jquery-ui-1.7.2.min.css" rel="stylesheet" type="text/css" />
+        <link href="build/jquery-ui-1.8.min.css" rel="stylesheet" type="text/css" />
         <link href="build/widgets.min.css" rel="stylesheet" type="text/css" />
         <link href="build/widgets-theme-simple.min.css" rel="stylesheet" type="text/css" />
         <style>
@@ -23,12 +23,6 @@
         </style>
     </head>
     <body>
-<script type="text/javascript">
-//<!--
-    if ('undefined' === typeof t11e) { t11e = {}; }
-    if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
-//-->
-</script>
         <div id="doc3" class="yui-t2">
             <div id="hd" role="banner">
               <h1>Tutorial Search Page</h1>
@@ -181,14 +175,24 @@
  <div class="t11e-ft t11e-widget-jquery-faceted-flyout-ft"></div>
 </div>
 
+<div id="search-shape-autocomplete" class="t11e-widget t11e-widget-jquery-single-autocomplete">
+    <div class="t11e-hd t11e-widget-jquery-single-autocomplete-hd">Shape</div>
+    <div class="t11e-bd t11e-widget-jquery-single-autocomplete-bd">
+        <form action="" onsubmit="return false;">
+            <input name="shape"/>
+        </form>
+    </div>
+    <div class="t11e-ft t11e-widget-jquery-single-autocomplete-ft"></div>
+</div>
+
                 </div>
             </div>
 
             <div id="ft" role="contentinfo">
             </div>
         </div>
-        <script type="text/javascript" src="build/jquery-1.3.2.min.js" charset="utf-8"></script>
-        <script type="text/javascript" src="build/jquery-ui-1.7.2.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="build/jquery-1.4.2.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="build/jquery-ui-1.8.min.js" charset="utf-8"></script>
         <script type="text/javascript" src="build/widgets.js" charset="utf-8"></script>
         <script type="text/javascript">//<![CDATA[
         (function ($) {
@@ -240,6 +244,12 @@
                 "dimension": "shape",
                 "flyout_panel_width": 250,
                 "column_count": 2
+            });
+            $('#search-shape-autocomplete').t11e_single_autocomplete({
+                "search_group": "default",
+                "page_param": "page",
+                "value_param": "shape",
+                "source": ["circle", "square", "triangle"]
             });
             var options = {"search_groups": {"default": {"url": "/search"}}};
             options.history_plugin = t11e.widget.jquery.history_plugin($);

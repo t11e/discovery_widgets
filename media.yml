@@ -89,6 +89,7 @@ groups:
         - widgets/js/t11e/ui/jquery/jquery.ui.t11e_styled_checkboxes.js
         - widgets/js/t11e/ui/jquery/jquery.ui.t11e_cached_local_json_source.js
         - widgets/js/t11e/ui/jquery/jquery.ui.t11e_autocomplete.js
+        - widgets/js/t11e/ui/jquery/jquery.ui.t11e_single_autocomplete.js
         - widgets/js/t11e/widget/jquery/text_highlighter_plugin.js
         - widgets/js/t11e/widget/jquery/activate.js
         - widgets/js/t11e/widget/jquery/document.js
