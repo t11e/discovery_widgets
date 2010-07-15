@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Discovery Widgets" default="compress-media">
-    <target name="clean">
+    <target name="clean"
+      description="Removes any built files">
         <delete dir="build.ant"/>
         <delete dir="src/web/build"/>
     </target>
@@ -16,7 +17,8 @@
     </target>
 
     <property name="server.port" value="8080"/>
-    <target name="server" depends="compile">
+    <target name="server" depends="compile"
+      description="Runs a small embedded web server to demonstrate the widgets">
         <java classname="com.t11e.web.SimpleServer" failonerror="true">
             <classpath>
                 <path refid="build.classpath"/>
@@ -27,7 +29,8 @@
         </java>
     </target>
 
-    <target name="jsdoc" depends="compress-media">
+    <target name="jsdoc" depends="compress-media"
+      description="Builds the JavaScript documentation">
         <delete dir="src/web/build/jsdoc"/>
         <java jar="tools/jsdoc_toolkit-2.3.1/jsrun.jar" fork="true" failonerror="true">
             <arg value="tools/jsdoc_toolkit-2.3.1/app/run.js"/>
@@ -37,6 +40,63 @@
             <arg value="src/web/widgets/js"/>
         </java>
         <echo message="JavaScript documentation now available in src/web/build/jsdoc/index.html"/>
+    </target>
+
+    <property name="external.version" value="0.0.0"/>
+    <target name="dist" depends="compress-media,jsdoc"
+      description="Builds a binary distribution of this project.">
+      <delete dir="build.ant/dist"/>
+      <mkdir dir="build.ant/dist"/>
+      <copy todir="build.ant/dist">
+        <fileset dir="src/web/build">
+          <include name="widgets*.min.css"/>
+        </fileset>
+        <mapper type="glob" from="widgets*.min.css" to="discovery-widgets*-${external.version}.min.css"/>
+      </copy>
+      <copy todir="build.ant/dist">
+        <fileset dir="src/web/build">
+          <include name="widgets*.css"/>
+          <exclude name="widgets*.min.css"/>
+        </fileset>
+        <mapper type="glob" from="widgets*.css" to="discovery-widgets*-${external.version}.css"/>
+      </copy>
+      <copy todir="build.ant/dist">
+        <fileset dir="src/web/build">
+          <include name="widgets*.min.js"/>
+        </fileset>
+        <mapper type="glob" from="widgets*.min.js" to="discovery-widgets*-${external.version}.min.js"/>
+      </copy>
+      <copy todir="build.ant/dist">
+        <fileset dir="src/web/build">
+          <include name="widgets*.js"/>
+          <exclude name="widgets*.min.js"/>
+        </fileset>
+        <mapper type="glob" from="widgets*.js" to="discovery-widgets*-${external.version}.js"/>
+      </copy>
+      <copy todir="build.ant/dist">
+        <fileset dir="src/web/build">
+          <include name="jsdoc/**/"/>
+        </fileset>
+        <filterchain>
+          <tokenfilter>
+            <filetokenizer/>
+            <replaceregex pattern="/(widgets.*)\.min\.css" replace="/discovery-\1-${external.version}.min.css" flags="g"/>
+            <replaceregex pattern="/(widgets.*)\.min\.js" replace="/discovery-\1-${external.version}.min.js" flags="g"/>
+            <replaceregex pattern="/(widgets.*)\.css" replace="/discovery-\1-${external.version}.css" flags="g"/>
+            <replaceregex pattern="/(widgets.*)\.js" replace="/discovery-\1-${external.version}.js" flags="g"/>
+         </tokenfilter>
+          </filterchain>
+      </copy>
+      <delete file="discovery-widgets-${external.version}.zip"/>
+      <zip destfile="discovery-widgets-${external.version}.zip">
+        <zipfileset dir="src/web/build" prefix="discovery-widgets-${external.version}/">
+          <exclude name="qunit*"/>
+          <exclude name="test*"/>
+          <exclude name="widgets*"/>
+          <exclude name="jsdoc**"/>
+        </zipfileset>
+        <zipfileset dir="build.ant/dist" prefix="discovery-widgets-${external.version}/"/>
+      </zip>
     </target>
 
     <!--
