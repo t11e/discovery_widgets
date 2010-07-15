@@ -75,19 +75,26 @@
         </fileset>
         <mapper type="glob" from="widgets*.js" to="discovery-widgets*-${external.version}.js"/>
       </copy>
+      <filterchain id="widgets-release-filterchain">
+        <tokenfilter>
+          <filetokenizer/>
+          <replaceregex pattern="/(widgets.*)\.min\.css" replace="/discovery-\1-${external.version}.min.css" flags="g"/>
+          <replaceregex pattern="/(widgets.*)\.min\.js" replace="/discovery-\1-${external.version}.min.js" flags="g"/>
+          <replaceregex pattern="/(widgets.*)\.css" replace="/discovery-\1-${external.version}.css" flags="g"/>
+          <replaceregex pattern="/(widgets.*)\.js" replace="/discovery-\1-${external.version}.js" flags="g"/>
+        </tokenfilter>
+      </filterchain>
       <copy todir="build.ant/dist">
         <fileset dir="src/web/build">
           <include name="jsdoc/**/"/>
         </fileset>
-        <filterchain>
-          <tokenfilter>
-            <filetokenizer/>
-            <replaceregex pattern="/(widgets.*)\.min\.css" replace="/discovery-\1-${external.version}.min.css" flags="g"/>
-            <replaceregex pattern="/(widgets.*)\.min\.js" replace="/discovery-\1-${external.version}.min.js" flags="g"/>
-            <replaceregex pattern="/(widgets.*)\.css" replace="/discovery-\1-${external.version}.css" flags="g"/>
-            <replaceregex pattern="/(widgets.*)\.js" replace="/discovery-\1-${external.version}.js" flags="g"/>
-         </tokenfilter>
-          </filterchain>
+        <filterchain refid="widgets-release-filterchain"/>
+      </copy>
+      <copy todir="build.ant/dist">
+        <fileset dir="src/dist">
+          <include name="*.html/"/>
+        </fileset>
+        <filterchain refid="widgets-release-filterchain"/>
       </copy>
       <delete file="discovery-widgets-${external.version}.zip"/>
       <zip destfile="discovery-widgets-${external.version}.zip">
@@ -101,6 +108,7 @@
           <exclude name="jsdoc**"/>
         </zipfileset>
         <zipfileset dir="build.ant/dist" prefix="discovery-widgets-${external.version}/"/>
+        <zipfileset dir="src/dist" excludes="*.html" prefix="discovery-widgets-${external.version}/"/>
       </zip>
     </target>
 
