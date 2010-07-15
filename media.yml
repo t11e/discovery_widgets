@@ -183,10 +183,10 @@ groups:
       sourceFileNames:
         - jquery/jquery-ui/1.8/css/jquery.ui.core.css
         - jquery/jquery-ui/1.8/css/jquery.ui.resizable.css
-        #- jquery/jquery-ui/1.8/css/jquery.ui.accordion.css
-        #- jquery/jquery-ui/1.8/css/jquery.ui.datepicker.css
+        - jquery/jquery-ui/1.8/css/jquery.ui.accordion.css
+        - jquery/jquery-ui/1.8/css/jquery.ui.datepicker.css
         - jquery/jquery-ui/1.8/css/jquery.ui.dialog.css
-        #- jquery/jquery-ui/1.8/css/jquery.ui.progressbar.css
+        - jquery/jquery-ui/1.8/css/jquery.ui.progressbar.css
         - jquery/jquery-ui/1.8/css/jquery.ui.slider.css
         - jquery/jquery-ui/1.8/css/jquery.ui.tabs.css
         - jquery/jquery-ui/1.8/css/jquery.ui.autocomplete.css
