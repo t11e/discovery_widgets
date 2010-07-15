@@ -4,7 +4,27 @@
  */
 
 /**
- * Autocomplete widget, based on jQuery UI Autocomplete.
+ * Autocomplete widget that extends the jQuery UI Autocomplete widget to add
+ * client side caching and server side parameter pass through.
+ *
+ * <h2>Options</h2>
+ *
+ * <dl>
+ *   <dt>source</dt>
+ *   <dd>
+ *     The source to use, either an Array, URL or function. If this
+ *     is not an array then caching is enabled.
+ *   </dd>
+ *   <dt>source_params</dt>
+ *   <dd>
+ *     Option dictionary of parameters to pass through to the original source
+ *     if the source is not an Array.
+ *   </dd>
+ * </dl>
+ *
+ * For other options, see:
+ * <a href="http://docs.jquery.com/UI/Autocomplete">http://docs.jquery.com/UI/Autocomplete</a>
+ *
  * <h2>Example</h2>
  * <div class="t11e-widget-example"><!--
  *   <input id='exampleAutoComplete'/>
@@ -16,7 +36,7 @@
  *   </script>
  * --></div>
  * @name jQuery.ui.t11e_autocomplete
- * @class A widget for single select autocomplete.
+ * @class An extension of jQuery UI autocomplete.
  */
 (function ($) {
     $.widget('ui.t11e_autocomplete', {});

@@ -10,6 +10,9 @@ if (false) {
 
 /**
  * Widget that displays a text entry box.
+ *
+ * Also available as jQuery.ui.t11e_textbox.
+ *
  * <h2>Options</h2>
  * <dl>
  *    <dt>search_group</dt>
@@ -18,6 +21,7 @@ if (false) {
  *    <dt>value_param</dt>
  *    <dd>The query parameter this widget is associated with.</dd>
  * </dl>
+ *
  * <h2>Sample HTML</h2>
  * <div class="t11e-widget t11e-widget-jquery-textbox t11e-widget-id-2076">
  *  <div class="t11e-hd t11e-widget-jquery-textbox-hd"></div>
@@ -87,5 +91,9 @@ t11e.widget.jquery.TextBoxWidget = function ($, options) {
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 };
 
+/**
+ * @name jQuery.ui.t11e_textbox
+ * @class jQuery widget wrapper for t11e.widget.jquery.TextBoxWidget.
+ */
 t11e.widget.jquery.make_jquery_ui_widget(jQuery,
     't11e_textbox', t11e.widget.jquery.TextBoxWidget);

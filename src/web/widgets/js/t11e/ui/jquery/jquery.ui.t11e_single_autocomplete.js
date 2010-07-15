@@ -4,7 +4,11 @@
  */
 
 /**
- * Autocomplete search widget.
+ * Autocomplete search widget that extends the t11e_textbox widget to
+ * provide autocomplete functionality for a single term.
+ *
+ * <h2>Options</h2>
+ * Passes through options to both t11e_autocomplete and t11e_textbox.
  *
  * <h2>Example</h2>
  * <div class="t11e-widget-example"><!--
