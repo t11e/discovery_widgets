@@ -28,22 +28,15 @@
     </target>
 
     <target name="jsdoc" depends="compress-media">
-        <delete dir="src/web/jsdoc"/>
+        <delete dir="src/web/build/jsdoc"/>
         <java jar="tools/jsdoc_toolkit-2.3.1/jsrun.jar" fork="true" failonerror="true">
             <arg value="tools/jsdoc_toolkit-2.3.1/app/run.js"/>
             <arg value="-t=src/jsdoc_templates"/>
-            <arg value="-d=src/web/jsdoc"/>
+            <arg value="-d=src/web/build/jsdoc"/>
             <arg value="-r=5"/>
             <arg value="src/web/widgets/js"/>
         </java>
-        <copy todir="src/web/jsdoc/symbols/build">
-            <fileset dir="src/web/build"/>
-        </copy>
-        <copy todir="src/web/jsdoc/symbols/build/images">
-          <fileset dir="src/web/jquery/jquery-ui/1.8/css/images"/>
-          <fileset dir="src/web/images"/>
-        </copy>
-        <echo message="JavaScript documentation now available in src/web/jsdoc/index.html"/>
+        <echo message="JavaScript documentation now available in src/web/build/jsdoc/index.html"/>
     </target>
 
     <!--
