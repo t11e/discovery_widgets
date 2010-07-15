@@ -47,27 +47,29 @@
       description="Builds a binary distribution of this project.">
       <delete dir="build.ant/dist"/>
       <mkdir dir="build.ant/dist"/>
-      <copy todir="build.ant/dist">
-        <fileset dir="src/web/build">
+      <mkdir dir="build.ant/dist/css"/>
+      <mkdir dir="build.ant/dist/js"/>
+      <copy todir="build.ant/dist/css">
+        <fileset dir="src/web/build/css">
           <include name="widgets*.min.css"/>
         </fileset>
         <mapper type="glob" from="widgets*.min.css" to="discovery-widgets*-${external.version}.min.css"/>
       </copy>
-      <copy todir="build.ant/dist">
-        <fileset dir="src/web/build">
+      <copy todir="build.ant/dist/css">
+        <fileset dir="src/web/build/css">
           <include name="widgets*.css"/>
           <exclude name="widgets*.min.css"/>
         </fileset>
         <mapper type="glob" from="widgets*.css" to="discovery-widgets*-${external.version}.css"/>
       </copy>
-      <copy todir="build.ant/dist">
-        <fileset dir="src/web/build">
+      <copy todir="build.ant/dist/js">
+        <fileset dir="src/web/build/js">
           <include name="widgets*.min.js"/>
         </fileset>
         <mapper type="glob" from="widgets*.min.js" to="discovery-widgets*-${external.version}.min.js"/>
       </copy>
-      <copy todir="build.ant/dist">
-        <fileset dir="src/web/build">
+      <copy todir="build.ant/dist/js">
+        <fileset dir="src/web/build/js">
           <include name="widgets*.js"/>
           <exclude name="widgets*.min.js"/>
         </fileset>
@@ -90,9 +92,12 @@
       <delete file="discovery-widgets-${external.version}.zip"/>
       <zip destfile="discovery-widgets-${external.version}.zip">
         <zipfileset dir="src/web/build" prefix="discovery-widgets-${external.version}/">
-          <exclude name="qunit*"/>
-          <exclude name="test*"/>
-          <exclude name="widgets*"/>
+          <exclude name="js/qunit*"/>
+          <exclude name="js/test*"/>
+          <exclude name="js/widgets*"/>
+          <exclude name="css/qunit*"/>
+          <exclude name="css/test*"/>
+          <exclude name="css/widgets*"/>
           <exclude name="jsdoc**"/>
         </zipfileset>
         <zipfileset dir="build.ant/dist" prefix="discovery-widgets-${external.version}/"/>
