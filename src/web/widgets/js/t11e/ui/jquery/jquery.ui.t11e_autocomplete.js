@@ -47,7 +47,7 @@
     /*jslint nomen: false */
     $.ui.t11e_autocomplete.prototype._init = function () {
         var self = this;
-        $(self.element).autocomplete($.extend({}, self.options.source, {
+        $(self.element).autocomplete($.extend({}, self.options, {
             'source': $.t11e_local_caching_json_source(self.options.source, self.options.source_params)
         }));
     };

@@ -42,10 +42,11 @@
     $.ui.t11e_single_autocomplete.prototype._init = function () {
         var self = this;
         var autocomplete = $(self.element).find('input:first');
-        autocomplete.t11e_autocomplete(self.options);
-        autocomplete.bind('autocompleteselect', function (event, ui) {
-            autocomplete.change();
-        });
+        autocomplete.t11e_autocomplete($.extend({}, self.options, {
+            'select': function (event, ui) {
+                autocomplete.change();
+            }
+        }));
         $(self.element).t11e_textbox(self.options);
     };
 
