@@ -4,7 +4,9 @@
  */
 
 /**
- * Widget for geocoding addresses.
+ * Search widget for geocoding addresses. Wraps t11e_geocode and hooks it into
+ * the search event flow. This means that the actual latitude/longitude of
+ * the geocoded address can be passed to the search controller.
  *
  * <h2>Options</h2>
  *
@@ -60,7 +62,7 @@
  * </script>
  * <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=" type="text/javascript"></script>
  * @name jQuery.ui.t11e_location
- * @class A widget for geocoding addresses.
+ * @class A search widget that geocodes addresses and makes the geocoded form available for search.
  */
 
 (function ($) {

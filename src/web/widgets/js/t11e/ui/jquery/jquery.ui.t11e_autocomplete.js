@@ -36,7 +36,7 @@
  *   </script>
  * --></div>
  * @name jQuery.ui.t11e_autocomplete
- * @class An extension of jQuery UI autocomplete.
+ * @class Autocomplete widget that extends the jQuery UI Autocomplete widget to add client side caching and server side parameter pass through.
  */
 (function ($) {
     $.widget('ui.t11e_autocomplete', {});
