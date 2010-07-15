@@ -16,6 +16,7 @@ fieldset.t11e-widget-jquery-faceted-flyout-primary,
 fieldset.t11e-widget-jquery-faceted-flyout-secondary {
     padding: 0 !important;
     margin: 0 !important;
+    border: none;
 }
 
 fieldset.t11e-widget-jquery-faceted-flyout-secondary {
