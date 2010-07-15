@@ -153,7 +153,7 @@ ul {
 }
 
 .t11e-widget-jquery-faceted-dual-slider-sparkline .ui-slider .ui-slider-handle {
-    background: transparent url(/images/widgets/themes/advanced/thumb-n.gif) no-repeat top center;
+    background: transparent url(images/thumb-n.gif) no-repeat top center;
     border: 0;
     margin-left: -.6em;
     top: -.2em;
@@ -217,11 +217,11 @@ label.ui-state-hover {
  */
 
 .t11e-checkbox label {
-    background: #ffffff url(/images/widgets/themes/advanced/checkbox.gif) no-repeat;
+    background: #ffffff url(images/checkbox.gif) no-repeat;
 }
 
 .t11e-radio label {
-    background:#ffffff url(/images/widgets/themes/advanced/radiobutton.gif) no-repeat;
+    background:#ffffff url(images/radiobutton.gif) no-repeat;
 }
 
 .t11e-checkbox label, .t11e-radio label {

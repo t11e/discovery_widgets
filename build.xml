@@ -12,7 +12,7 @@
             <arg value="--config=media.yml"/>
         </java>
         <copy todir="src/web/build/images">
-            <fileset dir="src/web/jquery/jquery-ui/1.8/css/images"/>
+            <fileset dir="src/web/images"/>
         </copy>
     </target>
 
@@ -95,7 +95,6 @@
           <exclude name="widgets*"/>
           <exclude name="jsdoc**"/>
         </zipfileset>
-        <zipfileset dir="src/web/images" prefix="discovery-widgets-${external.version}/images/"/>
         <zipfileset dir="build.ant/dist" prefix="discovery-widgets-${external.version}/"/>
       </zip>
     </target>
