@@ -95,6 +95,7 @@
           <exclude name="widgets*"/>
           <exclude name="jsdoc**"/>
         </zipfileset>
+        <zipfileset dir="src/web/images" prefix="discovery-widgets-${external.version}/images/"/>
         <zipfileset dir="build.ant/dist" prefix="discovery-widgets-${external.version}/"/>
       </zip>
     </target>
