@@ -11,7 +11,7 @@
         <java jar="tools/mediacompressor-1.1.jar" fork="true" failonerror="true">
             <arg value="--config=media.yml"/>
         </java>
-        <copy todir="src/web/build/images">
+        <copy todir="src/web/build/css/images">
             <fileset dir="src/web/images"/>
         </copy>
     </target>

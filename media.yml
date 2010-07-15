@@ -10,8 +10,8 @@ tempDir: build.ant/compressed
 groups:
     - groupName: widgets_css
       mediaType: css
-      outputFileName: widgets.css
-      outputFileNameMinified: widgets.min.css
+      outputFileName: css/widgets.css
+      outputFileNameMinified: css/widgets.min.css
       sourceFileNames:
         - widgets/css/core.css
         - widgets/css/jquery/widget/pagination_widget.css
@@ -26,32 +26,32 @@ groups:
 
     - groupName: widgets_theme_simple_css
       mediaType: css
-      outputFileName: widgets-theme-simple.css
-      outputFileNameMinified: widgets-theme-simple.min.css
+      outputFileName: css/widgets-theme-simple.css
+      outputFileNameMinified: css/widgets-theme-simple.min.css
       sourceFileNames:
         - widgets/css/themes/simple/ui.css
         - widgets/css/themes/simple/widgets.css
 
     - groupName: widgets_theme_advanced_css
       mediaType: css
-      outputFileName: widgets-theme-advanced.css
-      outputFileNameMinified: widgets-theme-advanced.min.css
+      outputFileName: css/widgets-theme-advanced.css
+      outputFileNameMinified: css/widgets-theme-advanced.min.css
       sourceFileNames:
         - widgets/css/themes/advanced/ui.css
         - widgets/css/themes/advanced/widgets.css
 
     - groupName: widgets_theme_jsdoc_css
       mediaType: css
-      outputFileName: widgets-theme-jsdoc.css
-      outputFileNameMinified: widgets-theme-jsdoc.min.css
+      outputFileName: css/widgets-theme-jsdoc.css
+      outputFileNameMinified: css/widgets-theme-jsdoc.min.css
       sourceFileNames:
         - widgets/css/themes/jsdoc/ui.css
         - widgets/css/themes/jsdoc/widgets.css
 
     - groupName: widgets_js
       mediaType: js
-      outputFileName: widgets.js
-      outputFileNameMinified: widgets.min.js
+      outputFileName: js/widgets.js
+      outputFileNameMinified: js/widgets.min.js
       sourceFileNames:
         - jquery/plugins/ajaxsoft_history/jquery.history-r102.lint.js
         - jquery/plugins/pagination/jquery.pagination-1.1.lint.js
@@ -96,8 +96,8 @@ groups:
 
     - groupName: yui_css
       mediaType: css
-      outputFileName: yui-2.7.0.css
-      outputFileNameMinified: yui-2.7.0.min.css
+      outputFileName: css/yui-2.7.0.css
+      outputFileNameMinified: css/yui-2.7.0.min.css
       sourceFileNames:
         - yui/2.7.0/build/reset/reset.css
         - yui/2.7.0/build/fonts/fonts.css
@@ -106,8 +106,8 @@ groups:
 
     - groupName: yui_grids_css
       mediaType: css
-      outputFileName: yui_grids-2.7.0.css
-      outputFileNameMinified: yui_grids-2.7.0.min.css
+      outputFileName: css/yui_grids-2.7.0.css
+      outputFileNameMinified: css/yui_grids-2.7.0.min.css
       sourceFileNames:
         #- yui/2.7.0/build/reset/reset.css
         #- yui/2.7.0/build/fonts/fonts.css
@@ -116,24 +116,24 @@ groups:
 
     - groupName: jquery_js
       mediaType: js
-      outputFileName: jquery-1.3.2.js
-      outputFileNameMinified: jquery-1.3.2.min.js
+      outputFileName: js/jquery-1.3.2.js
+      outputFileNameMinified: js/jquery-1.3.2.min.js
       jslint: off
       sourceFileNames:
         - jquery/jquery-1.3.2.js
 
     - groupName: jquery-1.4.2_js
       mediaType: js
-      outputFileName: jquery-1.4.2.js
-      outputFileNameMinified: jquery-1.4.2.min.js
+      outputFileName: js/jquery-1.4.2.js
+      outputFileNameMinified: js/jquery-1.4.2.min.js
       jslint: off
       sourceFileNames:
         - jquery/jquery-1.4.2.js
 
     - groupName: jquery-ui_css
       mediaType: css
-      outputFileName: jquery-ui-1.7.2.css
-      outputFileNameMinified: jquery-ui-1.7.2.min.css
+      outputFileName: css/jquery-ui-1.7.2.css
+      outputFileNameMinified: css/jquery-ui-1.7.2.min.css
       sourceFileNames:
         - jquery/jquery-ui/1.7.2/css/ui.core.css
         - jquery/jquery-ui/1.7.2/css/ui.resizable.css
@@ -146,8 +146,8 @@ groups:
 
     - groupName: jquery-ui_js
       mediaType: js
-      outputFileName: jquery-ui-1.7.2.js
-      outputFileNameMinified: jquery-ui-1.7.2.min.js
+      outputFileName: js/jquery-ui-1.7.2.js
+      outputFileNameMinified: js/jquery-ui-1.7.2.min.js
       jslint: off
       sourceFileNames:
         - jquery/jquery-ui/1.7.2/js/ui.core.js
@@ -178,8 +178,8 @@ groups:
 
     - groupName: jquery-ui-1.8_css
       mediaType: css
-      outputFileName: jquery-ui-1.8.css
-      outputFileNameMinified: jquery-ui-1.8.min.css
+      outputFileName: css/jquery-ui-1.8.css
+      outputFileNameMinified: css/jquery-ui-1.8.min.css
       sourceFileNames:
         - jquery/jquery-ui/1.8/css/jquery.ui.core.css
         - jquery/jquery-ui/1.8/css/jquery.ui.resizable.css
@@ -195,8 +195,8 @@ groups:
 
     - groupName: jquery-ui-1.8_js
       mediaType: js
-      outputFileName: jquery-ui-1.8.js
-      outputFileNameMinified: jquery-ui-1.8.min.js
+      outputFileName: js/jquery-ui-1.8.js
+      outputFileNameMinified: js/jquery-ui-1.8.min.js
       jslint: off
       sourceFileNames:
         - jquery/jquery-ui/1.8/js/jquery.ui.core.js
@@ -233,23 +233,23 @@ groups:
 
     - groupName: qunit_css
       mediaType: css
-      outputFileName: qunit.css
-      outputFileNameMinified: qunit.min.css
+      outputFileName: css/qunit.css
+      outputFileNameMinified: css/qunit.min.css
       sourceFileNames:
         - jquery/qunit/532c6e9/qunit/qunit.css
 
     - groupName: qunit_js
       mediaType: js
-      outputFileName: qunit.js
-      outputFileNameMinified: qunit.min.js
+      outputFileName: js/qunit.js
+      outputFileNameMinified: js/qunit.min.js
       jslint: off
       sourceFileNames:
         - jquery/qunit/532c6e9/qunit/qunit.js
 
     - groupName: tests_js
       mediaType: js
-      outputFileName: tests.js
-      outputFileNameMinified: tests.min.js
+      outputFileName: js/tests.js
+      outputFileNameMinified: js/tests.min.js
       sourceFileNames:
         - tests/js/t11e/widget/jquery/test_accordion_widget.js
         - tests/js/t11e/widget/jquery/test_breadcrumb_widget.js
