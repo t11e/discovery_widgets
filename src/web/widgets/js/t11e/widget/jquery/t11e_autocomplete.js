@@ -37,15 +37,18 @@
  * @class Autocomplete widget that extends the jQuery UI Autocomplete widget to add client side caching and server side parameter pass through.
  */
 (function ($) {
-    $.widget('ui.t11e_autocomplete', {});
-    $.ui.t11e_autocomplete.defaults = {
+    $.t11e_widget('t11e_autocomplete', {
         'source_params': {}
-    };
+    });
 
     /*jslint nomen: false */
     $.ui.t11e_autocomplete.prototype._init = function () {
         var self = this;
-        $(self.element).autocomplete($.extend({}, self.options, {
+        if (!self.element.autocomplete) {
+            t11e.util.error("You need at least jQuery UI 1.8 to use the autocomplete widget. You have " + $.ui.version);
+            return;
+        }
+        self.element.autocomplete($.extend({}, self.options, {
             'source': $.t11e_local_caching_json_source(self.options.source, self.options.source_params)
         }));
     };

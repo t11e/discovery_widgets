@@ -34,17 +34,15 @@
  * @class A widget for displaying per search parameter breadcrumbs.
  */
 (function ($) {
-    var options = {
-            search_group: 'default',
-            page_param: 'page',
-            value_params: [],
-            close_template: '&nbsp;[<a class="t11e-close" href="#">x</a>]',
-            container: '.t11e-widget-jquery-breadcrumb-bd',
-            animate: false,
-            animation_speed: 'fast'
-        };
-    $.widget('ui.t11e_breadcrumb', { options: options });
-    $.ui.t11e_breadcrumb.defaults = options;
+    $.t11e_widget('t11e_breadcrumb', {
+        search_group: 'default',
+        page_param: 'page',
+        value_params: [],
+        close_template: '&nbsp;[<a class="t11e-close" href="#">x</a>]',
+        container: '.t11e-widget-jquery-breadcrumb-bd',
+        animate: false,
+        animation_speed: 'fast'
+    });
 
     /*jslint nomen: false */
     $.ui.t11e_breadcrumb.prototype._init = function () {

@@ -64,16 +64,14 @@
  * @class A checkbox widget that displays facet counts.
  */
 (function ($) {
-    var options = {
+    $.t11e_widget('t11e_faceted_checkboxes2', {
         search_group: 'default',
         value_param: '',
         input_selector: 'input',
         row_class: 't11e-input-row',
         facet_count_class: 't11e-facet-count',
         mutex_params: {}
-    };
-    $.widget('ui.t11e_faceted_checkboxes2', {options: options});
-    $.ui.t11e_faceted_checkboxes2.defaults = options;
+    });
 
     /*jslint nomen: false */
     $.ui.t11e_faceted_checkboxes2.prototype._init = function () {

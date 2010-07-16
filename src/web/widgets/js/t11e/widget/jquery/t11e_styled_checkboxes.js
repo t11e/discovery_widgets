@@ -42,12 +42,10 @@
  * @class Accessible custom designed checkbox/radio button inputs
  */
 (function ($) {
-    var options = {
+    $.t11e_widget('t11e_styled_checkboxes', {
         input_selector: 'input',
         row_class: 't11e-input-row'
-    };
-    $.widget('ui.t11e_styled_checkboxes', {options: options});
-    $.ui.t11e_styled_checkboxes.defaults = options;
+    });
 
     /*jslint nomen: false */
     $.ui.t11e_styled_checkboxes.prototype._init = function () {

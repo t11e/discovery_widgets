@@ -67,6 +67,7 @@ groups:
         - widgets/js/t11e/widget/jquery/search_plugin.js
         - widgets/js/t11e/widget/jquery/history_plugin.js
         - widgets/js/t11e/widget/jquery/util.js
+        - widgets/js/t11e/widget/jquery/t11e_widget.js
         - widgets/js/t11e/widget/jquery/t11e_slider.js
         - widgets/js/t11e/widget/jquery/t11e_faceted_slider.js
         - widgets/js/t11e/widget/jquery/t11e_dual_slider.js

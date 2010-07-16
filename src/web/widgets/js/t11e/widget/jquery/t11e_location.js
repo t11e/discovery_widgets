@@ -65,22 +65,18 @@
  */
 
 (function ($) {
-    var options = {
-            search_group: 'default',
-            page_param: 'page',
-            value_param: 'location',
-            latitude_param: 'lat',
-            longitude_param: 'lon',
-            display_results: 'true',
-            display_error: 'true',
-            error_selector: '.t11e-widget-jquery-location-ft',
-            error_template: 'Unknown address. Please enter a new address.'
-        };
-    $.widget('ui.t11e_location', {
-        widgetEventPrefix: "location",
-        options: options
+    $.t11e_widget('t11e_location', {
+        search_group: 'default',
+        page_param: 'page',
+        value_param: 'location',
+        latitude_param: 'lat',
+        longitude_param: 'lon',
+        display_results: 'true',
+        display_error: 'true',
+        error_selector: '.t11e-widget-jquery-location-ft',
+        error_template: 'Unknown address. Please enter a new address.'
     });
-    $.ui.t11e_location.defaults = options;
+    $.ui.t11e_location.widgetEventPrefix = "location";
 
     /*jslint nomen: false */
     $.ui.t11e_location.prototype._init = function () {

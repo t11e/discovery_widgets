@@ -25,13 +25,12 @@
  * @class A widget for geocoding addresses.
  */
 (function ($) {
-    var options = {address: ''};
-    $.widget('ui.t11e_geocode', {
-        // TODO: check compatibility
-        widgetEventPrefix: 'geocode',
-        options: options
+    $.t11e_widget('t11e_geocode', {
+        address: ''
     });
-    $.ui.t11e_geocode.defaults = options;
+
+    // TODO: check compatibility
+    $.ui.t11e_geocode.prototype.widgetEventPrefix = 'geocode';
 
     /*jslint nomen: false */
     $.ui.t11e_geocode.prototype._init = function () {

@@ -34,9 +34,8 @@
  * @class Autocomplete search widget that extends the t11e_textbox widget to provide autocomplete functionality for a single term.
  */
 (function ($) {
-    $.widget('ui.t11e_single_autocomplete', {});
-    $.ui.t11e_single_autocomplete.defaults = {
-    };
+    $.t11e_widget('t11e_single_autocomplete', {
+    });
 
     /*jslint nomen: false */
     $.ui.t11e_single_autocomplete.prototype._init = function () {
