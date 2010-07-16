@@ -30,8 +30,7 @@
  *   <input id='exampleAutoComplete'/>
  *   <script type="text/javascript">
  *     $('#exampleAutoComplete').t11e_autocomplete({
- *       'source': '/autocomplete',
- *       'source_params': {'listlength': 3}
+ *       'source': ['Orange', 'Apple', 'Banana', 'Pear', 'Strawberry', 'Peach', 'Kiwi', 'Mango', 'Pineapple']
  *     });
  *   </script>
  * --></div>

@@ -18,15 +18,9 @@ public class TutorialAutoCompleteServlet
   private static final long serialVersionUID = 8872041268396435423L;
 
   private static final String[] WORDS = new String[] {
-    "Orange",
-    "Apple",
-    "Banana",
-    "Pear",
-    "Strawberry",
-    "Peach",
-    "Kiwi",
-    "Mango",
-    "Pineapple",
+    "circle",
+    "square",
+    "triangle"
   };
 
   @Override

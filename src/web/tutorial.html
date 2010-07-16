@@ -249,7 +249,8 @@
                 "search_group": "default",
                 "page_param": "page",
                 "value_param": "shape",
-                "source": ["circle", "square", "triangle"]
+                "source": "/autocomplete",
+                "source_params": {"listlength": 5}
             });
             var options = {"search_groups": {"default": {"url": "/search"}}};
             options.history_plugin = t11e.widget.jquery.history_plugin($);

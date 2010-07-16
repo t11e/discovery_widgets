@@ -25,8 +25,7 @@
  *     $('#example').t11e_single_autocomplete({
  *       'search_group': 'default',
  *       'value_param': 'myparam',
- *       'source': '/autocomplete',
- *       'source_params': {'listlength': 3}
+ *       'source': ['Orange', 'Apple', 'Banana', 'Pear', 'Strawberry', 'Peach', 'Kiwi', 'Mango', 'Pineapple']
  *     });
  *   </script>
  * --></div>
