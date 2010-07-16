@@ -75,7 +75,7 @@ groups:
         - widgets/js/t11e/widget/jquery/t11e_results.js
         - widgets/js/t11e/widget/jquery/t11e_pagination.js
         - widgets/js/t11e/widget/jquery/t11e_select.js
-        - widgets/js/t11e/widget/jquery/t11e_faceted_checkboxes_widget.js
+        - widgets/js/t11e/widget/jquery/t11e_faceted_checkboxes.js
         - widgets/js/t11e/widget/jquery/t11e_faceted_flyout.js
         - widgets/js/t11e/widget/jquery/t11e_textbox.js
         - widgets/js/t11e/widget/jquery/t11e_button.js
@@ -84,7 +84,7 @@ groups:
         - widgets/js/t11e/widget/jquery/t11e_accordion.js
         - widgets/js/t11e/widget/jquery/t11e_breadcrumb.js
         - widgets/js/t11e/widget/jquery/t11e_location.js
-        - widgets/js/t11e/widget/jquery/t11e_faceted_checkboxes.js
+        - widgets/js/t11e/widget/jquery/t11e_faceted_checkboxes2.js
         - widgets/js/t11e/widget/jquery/t11e_geocode.js
         - widgets/js/t11e/widget/jquery/t11e_styled_checkboxes.js
         - widgets/js/t11e/widget/jquery/t11e_cached_local_json_source.js
