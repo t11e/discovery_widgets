@@ -1,9 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.jquery.util.associate_labels
- *
- * <p>Automatically find any labels and associates them with the first input
- * inside the given container.</p>
+ * @fileOverview t11e.widget.jquery.util
  */
 
 /**
@@ -14,6 +11,11 @@
 /**
  * @name jQuery.ui
  * @namespace jQuery UI: See <a href="http://docs.jquery.com">external documentation</a>
+ */
+
+/**
+ * @name t11e.widget.jquery.util
+ * @namespace t11e.widget.jquery.util
  */
 
 t11e.util.define_namespace('t11e.widget.jquery.util');
@@ -30,6 +32,10 @@ t11e.widget.jquery.util.call_func = function ($, value, func) {
     }
 };
 
+/**
+ * Automatically find any labels and associates them with the first input
+ * inside the given container.
+ */
 t11e.widget.jquery.util.associate_labels = function ($, container) {
     var input = $(container).find('input:first');
     var input_id = input.attr('id');

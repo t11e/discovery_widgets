@@ -116,8 +116,8 @@ t11e.widget.jquery.ResultsWidget = function ($, options) {
         hide_loading();
     });
 
-    /** @scope t11e.widget.jquery.ResultsWidget */
-   /**
+    /* @scope t11e.widget.jquery.ResultsWidget */
+   /*
     * This function is used as a callback for the <code>response</code> event. It takes
     * one parameter, the search response object. The search response object
     * consists of the original request, the response from the Discovery Engine&trade;
@@ -174,14 +174,14 @@ t11e.widget.jquery.ResultsWidget = function ($, options) {
     };
     t11e.event.subscribe('response.' + search_group, update_from_response);
 
-    /**
+    /*
      * Shows the loading popup if the widget contains a div of
      * class <code>t11e-widget-jquery-results-loading</code>.
      */
     var show_loading = function () {
         if (t11e.util.is_defined(loading) && loading.length !== 0 &&
             t11e.util.is_defined(container) && container.length !== 0) {
-            /**
+            /*
              * Position the 'loading' display horizontally relative to the
              * document or the container element.
              */
@@ -194,7 +194,7 @@ t11e.widget.jquery.ResultsWidget = function ($, options) {
             }
             var left = center - (loading.width() / 2);
 
-            /**
+            /*
              * Position the 'loading' display vertically either at the center
              * of the viewport, or at the top of the viewport.
              */
@@ -245,7 +245,7 @@ t11e.widget.jquery.ResultsWidget = function ($, options) {
     };
     t11e.event.subscribe('searching.' + search_group, show_loading);
 
-    /**
+    /*
      * Hides the loading popup.
      */
     var hide_loading = function () {

@@ -99,7 +99,7 @@ if (false) {
  *
  */
 t11e.widget.jquery.FacetedFlyoutWidget = function ($, options) {
-    /**
+    /*
      * Widget that displays faceted checkboxes which allow selection of
      * facets to alter the search and display the facet counts from the
      * response.
@@ -126,8 +126,8 @@ t11e.widget.jquery.FacetedFlyoutWidget = function ($, options) {
     }
 
     var ignore_event = false;
-    /** @scope t11e.widget.jquery.FacetedFlyoutWidget */
-    /**
+    /* @scope t11e.widget.jquery.FacetedFlyoutWidget */
+    /*
      * Update the widget's current state from the params object. This
      * function is used as a callback to the <code>request</code> topic.
      * @param {Object} params
@@ -159,8 +159,8 @@ t11e.widget.jquery.FacetedFlyoutWidget = function ($, options) {
     };
     t11e.event.subscribe('request.' + search_group, load_from_params);
 
-    /** @scope t11e.widget.jquery.FacetedFlyoutWidget */
-    /**
+    /* @scope t11e.widget.jquery.FacetedFlyoutWidget */
+    /*
      * Clear all the widget's checkboxes. This
      * function is used as a callback to the <code>clear_params_from_search</code> topic.
      * @param {Object} params
@@ -170,7 +170,7 @@ t11e.widget.jquery.FacetedFlyoutWidget = function ($, options) {
     };
     t11e.event.subscribe('clear_params_from_search.' + search_group, clear_params_from_search);
 
-    /**
+    /*
      * @function
      * @description Adds a facet to the search request parameters
      * @param {Object} params
@@ -187,7 +187,7 @@ t11e.widget.jquery.FacetedFlyoutWidget = function ($, options) {
             values.push(facet_id);
         }
     };
-    /**
+    /*
      * Update the search request parameters and the breadcrumbs when
      * a checkbox or radio button is clicked.
      *
@@ -201,7 +201,7 @@ t11e.widget.jquery.FacetedFlyoutWidget = function ($, options) {
             });
         }
     };
-    /**
+    /*
      * Update the search request parameters when
      * a checkbox or radio button is clicked.
      *
@@ -230,7 +230,7 @@ t11e.widget.jquery.FacetedFlyoutWidget = function ($, options) {
     });
 
     if (t11e.util.is_defined(dimension)) {
-        /**
+        /*
         * @function
         * @description
         *     Update the widget's drilldown counts from the search response object.

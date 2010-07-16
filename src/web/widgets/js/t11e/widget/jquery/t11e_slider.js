@@ -81,8 +81,8 @@ t11e.widget.jquery.SliderWidget = function ($, options) {
     update_amounts(null, slider_options);
 
     var ignore_event = false;
-    /** @scope t11e.widget.jquery.SliderWidget */
-    /**
+    /* @scope t11e.widget.jquery.SliderWidget */
+    /*
      * This function is used as a callback for the <code>request</code> event and it is
      * used to update the slider's state from the current search parameters
      * object. The new value is read from the <code>params</code> object and the slider
@@ -105,8 +105,8 @@ t11e.widget.jquery.SliderWidget = function ($, options) {
     };
     t11e.event.subscribe('request.' + search_group, load_from_params);
 
-    /** @scope t11e.widget.jquery.SliderWidget */
-    /**
+    /* @scope t11e.widget.jquery.SliderWidget */
+    /*
      * This function is used as a callback for the <code>update_request</code> event.
      * It takes a single argument, which is the search parameters object,
      * a mapping of search parameters to their values. The function sets the

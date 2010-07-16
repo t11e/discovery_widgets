@@ -62,9 +62,7 @@
  *
  * @name jQuery.ui.t11e_faceted_checkboxes2
  * @class A checkbox widget that displays facet counts.
- *
- * */
-
+ */
 (function ($) {
     var options = {
         search_group: 'default',
@@ -97,12 +95,12 @@
         });
 
         var ignore_event = false;
-        /**
+        /*
          * Update the widget's current state from the params object. This
          * function is used as a callback to the <code>request</code> topic.
          * @param {Object} params
          */
-        var load_from_params = function (/**Object*/params) {
+        var load_from_params = function (/*Object*/params) {
             var values = params[value_param];
             if (t11e.util.is_undefined(values)) {
                 values = [];
@@ -120,11 +118,11 @@
                 ignore_event = false;
             }
         };
-        /**
+        /*
         * Subscribe to the request topic.
         */
         t11e.event.subscribe('request.' + search_group, load_from_params);
-        /**
+        /*
          * @function
          * @description Adds a facet to the search request parameters
          * @param {Object} params
@@ -144,7 +142,7 @@
             }
             return changed;
         };
-        /**
+        /*
          * @function
          * @description Removes a facet from the search request parameters
          * @param {Object} params
@@ -165,7 +163,7 @@
             }
             return changed;
         };
-        /**
+        /*
          * Update the search request parameters and the breadcrumbs when
          * a checkbox or radio button is clicked.
          *
@@ -210,7 +208,7 @@
         });
 
         if (t11e.util.is_defined(dimension)) {
-            /**
+            /*
             * @function
             * @description
             *     Update the widget's drilldown counts from the search response object.
@@ -232,7 +230,7 @@
                     });
                 });
             };
-            /**
+            /*
              * Subscribe to the response topic.
              * @param {String} response.search_group
              * @param {Function} callback
@@ -247,7 +245,7 @@
         // Updates checkboxes so that styling can be customized.
         self.element.t11e_styled_checkboxes(self.options);
 
-        /**
+        /*
          * Clear all the widget's checkboxes. This
          * function is used as a callback to the <code>clear_params_from_search</code> topic.
          * @param {Object} params

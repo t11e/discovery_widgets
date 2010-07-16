@@ -84,8 +84,8 @@ t11e.widget.jquery.FacetedCheckboxesWidget = function ($, options) {
     var checkboxes = $(this).find('form div.row input');
 
     var ignore_event = false;
-    /** @scope t11e.widget.jquery.FacetedCheckboxesWidget */
-    /**
+    /* @scope t11e.widget.jquery.FacetedCheckboxesWidget */
+    /*
      * Update the widget's current state from the params object. This
      * function is used as a callback to the <code>request</code> topic.
      * @param {Object} params
@@ -107,11 +107,11 @@ t11e.widget.jquery.FacetedCheckboxesWidget = function ($, options) {
             ignore_event = false;
         }
     };
-    /**
+    /*
     * Subscribe to the request topic.
     */
     t11e.event.subscribe('request.' + search_group, load_from_params);
-    /**
+    /*
      * @function
      * @description Adds a facet to the search request parameters
      * @param {Object} params
@@ -131,7 +131,7 @@ t11e.widget.jquery.FacetedCheckboxesWidget = function ($, options) {
         }
         return changed;
     };
-    /**
+    /*
      * @function
      * @description Removes a facet from the search request parameters
      * @param {Object} params
@@ -152,7 +152,7 @@ t11e.widget.jquery.FacetedCheckboxesWidget = function ($, options) {
         }
         return changed;
     };
-    /**
+    /*
      * Update the search request parameters and the breadcrumbs when
      * a checkbox or radio button is clicked.
      *
@@ -186,7 +186,7 @@ t11e.widget.jquery.FacetedCheckboxesWidget = function ($, options) {
     });
 
     if (t11e.util.is_defined(dimension)) {
-        /**
+        /*
         * @function
         * @description
         *     Update the widget's drilldown counts from the search response object.
@@ -207,7 +207,7 @@ t11e.widget.jquery.FacetedCheckboxesWidget = function ($, options) {
                 });
             });
         };
-        /**
+        /*
          * Subscribe to the response topic.
          * @param {String} response.search_group
          * @param {Function} callback
@@ -219,8 +219,8 @@ t11e.widget.jquery.FacetedCheckboxesWidget = function ($, options) {
         t11e.widget.jquery.util.associate_labels($, row);
     });
 
-    /** @scope t11e.widget.jquery.FacetedCheckboxesWidget */
-    /**
+    /* @scope t11e.widget.jquery.FacetedCheckboxesWidget */
+    /*
      * Clear all the widget's checkboxes. This
      * function is used as a callback to the <code>clear_params_from_search</code> topic.
      * @param {Object} params

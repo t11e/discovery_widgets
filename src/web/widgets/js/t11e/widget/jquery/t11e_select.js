@@ -62,12 +62,12 @@ t11e.widget.jquery.SelectWidget = function ($, options) {
     var select_options = $(this).find('form select option');
 
     var ignore_event = false;
-    /**
+    /*
      * Update the widget's current state from the params object. This
      * function is used as a callback to the <code>request</code> topic.
      * @param {Object} params
      */
-    var load_from_params = function (/**Object*/params) {
+    var load_from_params = function (/*Object*/params) {
         var values = params[value_param];
         if (t11e.util.is_undefined(values)) {
             values = [];
@@ -90,11 +90,11 @@ t11e.widget.jquery.SelectWidget = function ($, options) {
             ignore_event = false;
         }
     };
-    /**
+    /*
     * Subscribe to the request topic.
     */
     t11e.event.subscribe('request.' + search_group, load_from_params);
-    /**
+    /*
      * @function
      * @description Adds a facet to the search request parameters
      * @param {Object} params
@@ -118,7 +118,7 @@ t11e.widget.jquery.SelectWidget = function ($, options) {
         }
         return changed;
     };
-    /**
+    /*
      * @function
      * @description Removes a facet from the search request parameters
      * @param {Object} params
@@ -139,7 +139,7 @@ t11e.widget.jquery.SelectWidget = function ($, options) {
         }
         return changed;
     };
-    /**
+    /*
      * Update the search request parameters.
      *
      * @param {Object} event
@@ -164,7 +164,7 @@ t11e.widget.jquery.SelectWidget = function ($, options) {
 
     $(select).bind('change', option_changed);
 
-    /**
+    /*
      * Clear all the widget's options. This
      * function is used as a callback to the <code>clear_params_from_search</code> topic.
      * @param {Object} params
