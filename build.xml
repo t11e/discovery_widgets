@@ -32,10 +32,13 @@
     <target name="jsdoc" depends="compress-media"
       description="Builds the JavaScript documentation">
         <delete dir="src/web/build/jsdoc"/>
-        <java jar="tools/jsdoc_toolkit-2.3.1/jsrun.jar" fork="true" failonerror="true">
-            <arg value="tools/jsdoc_toolkit-2.3.1/app/run.js"/>
+        <copy todir="src/web/build/jsdoc/symbols">
+            <fileset dir="src/jsdoc_templates/static"/>
+        </copy>
+        <java jar="tools/jsdoc_toolkit-2.4.0/jsrun.jar" fork="true" failonerror="true">
+            <arg value="tools/jsdoc_toolkit-2.4.0/app/run.js"/>
             <arg value="-t=src/jsdoc_templates"/>
-            <arg value="-d=src/web/build/jsdoc"/>
+            <arg value="-d=src/web/build/jsdoc/"/>
             <arg value="-r=5"/>
             <arg value="src/web/widgets/js"/>
         </java>
