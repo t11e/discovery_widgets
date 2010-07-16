@@ -47,41 +47,22 @@
       description="Builds a binary distribution of this project.">
       <delete dir="build.ant/dist"/>
       <mkdir dir="build.ant/dist"/>
-      <mkdir dir="build.ant/dist/css"/>
-      <mkdir dir="build.ant/dist/js"/>
-      <copy todir="build.ant/dist/css">
-        <fileset dir="src/web/build/css">
-          <include name="widgets*.min.css"/>
+      <copy todir="build.ant/dist">
+        <fileset dir="src/web/build">
+          <include name="css/widgets*.css"/>
+          <include name="js/widgets*.js"/>
+          <include name="(css|js)/(widgets*)(\.min\.css|\.min\.js|\.js|\.css)"/>
         </fileset>
-        <mapper type="glob" from="widgets*.min.css" to="discovery-widgets*-${external.version}.min.css"/>
-      </copy>
-      <copy todir="build.ant/dist/css">
-        <fileset dir="src/web/build/css">
-          <include name="widgets*.css"/>
-          <exclude name="widgets*.min.css"/>
-        </fileset>
-        <mapper type="glob" from="widgets*.css" to="discovery-widgets*-${external.version}.css"/>
-      </copy>
-      <copy todir="build.ant/dist/js">
-        <fileset dir="src/web/build/js">
-          <include name="widgets*.min.js"/>
-        </fileset>
-        <mapper type="glob" from="widgets*.min.js" to="discovery-widgets*-${external.version}.min.js"/>
-      </copy>
-      <copy todir="build.ant/dist/js">
-        <fileset dir="src/web/build/js">
-          <include name="widgets*.js"/>
-          <exclude name="widgets*.min.js"/>
-        </fileset>
-        <mapper type="glob" from="widgets*.js" to="discovery-widgets*-${external.version}.js"/>
+        <mapper type="regexp"
+          from="(css|js)/(widgets.*)(\.min\.css|\.min\.js|\.js|\.css)"
+          to="\1/discovery-\2-${external.version}\3"/>
       </copy>
       <filterchain id="widgets-release-filterchain">
         <tokenfilter>
           <filetokenizer/>
-          <replaceregex pattern="/(widgets.*)\.min\.css" replace="/discovery-\1-${external.version}.min.css" flags="g"/>
-          <replaceregex pattern="/(widgets.*)\.min\.js" replace="/discovery-\1-${external.version}.min.js" flags="g"/>
-          <replaceregex pattern="/(widgets.*)\.css" replace="/discovery-\1-${external.version}.css" flags="g"/>
-          <replaceregex pattern="/(widgets.*)\.js" replace="/discovery-\1-${external.version}.js" flags="g"/>
+          <replaceregex flags="g"
+            pattern="/(widgets.*)(\.min\.css|\.min\.js|\.js|\.css)"
+            replace="/discovery-\1-${external.version}\2"/>
         </tokenfilter>
       </filterchain>
       <copy todir="build.ant/dist">
