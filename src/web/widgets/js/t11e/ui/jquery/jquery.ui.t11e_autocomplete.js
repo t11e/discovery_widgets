@@ -8,7 +8,6 @@
  * client side caching and server side parameter pass through.
  *
  * <h2>Options</h2>
- *
  * <dl>
  *   <dt>source</dt>
  *   <dd>
@@ -27,9 +26,9 @@
  *
  * <h2>Example</h2>
  * <div class="t11e-widget-example"><!--
- *   <input id='exampleAutoComplete'/>
+ *   <input id='example'/>
  *   <script type="text/javascript">
- *     $('#exampleAutoComplete').t11e_autocomplete({
+ *     $('#example').t11e_autocomplete({
  *       'source': ['Orange', 'Apple', 'Banana', 'Pear', 'Strawberry', 'Peach', 'Kiwi', 'Mango', 'Pineapple']
  *     });
  *   </script>

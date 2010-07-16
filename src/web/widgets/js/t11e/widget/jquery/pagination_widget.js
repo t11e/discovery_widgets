@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.jquery.PaginationWidget definition
+ * @fileOverview jQuery.ui.t11e_pagination definition
  */
 
 t11e.util.define_namespace('t11e.widget.jquery');
@@ -12,7 +12,6 @@ if (false) {
  * Widget that displays pagination controls for the search results.
  *
  * <h2>Options</h2>
- *
  * <dl>
  *     <dt>css_class</dt>
  *     <dd>An optional CSS class to be applied to this widget instance to facilitate custom styling.</dd>
@@ -28,30 +27,27 @@ if (false) {
  *     <dt>page_size</dt>
  *     <dd>The number of result items per page.</dd>
  * </dl>
- * <h2>Example</h2>
- * <div class="t11e-widget t11e-widget-jquery-pagination t11e-widget-id-2089">
- *  <div class="t11e-hd t11e-widget-jquery-pagination-hd"></div>
- *  <div class="t11e-bd t11e-widget-jquery-pagination-bd">
- *      <div class="pagination">
- *          <a href="#" class="prev">Prev</a>
- *          <a href="#">1</a>
- *          <a href="#" class="next">Next</a>
- *      </div>
- *  </div>
- *  <div class="t11e-ft t11e-widget-jquery-pagination-ft"></div>
- * </div>
- * <script type="text/javascript">
- * //<!--
- *   if ('undefined' === typeof t11e) { t11e = {}; }
- *   if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
- *   t11e.widget_options['2089'] = {
- *       "search_group": "vehicle",
- *       "page_param": "page"
- *   };
- * //-->
- * </script>
  *
- * @name t11e.widget.jquery.PaginationWidget
+ * <h2>Example</h2>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-widget-jquery-pagination">
+ *    <div class="t11e-hd t11e-widget-jquery-pagination-hd"></div>
+ *    <div class="t11e-bd t11e-widget-jquery-pagination-bd">
+ *      <div class="pagination"/>
+ *    </div>
+ *    <div class="t11e-ft t11e-widget-jquery-pagination-ft"></div>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_pagination({
+ *       "search_group": "default",
+ *       "page_param": "page"
+ *     });
+ *   </script>
+ * --></div>
+ *
+ * Also available as t11e.widget.jquery.PaginationWidget.
+ *
+ * @name jQuery.ui.t11e_pagination
  * @class Displays pagination navigation links for search results.
  */
 t11e.widget.jquery.PaginationWidget = function ($, options) {

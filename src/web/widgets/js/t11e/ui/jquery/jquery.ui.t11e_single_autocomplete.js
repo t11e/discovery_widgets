@@ -29,6 +29,7 @@
  *     });
  *   </script>
  * --></div>
+ *
  * @name jQuery.ui.t11e_single_autocomplete
  * @class Autocomplete search widget that extends the t11e_textbox widget to provide autocomplete functionality for a single term.
  */

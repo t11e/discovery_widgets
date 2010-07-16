@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.jquery.DualSliderWidget definition
+ * @fileOverview jQuery.ui.t11e_faceted_dual_slider definition
  */
 
 t11e.util.define_namespace('t11e.widget.jquery');
@@ -57,66 +57,63 @@ if (false) {
  *    <dt>min_is_any</dt>
  *    <dd>When set to 'true', the minimum value on the slider is set to match any value. If there is
  *    a max value set for the slider and min_is_any is set to 'true', then the slider is equivalent
- *    to searching for items whose dimension is less than the max value.</div>
+ *    to searching for items whose dimension is less than the max value.</dd>
  *
  *    <dt>max_is_any</dt>
  *    <dd>When set to 'true', the maximum value on the slider is set to match any value. If there is
  *    a min value set for the slider and max_is_any is set to 'true', then the slider is equivalent
  *    to searching for items whose dimension is greater than the min value. If both min_is_any and
  *    max_is_any is set to 'true', the slider is not used in the search.</dd>
- *
  * </dl>
  *
- * <h2>Sample HTML</h2>
- * <div class="t11e-widget t11e-widget-jquery-faceted-dual-slider t11e-widget-id-7">
- *     <div class="t11e-hd t11e-widget-jquery-faceted-dual-slider-hd">Price</div>
+ * <h2>Example</h2>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-widget-jquery-faceted-dual-slider">
+ *     <div class="t11e-hd t11e-widget-jquery-faceted-dual-slider-hd"></div>
  *     <div class="t11e-bd t11e-widget-jquery-faceted-dual-slider-bd">
- *         <div class="t11e-sparkline"></div>
- *         <div class="t11e-slider-control"></div>
- *         <div class="t11e-amount"></div>
+ *       <div class="t11e-sparkline"></div>
+ *       <div class="t11e-slider-control"></div>
+ *       <div class="t11e-amount"></div>
  *     </div>
  *     <div class="t11e-ft t11e-widget-jquery-faceted-dual-slider-ft">
  *     </div>
- * </div>
- * <script type="text/javascript">
- * //<!--
- *     if ('undefined' === typeof t11e) { t11e = {}; }
- *     if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
- *     t11e.widget_options['7'] = {
- *         "search_group": "default",
- *         "dimension": "price",
- *         "page_param": "page",
- *         "min_param": "price_min",
- *         "max_param": "price_max",
- *         "min_value": 2,
- *         "max_value": 10,
- *         "step": 1,
- *         "sparkline": {
- *             "height": "2em",
- *             "lineWidth": 2,
- *             "background": {
- *                 "lineColor": "#AAA",
- *                 "fillColor": "#CCC"
- *             },
- *             "foreground": {
- *                 "lineColor": "#F66",
- *                 "fillColor": "#FAA"
- *             }
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_faceted_dual_slider({
+ *       "search_group": "default",
+ *       "dimension": "price",
+ *       "min_param": "price_min",
+ *       "max_param": "price_max",
+ *       "min_value": 2,
+ *       "max_value": 10,
+ *       "sparkline": {
+ *         "height": "2em",
+ *         "lineWidth": 2,
+ *         "background": {
+ *           "lineColor": "#AAA",
+ *           "fillColor": "#CCC"
  *         },
- *         "value_to_param": function ($, value) {
- *             return Math.pow(Number(value), 3);
- *         },
- *         "param_to_value": function ($, value) {
- *             return Math.ceil(Math.pow(value, 1/3));
- *         },
- *         "format": function ($, amount, min_value, max_value) {
- *             amount.html('$' + min_value + ' - $' + max_value);
+ *         "foreground": {
+ *           "lineColor": "#F66",
+ *           "fillColor": "#FAA"
  *         }
- *     };
- * //-->
- * </script>
+ *       },
+ *       "value_to_param": function ($, value) {
+ *         return Math.pow(Number(value), 3);
+ *       },
+ *       "param_to_value": function ($, value) {
+ *         return Math.ceil(Math.pow(value, 1/3));
+ *       },
+ *       "format": function ($, amount, min_value, max_value) {
+ *         amount.html('$' + min_value + ' - $' + max_value);
+ *       }
+ *     });
+ *   </script>
+ * --></div>
  *
- * @name t11e.widget.jquery.FacetedDualSliderWidget
+ * Also available as t11e.widget.jquery.FacetedDualSliderWidget.
+ *
+ * @name jQuery.ui.t11e_faceted_dual_slider
  * @class A dual-handled slider widget for searching a range of values.
  */
 t11e.widget.jquery.FacetedDualSliderWidget = function ($, options) {

@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.jquery.AccordionWidget definition.
+ * @fileOverview jQuery.ui.t11e_accordion definition.
  */
 
 t11e.util.define_namespace('t11e.widget.jquery');
@@ -13,7 +13,6 @@ if (false) {
  * the children at top of page when scrolled with shade open behaviors.
  *
  * <h2>Options</h2>
- *
  * <dl>
  *     <dt>css_class</dt>
  *     <dd>An option CSS class to be applied to this widget instance to facilitate custom styling.</dd>
@@ -27,31 +26,31 @@ if (false) {
  *     <dd>Optional. Milliseconds for window shade open effect. Defaults to 500 ms.</dd>
  * </dl>
  *
- * <h2>Example</h2>
- * <div class="t11e-widget t11e-widget-jquery-accordion t11e-widget-id-2082">
- *   <div class="t11e-widget-jquery-accordion-bd">
- *      <div class="accordion-top"></div>
- *      <ol class="t11e-list-entries accordion-body">
- *          <li class="t11e-list-entry">
- *              <!-- Contained widget -->
- *          </li>
- *      </ol>
- *      <div class="accordion-bottom"></div>
- *   </div>
- *   <div class="t11e-widget-jquery-accordion-ft"></div>
- * </div>
- * <script type="text/javascript">
- *  //<!--
- *      if ('undefined' === typeof t11e) { t11e = {}; }
- *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
- *      t11e.widget_options['2082'] = {
- *          "animation_length_ms": 500,
- *          "contained_widget_height": "300px"
- *      };
- *  //-->
- * </script>
+ * Also available as t11e.widget.jquery.AccordionWidget.
  *
- * @name t11e.widget.jquery.AccordionWidget
+ * <h2>Example</h2>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-widget-jquery-accordion">
+ *     <div class="t11e-widget-jquery-accordion-bd">
+ *        <div class="t11e-accordion-top"></div>
+ *        <ol class="t11e-list-entries t11e-accordion-body">
+ *            <li class="t11e-list-entry">
+ *                The contained widget goes here.
+ *            </li>
+ *        </ol>
+ *        <div class="t11e-accordion-bottom"></div>
+ *     </div>
+ *     <div class="t11e-widget-jquery-accordion-ft"></div>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $('#example').t11e_accordion({
+ *          "animation_length_ms": 500,
+ *          "contained_widget_height": "100px"
+ *      });
+ *   </script>
+ * --></div>
+ *
+ * @name jQuery.ui.t11e_accordion
  * @class Implements window shade behavior.
  *
  */

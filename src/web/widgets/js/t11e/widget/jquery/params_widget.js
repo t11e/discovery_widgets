@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.jquery.ParamsWidget definition
+ * @fileOverview jQuery.ui.t11e_params definition
  */
 
 t11e.util.define_namespace('t11e.widget.jquery');
@@ -11,7 +11,34 @@ if (false) {
 /**
  * Display search parameters for individual search group.
  *
- * @name t11e.widget.jquery.ParamsWidget
+ * <h2>Options</h2>
+ * <dl>
+ *   <dt>search_group</dt>
+ *   <dd>The search group from which this widget displays the params.</dd>
+ * <dl>
+ *
+ * <h2>Example</h2>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-widget-jquery-params">
+ *     <div class="t11e-hd t11e-widget-jquery-params-hd"></div>
+ *     <div class="t11e-bd t11e-widget-jquery-params-bd">
+ *       <div class="t11e-params"/>
+ *     </div>
+ *     <div class="t11e-ft t11e-widget-jquery-params-ft"></div>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_params({
+ *       "search_group": "history"
+ *     });
+ *     // For example purposes only, change the hash to create some
+ *     // parameters.
+ *     window.location.hash = "&a=example%20param&b=another%20one";
+ *   </script>
+ * --><div>
+ *
+ * Also available as t11e.widget.jquery.ParamsWidget.
+ *
+ * @name jQuery.ui.t11e_params
  * @class Debug widget for displaying the current search parameters by search_group
  */
 t11e.widget.jquery.ParamsWidget = function ($, options) {

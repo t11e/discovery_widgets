@@ -654,8 +654,35 @@
         <script type="text/javascript" src="../../js/widgets.js" charset="utf-8"></script>
         <script type="text/javascript">//<![CDATA[
         (function ($) {
-            t11e.widget.jquery.document_widgets($, '<pre class="brush: html"></pre>');
+            t11e.widget.jquery.document_widgets_1($, '<pre class="brush: html"></pre>');
             t11e.widget.jquery.activate_widgets($);
+            t11e.widget.jquery.document_widgets_2($, '<pre class="brush: html"></pre>');
+            t11e.widget.activate_search_page({
+                "search_groups": {
+                    "default": {
+                        "url": "/search"
+                    }
+                },
+                "search_plugin": t11e.widget.jquery.search_plugin($),
+                "history_plugin": {
+                    "get_initial_state": function () {
+                        return {
+                            "weight": ["1.0"]
+                        };
+                    },
+                    "update": function () {
+                    }
+                }
+            });
+            t11e.widget.activate_search_page({
+                "search_groups": {
+                    "history": {
+                        "url": "/search"
+                    }
+                },
+                "search_plugin": t11e.widget.jquery.search_plugin($),
+                "history_plugin": t11e.widget.jquery.history_plugin($)
+            });
         }(jQuery));
         //]]></script>
         <script type="text/javascript" src="scripts/shCore.js"></script>

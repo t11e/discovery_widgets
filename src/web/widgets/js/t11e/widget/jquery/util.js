@@ -6,6 +6,16 @@
  * inside the given container.</p>
  */
 
+/**
+ * @name jQuery
+ * @namespace jQuery: See <a href="http://docs.jquery.com">external documentation</a>
+ */
+
+/**
+ * @name jQuery.ui
+ * @namespace jQuery UI: See <a href="http://docs.jquery.com">external documentation</a>
+ */
+
 t11e.util.define_namespace('t11e.widget.jquery.util');
 if (false) {
     t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;

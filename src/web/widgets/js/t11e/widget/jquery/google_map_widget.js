@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.jquery.GoogleMapWidget definition
+ * @fileOverview jQuery.ui.t11e_google_map defintion
  */
 
 t11e.util.define_namespace('t11e.widget.jquery');
@@ -12,7 +12,6 @@ if (false) {
  * Widget for displaying geocoded results on a Google map.
  *
  * <h2>Options</h2>
- *
  * <dl>
  *    <dt>css_class</dt>
  *    <dd>An optional CSS class to be applied to this widget instance to facilitate custom styling.</dd>
@@ -62,40 +61,31 @@ if (false) {
  *    <dt>map_height</dt>
  *    <dd>The display height of the map. The default is '300px'.</dd>
  *</dl>
+ *
  *<h2>Example</h2>
- * <div class="t11e-widget t11e-widget-jquery-google-map t11e-widget-id-2083">
- *  <div class="t11e-hd t11e-widget-jquery-google-map-hd"></div>
- *  <div class="t11e-bd t11e-widget-jquery-google-map-bd">
- *      <div class="google-map"></div>
- *  </div>
- *  <div class="t11e-ft t11e-widget-jquery-google-map-ft"></div>
- * </div>
- * <script type="text/javascript">
- *  //<!--
- *      if ('undefined' === typeof t11e) { t11e = {}; }
- *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
- *      t11e.widget_options['2083'] = {
- *          "search_group": "vehicle",
- *          "dimension": "latlon",
- *          "map_height": 250,
- *          "center_latitude": 40.777900699999996,
- *          "center_longitude": -73.9634018,
- *          "zoom_level": 13,
- *          "close_match_icon": "/images/google_map_markers/largeTDYellowIcons/marker${index}.png",
- *          "exact_match_icon": "/images/google_map_markers/largeTDRedIcons/marker${index}.png",
- *          "icon_shadow": "/images/google_map_markers/shadow50.png",
- *          "item_info_url": "/info_window/${id}/",
- *          "icon_width": 34,
- *          "icon_height": 20,
- *          "icon_shadow_width": 27,
- *          "icon_shadow_height": 34,
- *          "icon_anchor_x": 9,
- *          "icon_anchor_y": 34
- *      };
- *  //-->
- * </script>
  * <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=" type="text/javascript"></script>
- * @name t11e.widget.jquery.GoogleMapWidget
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-widget-jquery-google-map">
+ *     <div class="t11e-hd t11e-widget-jquery-google-map-hd"></div>
+ *     <div class="t11e-bd t11e-widget-jquery-google-map-bd">
+ *       <div class="google-map"></div>
+ *     </div>
+ *     <div class="t11e-ft t11e-widget-jquery-google-map-ft"></div>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_google_map({
+ *       "search_group": "default",
+ *       "center_latitude": 40.777900699999996,
+ *       "center_longitude": -73.9634018,
+ *       "zoom_level": 13,
+ *       "map_height": 250
+ *      });
+ *   </script>
+ * --></div>
+ *
+ * Also available as t11e.widget.jquery.GoogleMapWidget.
+ *
+ * @name jQuery.ui.t11e_google_map
  * @class A widget for displaying search results on a Google map.
  */
 t11e.widget.jquery.GoogleMapWidget = function ($, options) {

@@ -7,33 +7,23 @@
  * Widget for geocoding addresses.
  *
  * <h2>Options</h2>
- *
  * <dl>
  *    <dt>address</dt>
  *    <dd>The initial address to be geocoded.</dd>
  * </dl>
- * <h2>Example 1</h2>
  *
- * <pre class="brush: js">
- *     $('#geocode').t11e_geocode({address: 'New York, NY'});
- * </pre>
- *
- * <h2>Example 2</h2>
- * <div class="t11e-widget t11e-jquery-ui-geocode t11e-widget-id-geocode"></div>
- * <script type="text/javascript">
- * //<!--
- *     if ('undefined' === typeof t11e) { t11e = {}; }
- *     if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
- *     t11e.widget_options['geocode'] = {
- *            address: 'New York, NY'
- *     }
- * //-->
- * </script>
+ * <h2>Example</h2>
  * <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=" type="text/javascript"></script>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-jquery-ui-geocode"></div>
+ *   <script type="text/javascript">
+ *     $("#geocode").t11e_geocode();
+ *   </script>
+ * --></div>
+ *
  * @name jQuery.ui.t11e_geocode
  * @class A widget for geocoding addresses.
  */
-
 (function ($) {
     var options = {address: ''};
     $.widget('ui.t11e_geocode', {

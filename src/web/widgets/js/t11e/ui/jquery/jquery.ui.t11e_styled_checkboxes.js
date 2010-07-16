@@ -3,6 +3,11 @@
  * @fileOverview Styled Checkboxes
  * Based on: http://filamentgroup.com/lab/accessible_custom_designed_checkbox_radio_button_inputs_styled_css_jquery/
  */
+
+/**
+ * @name jQuery.ui.t11e_styled_checkboxes
+ * @class Accessible custom designed checkbox/radio button inputs
+ */
 (function ($) {
     var options = {
         input_selector: 'input',

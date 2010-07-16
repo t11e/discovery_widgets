@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.jquery.ResultsWidget definition
+ * @fileOverview jQuery.ui.t11e_results definition
  */
 
 t11e.util.define_namespace('t11e.widget.jquery');
@@ -10,8 +10,8 @@ if (false) {
 
 /**
  * Widget that displays AJAX rendered HTML search results.
- * <h2>Options</h2>
  *
+ * <h2>Options</h2>
  *<dl>
  *    <dt>search_group</dt>
  *    <dd>The search group this widget is associated with.</dd>
@@ -20,7 +20,7 @@ if (false) {
  *    <dd>The url the results widget uses to request the rendered search results. The url
  *    is appended with the 'results_query_params' value from the search response.</dd>
  *
- *    <dt>render_params_paths</dd>
+ *    <dt>render_params_paths</dt>
  *    <dd>Array of paths under the JSON AJAX response to look for the render parameters.
  *    Defaults to ['results_query_params', '_discovery.response.renderParameters'].</dd>
  *
@@ -42,31 +42,30 @@ if (false) {
  *
  *    <dt>z_index</dt>
  *    <dd>The z-index of the 'loading' message to insure it displays on top of other
- *    elements. Defaults to 1000.</dd>
- *
+ *    elements. Defaults to 1000.</dd
  *</dl>
  *
  * <h2>Example</h2>
- * <div class="t11e-widget t11e-widget-jquery-results t11e-widget-id-2088">
- *  <div class="t11e-hd t11e-widget-jquery-results-hd"></div>
- *  <div class="t11e-bd t11e-widget-jquery-results-bd">
- *      <div class="t11e-results"></div>
- *      <div class="t11e-widget-jquery-results-loading">
- *      </div>
- *  </div>
- *  <div class="t11e-ft t11e-widget-jquery-results-ft"></div>
- * </div><script type="text/javascript">
- *  //<!--
- *      if ('undefined' === typeof t11e) { t11e = {}; }
- *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
- *      t11e.widget_options['2088'] = {
- *          "search_group": "vehicle",
- *          "base_url": "/proxy/results"
- *      };
- *  //-->
- * </script>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-widget-jquery-results">
+ *     <div class="t11e-hd t11e-widget-jquery-results-hd"></div>
+ *     <div class="t11e-bd t11e-widget-jquery-results-bd">
+ *       <div class="t11e-results"></div>
+ *       <div class="t11e-widget-jquery-results-loading"></div>
+ *     </div>
+ *    <div class="t11e-ft t11e-widget-jquery-results-ft"></div>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_results({
+ *       "search_group": "default",
+ *       "base_url": "/results"
+ *     });
+ *   </script>
+ * --></div>
  *
- * @name t11e.widget.jquery.ResultsWidget
+ * Also available as t11e.widget.jquery.ResultsWidget.
+ *
+ * @name jQuery.ui.t11e_results
  * @class Executes Ajax request and renders search results.
  */
 t11e.widget.jquery.ResultsWidget = function ($, options) {

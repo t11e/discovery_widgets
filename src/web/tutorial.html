@@ -252,10 +252,15 @@
                 "source": "/autocomplete",
                 "source_params": {"listlength": 5}
             });
-            var options = {"search_groups": {"default": {"url": "/search"}}};
-            options.history_plugin = t11e.widget.jquery.history_plugin($);
-            options.search_plugin = t11e.widget.jquery.search_plugin($);
-            t11e.widget.activate_search_page(options);
+            t11e.widget.activate_search_page({
+                "search_groups": {
+                    "default": {
+                        "url": "/search"
+                    }
+                },
+                "history_plugin": t11e.widget.jquery.history_plugin($),
+                "search_plugin": t11e.widget.jquery.search_plugin($)
+            });
         }(jQuery));
         //]]></script>
     </body>

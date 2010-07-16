@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview Geocode widget definition
+ * @fileOverview jQuery.ui.t11e_location definition
  */
 
 /**
@@ -9,7 +9,6 @@
  * the geocoded address can be passed to the search controller.
  *
  * <h2>Options</h2>
- *
  * <dl>
  *    <dt>search_group</dt>
  *    <dd>The search group associated with this widget.</dd>
@@ -41,26 +40,26 @@
  *    <dt>error_template</dt>
  *    <dd>String to display when the entered address cannot be geocoded.</dd>
  * </dl>
+ *
  * <h2>Example</h2>
- * <div class="t11e-widget t11e-widget-jquery-location t11e-widget-id-geo">
- *     <div class="t11e-hd t11e-widget-jquery-location-hd"><h1>Geocode</h1></div>
+ * <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=" type="text/javascript"></script>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-widget-jquery-location">
+ *     <div class="t11e-hd t11e-widget-jquery-location-hd"></div>
  *     <div class="t11e-bd t11e-widget-jquery-location-bd"></div>
  *     <div class="t11e-ft t11e-widget-jquery-location-ft"></div>
- * </div>
- * <script type="text/javascript">
- * //<!--
- *     if ('undefined' === typeof t11e) { t11e = {}; }
- *     if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
- *     t11e.widget_options['geo'] = {
- *         "search_group": "default",
- *         "value_param": "location",
- *         "latitude_param": "la",
- *         "longitude_param": "lo",
- *         "display_results": true
- *     };
- * //-->
- * </script>
- * <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=" type="text/javascript"></script>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_location({
+ *       "search_group": "default",
+ *       "value_param": "location",
+ *       "latitude_param": "lat",
+ *       "longitude_param": "lon",
+ *       "display_results": true
+ *     });
+ *   </script>
+ * --></div>
+ *
  * @name jQuery.ui.t11e_location
  * @class A search widget that geocodes addresses and makes the geocoded form available for search.
  */

@@ -1,9 +1,9 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.jquery.FacetedFlyoutWidget definition
- * <p>{@link t11e.widget.jquery.FacetedFlyoutWidget} provides a faceted
- * search interface of either checkboxes or radio buttons that includes a
- * flyout panel to display additional choices.</p>
+ * @fileOverview jQuery.ui.t11e_faceted_flyout definition
+ * <p>
+ * Provides a faceted search interface of either checkboxes or radio buttons
+ * that includes a flyout panel to display additional choices.
  */
 
 t11e.util.define_namespace('t11e.widget.jquery');
@@ -12,11 +12,10 @@ if (false) {
 }
 
 /**
- * A widget with the same functionality as {@link t11e.widget.jquery.FacetedCheckboxesWidget}
+ * A widget with the same functionality as {@link jQuery.ui.t11e_faceted_checkboxes_widget}
  * that also contains a flyout panel.
  *
  * <h2>Options</h2>
- *
  *<dl>
  *    <dt>css_class</dt>
  *    <dd>An optional CSS class to be applied to this widget instance to facilitate custom styling.</dd>
@@ -42,62 +41,60 @@ if (false) {
  *    <dt>column_count</dt>
  *    <dd>The number of columns to be used in the flyout panel</dd>
  *</dl>
- * <h2>Example</h2>
- * <div class="t11e-widget t11e-widget-jquery-faceted-flyout t11e-widget-id-2077">
- *  <div class="t11e-hd t11e-widget-jquery-faceted-flyout-hd"></div>
- *  <div class="t11e-bd t11e-widget-jquery-faceted-flyout-bd">
- *      <div class="breadcrumb"></div>
- *      <form action="">
- *          <fieldset class="t11e-widget-jquery-faceted-flyout-primary">
- *              <div class="row">
- *                  <input type="checkbox" name="c" value="vehicles/automobiles/cars">
- *                  <label>Cars</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *              </div>
- *              <div class="row">
- *                  <input type="checkbox" name="c" value="vehicles/automobiles/motorcycles">
- *                  <label>Motorcycles</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *              </div>
- *              <div class="row">
- *                  <input type="checkbox" name="c" value="vehicles/automobiles/suvs">
- *                  <label>SUV</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *              </div>
- *          </fieldset>
- *          <fieldset class="t11e-widget-jquery-faceted-flyout-secondary">
- *              <div class="flyout-panel">
- *                  <div class="close-flyout-panel">
- *                      [x]
- *                  </div>
- *                  <div class="row">
- *                      <input type="checkbox" name="c" value="vehicles/automobiles/trucks">
- *                      <label>Trucks</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *                  </div>
- *                  <div class="row">
- *                      <input type="checkbox" name="c" value="vehicles/automobiles/vans">
- *                      <label>Vans</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *                  </div>
- *              </div>
- *          </fieldset>
- *          <div class="toggle-flyout">
- *              More...
- *          </div>
- *      </form>
- *  </div>
- *  <div class="t11e-ft t11e-widget-jquery-faceted-flyout-ft"></div>
- * </div><script type="text/javascript">
- *  //<!--
- *      if ('undefined' === typeof t11e) { t11e = {}; }
- *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
- *      t11e.widget_options['2077'] = {
- *          "search_group": "vehicle",
- *          "value_param": "c",
- *          "dimension": "category",
- *          "column_count": 2,
- *          "flyout_panel_width": 250
- *      };
- *  //-->
- * </script>
  *
- * @name t11e.widget.jquery.FacetedFlyoutWidget
+ * <h2>Example</h2>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-widget-jquery-faceted-flyout">
+ *     <div class="t11e-hd t11e-widget-jquery-faceted-flyout-hd"></div>
+ *     <div class="t11e-bd t11e-widget-jquery-faceted-flyout-bd">
+ *       <div class="breadcrumb"></div>
+ *         <form action="">
+ *           <fieldset class="t11e-widget-jquery-faceted-flyout-primary">
+ *             <div class="row">
+ *               <input type="checkbox" name="c" value="cars">
+ *               <label>Cars</label><span class="facet-count">0</span>
+ *             </div>
+ *             <div class="row">
+ *               <input type="checkbox" name="c" value="motorcycles">
+ *               <label>Motorcycles</label><span class="facet-count">0</span>
+ *             </div>
+ *           </fieldset>
+ *           <fieldset class="t11e-widget-jquery-faceted-flyout-secondary">
+ *             <div class="flyout-panel">
+ *               <div class="close-flyout-panel">[x]</div>
+ *               <div class="row">
+ *                 <input type="checkbox" name="c" value="suvs">
+ *                 <label>SUV</label><span class="facet-count">0</span>
+ *               </div>
+ *               <div class="row">
+ *                 <input type="checkbox" name="c" value="trucks">
+ *                 <label>Trucks</label><span class="facet-count">0</span>
+ *               </div>
+ *               <div class="row">
+ *                 <input type="checkbox" name="c" value="vans">
+ *                 <label>Vans</label><span class="facet-count">0</span>
+ *               </div>
+ *             </div>
+ *           </fieldset>
+ *           <div class="toggle-flyout">More...</div>
+ *         </form>
+ *       </div>
+ *     <div class="t11e-ft t11e-widget-jquery-faceted-flyout-ft"></div>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_faceted_flyout({
+ *       "search_group": "default",
+ *       "value_param": "c",
+ *       "dimension": "category",
+ *       "column_count": 2,
+ *       "flyout_panel_width": 250
+ *     });
+ *   </script>
+ * --></div>
+ *
+ * Also available as t11e.widget.jquery.FacetedFlyoutWidget.
+ *
+ * @name jQuery.ui.t11e_faceted_flyout
  * @class A checkbox widget that contains a flyout panel for additional options.
  *
  */

@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.jquery.SelectWidget definition
+ * @fileOverview jQuery.ui.t11e_select definition
  *
  */
 
@@ -10,10 +10,9 @@ if (false) {
 }
 
 /**
- * <p>TODO</p>
+ * A search enabled select widget.
  *
  * <h2>Options</h2>
- *
  * <dl>
  *    <dt>css_class</dt>
  *    <dd>An option CSS class to be applied to this widget instance to facilitate custom styling.</dd>
@@ -24,10 +23,35 @@ if (false) {
  *    <dt>value_param</dt>
  *    <dd>The search group parameter this widget listens to.</dd>
  * </dl>
- * <h2>Example</h2>
  *
- * @name t11e.widget.jquery.SelectWidget
- * @class A select widget.
+ * <h2>Example</h2>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-widget-jquery-select">
+ *     <div class="t11e-hd t11e-widget-jquery-select-hd"></div>
+ *     <div class="t11e-bd t11e-widget-jquery-select-bd">
+ *       <form name="">
+ *         <select name="s">
+ *           <option value="">--Select One--</option>
+ *           <option value="apple">Apple</option>
+ *           <option value="orange">Orange</option>
+ *           <option value="banana">Banana</option>
+ *         </select>
+ *       </form>
+ *     </div>
+ *     <div class="t11e-ft t11e-widget-jquery-select-ft"></div>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_select({
+ *       "search_group": "default",
+ *       "value_param": "s"
+ *     });
+ *   </script>
+ * --></div>
+ *
+ * Also available as t11e.widget.jquery.SelectWidget.
+ *
+ * @name jQuery.ui.t11e_select
+ * @class A search enabled select widget.
  *
  * */
 t11e.widget.jquery.SelectWidget = function ($, options) {

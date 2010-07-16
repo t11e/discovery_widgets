@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview t11e.widget.jquery.FacetedCheckboxesWidget definition
+ * @fileOverview jQuery.ui.t11e_faceted_checkboxes_widget definition
  *
  * <p>{@link t11e.widget.jquery.FacetedCheckboxesWidget} provides a faceted
  * search interface of either checkboxes or radio buttons.</p>
@@ -17,8 +17,7 @@ if (false) {
  * response.</p>
  *
  * <h2>Options</h2>
- *
- *<dl>
+ * <dl>
  *    <dt>css_class</dt>
  *    <dd>An option CSS class to be applied to this widget instance to facilitate custom styling.</dd>
  *
@@ -30,49 +29,50 @@ if (false) {
  *
  *    <dt>dimension</dt>
  *    <dd>The dimension (index) used for updating drilldown counts.</dd>
-
- * <h2>Example</h2>
- * <div class="t11e-widget t11e-widget-jquery-faceted-checkboxes t11e-widget-id-2078">
- *  <div class="t11e-hd t11e-widget-jquery-faceted-checkboxes-hd"></div>
- *  <div class="t11e-bd t11e-widget-jquery-faceted-checkboxes-bd">
- *      <form action="">
- *          <div class="row">
- *              <input type="checkbox" name="c" value="vehicles/automobiles/cars">
- *              <label>Cars</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *          </div>
- *          <div class="row">
- *              <input type="checkbox" name="c" value="vehicles/automobiles/motorcycles">
- *              <label>Motorcycles</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *          </div>
- *          <div class="row">
- *              <input type="checkbox" name="c" value="vehicles/automobiles/suvs">
- *              <label>SUV</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *          </div>
- *          <div class="row">
- *              <input type="checkbox" name="c" value="vehicles/automobiles/trucks">
- *              <label>Trucks</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *          </div>
- *          <div class="row">
- *              <input type="checkbox" name="c" value="vehicles/automobiles/vans">
- *              <label>Vans</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *          </div>
- *      </form>
- *  </div>
- *  <div class="t11e-ft t11e-widget-jquery-faceted-checkboxes-ft"></div>
- * </div>
- * <script type="text/javascript">
- *  //<!--
- *      if ('undefined' === typeof t11e) { t11e = {}; }
- *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
- *      t11e.widget_options['2078'] = {
- *          "search_group": "vehicle",
- *          "value_param": "c",
- *          "dimension": "category"
- *      };
- *  //-->
- * </script>
+ * </dl>
  *
- * @name t11e.widget.jquery.FacetedCheckboxesWidget
+ * <h2>Example</h2>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-widget-jquery-faceted-checkboxes">
+ *    <div class="t11e-hd t11e-widget-jquery-faceted-checkboxes-hd"></div>
+ *    <div class="t11e-bd t11e-widget-jquery-faceted-checkboxes-bd">
+ *      <form action="">
+ *        <div class="row">
+ *          <input type="checkbox" name="c" value="cars">
+ *          <label>Cars</label><span class="facet-count">0</span>
+ *        </div>
+ *        <div class="row">
+ *          <input type="checkbox" name="c" value="motorcycles">
+ *          <label>Motorcycles</label><span class="facet-count">0</span>
+ *        </div>
+ *        <div class="row">
+ *          <input type="checkbox" name="c" value="suvs">
+ *          <label>SUV</label><span class="facet-count">0</span>
+ *        </div>
+ *        <div class="row">
+ *          <input type="checkbox" name="c" value="trucks">
+ *           <label>Trucks</label><span class="facet-count">0</span>
+ *        </div>
+ *        <div class="row">
+ *          <input type="checkbox" name="c" value="vans">
+ *           <label>Vans</label><span class="facet-count">0</span>
+ *        </div>
+ *      </form>
+ *    </div>
+ *    <div class="t11e-ft t11e-widget-jquery-faceted-checkboxes-ft"></div>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_faceted_checkboxes_widget({
+ *       "search_group": "default",
+ *       "value_param": "c",
+ *       "dimension": "category"
+ *     });
+ *   </script>
+ * --></div>
+ *
+ * Also available as t11e.widget.jquery.FacetedCheckboxesWidget.
+ *
+ * @name jQuery.ui.t11e_faceted_checkboxes_widget
  * @class A checkbox widget that displays facet counts.
  *
  * */

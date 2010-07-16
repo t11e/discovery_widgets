@@ -3,6 +3,36 @@
  * @fileOverview Breadcrumb definition
  */
 
+/**
+ * Widget for displaying per search parameter breadcrumbs.
+ *
+ * <h2>Options</h2>
+ * <dl>
+ *    <dt>value_params</dt>
+ *    <dd>Array of parameters that breadcrumbs should be displayed for.</dd>
+ * </dl>
+ *
+ * <h2>Example</h2>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example" class="t11e-widget t11e-widget-jquery-breadcrumb">
+ *     <div class="t11e-hd t11e-widget-jquery-breadcrumb-hd"></div>
+ *     <div class="t11e-bd t11e-widget-jquery-breadcrumb-bd"></div>
+ *     <div class="t11e-ft t11e-widget-jquery-breadcrumb-ft"></div>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_breadcrumb({
+ *       "search_group": "history",
+ *       "value_params": ["a", "b", "c"]
+ *     });
+ *     // For example purposes only, change the hash to create some
+ *     // breadcrumbs.
+ *     window.location.hash = "&a=example%20breadcrumb&b=another%20one";
+ *   </script>
+ * --></div>
+ *
+ * @name jQuery.ui.t11e_breadcrumb
+ * @class A widget for displaying per search parameter breadcrumbs.
+ */
 (function ($) {
     var options = {
             search_group: 'default',

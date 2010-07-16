@@ -26,45 +26,43 @@
  *    <dd>The dimension (index) used for updating drilldown counts.</dd>
 
  * <h2>Example</h2>
- * <div class="t11e-widget t11e-widget-jquery-faceted-checkboxes t11e-widget-id-cars">
- *  <div class="t11e-hd t11e-widget-jquery-faceted-checkboxes-hd"></div>
- *  <div class="t11e-bd t11e-widget-jquery-faceted-checkboxes-bd">
- *      <form action="">
- *          <div class="row">
- *              <input type="checkbox" name="c" value="vehicles/automobiles/cars">
- *              <label>Cars</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *          </div>
- *          <div class="row">
- *              <input type="checkbox" name="c" value="vehicles/automobiles/motorcycles">
- *              <label>Motorcycles</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *          </div>
- *          <div class="row">
- *              <input type="checkbox" name="c" value="vehicles/automobiles/suvs">
- *              <label>SUV</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *          </div>
- *          <div class="row">
- *              <input type="checkbox" name="c" value="vehicles/automobiles/trucks">
- *              <label>Trucks</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *          </div>
- *          <div class="row">
- *              <input type="checkbox" name="c" value="vehicles/automobiles/vans">
- *              <label>Vans</label> &nbsp;&nbsp;<span class="facet-count">0</span>
- *          </div>
- *      </form>
- *  </div>
- *  <div class="t11e-ft t11e-widget-jquery-faceted-checkboxes-ft"></div>
- * </div>
- * <script type="text/javascript">
- *  //<!--
- *      if ('undefined' === typeof t11e) { t11e = {}; }
- *      if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
- *      t11e.widget_options['cars'] = {
- *          "search_group": "vehicle",
- *          "value_param": "c",
- *          "dimension": "category"
- *      };
- *  //-->
- * </script>
+ * <div class="t11e-widget-example"><!--
+ *   <div class="t11e-widget t11e-widget-jquery-faceted-checkboxes2">
+ *     <div class="t11e-hd t11e-widget-jquery-faceted-checkboxes2-hd"></div>
+ *     <div id="example" class="t11e-bd t11e-widget-jquery-faceted-checkboxes2-bd">
+ *       <form action="">
+ *         <div class="t11e-input-row">
+ *           <input type="checkbox" name="c" value="cars">
+ *           <label>Cars</label><span class="t11e-facet-count">0</span>
+ *         </div>
+ *         <div class="t11e-input-row">
+ *           <input type="checkbox" name="c" value="motorcycles">
+ *           <label>Motorcycles</label><span class="t11e-facet-count">0</span>
+ *         </div>
+ *         <div class="t11e-input-row">
+ *           <input type="checkbox" name="c" value="suvs">
+ *           <label>SUV</label><span class="t11e-facet-count">0</span>
+ *         </div>
+ *         <div class="t11e-input-row">
+ *           <input type="checkbox" name="c" value="trucks">
+ *           <label>Trucks</label><span class="t11e-facet-count">0</span>
+ *         </div>
+ *         <div class="t11e-input-row">
+ *           <input type="checkbox" name="c" value="vans">
+ *           <label>Vans</label><span class="t11e-facet-count">0</span>
+ *         </div>
+ *       </form>
+ *     </div>
+ *    <div class="t11e-ft t11e-widget-jquery-faceted-checkboxes2-ft"></div>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_faceted_checkboxes({
+ *       "search_group": "default",
+ *       "value_param": "c",
+ *       "dimension": "category"
+ *     });
+ *   </script>
+ * --></div>
  *
  * @name jQuery.ui.t11e_faceted_checkboxes
  * @class A checkbox widget that displays facet counts.
@@ -193,7 +191,7 @@
                             changed = remove_facet_from_params(params, checkbox.value) || changed;
                         }
                     });
-                    
+
                     if (changed) {
                         var to_delete = $.merge([], self.mutex_param_names);
                         $.each(params[self.options.value_param] || [], function (idx, value) {
