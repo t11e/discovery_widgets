@@ -17,7 +17,7 @@
  * <div class="t11e-widget-example"><!--
  *   <div id="example" class="t11e-widget t11e-jquery-ui-geocode"></div>
  *   <script type="text/javascript">
- *     $("#geocode").t11e_geocode();
+ *     $("#example").t11e_geocode();
  *   </script>
  * --></div>
  *
