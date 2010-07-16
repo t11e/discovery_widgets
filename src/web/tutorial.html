@@ -75,6 +75,8 @@
                             </div>
                             <div class="yui-u">
 
+<div id="theme-switcher"></div>
+
                             </div>
                         </div>
                     </div>
@@ -193,9 +195,14 @@
         </div>
         <script type="text/javascript" src="build/js/jquery-1.4.2.min.js" charset="utf-8"></script>
         <script type="text/javascript" src="build/js/jquery-ui-1.8.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
         <script type="text/javascript" src="build/js/widgets.min.js" charset="utf-8"></script>
         <script type="text/javascript">//<![CDATA[
         (function ($) {
+            $('#theme-switcher').themeswitcher({
+                height: '500px',
+                closeOnSelect: false
+            });
             $('.t11e-widget-jquery-pagination').t11e_pagination({
                 "search_group": "default",
                 "page_param": "page"
