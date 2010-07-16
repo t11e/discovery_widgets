@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview $.t11e_autocomplete definition
+ * @fileOverview jQuery.ui.t11e_autocomplete definition
  */
 
 /**

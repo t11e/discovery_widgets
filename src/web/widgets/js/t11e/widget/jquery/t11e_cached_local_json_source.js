@@ -1,6 +1,6 @@
 /**
  * @copyright Transparensee Systems, Inc.
- * @fileOverview $.t11e_local_caching_json_source definition
+ * @fileOverview jQuery.t11e_local_caching_json_source definition
  */
 
 /**

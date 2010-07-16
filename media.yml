@@ -67,29 +67,29 @@ groups:
         - widgets/js/t11e/widget/jquery/search_plugin.js
         - widgets/js/t11e/widget/jquery/history_plugin.js
         - widgets/js/t11e/widget/jquery/util.js
-        - widgets/js/t11e/widget/jquery/slider_widget.js
-        - widgets/js/t11e/widget/jquery/faceted_slider_widget.js
-        - widgets/js/t11e/widget/jquery/dual_slider_widget.js
-        - widgets/js/t11e/widget/jquery/faceted_dual_slider_widget.js
-        - widgets/js/t11e/widget/jquery/response_widget.js
-        - widgets/js/t11e/widget/jquery/results_widget.js
-        - widgets/js/t11e/widget/jquery/pagination_widget.js
-        - widgets/js/t11e/widget/jquery/select_widget.js
-        - widgets/js/t11e/widget/jquery/faceted_checkboxes_widget.js
-        - widgets/js/t11e/widget/jquery/faceted_flyout_widget.js
-        - widgets/js/t11e/widget/jquery/textbox_widget.js
-        - widgets/js/t11e/widget/jquery/button_widget.js
-        - widgets/js/t11e/widget/jquery/params_widget.js
-        - widgets/js/t11e/widget/jquery/google_map_widget.js
-        - widgets/js/t11e/widget/jquery/accordion_widget.js
-        - widgets/js/t11e/widget/jquery/breadcrumb_widget.js
-        - widgets/js/t11e/widget/jquery/location_widget.js
-        - widgets/js/t11e/widget/jquery/jquery.ui.t11e_faceted_checkboxes.js
-        - widgets/js/t11e/ui/jquery/jquery.ui.t11e_geocode.js
-        - widgets/js/t11e/ui/jquery/jquery.ui.t11e_styled_checkboxes.js
-        - widgets/js/t11e/ui/jquery/jquery.ui.t11e_cached_local_json_source.js
-        - widgets/js/t11e/ui/jquery/jquery.ui.t11e_autocomplete.js
-        - widgets/js/t11e/ui/jquery/jquery.ui.t11e_single_autocomplete.js
+        - widgets/js/t11e/widget/jquery/t11e_slider.js
+        - widgets/js/t11e/widget/jquery/t11e_faceted_slider.js
+        - widgets/js/t11e/widget/jquery/t11e_dual_slider.js
+        - widgets/js/t11e/widget/jquery/t11e_faceted_dual_slider.js
+        - widgets/js/t11e/widget/jquery/t11e_response.js
+        - widgets/js/t11e/widget/jquery/t11e_results.js
+        - widgets/js/t11e/widget/jquery/t11e_pagination.js
+        - widgets/js/t11e/widget/jquery/t11e_select.js
+        - widgets/js/t11e/widget/jquery/t11e_faceted_checkboxes_widget.js
+        - widgets/js/t11e/widget/jquery/t11e_faceted_flyout.js
+        - widgets/js/t11e/widget/jquery/t11e_textbox.js
+        - widgets/js/t11e/widget/jquery/t11e_button.js
+        - widgets/js/t11e/widget/jquery/t11e_params.js
+        - widgets/js/t11e/widget/jquery/t11e_google_map.js
+        - widgets/js/t11e/widget/jquery/t11e_accordion.js
+        - widgets/js/t11e/widget/jquery/t11e_breadcrumb.js
+        - widgets/js/t11e/widget/jquery/t11e_location.js
+        - widgets/js/t11e/widget/jquery/t11e_faceted_checkboxes.js
+        - widgets/js/t11e/widget/jquery/t11e_geocode.js
+        - widgets/js/t11e/widget/jquery/t11e_styled_checkboxes.js
+        - widgets/js/t11e/widget/jquery/t11e_cached_local_json_source.js
+        - widgets/js/t11e/widget/jquery/t11e_autocomplete.js
+        - widgets/js/t11e/widget/jquery/t11e_single_autocomplete.js
         - widgets/js/t11e/widget/jquery/text_highlighter_plugin.js
         - widgets/js/t11e/widget/jquery/activate.js
         - widgets/js/t11e/widget/jquery/document.js
