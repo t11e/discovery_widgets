@@ -5,6 +5,39 @@
  */
 
 /**
+ * Accessible custom designed checkbox/radio button inputs.
+ *
+ * <h2>Example</h2>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example">
+ *     <fieldset>
+ *       <div class="t11e-input-row">
+ *         <input id="cars" type="checkbox" name="c" value="cars" />
+ *         <label for="cars">Cars</label>
+ *       </div>
+ *       <div class="t11e-input-row">
+ *         <input id="motorcycles" type="checkbox" name="c" value="motorcycles" />
+ *         <label for="motorcycles">Motorcycles</label>
+ *       </div>
+ *       <div class="t11e-input-row">
+ *         <input id="suvs" type="checkbox" name="c" value="suvs" />
+ *         <label for="suvs">SUV</label>
+ *       </div>
+ *       <div class="t11e-input-row">
+ *         <input id="trucks" type="checkbox" name="c" value="trucks" />
+ *         <label for="trucks">Trucks</label>
+ *       </div>
+ *       <div class="t11e-input-row">
+ *         <input id="vans" type="checkbox" name="c" value="vans" />
+ *         <label for="vans">Vans</label>
+ *       </div>
+ *     </fieldset>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example").t11e_styled_checkboxes();
+ *   </script>
+ * --></div>
+ *
  * @name jQuery.ui.t11e_styled_checkboxes
  * @class Accessible custom designed checkbox/radio button inputs
  */

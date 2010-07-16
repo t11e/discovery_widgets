@@ -38,7 +38,7 @@
  *         <label>Motorcycles</label><span class="t11e-facet-count">0</span>
  *       </div>
  *       <div class="t11e-input-row">
- *         <input type="checkbox" name="c" value="suvs" ;>
+ *         <input type="checkbox" name="c" value="suvs" />
  *         <label>SUV</label><span class="t11e-facet-count">0</span>
  *       </div>
  *       <div class="t11e-input-row">
