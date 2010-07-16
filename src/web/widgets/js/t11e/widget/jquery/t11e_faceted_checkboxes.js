@@ -27,33 +27,29 @@
 
  * <h2>Example</h2>
  * <div class="t11e-widget-example"><!--
- *   <div class="t11e-widget t11e-widget-jquery-faceted-checkboxes2">
- *     <div class="t11e-hd t11e-widget-jquery-faceted-checkboxes2-hd"></div>
- *     <div id="example" class="t11e-bd t11e-widget-jquery-faceted-checkboxes2-bd">
- *       <form action="">
- *         <div class="t11e-input-row">
- *           <input type="checkbox" name="c" value="cars">
- *           <label>Cars</label><span class="t11e-facet-count">0</span>
- *         </div>
- *         <div class="t11e-input-row">
- *           <input type="checkbox" name="c" value="motorcycles">
- *           <label>Motorcycles</label><span class="t11e-facet-count">0</span>
- *         </div>
- *         <div class="t11e-input-row">
- *           <input type="checkbox" name="c" value="suvs">
- *           <label>SUV</label><span class="t11e-facet-count">0</span>
- *         </div>
- *         <div class="t11e-input-row">
- *           <input type="checkbox" name="c" value="trucks">
- *           <label>Trucks</label><span class="t11e-facet-count">0</span>
- *         </div>
- *         <div class="t11e-input-row">
- *           <input type="checkbox" name="c" value="vans">
- *           <label>Vans</label><span class="t11e-facet-count">0</span>
- *         </div>
- *       </form>
- *     </div>
- *    <div class="t11e-ft t11e-widget-jquery-faceted-checkboxes2-ft"></div>
+ *   <div id="example">
+ *     <fieldset>
+ *       <div class="t11e-input-row">
+ *         <input type="checkbox" name="c" value="cars" />
+ *         <label>Cars</label><span class="t11e-facet-count">0</span>
+ *       </div>
+ *       <div class="t11e-input-row">
+ *         <input type="checkbox" name="c" value="motorcycles" />
+ *         <label>Motorcycles</label><span class="t11e-facet-count">0</span>
+ *       </div>
+ *       <div class="t11e-input-row">
+ *         <input type="checkbox" name="c" value="suvs" ;>
+ *         <label>SUV</label><span class="t11e-facet-count">0</span>
+ *       </div>
+ *       <div class="t11e-input-row">
+ *         <input type="checkbox" name="c" value="trucks" />
+ *         <label>Trucks</label><span class="t11e-facet-count">0</span>
+ *       </div>
+ *       <div class="t11e-input-row">
+ *         <input type="checkbox" name="c" value="vans" />
+ *         <label>Vans</label><span class="t11e-facet-count">0</span>
+ *       </div>
+ *     </fieldset>
  *   </div>
  *   <script type="text/javascript">
  *     $("#example").t11e_faceted_checkboxes({
