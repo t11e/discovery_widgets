@@ -34,9 +34,10 @@
  * @class Autocomplete search widget that extends the t11e_textbox widget to provide autocomplete functionality for a single term.
  */
 (function ($) {
-    $.widget('ui.t11e_single_autocomplete', {});
-    $.ui.t11e_single_autocomplete.defaults = {
+    var options = {
     };
+    $.widget('ui.t11e_single_autocomplete', {options: options});
+    $.ui.t11e_single_autocomplete.defaults = options;
 
     /*jslint nomen: false */
     $.ui.t11e_single_autocomplete.prototype._init = function () {
@@ -48,10 +49,5 @@
             }
         }));
         $(self.element).t11e_textbox(self.options);
-    };
-
-    $.ui.t11e_single_autocomplete.prototype.destroy = function () {
-        this.element.unbind();
-        $.widget.prototype.destroy.apply(this, arguments);
     };
 }(jQuery));

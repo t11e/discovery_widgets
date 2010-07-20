@@ -77,6 +77,7 @@
             error_template: 'Unknown address. Please enter a new address.'
         };
     $.widget('ui.t11e_location', {
+        // TODO: check compatibility
         widgetEventPrefix: "location",
         options: options
     });
@@ -171,11 +172,5 @@
         if (t11e.util.is_defined(error)) {
             error.html("");
         }
-    };
-
-    $.ui.t11e_location.prototype.destroy = function () {
-        var self = this;
-        this.element.unbind();
-        $.widget.prototype.destroy.apply(this, arguments);
     };
 }(jQuery));

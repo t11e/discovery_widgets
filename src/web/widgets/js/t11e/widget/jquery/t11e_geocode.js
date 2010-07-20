@@ -25,7 +25,9 @@
  * @class A widget for geocoding addresses.
  */
 (function ($) {
-    var options = {address: ''};
+    var options = {
+        address: ''
+    };
     $.widget('ui.t11e_geocode', {
         // TODO: check compatibility
         widgetEventPrefix: 'geocode',
@@ -219,9 +221,13 @@
     };
 
     $.ui.t11e_geocode.prototype.destroy = function () {
-        var self = this;
         this._address.unbind();
         this.element.unbind();
-        $.widget.prototype.destroy.apply(this, arguments);
+        if (t11e.util.is_defined($.widget)) {
+            $.widget.prototype.destroy.apply(this, arguments);
+        } else {
+            $.Widget.prototype.destroy.apply(this, arguments);
+        }
+        return this;
     };
 }(jQuery));

@@ -43,7 +43,7 @@
             animate: false,
             animation_speed: 'fast'
         };
-    $.widget('ui.t11e_breadcrumb', { options: options });
+    $.widget('ui.t11e_breadcrumb', {options: options});
     $.ui.t11e_breadcrumb.defaults = options;
 
     /*jslint nomen: false */
@@ -154,11 +154,5 @@
             crumb.remove();
         }
         t11e.util.remove_param_value(params, param, value);
-    };
-
-    $.ui.t11e_breadcrumb.prototype.destroy = function () {
-        var self = this;
-        this.element.unbind();
-        $.widget.prototype.destroy.apply(this, arguments);
     };
 }(jQuery));
