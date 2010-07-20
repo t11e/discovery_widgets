@@ -35,6 +35,11 @@
         <copy todir="src/web/build/jsdoc/symbols">
             <fileset dir="src/jsdoc_templates/static"/>
         </copy>
+        <copy todir="src/web/build/jsdoc">
+            <fileset dir="src/jsdoc_templates/static">
+              <include name="*logo*.png"/>
+            </fileset>
+        </copy>
         <java jar="tools/jsdoc_toolkit-2.4.0/jsrun.jar" fork="true" failonerror="true">
             <arg value="tools/jsdoc_toolkit-2.4.0/app/run.js"/>
             <arg value="-t=src/jsdoc_templates"/>
