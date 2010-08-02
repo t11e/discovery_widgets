@@ -12,15 +12,7 @@
  *
  * <h2>Example</h2>
  * <div class="t11e-widget-example"><!--
- *   <div id="example" class="t11e-widget t11e-widget-jquery-single-autocomplete">
- *    <div class="t11e-hd t11e-widget-jquery-single-autocomplete-hd"></div>
- *    <div class="t11e-bd t11e-widget-jquery-single-autocomplete-bd">
- *      <form action="" onsubmit="return false;">
- *        <input name="k">
- *      </form>
- *    </div>
- *    <div class="t11e-ft t11e-widget-jquery-single-autocomplete-ft"></div>
- *   </div>
+ *   <input id="example" name="k">
  *   <script type="text/javascript">
  *     $('#example').t11e_single_autocomplete({
  *       'search_group': 'default',
@@ -42,12 +34,11 @@
     /*jslint nomen: false */
     $.ui.t11e_single_autocomplete.prototype._init = function () {
         var self = this;
-        var autocomplete = $(self.element).find('input:first');
-        autocomplete.t11e_autocomplete($.extend({}, self.options, {
+        self.element.t11e_autocomplete($.extend({}, self.options, {
             'select': function (event, ui) {
-                autocomplete.change();
+                $(self.element).change();
             }
         }));
-        $(self.element).t11e_textbox(self.options);
+        self.element.t11e_textbox(self.options);
     };
 }(jQuery));

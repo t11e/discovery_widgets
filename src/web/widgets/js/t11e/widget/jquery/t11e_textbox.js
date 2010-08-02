@@ -24,7 +24,18 @@ if (false) {
  *
  * <h2>Example</h2>
  * <div class="t11e-widget-example"><!--
- *   <div id="example" class="t11e-widget t11e-widget-jquery-textbox">
+ *   <input id="example" name="k">
+ *   <script type="text/javascript">
+ *     $("#example").t11e_textbox({
+ *       "search_group": "default",
+ *       "value_param": "k"
+ *     });
+ *   </script>
+ * --></div>
+ *
+ * <h2>Deprecated Example</h2>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example2" class="t11e-widget t11e-widget-jquery-textbox">
  *     <div class="t11e-hd t11e-widget-jquery-textbox-hd"></div>
  *     <div class="t11e-bd t11e-widget-jquery-textbox-bd">
  *       <form action="" onsubmit="return false;">
@@ -34,7 +45,7 @@ if (false) {
  *     <div class="t11e-ft t11e-widget-jquery-textbox-ft"></div>
  *   </div>
  *   <script type="text/javascript">
- *     $("#example").t11e_textbox({
+ *     $("#example2").t11e_textbox({
  *       "search_group": "default",
  *       "value_param": "k"
  *     });
@@ -47,7 +58,8 @@ if (false) {
 t11e.widget.jquery.TextBoxWidget = function ($, options) {
     var search_group = options.search_group;
     var value_param = options.value_param;
-    var textbox = $(this).find('input:first');
+    t11e.util.log('textbox', this);
+    var textbox = $(this).is(':input') ? $(this) : $(this).find('input:first');
 
     var ignore_event = false;
     var load_from_params = function (params) {
