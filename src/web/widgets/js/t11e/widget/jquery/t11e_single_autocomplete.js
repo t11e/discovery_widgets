@@ -34,11 +34,10 @@
     /*jslint nomen: false */
     $.ui.t11e_single_autocomplete.prototype._init = function () {
         var self = this;
-        self.element.t11e_autocomplete($.extend({}, self.options, {
-            'select': function (event, ui) {
-                $(self.element).change();
-            }
-        }));
+        self.element.t11e_autocomplete(self.options);
         self.element.t11e_textbox(self.options);
+        self.element.bind('autocompleteselect', function (event, ui) {
+            $(self.element).change();
+        });
     };
 }(jQuery));
