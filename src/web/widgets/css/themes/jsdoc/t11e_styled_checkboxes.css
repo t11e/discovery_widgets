@@ -1,0 +1,49 @@
+/*
+ * Styled Checkbox widget that makes the label bold for selected checkboxes.
+ */
+.t11e-styled-checkbox, .t11e-styled-radio {
+    position: relative;
+}
+
+/* input, label positioning */
+.t11e-styled-checkbox input,
+.t11e-styled-radio input {
+    position: absolute;
+    left: 2px;
+    top: 3px;
+    margin: 0;
+    z-index: 0;
+}
+
+/*
+ * z-index is set higher than checkboxes/radio buttons
+ * so that the labels hide them.
+ */
+.t11e-styled-checkbox label,
+.t11e-styled-radio label {
+    display: block;
+    position: relative;
+    z-index: 1;
+    padding: .25em 0 .25em 1em;
+    margin: 0 0 .3em;
+    cursor: pointer;
+}
+
+.t11e-styled-checkbox label.ui-state-hover,
+.t11e-styled-checkbox label.ui-state-focus,
+.t11e-styled-radio label.ui-state-hover,
+.t11e-styled-radio label.ui-state-focus {
+    border: none;
+    background: none;
+}
+
+.t11e-styled-checkbox label.ui-state-checked,
+.t11e-styled-radio label.ui-state-checked {
+  font-weight: bold;
+}
+
+.t11e-styled-checkbox label.ui-state-checked-hover,
+.t11e-styled-checkbox label.ui-state-checked-focus {
+    border: none;
+    background: none;
+}

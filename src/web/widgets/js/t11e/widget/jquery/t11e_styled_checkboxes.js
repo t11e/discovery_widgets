@@ -67,11 +67,11 @@
                 // Deal with legacy faceted checkbox widget code that wraps inputs in divs.
                 var parent = input.parent();
                 if (parent[0].tagName === 'DIV') {
-                    parent.addClass(self.options.row_class + ' t11e-' + input_type);
+                    parent.addClass(self.options.row_class + ' t11e-styled-' + input_type);
                 } else {
                     // wrap the input + label in a div
                     parent = $('<div/>')
-                        .attr('class', self.options.row_class + ' t11e-' + input_type)
+                        .attr('class', self.options.row_class + ' t11e-styled-' + input_type)
                         .insertBefore(input);
                     parent.append(input);
                     parent.append(label);

@@ -79,6 +79,8 @@
     $.ui.t11e_faceted_checkboxes2.prototype._init = function () {
         var self = this;
 
+        self.element.addClass('ui-t11e_faceted_checkboxes2');
+
         var search_group = self.options.search_group;
         var value_param = self.options.value_param;
         var dimension = self.options.dimension;

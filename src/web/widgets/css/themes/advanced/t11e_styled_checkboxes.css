@@ -1,3 +1,6 @@
+/*
+ * Styled checkboxes widget that utilizes custom images for checkboxes.
+ */
 
 .t11e-checkbox, .t11e-radio {
     position: relative;
@@ -24,12 +27,6 @@
     padding: .25em 0 .25em 30px;
     margin: 0 0 .3em;
     cursor: pointer;
-    border: 1px solid #ffffff;
-    background-color: #ffffff;
-}
-
-label.ui-state-hover {
-
 }
 
 .t11e-checkbox label.ui-state-focus,
@@ -41,31 +38,31 @@ label.ui-state-hover {
  */
 
 .t11e-checkbox label {
-    /*background: #ffffff url(images/checkbox.gif) no-repeat;*/
+    background: #ffffff url(images/checkbox.gif) no-repeat;
 }
 
 .t11e-radio label {
-    /*background:#ffffff url(images/radiobutton.gif) no-repeat;*/
+    background:#ffffff url(images/radiobutton.gif) no-repeat;
 }
 
 .t11e-checkbox label, .t11e-radio label {
-    /*background-position: -10px -14px;*/
+    background-position: -10px -14px;
 }
 
 .t11e-checkbox label.ui-state-hover,
 .t11e-checkbox label.ui-state-focus,
 .t11e-radio label.ui-state-hover,
 .t11e-radio label.ui-state-focus {
-    /*background-position: -10px -114px;*/
+    background-position: -10px -114px;
 }
 
 .t11e-checkbox label.ui-state-checked,
 .t11e-radio label.ui-state-checked {
-    background-color: #eeeeee;
-   /*background-position: -10px -214px;*/
+    border: 1px solid black;
+    background-position: -10px -214px;
 }
 
 .t11e-checkbox label.ui-state-checked-hover,
 .t11e-checkbox label.ui-state-checked-focus {
-    /*background-position: -10px -314px;*/
+    background-position: -10px -314px;
 }

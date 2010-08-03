@@ -16,13 +16,13 @@ groups:
         - widgets/css/core.css
         - widgets/css/jquery/widget/pagination_widget.css
         - widgets/css/jquery/widget/faceted_checkboxes_widget.css
+        - widgets/css/jquery/widget/faceted_checkboxes_widget2.css
         - widgets/css/jquery/widget/faceted_flyout_widget.css
         - widgets/css/jquery/widget/google_map_widget.css
         - widgets/css/jquery/widget/response_widget.css
         - widgets/css/jquery/widget/results_widget.css
         - widgets/css/jquery/widget/accordion_widget.css
         - widgets/css/jquery/widget/breadcrumb_widget.css
-        - widgets/css/jquery/ui/jquery.ui.t11e_styled_checkboxes.css
 
     - groupName: widgets_theme_simple_css
       mediaType: css
@@ -39,6 +39,7 @@ groups:
       sourceFileNames:
         - widgets/css/themes/advanced/ui.css
         - widgets/css/themes/advanced/widgets.css
+        - widgets/css/themes/advanced/t11e_styled_checkboxes.css
 
     - groupName: widgets_theme_jsdoc_css
       mediaType: css
@@ -47,6 +48,7 @@ groups:
       sourceFileNames:
         - widgets/css/themes/jsdoc/ui.css
         - widgets/css/themes/jsdoc/widgets.css
+        - widgets/css/themes/jsdoc/t11e_styled_checkboxes.css
 
     - groupName: widgets_js
       mediaType: js

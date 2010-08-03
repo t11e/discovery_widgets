@@ -7,28 +7,28 @@
 /*
  * Checkbox rows
  */
-.t11e-widget-jquery-faceted-checkboxes-bd div.row {
+.ui-t11e_faceted_checkboxes2 .t11e-input-row {
     position: relative;
 }
 
 /*
  * Position checkboxes
  */
-.t11e-widget-jquery-faceted-checkboxes-bd div.row input {
+.ui-t11e_faceted_checkboxes2 .t11e-input-row input {
     margin: .125em 0 0 0;
 }
 
 /*
  * Position checkbox labels
  */
-.t11e-widget-jquery-faceted-checkboxes-bd div.row label {
+.ui-t11e_faceted_checkboxes2 .t11e-input-row label {
     margin: 0 0 0 .5em;
 }
 
 /*
  * Position drilldown counts
  */
-.t11e-widget-jquery-faceted-checkboxes-bd div.row span.facet-count {
+.ui-t11e_faceted_checkboxes2 .t11e-input-row span.t11e-facet-count {
     position: absolute;
     top: 0;
     right: .1em;
@@ -37,14 +37,14 @@
 /*
  * Remove bullets/numbers from ordered lists
  */
-.t11e-widget-jquery-faceted-checkboxes-bd ol {
+.ui-t11e_faceted_checkboxes2 ol {
     margin:0 0 0 0;
 }
 
-.t11e-widget-jquery-faceted-checkboxes-bd ol ol {
+.ui-t11e_faceted_checkboxes2 ol ol {
     margin:0 0 0 1em;
 }
 
-.t11e-widget-jquery-faceted-checkboxes-bd li {
+.ui-t11e_faceted_checkboxes2 li {
     list-style-type: none;
 }
