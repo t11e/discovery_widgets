@@ -145,11 +145,7 @@ t11e.widget.jquery.ResultsWidget = function ($, options) {
             hide_loading();
         } else {
             var url = base_url + '?' + query_params;
-            // Load the results into a dummy div and then splice them into
-            // the document as a separate step so we can process them
-            // before they are displayed.
-            var dummy = $('<div/>');
-            dummy.load(url, null, function (responseText, statusText, xhr) {
+            target.load(url, null, function (responseText, statusText, xhr) {
                 if (xhr.status < 200 || xhr.status >= 300) {
                     update_from_error('Problem rendering results.', {
                         status: xhr.status,
@@ -159,14 +155,10 @@ t11e.widget.jquery.ResultsWidget = function ($, options) {
                 }
                 else
                 {
-                    highlight_text(dummy, t11e.util.deref(search, '_discovery.response'));
+                    highlight_text(target, t11e.util.deref(search, '_discovery.response'));
                     if (t11e.util.is_defined(results_callback)) {
-                        results_callback(dummy, search);
+                        results_callback(target, search);
                     }
-                    var contents = dummy.children().clone(true);
-                    target.empty();
-                    target.append(contents);
-                    dummy.empty();
                 }
                 hide_loading();
             });
