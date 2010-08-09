@@ -42,7 +42,7 @@ if (false) {
  *
  *    <dt>z_index</dt>
  *    <dd>The z-index of the 'loading' message to insure it displays on top of other
- *    elements. Defaults to 1000.</dd
+ *    elements. Defaults to 1000.</dd>
  *</dl>
  *
  * <h2>Example</h2>
