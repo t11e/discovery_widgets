@@ -21,6 +21,7 @@
 t11e.util.define_namespace('t11e.widget.jquery.util');
 if (false) {
     t11e.widget.jquery.prototype.Eclipse__Outline__Hack = undefined;
+    t11e.widget.jquery.util.prototype.Eclipse__Outline__Hack = undefined;
 }
 
 t11e.widget.jquery.util.call_func = function ($, value, func) {
@@ -72,7 +73,7 @@ t11e.widget.jquery.util.subtract = function ($, firstArray, secondArray) {
     return output;
 };
 
-t11e.widget.jquery.util.get_dimension_drilldown = function ($, search, dimension) {
+t11e.widget.jquery.util.get_dimension_drilldown = function ($, search, dimension, get_fuzzy_counts) {
     var facet_counts = {};
     var found = false;
     var drillDown = t11e.util.deref(search, '_discovery.response.drillDown');
@@ -81,7 +82,7 @@ t11e.widget.jquery.util.get_dimension_drilldown = function ($, search, dimension
             if (!found && dimension === criterion.dimension) {
                 found = true;
                 var ids = criterion.ids;
-                var counts = criterion.exactCounts;
+                var counts = get_fuzzy_counts ? criterion.fuzzyCounts : criterion.exactCounts;
                 var j;
                 for (j = 0; j < ids.length && j < counts.length; j++) {
                     var id = ids[j];

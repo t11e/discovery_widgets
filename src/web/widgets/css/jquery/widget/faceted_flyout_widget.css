@@ -62,8 +62,10 @@ fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row label {
  * Position drilldown counts
  */
 fieldset.t11e-widget-jquery-faceted-flyout-primary div.row span.facet-count,
-fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row span.facet-count {
-    position: absolute;
+fieldset.t11e-widget-jquery-faceted-flyout-primary div.row span.fuzzy-facet-count,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row span.facet-count,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row span.fuzzy-facet-count {
+	    position: absolute;
     top: .125em;
     right: .1em;
 }

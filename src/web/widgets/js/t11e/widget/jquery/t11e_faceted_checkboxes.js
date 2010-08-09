@@ -31,41 +31,64 @@ if (false) {
  *    <dd>The dimension (index) used for updating drilldown counts.</dd>
  * </dl>
  *
- * <h2>Example</h2>
+ * <h2>Example - Exact counts</h2>
  * <div class="t11e-widget-example"><!--
- *   <div id="example" class="t11e-widget t11e-widget-jquery-faceted-checkboxes">
+ *   <div id="example-exact" class="t11e-widget t11e-widget-jquery-faceted-checkboxes">
  *    <div class="t11e-hd t11e-widget-jquery-faceted-checkboxes-hd"></div>
  *    <div class="t11e-bd t11e-widget-jquery-faceted-checkboxes-bd">
  *      <form action="">
  *        <div class="row">
- *          <input type="checkbox" name="c" value="cars">
- *          <label>Cars</label><span class="facet-count">0</span>
+ *          <input type="checkbox" name="shape" value="square">
+ *          <label>Square</label><span class="facet-count">0</span>
  *        </div>
  *        <div class="row">
- *          <input type="checkbox" name="c" value="motorcycles">
- *          <label>Motorcycles</label><span class="facet-count">0</span>
+ *          <input type="checkbox" name="shape" value="circle">
+ *          <label>Circle</label><span class="facet-count">0</span>
  *        </div>
  *        <div class="row">
- *          <input type="checkbox" name="c" value="suvs">
- *          <label>SUV</label><span class="facet-count">0</span>
- *        </div>
- *        <div class="row">
- *          <input type="checkbox" name="c" value="trucks">
- *           <label>Trucks</label><span class="facet-count">0</span>
- *        </div>
- *        <div class="row">
- *          <input type="checkbox" name="c" value="vans">
- *           <label>Vans</label><span class="facet-count">0</span>
+ *          <input type="checkbox" name="shape" value="triangle">
+ *          <label>Triangle</label><span class="facet-count">0</span>
  *        </div>
  *      </form>
  *    </div>
  *    <div class="t11e-ft t11e-widget-jquery-faceted-checkboxes-ft"></div>
  *   </div>
  *   <script type="text/javascript">
- *     $("#example").t11e_faceted_checkboxes({
+ *     $("#example-exact").t11e_faceted_checkboxes({
  *       "search_group": "default",
- *       "value_param": "c",
- *       "dimension": "category"
+ *       "value_param": "shape",
+ *       "dimension": "shape"
+ *     });
+ *   </script>
+ * --></div>
+ *
+ * <h2>Example - Fuzzy counts</h2>
+ * <div class="t11e-widget-example"><!--
+ *   <div id="example-fuzzy" class="t11e-widget t11e-widget-jquery-faceted-checkboxes">
+ *    <div class="t11e-hd t11e-widget-jquery-faceted-checkboxes-hd"></div>
+ *    <div class="t11e-bd t11e-widget-jquery-faceted-checkboxes-bd">
+ *      <form action="">
+ *        <div class="row">
+ *          <input type="checkbox" name="shape" value="square">
+ *          <label>Square</label><span class="fuzzy-facet-count">0</span>
+ *        </div>
+ *        <div class="row">
+ *          <input type="checkbox" name="shape" value="circle">
+ *          <label>Circle</label><span class="fuzzy-facet-count">0</span>
+ *        </div>
+ *        <div class="row">
+ *          <input type="checkbox" name="shape" value="triangle">
+ *          <label>Triangle</label><span class="fuzzy-facet-count">0</span>
+ *        </div>
+ *      </form>
+ *    </div>
+ *    <div class="t11e-ft t11e-widget-jquery-faceted-checkboxes-ft"></div>
+ *   </div>
+ *   <script type="text/javascript">
+ *     $("#example-fuzzy").t11e_faceted_checkboxes({
+ *       "search_group": "default",
+ *       "value_param": "shape",
+ *       "dimension": "shape"
  *     });
  *   </script>
  * --></div>
@@ -196,14 +219,23 @@ t11e.widget.jquery.FacetedCheckboxesWidget = function ($, options) {
         var update_from_response = function (search) {
             var facet_counts =
                 t11e.widget.jquery.util.get_dimension_drilldown($, search, dimension);
+            var fuzzy_facet_counts =
+                t11e.widget.jquery.util.get_dimension_drilldown($, search, dimension, true);
 
             checkboxes.each(function (i, checkbox) {
                 var count = facet_counts[checkbox.value];
                 if (t11e.util.is_undefined(count)) {
                     count = 0;
                 }
+                var fuzzy_count = fuzzy_facet_counts[checkbox.value];
+                if (t11e.util.is_undefined(fuzzy_count)) {
+                    fuzzy_count = 0;
+                }
                 $(checkbox).find('~span.facet-count').each(function (i, span) {
                     $(span).html(count);
+                });
+                $(checkbox).find('~span.fuzzy-facet-count').each(function (i, span) {
+                    $(span).html(fuzzy_count);
                 });
             });
         };

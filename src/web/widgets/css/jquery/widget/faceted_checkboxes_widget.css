@@ -33,7 +33,8 @@
 /*
  * Position drilldown counts
  */
-.t11e-widget-jquery-faceted-checkboxes-bd div.row span.facet-count {
+.t11e-widget-jquery-faceted-checkboxes-bd div.row span.facet-count,
+.t11e-widget-jquery-faceted-checkboxes-bd div.row span.fuzzy-facet-count {
     position: absolute;
     top: 0;
     right: .1em;
