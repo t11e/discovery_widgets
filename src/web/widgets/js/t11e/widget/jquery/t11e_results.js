@@ -141,7 +141,7 @@ t11e.widget.jquery.ResultsWidget = function ($, options) {
             t11e.util.error('No element has been defined to display results.');
             hide_loading();
         } else if (t11e.util.is_undefined(query_params)) {
-            t11e.util.error('query_params cannot be deterimined from', render_params_paths);
+            t11e.util.error('query_params cannot be determined from', render_params_paths);
             hide_loading();
         } else {
             var url = base_url + '?' + query_params;
