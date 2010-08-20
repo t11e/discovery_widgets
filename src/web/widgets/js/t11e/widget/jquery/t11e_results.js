@@ -43,6 +43,16 @@ if (false) {
  *    <dt>z_index</dt>
  *    <dd>The z-index of the 'loading' message to insure it displays on top of other
  *    elements. Defaults to 1000.</dd>
+ *
+ *    <dt>highlight_filter</dt>
+ *    <dd>An array of jQuery selectors that enclose keyword text to be highlighted
+ *    in the results. <p>Note: Highlighting is only enabled if the query request requests
+ *    "textTokens" for the "explain" key <i>and</i> at least one valid highlight_filter
+ *    has been declared.</p></dd>
+ *
+ *    <dt>highlight_template</dt>
+ *    <dd>An HTML template that will wrap around highlighted keywords found in text
+ *    enclosed by the selectors in highlist_filter. Defaults to &lt;span class="highlight"/&gt;</dd>
  *</dl>
  *
  * <h2>Example</h2>
