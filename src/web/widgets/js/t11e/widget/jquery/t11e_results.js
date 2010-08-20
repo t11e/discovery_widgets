@@ -53,6 +53,10 @@ if (false) {
  *    <dt>highlight_template</dt>
  *    <dd>An HTML template that will wrap around highlighted keywords found in text
  *    enclosed by the selectors in highlist_filter. Defaults to &lt;span class="highlight"/&gt;</dd>
+ *
+ *    <dt>results_callback</dt>
+ *    <dd>An callback function(target,search){} that is executed when the after the search results
+ *    fire.</dd>
  *</dl>
  *
  * <h2>Example</h2>
