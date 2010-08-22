@@ -58,7 +58,6 @@ if (false) {
 t11e.widget.jquery.TextBoxWidget = function ($, options) {
     var search_group = options.search_group;
     var value_param = options.value_param;
-    t11e.util.log('textbox', this);
     var textbox = $(this).is(':input') ? $(this) : $(this).find('input:first');
 
     var ignore_event = false;
