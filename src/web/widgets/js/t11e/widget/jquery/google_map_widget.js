@@ -196,23 +196,25 @@ t11e.widget.jquery.GoogleMapWidget = function ($, options) {
             }());
 
             (function () {
-                if (show_criteria_locations) {
-                    var criteria = t11e.util.deref(search, '_discovery.request.criteria');
-                    if (t11e.util.is_defined(criteria)) {
-                        for (var i = 0; i < criteria.length; ++i) {
-                            if (criteria[i].dimension === dimension) {
-                                var lats = t11e.util.deref(criteria[i], 'latitude');
-                                var longs = t11e.util.deref(criteria[i], 'longitude');
-                                if (t11e.util.is_defined(lats) && t11e.util.is_defined(longs)) {
-                                    var minLen = Math.min(lats.length, longs.length);
-                                    for (var posIdx = 0; posIdx < minLen; ++posIdx) {
-                                        criteria_locations.push({
-                                            'id': criteria[i].locationId,
-                                            'type': 'criteria',
-                                            'latitude': lats[posIdx],
-                                            'longitude': longs[posIdx]
-                                        });
-                                    }
+                var criteria = t11e.util.deref(search, '_discovery.request.criteria');
+                if (t11e.util.is_defined(criteria)) {
+                    for (var i = 0; i < criteria.length; ++i) {
+                        if (criteria[i].dimension === dimension) {
+                            var lats = t11e.util.deref(criteria[i], 'latitude');
+                            var longs = t11e.util.deref(criteria[i], 'longitude');
+                            if (t11e.util.is_defined(lats) && t11e.util.is_defined(longs)) {
+                                if (!$.isArray(lats)) {
+                                    lats = [lats];
+                                    longs = [longs];
+                                }
+                                var minLen = Math.min(lats.length, longs.length);
+                                for (var posIdx = 0; posIdx < minLen; ++posIdx) {
+                                    criteria_locations.push({
+                                        'id': criteria[i].locationId,
+                                        'type': 'criteria',
+                                        'latitude': lats[posIdx],
+                                        'longitude': longs[posIdx]
+                                    });
                                 }
                             }
                         }
@@ -249,10 +251,16 @@ t11e.widget.jquery.GoogleMapWidget = function ($, options) {
             var markers_exist = false;
             if (t11e.util.is_defined(map_items)) {
                 markers_exist = create_markers(map_items.responses, bounds) || markers_exist;
-                markers_exist = create_markers(map_items.criteria_locations, bounds) || markers_exist;
+                if (show_criteria_locations) {
+                    markers_exist = create_markers(map_items.criteria_locations, bounds) || markers_exist;
+                }
             }
             if (markers_exist) {
                 map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds));
+            } else if (t11e.util.is_defined(map_items) && map_items.criteria_locations.length !== 0) {
+                var latlng = new GLatLng(map_items.criteria_locations[0].latitude, map_items.criteria_locations[0].longitude);
+                map.checkResize();
+                map.setCenter(latlng, options.zoom_level);
             } else {
                 center_map();
             }
