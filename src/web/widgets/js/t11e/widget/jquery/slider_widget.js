@@ -66,7 +66,6 @@ if (false) {
  * @class A single-handled slider.
  */
 t11e.widget.jquery.SliderWidget = function ($, options) {
-    t11e.util.log(options);
     var search_group = options.search_group;
     var amount = $(this).find('.amount:first');
     var slider_ctl = $(this).find('.slider-control:first');
